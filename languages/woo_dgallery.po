@@ -1,0 +1,477 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Woocommerce Dynamic Gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-13 14:33+0700\n"
+"PO-Revision-Date: 2012-07-13 14:33+0700\n"
+"Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
+"Language-Team: a3rev\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite\n"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:114
+msgid "Dynamic Gallery"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:252
+msgid "Gallery"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:258
+msgid "Gallery width"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:266
+msgid "Gallery height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:287
+msgid "Auto start"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:294
+msgid "False"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:295
+msgid "True"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:300
+msgid "Time between transitions"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:308
+msgid "Slide transition effect"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:315
+msgid "None"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:316
+msgid "Fade"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:317
+msgid "Slide Hori"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:318
+msgid "Slide vert"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:319
+msgid "Resize"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:325
+msgid "Transition effect speed"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:332
+msgid "1"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:333
+msgid "2"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:334
+msgid "3"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:335
+msgid "4"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:336
+msgid "5"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:337
+msgid "6"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:338
+msgid "7"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:339
+msgid "8"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:340
+msgid "9"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:341
+msgid "10"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:346
+msgid "Image background colour"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:347
+msgid "Gallery image background colour. Default <code>#FFFFFF</code>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:354
+msgid "Border colour"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:355
+msgid "Gallery border colour. Default <code>#CCCCCC</code>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:361
+msgid "Gallery popup"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:368
+msgid "Fancybox"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:369
+msgid "Lightbox"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:378
+msgid "Caption text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:384
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:492
+msgid "Font"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:391
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:499
+msgid "Arial"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:392
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:500
+msgid "Verdana"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:393
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:501
+msgid "Trebuchet"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:394
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:502
+msgid "Georgia"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:395
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:503
+msgid "Times New Roman"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:396
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:504
+msgid "Tahoma"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:397
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:505
+msgid "Palatino"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:398
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:506
+msgid "Helvetica*"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:399
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:507
+msgid "Calibri*"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:400
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:508
+msgid "Myriad Pro*"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:401
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:509
+msgid "Lucida"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:402
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:510
+msgid "Arial Black"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:403
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:511
+msgid "Gill Sans*"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:404
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:512
+msgid "Geneva*"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:405
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:513
+msgid "Impact"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:406
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:514
+msgid "Courier"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:407
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:515
+msgid "Century Gothic"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:412
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:520
+msgid "Font size"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:419
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:527
+msgid "9px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:420
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:528
+msgid "10px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:421
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:529
+msgid "11px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:422
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:530
+msgid "12px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:423
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:531
+msgid "13px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:424
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:532
+msgid "14px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:425
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:533
+msgid "15px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:426
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:534
+msgid "16px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:427
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:535
+msgid "17px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:428
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:536
+msgid "18px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:429
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:537
+msgid "19px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:430
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:538
+msgid "20px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:431
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:539
+msgid "21px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:432
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:540
+msgid "22px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:433
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:541
+msgid "23px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:434
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:542
+msgid "24px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:435
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:543
+msgid "25px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:436
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:544
+msgid "26px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:437
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:545
+msgid "27px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:438
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:546
+msgid "28px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:439
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:440
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:547
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:548
+msgid "29px"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:445
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:553
+msgid "Font style"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:452
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:560
+msgid "Normal"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:453
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:561
+msgid "Italic"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:454
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:562
+msgid "Bold"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:455
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:563
+msgid "Bold/Italic"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:460
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:568
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:608
+msgid "Colour"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:461
+msgid "Caption text color. Default <code>#FFFFFF</code>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:468
+msgid "Background"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:469
+msgid "Caption text background colour. Default <code>#000000</code>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:478
+msgid "Nav Bar"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:484
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:600
+msgid "Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:485
+msgid "Enable Nav bar Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:569
+msgid "Nav bar background colour. Default <code>#FFFFFF</code>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:576
+msgid "Text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:577
+msgid "Nav bar text color. Default <code>#000000</code>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:584
+msgid "Container height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:594
+msgid "Lazy-load scroll"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:601
+msgid "Enable lazy-load scroll"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:609
+msgid "Scroll bar colour. Default <code>#000000</code>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:618
+msgid "Image Thumbnails"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:624
+msgid "Show thumbnails"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:625
+msgid "Enable thumbnail gallery"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:642
+msgid "Thumbnail width"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:650
+msgid "Thumbnail height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:658
+msgid "Thumbnail spacing"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:667
+msgid "Preview"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:700
+msgid "Activate these 22 advanced setting"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:700
+msgid "here"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:700
+msgid "for a once only fee of "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/classes/class-wc-dynamic-gallery-metaboxes.php:17
+msgid "Gallery Images"
+msgstr ""
+
