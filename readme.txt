@@ -101,12 +101,12 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
-= 1.0.1 - 2012/07/17
+= 1.0.1 - 2012/07/17 =
 
-Fix - Set Gallery z index to a low number so that theme Nav bar dropdowns don't show behind the gallery.
-Fix - Remove gallery script that makes wide of block class to 100% which was causing some themes footer widgets to show 100% wide.
+* Fix - Set Gallery z index to a low number so that theme Nav bar dropdowns don't show behind the gallery.
+* Fix - Remove gallery script that makes wide of block class to 100% which was causing some themes footer widgets to show 100% wide.
 
 = 1.0 - 2012/07/14 =
-Initial release.
+* Initial release.
 
   
