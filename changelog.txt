@@ -1,0 +1,9 @@
+*** WooCommerce Dynamic Gallery Changelog ***
+
+2012.07.17 - version 1.0.1
+ * Fix - Set Gallery z index to a low number so that theme Nav bar dropdowns don't show behind the gallery.
+ * Fix - Remove gallery script that makes wide of block class to 100% which was causing some themes footer widgets to show 100% wide.
+
+2012.07.14 - version 1.0.0
+ * Initial release.
+ 

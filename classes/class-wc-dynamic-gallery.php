@@ -137,7 +137,7 @@ class WC_Gallery_Display_Class{
                     overflow: hidden !important;
                     padding:0;
                     border:1px solid #'.$border_image_wrapper_color.';
-					z-index:1000 !important;
+					z-index:8 !important;
                 }
                 .ad-image img{
                     max-width:'.$g_width.'px !important;
@@ -620,7 +620,7 @@ class WC_Gallery_Display_Class{
                     overflow: hidden !important;
                     padding:0;
                     border:1px solid #'.$border_image_wrapper_color.';
-					z-index:1000 !important;
+					z-index:8 !important;
                 }
                 .ad-image img{
                     max-width:'.$g_width.'px !important;

@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, woothemes, wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,11 +25,12 @@ Having an image with your products creates more sales. WooCommerce Dynamic  Gall
 
 = More Feature =
 
+* Add caption text to images
 * Caption text fades in after image transition effect and out before the next transaction effect begins.
 * Manual image click to scroll next or previous.
 * ZOOM - shows full size image with caption text and manual scroll through entire gallery.
 * START SLIDE SHOW | STOP SLIDESHOW control
-* Thumbnails scroll left and right on hover.
+* Gallery thumbnails scroll left and right on hover.
 
 = Premium Upgrade =
 
@@ -88,7 +89,7 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
 
 6. Have fun.
 
-==Frequently Asked Questions ==
+== Frequently Asked Questions ==
 
 = When can I use this plugin? =
 
@@ -100,6 +101,10 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 1.0.1 - 2012/07/17
+
+Fix - Set Gallery z index to a low number so that theme Nav bar dropdowns don't show behind the gallery.
+Fix - Remove gallery script that makes wide of block class to 100% which was causing some themes footer widgets to show 100% wide.
 
 = 1.0 - 2012/07/14 =
 Initial release.
