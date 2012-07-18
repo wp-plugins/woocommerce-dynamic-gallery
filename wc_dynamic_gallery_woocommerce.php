@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Dynamic Gallery LITE
 Plugin URI: http://www.a3rev.com/
 Description: WooCommerce Dynamic Gallery LITE plugin.
-Version: 1.0.1
+Version: 1.0.2
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later

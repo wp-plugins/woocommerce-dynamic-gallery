@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce Dynamic Gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-13 14:33+0700\n"
-"PO-Revision-Date: 2012-07-13 14:33+0700\n"
+"POT-Creation-Date: 2012-07-18 11:42+0700\n"
+"PO-Revision-Date: 2012-07-18 11:42+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -460,18 +460,37 @@ msgid "Preview"
 msgstr ""
 
 #: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:700
-msgid "Activate these 22 advanced setting"
+msgid "Introductory Offer! Activate these 22 advanced features with"
 msgstr ""
 
 #: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:700
-msgid "here"
+msgid "WooCommerce Dynamic Gallery Pro"
 msgstr ""
 
 #: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:700
-msgid "for a once only fee of "
+msgid "for just a tiny"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/admin/class-wc-dynamic-gallery-admin.php:700
+msgid "Offer won't last, grab it while you can!"
 msgstr ""
 
 #: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/classes/class-wc-dynamic-gallery-metaboxes.php:17
 msgid "Gallery Images"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/classes/class-wc-dynamic-gallery.php:333
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/classes/class-wc-dynamic-gallery.php:822
+msgid "START SLIDESHOW"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/classes/class-wc-dynamic-gallery.php:334
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/classes/class-wc-dynamic-gallery.php:823
+msgid "STOP SLIDESHOW"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/classes/class-wc-dynamic-gallery.php:335
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-dynamic-gallery-lite/classes/class-wc-dynamic-gallery.php:824
+msgid "ZOOM +"
 msgstr ""
 

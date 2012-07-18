@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, woothemes, wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -65,7 +65,7 @@ The manual installation method involves downloading our plugin and uploading it 
 
 = Localization =
 * English (default) - always include.
-* .pot file (woo_dgallery.pot) in languages folder for translations.
+* .po file (woo_dgallery.po) in languages folder for translations.
 * Your translation? Please do yours and [send it to us](http://www.a3rev.com/contact/) We'll acknowledge your work and link to your site.
 Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
 
@@ -100,6 +100,10 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/#help) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 1.0.2 - 2012/07/18 =
+
+* Fix - Edit Javascript to fix Image Scaling Issue.
 
 = 1.0.1 - 2012/07/17 =
 

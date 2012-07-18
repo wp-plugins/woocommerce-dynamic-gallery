@@ -25,8 +25,9 @@
                        enable: true,
                        autostart: false,
                        speed: 5000,
-                       start_label: '<span>Start</span>',
-                       stop_label: 'Stop',
+                       start_label: 'START SLIDESHOW',
+                       stop_label: 'STOP SLIDESHOW',
+					   zoom_label: 'ZOOM +',
                        stop_on_scroll: true,
                        countdown_prefix: '(',
                        countdown_sufix: ')',
@@ -600,7 +601,7 @@
         }
 		if ($(".slide-ctrl").length > 0){
 		}else{
-		this.image_wrapper.append('<div class="icon_zoom lightbox" rel="gallery_'+id+'"><span>ZOOM</span></div><div class="slide-ctrl"><span class="ad-slideshow-start-slide">START SLIDESHOW</span><span class="ad-slideshow-stop-slide">STOP SLIDESHOW</span></div>');
+		this.image_wrapper.append('<div class="icon_zoom lightbox" rel="gallery_'+id+'"><span>'+ this.settings.slideshow.zoom_label +'</span></div><div class="slide-ctrl"><span class="ad-slideshow-start-slide">'+ this.settings.slideshow.start_label +'</span><span class="ad-slideshow-stop-slide">'+ this.settings.slideshow.stop_label +'</span></div>');
 		}
 		
 		//img_container.after('<div class="slide-ctrl"><span class="ad-slideshow-start-slide">Start</span><span class="ad-slideshow-stop-slide">Stop</span></div>');
@@ -615,8 +616,9 @@
 		
         this.image_wrapper.prepend(img_container);
         var size = this._getContainedImageSize(image.size.width, image.size.height);
-        img.attr('width', size.width);
-        img.attr('height', size.height);
+        //img.attr('width', size.width);
+        //img.attr('height', size.height);
+		img.css({width: size.width +'px', height: size.height +'px'});
         img_container.css({width: size.width +'px', height: size.height +'px'});
         this._centerImage(img_container, size.width, size.height);
 		
