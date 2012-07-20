@@ -34,7 +34,7 @@ Having an image with your products creates more sales. WooCommerce Dynamic  Gall
 
 = Premium Upgrade =
 
-A $2 premium upgrade activates a total of 22 different settings that allows you to tweak and style the WooCommerce Dynamic Gallery to match your theme and your preferences to perfection. One of those 22 settings is the choice of 5 different image transition effects - you will see all the additional premium upgrade setting that are available on the admin page when you download and install this plugin. 
+A $5 premium upgrade activates a total of 22 different settings that allows you to tweak and style the WooCommerce Dynamic Gallery to match your theme and your preferences to perfection. One of those 22 settings is the choice of 5 different image transition effects - you will see all the additional premium upgrade setting that are available on the admin page when you download and install this plugin. 
 
 [Home Page](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/) |
 [Documentation](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/) |

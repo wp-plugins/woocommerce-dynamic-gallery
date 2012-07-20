@@ -697,7 +697,7 @@ class WC_Dynamic_Gallery {
 	
 	function wc_dynamic_gallery_extension() {
 		$html = '';
-		$html .= '<div id="wc_dynamic_gallery_extensions">'.__('Activate these 22 advanced setting', 'woo_dgallery').' <a target="_blank" href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/">'.__('here', 'woo_dgallery').'</a> '.__('for a once only fee of ', 'woo_dgallery').'<strong>$2</strong></div>';
+		$html .= '<div id="wc_dynamic_gallery_extensions">'.__('Introductory Offer! Activate these 22 advanced features with', 'woo_dgallery').' <a target="_blank" href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/">'.__('WooCommerce Dynamic Gallery Pro', 'woo_dgallery').'</a> '.__('for just a tiny', 'woo_dgallery').' <strong>$5</strong> - '.__("Offer won't last, grab it while you can!", 'woo_dgallery').'</div>';
 		return $html;	
 	}
 	
