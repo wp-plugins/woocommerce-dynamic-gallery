@@ -697,7 +697,7 @@ class WC_Dynamic_Gallery {
 	
 	function wc_dynamic_gallery_extension() {
 		$html = '';
-		$html .= '<div id="wc_dynamic_gallery_extensions">'.__('Introductory Offer! Activate these 22 advanced features with', 'woo_dgallery').' <a target="_blank" href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/">'.__('WooCommerce Dynamic Gallery Pro', 'woo_dgallery').'</a> '.__('for just a tiny', 'woo_dgallery').' <strong>$5</strong> - '.__("Offer won't last, grab it while you can!", 'woo_dgallery').'</div>';
+		$html .= '<div id="wc_dynamic_gallery_extensions">'.__('Features that you see inside this yellow frame are this plugins Pro Version Features. Upgrade to the', 'woo_dgallery').' <a target="_blank" href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/">'.__('Pro Version', 'woo_dgallery').'</a> '.__('for a small once only fee to activate all 22 gallery features and unleash to full glory of the WooCommerce dynamic products gallery on your site. Note: Thumbnail size settings are activated in this Lite version and are at the bottom of this page.', 'woo_dgallery').'</div>';
 		return $html;	
 	}
 	
