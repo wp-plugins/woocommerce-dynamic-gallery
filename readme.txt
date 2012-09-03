@@ -104,7 +104,7 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
-= 1.0.3 - 2012/09/03
+= 1.0.3 - 2012/09/03 =
 
 * Fixed : Fixed: Gallery preview not working on sites that do not have wp_enqueue_script( 'thickbox' ) by default. Added call to wp_enqueue_script( 'thickbox' ) if it does not exist so that preview window can open.
 * Fixed : Updated depreciated php function ereg() with stristr() so that Pro version auto plugin auto upgrade feature work without error for WordPress 3.4.0 and later
