@@ -56,8 +56,6 @@ class WC_Gallery_Display_Class{
 		?>
         <div class="images">
           <div class="product_gallery">
-            <link href="<?php echo WOO_DYNAMIC_GALLERY_URL ?>/assets/js/mygallery/jquery.ad-gallery.css" rel="stylesheet">
-            <script src="<?php echo WOO_DYNAMIC_GALLERY_URL ?>/assets/js/mygallery/jquery.ad-gallery.js" type="text/javascript"></script>
             <?php
             $g_width = get_option('product_gallery_width');
             $g_height = get_option('product_gallery_height');
@@ -114,14 +112,7 @@ class WC_Gallery_Display_Class{
 			
 			$bg_des = WC_Gallery_Display_Class::html2rgb($product_gallery_bg_des,true);
 			$des_background =str_replace('#','',$product_gallery_bg_des);
-			
-            if($popup_gallery == 'lb'){
-			?>
-            <link href="<?php echo WOO_DYNAMIC_GALLERY_URL;?>/assets/js/lightbox/themes/default/jquery.lightbox.css" rel="stylesheet">
-            <script src="<?php echo WOO_DYNAMIC_GALLERY_URL ?>/assets/js/lightbox/jquery.lightbox.min.js" type="text/javascript"></script>
-            <?php
-			}
-                
+			                
             echo '<style>
 			#TB_window{width:auto !important;}
                 .ad-gallery {
@@ -305,8 +296,8 @@ class WC_Gallery_Display_Class{
 					top: 38%;
 					width: 50px;
 				}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-start-slide {background: url('.WOO_DYNAMIC_GALLERY_URL.'/assets/js/mygallery/play.png);height: 50px;text-indent: -999em; width: 50px;}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_URL.'/assets/js/mygallery/pause.png);height: 50px;text-indent: -999em; width: 50px;}';
+				echo '.product_gallery .slide-ctrl .ad-slideshow-start-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/play.png);height: 50px;text-indent: -999em; width: 50px;}';
+				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/pause.png);height: 50px;text-indent: -999em; width: 50px;}';
 			}
 			
 			echo '
@@ -314,7 +305,7 @@ class WC_Gallery_Display_Class{
             
             echo '<script type="text/javascript">
                 jQuery(function() {
-                    var settings_defaults_'.$post->ID.' = { loader_image: \''.WOO_DYNAMIC_GALLERY_URL.'/assets/js/mygallery/loader.gif\',
+                    var settings_defaults_'.$post->ID.' = { loader_image: \''.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/loader.gif\',
                         start_at_index: 0,
                         gallery_ID: \''.$post->ID.'\',
                         description_wrapper: false,
@@ -501,7 +492,7 @@ class WC_Gallery_Display_Class{
 								$script_fancybox .= '</script>';
                             }
                         }else{
-                            echo '<li style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;"> <a style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" class="lightbox" rel="gallery_product_'.$post->ID.'" href="'.WOO_DYNAMIC_GALLERY_URL . '/assets/js/mygallery/no-image.png"> <div><img style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" src="'.WOO_DYNAMIC_GALLERY_URL . '/assets/js/mygallery/no-image.png" class="image" alt=""> </div></a> </li>';	
+                            echo '<li style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;"> <a style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" class="lightbox" rel="gallery_product_'.$post->ID.'" href="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png"> <div><img style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" src="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png" class="image" alt=""> </div></a> </li>';	
 								
                         }
 						if($popup_gallery == 'lb'){
@@ -527,13 +518,10 @@ class WC_Gallery_Display_Class{
 		 */
 		global $post, $woocommerce;
 		check_ajax_referer( 'woo_dynamic_gallery', 'security' );
-		wp_enqueue_script('jquery');
 		$woo_a3_gallery_settings = $request;
 		?>
         <div class="images" style="width:<?php echo $woo_a3_gallery_settings['product_gallery_width'].'px';?>;margin:30px auto;">
           <div class="product_gallery">
-            <link href="<?php echo WOO_DYNAMIC_GALLERY_URL ?>/assets/js/mygallery/jquery.ad-gallery.css" rel="stylesheet">
-            <script src="<?php echo WOO_DYNAMIC_GALLERY_URL ?>/assets/js/mygallery/jquery.ad-gallery.js" type="text/javascript"></script>
             <?php
 			
             
@@ -594,18 +582,8 @@ class WC_Gallery_Display_Class{
 			$bg_des = WC_Gallery_Display_Class::html2rgb($product_gallery_bg_des,true);
 			$des_background =str_replace('#','',$product_gallery_bg_des);
 			
-            if($popup_gallery == 'lb'){
-			?>
-            <link href="<?php echo WOO_DYNAMIC_GALLERY_URL;?>/assets/js/lightbox/themes/default/jquery.lightbox.css" rel="stylesheet">
-            <script src="<?php echo WOO_DYNAMIC_GALLERY_URL ?>/assets/js/lightbox/jquery.lightbox.min.js" type="text/javascript"></script>
-            <?php
-			}else{
-				?>
-				<link href="<?php echo WOO_DYNAMIC_GALLERY_URL;?>/assets/js/fancybox/fancybox.css" rel="stylesheet">
-            	<script src="<?php echo WOO_DYNAMIC_GALLERY_URL ?>/assets/js/fancybox/fancybox.min.js" type="text/javascript"></script>
-                <?php
-			}
-            $post->ID = 'mrkunau';
+           
+            $post->ID = rand(10,10000);
             echo '<style>
 			#TB_window{width:auto !important;}
                 .ad-gallery {
@@ -794,8 +772,8 @@ class WC_Gallery_Display_Class{
 					top: 38%;
 					width: 50px;
 				}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-start-slide {background: url('.WOO_DYNAMIC_GALLERY_URL.'/assets/js/mygallery/play.png);height: 50px;text-indent: -999em; width: 50px;}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_URL.'/assets/js/mygallery/pause.png);height: 50px;text-indent: -999em; width: 50px;}';
+				echo '.product_gallery .slide-ctrl .ad-slideshow-start-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/play.png);height: 50px;text-indent: -999em; width: 50px;}';
+				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/pause.png);height: 50px;text-indent: -999em; width: 50px;}';
 			}
 			
 			echo '
@@ -803,7 +781,7 @@ class WC_Gallery_Display_Class{
             
             echo '<script type="text/javascript">
                 jQuery(function() {
-                    var settings_defaults_'.$post->ID.' = { loader_image: \''.WOO_DYNAMIC_GALLERY_URL.'/assets/js/mygallery/loader.gif\',
+                    var settings_defaults_'.$post->ID.' = { loader_image: \''.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/loader.gif\',
                         start_at_index: 0,
                         gallery_ID: \''.$post->ID.'\',
                         description_wrapper: false,
@@ -863,8 +841,8 @@ class WC_Gallery_Display_Class{
 								$script_fancybox .= '(function($){';		  
                                 $script_lightbox .= '$(function(){';
 								$script_fancybox .= '$(function(){';
-                                $script_lightbox .= '$(".ad-gallery .lightbox").live("click",function(ev) {';
-								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) {';
+                                $script_lightbox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {';
+								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {';
                                 if(count($imgs) <= 1 ){
                                     $script_lightbox .= '$.lightbox(';
 									$script_fancybox .= '$.fancybox(';
@@ -930,8 +908,8 @@ class WC_Gallery_Display_Class{
 									$script_fancybox .= ']);';
                                 }
                                 $script_lightbox .= 'ev.preventDefault();';
-                                $script_lightbox .= '});';
-								$script_fancybox .= '});';
+                                $script_lightbox .= '} });';
+								$script_fancybox .= '} });';
                                 $script_lightbox .= '});';
 								$script_fancybox .= '});';
                                 $script_lightbox .= '})(jQuery);';
@@ -940,7 +918,7 @@ class WC_Gallery_Display_Class{
 								$script_fancybox .= '</script>';
                             }
                         }else{
-                            echo '<li> <a class="lightbox" rel="gallery_product_'.$post->ID.'" href="'.WOO_DYNAMIC_GALLERY_URL . '/assets/js/mygallery/no-image.png"> <img src="'.WOO_DYNAMIC_GALLERY_URL . '/assets/js/mygallery/no-image.png" class="image" alt=""> </a> </li>';
+                            echo '<li> <a class="lightbox" rel="gallery_product_'.$post->ID.'" href="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png"> <img src="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png" class="image" alt=""> </a> </li>';
 							
 							
 									

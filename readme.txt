@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, woothemes, wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -34,10 +34,18 @@ Having an image with your products creates more sales. WooCommerce Dynamic  Gall
 
 = Premium Upgrade =
 
-A $5 premium upgrade activates a total of 22 different settings that allows you to tweak and style the WooCommerce Dynamic Gallery to match your theme and your preferences to perfection. One of those 22 settings is the choice of 5 different image transition effects - you will see all the additional premium upgrade setting that are available on the admin page when you download and install this plugin. 
+A small once only Premium upgrade activates a total of 22 different settings that allows you to tweak and style the WooCommerce Dynamic Gallery to match your theme and your preferences to perfection. You will see all of the available upgrade features on the plugins admin panel. The Premium upgrade also gives you access to lifetime guaranteed same day one-on-one support by email. 
+
+= Localization =
+* English (default) - always include.
+* .po file (woo_dgallery.po) in languages folder for translations.
+* Your translation? Please do yours and [send it to us](http://www.a3rev.com/contact/) We'll acknowledge your work and link to your site.
+Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
+
+= Plugins resources =
 
 [Home Page](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/) |
-[Documentation](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/) |
+[Documentation](http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/) |
 [Support](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/#help)
 
 
@@ -63,11 +71,6 @@ The manual installation method involves downloading our plugin and uploading it 
 2. Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your WordPress installations wp-content/plugins/ directory.
 3. Activate the plugin from the Plugins menu within the WordPress admin.
 
-= Localization =
-* English (default) - always include.
-* .po file (woo_dgallery.po) in languages folder for translations.
-* Your translation? Please do yours and [send it to us](http://www.a3rev.com/contact/) We'll acknowledge your work and link to your site.
-Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
 
 == Screenshots ==
 
@@ -101,6 +104,17 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
+= 1.0.3 - 2012/08/03
+
+* Fixed : Fixed: Gallery preview not working on sites that do not have wp_enqueue_script( 'thickbox' ) by default. Added call to wp_enqueue_script( 'thickbox' ) if it does not exist so that preview window can open.
+* Fixed : Updated depreciated php function ereg() with stristr() so that Pro version auto plugin auto upgrade feature work without error for WordPress 3.4.0 and later
+* Feature: Add fancybox script to plugin so that if the theme does not support fancybox or it is disabled in the admin panel then the gallery image zoom can still work.
+* Feature: Enqueue plugin script into footer use wp_enqueue_script so that now it is only loaded when needed rather than site-wide and has zero impact on page load speeds.
+* Feature: Enqueue plugin style into header use wp_enqueue_style so that now it is only loaded when needed rather than site-wide and has zero impact on page load speeds.
+* Feature: Add plugin Documentation and Support links to the wp plugins dashboard description.
+* Tweak: Add plugin description to wp plugins dashboard.
+* Tweak: Change localization file path from actual to base path
+
 = 1.0.2 - 2012/07/18 =
 
 * Fix - Edit Javascript to fix Image Scaling Issue.
@@ -111,6 +125,7 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 * Fix - Remove gallery script that makes wide of block class to 100% which was causing some themes footer widgets to show 100% wide.
 
 = 1.0 - 2012/07/14 =
+
 * Initial release.
 
   

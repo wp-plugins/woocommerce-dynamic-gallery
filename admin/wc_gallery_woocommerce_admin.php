@@ -16,6 +16,9 @@ function wc_dynamic_gallery_init() {
 // Add language
 add_action('init', 'wc_dynamic_gallery_init');
 
+// Add text on right of Visit the plugin on Plugin manager page
+add_filter( 'plugin_row_meta', array('WC_Dynamic_Gallery', 'plugin_extra_links'), 10, 2 );
+
 add_action( 'wp', 'setup_dynamic_gallery', 20);
 function setup_dynamic_gallery() {
 	if (is_product()) {
@@ -25,6 +28,18 @@ function setup_dynamic_gallery() {
 		remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
 		
 		add_action( 'woocommerce_before_single_product_summary', 'wc_dynamic_gallery_show', 30);
+		
+		wp_enqueue_style( 'ad-gallery-style', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.ad-gallery.css' );
+		wp_enqueue_script( 'ad-gallery-script', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.ad-gallery.js', array(), false, true );
+		
+		$popup_gallery = get_option('popup_gallery');
+		if($popup_gallery == 'lb'){
+			wp_enqueue_style( 'a3_lightbox_style', WOO_DYNAMIC_GALLERY_JS_URL . '/lightbox/themes/default/jquery.lightbox.css' );
+			wp_enqueue_script( 'lightbox2_script', WOO_DYNAMIC_GALLERY_JS_URL . '/lightbox/jquery.lightbox.min.js', array(), false, true );
+		}else{
+			wp_enqueue_style( 'woocommerce_fancybox_styles', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.css' );
+			wp_enqueue_script( 'fancybox', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.min.js', array(), false, true );
+		}
 
 		if ( in_array( 'woocommerce-professor-cloud/woocommerce-professor-cloud.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && get_option('woocommerce_cloud_enableCloud') == 'true' ) :
 			remove_action( 'woocommerce_before_single_product_summary', 'wc_dynamic_gallery_show', 30);

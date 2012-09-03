@@ -18,6 +18,7 @@
  * wc_dynamic_gallery_extension()
  * wc_dynamic_gallery_upgrade_area_start()
  * wc_dynamic_gallery_upgrade_area_end()
+ * plugin_extra_links()
  */
 class WC_Dynamic_Gallery {
 	public function wc_dynamic_gallery_set_setting($reset=false, $free_version=false){
@@ -135,8 +136,22 @@ class WC_Dynamic_Gallery {
 	}
 	
 	function wc_dynamic_gallery_add_script(){
-		wp_register_script( 'dynamic-gallery-script', WOO_DYNAMIC_GALLERY_URL.'/assets/js/galleries.js' );
+		wp_enqueue_script('jquery');
+		wp_enqueue_script('farbtastic');
+		wp_enqueue_style('farbtastic');
+		wp_enqueue_script( 'thickbox' );
+		wp_enqueue_style( 'thickbox' );
+		wp_register_script( 'dynamic-gallery-script', WOO_DYNAMIC_GALLERY_JS_URL.'/galleries.js' );
 		wp_enqueue_script( 'dynamic-gallery-script' );
+		
+		wp_enqueue_style( 'ad-gallery-style', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.ad-gallery.css' );
+		wp_enqueue_script( 'ad-gallery-script', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.ad-gallery.js', array(), false, true );
+		
+		wp_enqueue_style( 'a3_lightbox_style', WOO_DYNAMIC_GALLERY_JS_URL . '/lightbox/themes/default/jquery.lightbox.css' );
+		wp_enqueue_script( 'lightbox2_script', WOO_DYNAMIC_GALLERY_JS_URL . '/lightbox/jquery.lightbox.min.js', array(), false, true );
+			
+		wp_enqueue_style( 'woocommerce_fancybox_styles', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.css' );
+		wp_enqueue_script( 'fancybox', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.min.js', array(), false, true );
 	}
 
     /*
@@ -170,11 +185,12 @@ class WC_Dynamic_Gallery {
         // do_action( 'woocommerce_newsletter_settings' );
 
        do_action('woocommerce_dynamic_gallery_settings');
+	add_action('admin_footer', array(&$this, 'wc_dynamic_gallery_add_script'), 10);
 	   ?>
        <style>
 	   #wc_dgallery_upgrade_area { border:2px solid #FF0;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; padding:0; position:relative}
 	   #wc_dgallery_upgrade_area h3{ margin-left:10px;}
-	   #wc_dynamic_gallery_extensions { background: url("<?php echo WOO_DYNAMIC_GALLERY_URL; ?>/assets/images/logo_a3blue.png") no-repeat scroll 4px 6px #FFFBCC; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 4px 8px 4px 38px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 300px; left:400px; top:10px; border:1px solid #E6DB55}
+	   #wc_dynamic_gallery_extensions { background: url("<?php echo WOO_DYNAMIC_GALLERY_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #FFFBCC; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 4px 8px 4px 38px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 300px; left:400px; top:10px; border:1px solid #E6DB55}
 	   </style>
 		<?php
        // Display settings for this tab (make sure to add the settings to the tab).
@@ -664,7 +680,7 @@ class WC_Dynamic_Gallery {
 			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_thumb_end'),
 			
-			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<a href="'.admin_url("admin-ajax.php").'?security='.$woo_dynamic_gallery.'" class="preview_allery">Click here to preview gallery</a>. ', 'id' => 'preview_gallery' ),
+			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<a href="'.admin_url("admin-ajax.php").'?security='.$woo_dynamic_gallery.'" class="preview_allery">'.__( 'Click here to preview gallery', 'woo_dgallery' ).'</a>. ', 'id' => 'preview_gallery' ),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_preview_end')
         ));
 	}
@@ -707,6 +723,15 @@ class WC_Dynamic_Gallery {
 	
 	function wc_dynamic_gallery_upgrade_area_end() {
 		echo '</div></td></tr>';
+	}
+	
+	function plugin_extra_links($links, $plugin_name) {
+		if ( $plugin_name != WOO_DYNAMIC_GALLERY_NAME) {
+			return $links;
+		}
+		$links[] = '<a href="http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/" target="_blank">'.__('Documentation', 'woo_dgallery').'</a>';
+		$links[] = '<a href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/#help" target="_blank">'.__('Support', 'woo_dgallery').'</a>';
+		return $links;
 	}
 }
 ?>
