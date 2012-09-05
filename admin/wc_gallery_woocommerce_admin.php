@@ -4,7 +4,7 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	WC_Dynamic_Gallery::wc_dynamic_gallery_set_setting();
+	WC_Dynamic_Gallery::wc_dynamic_gallery_set_setting(true, true);
 }
 
 /**

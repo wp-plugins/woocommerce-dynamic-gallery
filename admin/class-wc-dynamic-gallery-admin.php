@@ -188,9 +188,11 @@ class WC_Dynamic_Gallery {
 	add_action('admin_footer', array(&$this, 'wc_dynamic_gallery_add_script'), 10);
 	   ?>
        <style>
-	   #wc_dgallery_upgrade_area { border:2px solid #FF0;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; padding:0; position:relative}
-	   #wc_dgallery_upgrade_area h3{ margin-left:10px;}
-	   #wc_dynamic_gallery_extensions { background: url("<?php echo WOO_DYNAMIC_GALLERY_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #FFFBCC; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 4px 8px 4px 38px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 300px; left:400px; top:10px; border:1px solid #E6DB55}
+	   .form-table { margin:0; }
+	   #wc_dgallery_upgrade_area { border:2px solid #E6DB55;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; padding:0 40% 0 0; position:relative; background:#FFFBCC;}
+	   #wc_dgallery_upgrade_inner { background:#FFF; -webkit-border-radius:10px 0 0 10px;-moz-border-radius:10px 0 0 10px;-o-border-radius:10px 0 0 10px; border-radius: 10px 0 0 10px;}
+	   #wc_dgallery_upgrade_inner h3{ margin-left:10px;}
+	   #wc_dynamic_gallery_extensions { -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 5px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 38%; right:0; top:0px;}
 	   </style>
 		<?php
        // Display settings for this tab (make sure to add the settings to the tab).
@@ -713,16 +715,50 @@ class WC_Dynamic_Gallery {
 	
 	function wc_dynamic_gallery_extension() {
 		$html = '';
-		$html .= '<div id="wc_dynamic_gallery_extensions">'.__('Features that you see inside this yellow frame are this plugins Pro Version Features. Upgrade to the', 'woo_dgallery').' <a target="_blank" href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/">'.__('Pro Version', 'woo_dgallery').'</a> '.__('for a small once only fee to activate all 22 gallery features and unleash to full glory of the WooCommerce dynamic products gallery on your site. Note: Thumbnail size settings are activated in this Lite version and are at the bottom of this page.', 'woo_dgallery').'</div>';
+		$html .= '<div id="wc_dynamic_gallery_extensions"><h3>'.__('Help us help you!', 'woo_dgallery').'</h3>';
+		$html .= '<p>'.__('Creating a great plugin, keeping it upgraded, giving support. listening to feedback and building in enhancements takes a lot of time and money.', 'woo_dgallery').'</p>';
+		$html .= '<h3>'.__('No Donations Accepted', 'woo_dgallery').'</h3>';
+		$html .= '<img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/btn_donate.png" />';
+		$html .= '<p>'.__("We don't ask for or accept donations for our plugins because we do not build them as a hobby and we are not a charity. We are a business that building quality WordPress themes and plugins. If we were paid to develop this plugin at our client per hour development rate this plugin cost was USD$6,600 to bring from inception to launch.", 'woo_dgallery').'</p>';
+		$html .= '<h3>'.__('Lite v Pro version', 'woo_dgallery').'</h3>';
+		$html .= '<p>'.__('Our Lite version plugins here on WordPress while fully functional are designed to give you a good taste of what the fully featured Pro version of the plugin can do for your WooCommerce store. See the list below for the features and benefits to you from upgrading to this plugins Pro version', 'woo_dgallery').'</p>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>1. '.__('Unlocks the 22 advanced Gallery settings in this yellow border.', 'woo_dgallery').'</li>';
+		$html .= '<li>2. '.__('Lifetime guaranteed same day support.', 'woo_dgallery').'</li>';
+		$html .= '<li>3. '.__('Pro version only future feature enhancements.', 'woo_dgallery').'</li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '<p>* '.__('See the Pro version on the', 'woo_dgallery').' <a href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/" target="_blank">'.__('A3 market place', 'woo_dgallery').'</a></p>';
+		$html .= '<h3>'.__('Go Pro and help us help you.', 'woo_dgallery').'</h3>';
+		$html .= '<p>'.__('Your small once only Pro upgrade license fee help fund and support the maintenance and ongoing development of this plugin.', 'woo_dgallery').'</p>';
+		$html .= '<h3>'.__('More quality WooCommerce Plugins from A3 Rev', 'woo_dgallery').'</h3>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-predictive-search/" target="_blank">'.__('WooCommerce Predictive Search', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-compare-products/" target="_blank">'.__('WooCommerce Compare Products', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-email-template/" target="_blank">'.__('WooCommerce Global Email Template', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://a3rev.com/products-page/woocommerce/woo-email-inquiry-and-cart-options/" target="_blank">'.__('WooCommerce Email Inquiry & Cart View (Pro only)', 'woo_dgallery').'</a></li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '<h3>'.__('Spreading the Word about this plugin.', 'woo_dgallery').'</h3>';
+		$html .= '<p>'.__("Things you can do to help others find this plugin", 'woo_dgallery');
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-dynamic-gallery/" target="_blank">'.__('Rate this plugin 5', 'woo_dgallery').' <img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/stars.png" align="top" /> '.__('on WordPress.org', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/" target="_blank">'.__('Write about it in your blog', 'woo_dgallery').'</a></li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '<h3>'.__('Thank you for your support!', 'woo_dgallery').'</h3>';
+		$html .= '</div>';
 		return $html;	
 	}
 	
 	function wc_dynamic_gallery_upgrade_area_start() {
-		echo '<tr valign="top"><td style="padding:0;"><div id="wc_dgallery_upgrade_area">'.$this->wc_dynamic_gallery_extension();
+		echo '<tr valign="top"><td style="padding:0;"><div id="wc_dgallery_upgrade_area">'.$this->wc_dynamic_gallery_extension().'<div id="wc_dgallery_upgrade_inner">';
 	}
 	
 	function wc_dynamic_gallery_upgrade_area_end() {
-		echo '</div></td></tr>';
+		echo '</div></div></td></tr>';
 	}
 	
 	function plugin_extra_links($links, $plugin_name) {
