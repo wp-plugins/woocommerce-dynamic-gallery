@@ -37,11 +37,11 @@ The Premium Gallery upgrade unlocks a host of great premium features. You will s
 * Option to over-ride show product variation images on any single product page.
 * Activate these up to 25 different feature options to set the look and unique workings of each part of the Gallery including:
 
-- Image Gallery - 7 Options plus 4 different transition effects.
-- Caption - 5 Options plus topography editor.
-- Nav Bar - 7 Option including, disable / enable plus full topography editor.
-- Lazy-Load scroll bar - 2 Options including enable / disable.
-- Thumbnails - 4 Options including enable, disable.
+ - Image Gallery - 7 Options plus 4 different transition effects.
+ - Caption - 5 Options plus topography editor.
+ - Nav Bar - 7 Option including, disable / enable plus full topography editor.
+ - Lazy-Load scroll bar - 2 Options including enable / disable.
+ - Thumbnails - 4 Options including enable, disable.
 
  
 = Localization =
