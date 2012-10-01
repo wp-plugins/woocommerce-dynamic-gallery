@@ -291,13 +291,13 @@ class WC_Gallery_Display_Class{
 				.product_gallery .slide-ctrl {
 					background: none repeat scroll 0 0 transparent;
 					border: medium none;
-					height: 50px;
-					left: 41.5%;
-					top: 38%;
-					width: 50px;
+					height: 50px !important;
+					left: 41.5% !important;
+					top: 38% !important;
+					width: 50px !important;
 				}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-start-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/play.png);height: 50px;text-indent: -999em; width: 50px;}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/pause.png);height: 50px;text-indent: -999em; width: 50px;}';
+				echo '.product_gallery .slide-ctrl .ad-slideshow-start-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/play.png) !important;height: 50px !important;text-indent: -999em !important; width: 50px !important;}';
+				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/pause.png) !important;height: 50px !important;text-indent: -999em !important; width: 50px !important;}';
 			}
 			
 			echo '
@@ -342,6 +342,9 @@ class WC_Gallery_Display_Class{
                 jQuery("#gallery_'.$post->ID.'").adGallery(settings_defaults_'.$post->ID.');
             });
             </script>';
+			
+			echo '<img style="width: 0px ! important; height: 0px ! important; display: none ! important; position: absolute;" src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL . '/blank.gif">';
+			
             echo '<div id="gallery_'.$post->ID.'" class="ad-gallery">
                 <div class="ad-image-wrapper"></div>
                 <div class="ad-controls"> </div>
@@ -360,7 +363,6 @@ class WC_Gallery_Display_Class{
 								
 								'orderby'     => 'menu_order',
 								'order'       => 'ASC',
-								//'exclude'	  => $thumbid
 						) );
 						if(has_post_thumbnail($post->ID) && empty( $attached_images )) {
 							$attached_images = (array)get_posts( array(
@@ -381,7 +383,6 @@ class WC_Gallery_Display_Class{
 								'post_parent' => $post->ID ,
 								'orderby'     => 'menu_order',
 								'order'       => 'ASC',
-								//'exclude'	  => $thumbid
 							) );
 						}
                         if ( !empty( $attached_images ) ){	
@@ -411,8 +412,10 @@ class WC_Gallery_Display_Class{
 								$script_fancybox .= '(function($){';		  
                                 $script_lightbox .= '$(function(){';
 								$script_fancybox .= '$(function(){';
-                                $script_lightbox .= '$(".ad-gallery .lightbox").live("click",function(ev) {';
-								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) {';
+                                $script_lightbox .= '$("img.lightbox").live("click",function(ev) {
+									var idx = $(".ad-image img").attr("idx");';
+								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) {
+									var idx = $(".ad-image img").attr("idx");';
                                 if(count($attached_images) <= 1 ){
                                     $script_lightbox .= '$.lightbox(';
 									$script_fancybox .= '$.fancybox(';
@@ -424,7 +427,7 @@ class WC_Gallery_Display_Class{
                                 
                                 
                                 if($id_thumb){
-							
+								$idx = 0;
                                 foreach($attached_images as $item_thumb){
 									if ( get_post_meta( $item_thumb->ID, '_woocommerce_exclude_image', true ) == 1 ) continue;
                                     $li_class = '';
@@ -460,7 +463,7 @@ class WC_Gallery_Display_Class{
                                    $alt = get_post_meta($item_thumb->ID, '_wp_attachment_image_alt', true);
 								   $img_description = $item_thumb->post_excerpt;
                                             
-                                    echo '<li class="'.$li_class.'"><a alt="'.$alt.'" class="" title="'.$img_description.'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_lager_default_url.'" alt="'.$img_description.'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
+                                    echo '<li class="'.$li_class.'"><a alt="'.$alt.'" class="" title="'.$img_description.'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img idx="'.$idx.'" style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_lager_default_url.'" alt="'.$img_description.'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
                                     $img_description = trim(strip_tags(stripslashes(str_replace("'","", str_replace('"', '', $img_description)))));
                                     if($img_description != ''){
                                         $script_lightbox .= $common.'"'.$image_lager_default_url.'?lightbox[title]='.$img_description.'"';
@@ -471,6 +474,7 @@ class WC_Gallery_Display_Class{
                                     }
                                     $common = ',';
                                     $i++;
+									$idx++;
                                  }
 								}
 								 //$.fancybox([ {href : 'img1.jpg', title : 'Title'}, {href : 'img2.jpg', title : 'Title'} ])
@@ -479,7 +483,9 @@ class WC_Gallery_Display_Class{
 									$script_fancybox .= ');';
                                 }else{
                                     $script_lightbox .= ']);';
-									$script_fancybox .= ']);';
+									$script_fancybox .= '],{
+        \'index\': idx
+      });';
                                 }
                                 $script_lightbox .= 'ev.preventDefault();';
                                 $script_lightbox .= '});';
@@ -767,13 +773,13 @@ class WC_Gallery_Display_Class{
 				.product_gallery .slide-ctrl {
 					background: none repeat scroll 0 0 transparent;
 					border: medium none;
-					height: 50px;
-					left: 41.5%;
-					top: 38%;
-					width: 50px;
+					height: 50px !important;
+					left: 41.5% !important;
+					top: 38% !important;
+					width: 50px !important;
 				}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-start-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/play.png);height: 50px;text-indent: -999em; width: 50px;}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/pause.png);height: 50px;text-indent: -999em; width: 50px;}';
+				echo '.product_gallery .slide-ctrl .ad-slideshow-start-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/play.png) !important;height: 50px !important;text-indent: -999em !important; width: 50px !important;}';
+				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/pause.png) !important;height: 50px !important;text-indent: -999em !important; width: 50px !important;}';
 			}
 			
 			echo '
@@ -842,7 +848,8 @@ class WC_Gallery_Display_Class{
                                 $script_lightbox .= '$(function(){';
 								$script_fancybox .= '$(function(){';
                                 $script_lightbox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {';
-								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {';
+								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
+								var idx = $(".ad-image img").attr("idx");';
                                 if(count($imgs) <= 1 ){
                                     $script_lightbox .= '$.lightbox(';
 									$script_fancybox .= '$.fancybox(';
@@ -851,7 +858,7 @@ class WC_Gallery_Display_Class{
 									$script_fancybox .= '$.fancybox([';
                                 }
                                 $common = '';
-                                
+                                $idx = 0;
                                 foreach($imgs as $item_thumb){
                                     $li_class = '';
                                     if($i == 0){ $li_class = 'first_item';}elseif($i == count($imgs)-1){$li_class = 'last_item';}
@@ -887,7 +894,7 @@ class WC_Gallery_Display_Class{
                                         
                                     $img_description = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
                                             
-                                    echo '<li class="'.$li_class.'"><a class="" title="'.$img_description.'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_lager_default_url.'" alt="'.$img_description.'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
+                                    echo '<li class="'.$li_class.'"><a class="" title="'.$img_description.'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img idx="'.$idx.'" style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_lager_default_url.'" alt="'.$img_description.'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
                                     $img_description = trim(strip_tags(stripslashes(str_replace("'","", str_replace('"', '', $img_description)))));
                                     if($img_description != ''){
                                         $script_lightbox .= $common.'"'.$image_lager_default_url.'?lightbox[title]='.$img_description.'"';
@@ -898,6 +905,7 @@ class WC_Gallery_Display_Class{
                                     }
                                     $common = ',';
                                     $i++;
+									$idx++;
                                  }
 								 //$.fancybox([ {href : 'img1.jpg', title : 'Title'}, {href : 'img2.jpg', title : 'Title'} ])
                                 if(count($imgs) <= 1 ){
@@ -905,7 +913,9 @@ class WC_Gallery_Display_Class{
 									$script_fancybox .= ');';
                                 }else{
                                     $script_lightbox .= ']);';
-									$script_fancybox .= ']);';
+									$script_fancybox .= '],{
+        \'index\': idx
+      });';
                                 }
                                 $script_lightbox .= 'ev.preventDefault();';
                                 $script_lightbox .= '} });';

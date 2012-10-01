@@ -592,6 +592,8 @@
 			var img = $(new Image()).attr('src', image.image).attr('rel','').addClass('lightbox').attr('rel','gallery_'+id);
 			img.attr('alt',image.alt);
 		}
+		
+		img.attr('idx',index);
         if(image.link) {
           var link = $('<a href="'+ image.link +'" target="_blank"></a>');
           link.append(img);

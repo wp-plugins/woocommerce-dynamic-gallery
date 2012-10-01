@@ -89,7 +89,7 @@
 }
 .ad-gallery .ad-nav {
 	position: relative;
-	width: 100%;
+	width: 99.5%;
 }
 .ad-gallery .ad-forward, .ad-gallery .ad-back {
 	position: absolute;
@@ -155,6 +155,7 @@
 	box-shadow:0 0 0 !important;
 	border:none !important;
 	background:none !important;
+	display:inline-block !important;
 }
 .ad-image img:hover {
 	cursor:pointer;

@@ -60,7 +60,7 @@ class WC_Dynamic_Gallery {
 			update_option('product_gallery_text_color','#FFFFFF');
 		}
 		if( trim(get_option('product_gallery_bg_des')) == '' || $reset ){
-			update_option('product_gallery_bg_des','#000000');
+			update_option('product_gallery_bg_des','#886bab');
 		}
 		if( trim(get_option('product_gallery_nav')) == '' || $reset ){
 			update_option('product_gallery_nav','yes');
@@ -69,7 +69,7 @@ class WC_Dynamic_Gallery {
 			update_option('bg_nav_color','#FFFFFF');
 		}
 		if( trim(get_option('bg_nav_text_color')) == '' || $reset ){
-			update_option('bg_nav_text_color','#000000');
+			update_option('bg_nav_text_color','#886bab');
 		}
 		if( trim(get_option('popup_gallery')) == '' || $reset ){
 			update_option('popup_gallery','fb');
@@ -78,7 +78,7 @@ class WC_Dynamic_Gallery {
 			update_option('enable_gallery_thumb','yes');
 		}
 		if( trim(get_option('transition_scroll_bar')) == '' || $reset ){
-			update_option('transition_scroll_bar','#000000');
+			update_option('transition_scroll_bar','#886bab');
 		}
 		if( trim(get_option('lazy_load_scroll')) == '' || $reset ){
 			update_option('lazy_load_scroll','yes');
@@ -185,7 +185,7 @@ class WC_Dynamic_Gallery {
         // do_action( 'woocommerce_newsletter_settings' );
 
        do_action('woocommerce_dynamic_gallery_settings');
-	add_action('admin_footer', array(&$this, 'wc_dynamic_gallery_add_script'), 10);
+		add_action('admin_footer', array(&$this, 'wc_dynamic_gallery_add_script'), 10);
 	   ?>
        <style>
 	   .form-table { margin:0; }
@@ -201,6 +201,7 @@ class WC_Dynamic_Gallery {
        <script>
 	   (function($){
 			$(function(){
+				$("#dynamic_gallery_show_variation").attr('disabled', 'disabled');
 				$("#product_gallery_auto_start").attr('disabled', 'disabled');
 				$("#product_gallery_speed").attr('disabled', 'disabled');
 				$("#product_gallery_effect").attr('disabled', 'disabled');
@@ -264,6 +265,12 @@ class WC_Dynamic_Gallery {
 	function init_form_fields() {
 		global $wpdb;
 		$woo_dynamic_gallery = wp_create_nonce("woo_dynamic_gallery");
+		
+		$with_type_html = '<select name="width_type" id="width_type" style="margin: 0px; height: 21px;">
+          <option value="%">%</option>
+          <option value="px" selected="selected">px</option>
+        </select> <span class="description">'.__('Set at 100 and choose % to activate responsive gallery (Pro version feature)', 'woo_dgallery').'</span>';
+		
   		// Define settings			
      	$this->fields['dynamic_gallery'] = apply_filters('woocommerce_dynamic_gallery_settings_fields', array(
       		array(
@@ -274,7 +281,7 @@ class WC_Dynamic_Gallery {
            	),
 			array(  
 				'name' => __( 'Gallery width', 'woo_dgallery' ),
-				'desc' 		=> 'px',
+				'desc' 		=> $with_type_html,
 				'id' 		=> 'product_gallery_width',
 				'type' 		=> 'text',
 				'css' 		=> 'width:7em;',
@@ -301,6 +308,14 @@ class WC_Dynamic_Gallery {
                 'desc' => '',
           		'id' => 'dynamic_gallery_settings_start'
            	),
+			array(  
+				'name' 		=> __( 'Product Variation images', 'woo_dgallery' ),
+				'desc' 		=> __( 'Show Product Variation images in Gallery. Can disable this feature of individual products from product edit page.', 'woo_dgallery' ),
+				'id' 		=> 'dynamic_gallery_show_variation',
+				'std' 		=> '0',
+				'type' 		=> 'checkbox',
+				'checkboxgroup'		=> 'start'
+			),
 			array(  
 				'name' => __( 'Auto start', 'woo_dgallery' ),
 				'desc' 		=> '',
@@ -725,8 +740,12 @@ class WC_Dynamic_Gallery {
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>1. '.__('Unlocks the 22 advanced Gallery settings in this yellow border.', 'woo_dgallery').'</li>';
-		$html .= '<li>2. '.__('Lifetime guaranteed same day support.', 'woo_dgallery').'</li>';
-		$html .= '<li>3. '.__('Pro version only future feature enhancements.', 'woo_dgallery').'</li>';
+		$html .= '<li>2. '.__('Activate Responsive Gallery feature.', 'woo_dgallery').'</li>';
+		$html .= '<li>3. '.__('Activate option to deactiavte the Gallery on any signle product page.', 'woo_dgallery').'</li>';
+		$html .= '<li>4. '.__('Activate Show product variation images in the gallery.', 'woo_dgallery').'</li>';
+		$html .= '<li>5. '.__('Activate option to over-ride show variation images on single product page.', 'woo_dgallery').'</li>';
+		$html .= '<li>6. '.__('Guaranteed Pro version same day support.', 'woo_dgallery').'</li>';
+		$html .= '<li>7. '.__('Pro Version only future feature enhancements.', 'woo_dgallery').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
 		$html .= '<p>* '.__('See the Pro version on the', 'woo_dgallery').' <a href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/" target="_blank">'.__('A3 market place', 'woo_dgallery').'</a></p>';

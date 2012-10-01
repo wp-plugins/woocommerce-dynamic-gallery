@@ -14,7 +14,7 @@ class WC_Dynamic_Gallery_Meta_Boxes{
 	function woocommerce_meta_boxes_image() {
 		global $post;
 		// Products
-		add_meta_box( 'woocommerce-product-image', __('Gallery Images', 'woo_dgallery'), array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_product_image_box'), 'product', 'normal', 'high' );
+		add_meta_box( 'woocommerce-product-image', __('A3 Dynamic Image Gallery activated', 'woo_dgallery').' : <span><input disabled="disabled" style="position: relative; top: 3px; left: 5px; margin-right: 50px;" type="checkbox" checked="checked" value="1" name="actived_d_gallery" /></span> '.__('Show Product Variation images', 'woo_dgallery').' : <span><input disabled="disabled" style="position:relative;top:3px;left:5px" type="checkbox" value="1" name="show_variation" /></span>', array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_product_image_box'), 'product', 'normal', 'high' );
 	}
 	function woocommerce_product_image_box() {
 		
@@ -22,7 +22,10 @@ class WC_Dynamic_Gallery_Meta_Boxes{
 		
 		$thepostid = $post->ID;
 		echo '<script type="text/javascript">
-		
+
+		jQuery(\'#woocommerce-product-image h3\').live(\'click\', function(){
+			jQuery(\'#woocommerce-product-image\').removeClass("closed");
+		});
 		jQuery(\'.upload_image_button\').live(\'click\', function(){
 			var post_id = '.$post->ID.';
 			//window.send_to_editor = window.send_to_termmeta;
@@ -43,7 +46,7 @@ class WC_Dynamic_Gallery_Meta_Boxes{
 		
 		if(is_array($attached_images) && count($attached_images)>0){
 			
-			echo '<a href="#" onclick="tb_show(\'\', \'media-upload.php?post_id='.$post->ID.'&type=image&TB_iframe=true\');return false;" style="margin-right:10px;margin-bottom:10px;"class="upload_image_button1" rel="'.$post->ID.'"><img src="'.woocommerce_placeholder_img_src().'" style="width:73px;" /><input type="hidden" name="upload_image_id[1]" class="upload_image_id" value="0" /></a>';
+			echo '<a href="#" onclick="tb_show(\'\', \'media-upload.php?post_id='.$post->ID.'&type=image&TB_iframe=true\');return false;" style="margin-right:10px;margin-bottom:10px;"class="upload_image_button1" rel="'.$post->ID.'"><img style="width:69px;height:69px;border:2px solid #CCC" src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL . '/no-image.jpg" style="width:73px;" /><input type="hidden" name="upload_image_id[1]" class="upload_image_id" value="0" /></a>';
 			
 			$i = 0 ;
 			foreach($attached_images as $item_thumb){
@@ -53,7 +56,7 @@ class WC_Dynamic_Gallery_Meta_Boxes{
 				echo '<a href="#" style="margin-right:10px;margin-bottom:10px;" class="upload_image_button" rel="'.$post->ID.'"><img src="'.$image_attribute[0].'" style="width:69px;border:2px solid #CCC" /><input type="hidden" name="upload_image_id['.$i.']" class="upload_image_id" value="'.$item_thumb->ID.'" /></a>';
 			}
 		}else{
-			echo '<a href="#" class="upload_image_button" rel="'.$post->ID.'"><img src="'.woocommerce_placeholder_img_src().'" style="width:73px;" /><input type="hidden" name="upload_image_id[1]" class="upload_image_id" value="0" /></a>';
+			echo '<a href="#" class="upload_image_button" rel="'.$post->ID.'"><img style="width:69px;height:69px;border:2px solid #CCC" src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL . '/no-image.jpg" /><input type="hidden" name="upload_image_id[1]" class="upload_image_id" value="0" /></a>';
 		}
 		
 		echo '</div>';

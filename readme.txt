@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, woothemes, wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,11 +20,6 @@ As soon as you install WooCommerce Dynamic Gallery it <strong>brings your store 
 * Search Engine friendly images. Image Alt tags if set are visible to search engines
 * On-page Gallery easy manager greatly simplifies product image editing and gallery management.
 * Lazy-load feature - means the gallery loads instantly - no matter how many images in the gallery. 
- 
-Having an image with your products creates more sales. WooCommerce Dynamic  Gallery not only enables you to show an unlimited number of images - it shows one image or lots of images in a beautiful and dynamic presentation.  
-
-= More Feature =
-
 * Add caption text to images
 * Caption text fades in after image transition effect and out before the next transaction effect begins.
 * Manual image click to scroll next or previous.
@@ -34,8 +29,21 @@ Having an image with your products creates more sales. WooCommerce Dynamic  Gall
 
 = Premium Upgrade =
 
-A small once only Premium upgrade activates a total of 22 different settings that allows you to tweak and style the WooCommerce Dynamic Gallery to match your theme and your preferences to perfection. You will see all of the available upgrade features on the plugins admin panel. The Premium upgrade also gives you access to lifetime guaranteed same day one-on-one support by email. 
+The Premium Gallery upgrade unlocks a host of great premium features. You will see all of the available upgrade features on the plugins admin panel. Those Pro features include: 
 
+* Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up.
+* Option to turn the Gallery off on single product pages. If you only have 1 image on some product pages and don't want the Gallery, just turn it off for that product.
+* Option to set gallery to show all product variation images in the product page Galleries.
+* Option to over-ride show product variation images on any single product page.
+* Activate these up to 25 different feature options to set the look and unique workings of each part of the Gallery including:
+
+- Image Gallery - 7 Options plus 4 different transition effects.
+- Caption - 5 Options plus topography editor.
+- Nav Bar - 7 Option including, disable / enable plus full topography editor.
+- Lazy-Load scroll bar - 2 Options including enable / disable.
+- Thumbnails - 4 Options including enable, disable.
+
+ 
 = Localization =
 * English (default) - always include.
 * .po file (woo_dgallery.po) in languages folder for translations.
@@ -103,6 +111,13 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/#help) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 1.0.4 - 2012/10/01 =
+
+* Fixed: Single image click zoom function. The current image now opens when Zoom or the image is clicked.
+* Tweak: Added display:inline-block !important; into css file for image class
+* Tweak: Update dashboard to show new Pro version features - responsive setting and include product variation images.
+* Tweak; Added Pro Version check box features for deactivate gallery and variation images to product page gallery manager.
 
 = 1.0.3 - 2012/09/03 =
 
