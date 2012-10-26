@@ -121,7 +121,7 @@
 	padding:0px;
 }
 .ad-gallery .ad-thumbs .ad-thumb-list {
-	float: left;
+	float: none !important;
 	width: 9000px;
 	list-style: none;
 	margin-top:5px;
@@ -134,6 +134,7 @@
 	padding-right: 10px;
 	padding-left: 0px;
 	padding-top: 0;
+	list-style:none !important;
 }
 .ad-gallery .ad-thumbs li div {
 	display:table-cell;
@@ -150,6 +151,8 @@
 	top: -9000px;
 }
 .ad-image img {
+	height:auto !important;
+	vertical-align:middle !important;
 	margin:0 !important;
 	padding:0 !important;
 	box-shadow:0 0 0 !important;

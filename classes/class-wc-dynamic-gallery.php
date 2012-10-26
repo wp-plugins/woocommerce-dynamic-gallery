@@ -130,6 +130,7 @@ class WC_Gallery_Display_Class{
                     border:1px solid #'.$border_image_wrapper_color.';
 					z-index:8 !important;
                 }
+				.ad-gallery .ad-image-wrapper .ad-image{width:100% !important;text-align:center;}
                 .ad-image img{
                     max-width:'.$g_width.'px !important;
                 }
@@ -412,10 +413,10 @@ class WC_Gallery_Display_Class{
 								$script_fancybox .= '(function($){';		  
                                 $script_lightbox .= '$(function(){';
 								$script_fancybox .= '$(function(){';
-                                $script_lightbox .= '$("img.lightbox").live("click",function(ev) {
-									var idx = $(".ad-image img").attr("idx");';
-								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) {
-									var idx = $(".ad-image img").attr("idx");';
+								$script_lightbox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
+									var idx = $("#gallery_'.$post->ID.' .ad-image img").attr("idx");';
+								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
+									var idx = $("#gallery_'.$post->ID.' .ad-image img").attr("idx");';
                                 if(count($attached_images) <= 1 ){
                                     $script_lightbox .= '$.lightbox(';
 									$script_fancybox .= '$.fancybox(';
@@ -488,8 +489,8 @@ class WC_Gallery_Display_Class{
       });';
                                 }
                                 $script_lightbox .= 'ev.preventDefault();';
-                                $script_lightbox .= '});';
-								$script_fancybox .= '});';
+                                $script_lightbox .= '} });';
+								$script_fancybox .= '} });';
                                 $script_lightbox .= '});';
 								$script_fancybox .= '});';
                                 $script_lightbox .= '})(jQuery);';
@@ -607,6 +608,7 @@ class WC_Gallery_Display_Class{
                     border:1px solid #'.$border_image_wrapper_color.';
 					z-index:8 !important;
                 }
+				.ad-gallery .ad-image-wrapper .ad-image{width:100% !important;text-align:center;}
                 .ad-image img{
                     max-width:'.$g_width.'px !important;
                 }

@@ -14,7 +14,7 @@ class WC_Dynamic_Gallery_Meta_Boxes{
 	function woocommerce_meta_boxes_image() {
 		global $post;
 		// Products
-		add_meta_box( 'woocommerce-product-image', __('A3 Dynamic Image Gallery activated', 'woo_dgallery').' : <span><input disabled="disabled" style="position: relative; top: 3px; left: 5px; margin-right: 50px;" type="checkbox" checked="checked" value="1" name="actived_d_gallery" /></span> '.__('Show Product Variation images', 'woo_dgallery').' : <span><input disabled="disabled" style="position:relative;top:3px;left:5px" type="checkbox" value="1" name="show_variation" /></span>', array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_product_image_box'), 'product', 'normal', 'high' );
+		add_meta_box( 'woocommerce-product-image', __('A3 Dynamic Image Gallery activated', 'woo_dgallery').' : <span><input disabled="disabled" style="position: relative; top: 3px; left: 5px; margin-right: 50px;" type="checkbox" checked="checked" value="1" name="_actived_d_gallery" /></span> '.__('Show Product Variation images', 'woo_dgallery').' : <span><input disabled="disabled" style="position:relative;top:3px;left:5px" type="checkbox" value="1" name="_show_variation" /></span>', array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_product_image_box'), 'product', 'normal', 'high' );
 	}
 	function woocommerce_product_image_box() {
 		

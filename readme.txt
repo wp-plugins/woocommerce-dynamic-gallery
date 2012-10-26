@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, woothemes, wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -111,6 +111,13 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/#help) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 1.0.5 - 2012/10/26 = 
+
+* Fixed: Stopped Lazy load scrolling on Gallery initial load for auto start (Lite and Pro Versions) and when Auto Start not activated on Pro Version. Now the Lazy load scroll only starts when transition to second image in the Gallery starts.
+* Fixed: Lazy Load scroll duration now sync with and set by the transition effect speed setting (Lite and Pro Versions).
+* Fixed: Caption text pop-up now sync with and set by the Time between transitions settings (Lite and Pro Versions). 
+* Fixed: Make center for image in gallery frame
 
 = 1.0.4 - 2012/10/01 =
 

@@ -83,7 +83,7 @@
   };
 
   function HorizontalSlideAnimation(img_container, direction, desc) {
-	  
+	img_container.css({left: 0});  
     var current_left = parseInt(img_container.css('left'), 10);
     if(direction == 'left') {
       var old_image_left = '-'+ this.image_wrapper_width +'px';
@@ -92,6 +92,7 @@
       var old_image_left = this.image_wrapper_width +'px';
       img_container.css('left','-'+ this.image_wrapper_width +'px');
     };
+	
     if(desc) {
       desc.css('bottom', '-'+ desc[0].offsetHeight +'px');
       desc.animate({bottom: 0}, this.settings.animation_speed * 2);
@@ -109,15 +110,15 @@
     var image_height = img_container.height();
     var current_left = parseInt(img_container.css('left'), 10);
     var current_top = parseInt(img_container.css('top'), 10);
-    img_container.css({width: 0, height: 0, top: this.image_wrapper_height / 2, left: this.image_wrapper_width / 2});
+    img_container.css({width: 0, height: 0, top: this.image_wrapper_height / 2, left: 0});
     return {old_image: {width: 0,
                         height: 0,
                         top: this.image_wrapper_height / 2,
-                        left: this.image_wrapper_width / 2},
+                        left: 0},
             new_image: {width: image_width,
                         height: image_height,
                         top: current_top,
-                        left: current_left}};
+                        left: 0}};
   };
 
   function FadeAnimation(img_container, direction, desc) {
@@ -139,6 +140,7 @@
   };
   AdGallery.prototype = {
     // Elements
+	first_load:true,
     wrapper: false,
     image_wrapper: false,
     gallery_info: false,
@@ -195,8 +197,8 @@
       var nextimage_callback = function(callback) {
         return context.nextImage(callback);
       };
-      this.slideshow = new AdGallerySlideshow(nextimage_callback, this.settings.slideshow);
-      this.controls.append(this.slideshow.create());
+      this.slideshow = new AdGallerySlideshow(nextimage_callback, this.settings);
+      this.image_wrapper.append(this.slideshow.create());
       if(this.settings.slideshow.enable) {
         this.slideshow.enable();
       } else {
@@ -511,10 +513,11 @@
       img_container.css('left', '0px');
       if(image_width < this.image_wrapper_width) {
         var dif = this.image_wrapper_width - image_width;
-        img_container.css('left', (dif / 2) +'px');
+        //img_container.css('left', (dif / 2) +'px');
+		img_container.css('left', (dif / 2) +'px');
       };
     },
-    _getDescription: function(image) {
+    _getDescription: function(image, gallery_id) {
       var desc = false;
 	  var links = '';
       if(image.desc.length || image.title.length) {
@@ -530,13 +533,13 @@
           desc = '<span>'+ image.desc +'</span> ';
 		  
         };
-        desc = $('<p class="ad-image-description">'+ title + desc + links +'</p>');
+        desc = $('<p class="ad-image-description ad-image-description-'+gallery_id+'">'+ title + desc + links +'</p>');
       };
 	  
 	  if(!image.desc.length){
 		   if(image.link){
 				links = '<a href="'+image.link+'">Read more...</a>';
-				desc = $('<p class="ad-image-description">'+ links +'</p>');
+				desc = $('<p class="ad-image-description ad-image-description-'+gallery_id+'">'+ links +'</p>');
 			}
 			
 	  }
@@ -556,13 +559,7 @@
 			
           this.loading(true);
           this.preloadImage(index, function() {
-            context.loading(false);
-			var delay_lazy = this.settings.slideshow.speed;
-		this.image_wrapper.siblings(".lazy-load").remove();
-		
-		this.image_wrapper.before('<div class="lazy-load" style="background:#000;width:100%;height:1px; display: none;z-index:8;position:absolute"></div>');
-		this.image_wrapper.siblings(".lazy-load").animate( { width: "0px" },delay_lazy );
-		
+            context.loading(false);		
             context._showWhenLoaded(index, callback);
           });
         } else {
@@ -601,9 +598,9 @@
         } else {
           img_container.append(img);
         }
-		if ($(".slide-ctrl").length > 0){
+		if ($(".icon_zoom_"+id).length > 0){
 		}else{
-		this.image_wrapper.append('<div class="icon_zoom lightbox" rel="gallery_'+id+'"><span>'+ this.settings.slideshow.zoom_label +'</span></div><div class="slide-ctrl"><span class="ad-slideshow-start-slide">'+ this.settings.slideshow.start_label +'</span><span class="ad-slideshow-stop-slide">'+ this.settings.slideshow.stop_label +'</span></div>');
+		this.image_wrapper.find('.slide-ctrl').before('<div class="icon_zoom lightbox icon_zoom_'+id+'" rel="gallery_'+id+'"><span>'+ this.settings.slideshow.zoom_label +'</span></div>');
 		}
 		
 		//img_container.after('<div class="slide-ctrl"><span class="ad-slideshow-start-slide">Start</span><span class="ad-slideshow-stop-slide">Stop</span></div>');
@@ -611,10 +608,13 @@
 		if($('#view_gallery_'+id).length <= 0){
 			this.controls.append('<div id="view_gallery_'+id+'" class="view_gallery lightbox" rel="gallery_'+id+'"></div>');
 		}
-		var delay_lazy = this.settings.slideshow.speed;
-		this.image_wrapper.siblings(".lazy-load").remove();
-		this.image_wrapper.before('<div class="lazy-load" style="background:#000;width:100%;height:1px; display: none;z-index:8;position:absolute"></div>');
-		this.image_wrapper.siblings(".lazy-load").animate( { width: "0px" },delay_lazy );
+		var delay_lazy = this.settings.animation_speed;
+		if (!this.first_load) {
+			this.image_wrapper.siblings(".lazy-load").remove();
+			this.image_wrapper.before('<div class="lazy-load" style="background:#000;width:100%;height:1px; display: none;z-index:8;position:absolute"></div>');
+			this.image_wrapper.siblings(".lazy-load").animate( { width: "0px" },delay_lazy );
+		}
+		
 		
         this.image_wrapper.prepend(img_container);
         var size = this._getContainedImageSize(image.size.width, image.size.height);
@@ -624,8 +624,9 @@
         img_container.css({width: size.width +'px', height: size.height +'px'});
         this._centerImage(img_container, size.width, size.height);
 		
-        var desc = this._getDescription(image, img_container);
-		
+		img_container.css('left', '0px');
+		$('p.ad-image-description-'+id).remove();
+        var desc = this._getDescription(image, id, img_container);
         if(desc) {
 			
           if(!this.settings.description_wrapper) {
@@ -635,7 +636,7 @@
           } else {
             this.settings.description_wrapper.append(desc);
           }
-		  $('p.ad-image-description').hide();
+		  $('p.ad-image-description-'+id).hide();
         };
 		
 		/*var des_delay = this.settings.animation_speed;
@@ -648,15 +649,23 @@
 			  $('p.ad-image-description').animate({"bottom":"-1000px"}, 1000);
 		}, (delay_lazy-500) );*/
 		
-		var des_delay = this.settings.animation_speed;
-        setTimeout(function() {            
-            $('p.ad-image-description').css('bottom','0').show(1000);
-        }, (des_delay+1) );
-        
-        var delay_lazy = this.settings.slideshow.speed;
-        setTimeout(function() {
-              $('p.ad-image-description').hide(1000);
-        }, (delay_lazy-1000) );
+		var delay_lazy = this.settings.animation_speed;
+		if (!this.first_load) {
+			setTimeout(function() {
+				$('p.ad-image-description-'+id).css('bottom','0').show(1000);
+			}, ( parseInt(delay_lazy) + 1) );
+		} else {
+			setTimeout(function() {
+				$('p.ad-image-description-'+id).css('bottom','0').show(1000);
+			}, ( 1) );
+		}
+		
+		this.first_load = false;
+		
+		var des_delay = this.settings.slideshow.speed;
+		setTimeout(function() {
+			$('p.ad-image-description-'+id).hide(1000);
+		}, ( ( parseInt(delay_lazy) + parseInt(des_delay) ) -1000) );
 		
         this.highLightThumb(this.nav.find('.ad-thumb'+ index));
 
@@ -685,6 +694,7 @@
                 if(old_description) old_description.remove();
               }
             );
+			
           };
           img_container.animate(animation.new_image, animation_speed, easing,
             function() {
@@ -723,7 +733,7 @@
       var next = this.nextIndex();
       if(next === false) return false;
       this.preloadImage(next + 1);
-	  var delay_lazy = this.settings.slideshow.speed;
+	  var delay_lazy = this.settings.animation_speed;
 
       this.showImage(next, callback);	
       return true;
@@ -820,10 +830,12 @@
     this.init(nextimage_callback, settings);
   };
   AdGallerySlideshow.prototype = {
+	first_load_item: true,
     start_link: false,
     stop_link: false,
     countdown: false,
     controls: false,
+	image_wrapper: false,
 
     settings: false,
     nextimage_callback: false,
@@ -836,48 +848,30 @@
       this.settings = settings;
     },
     create: function() {
-      this.start_link = $('<span class="ad-slideshow-start">'+ this.settings.start_label +'</span>');
-      this.stop_link = $('<span class="ad-slideshow-stop">'+ this.settings.stop_label +'</span>');
+      this.start_link = $('<span class="ad-slideshow-start-slide">'+ this.settings.slideshow.start_label +'</span>');
+      this.stop_link = $('<span class="ad-slideshow-stop-slide">'+ this.settings.slideshow.stop_label +'</span>');
 	  
       this.countdown = $('<span class="ad-slideshow-countdown"></span>');
       this.controls = $('<div class="ad-slideshow-controls"></div>');
-      this.controls.append(this.start_link).append(this.stop_link).append(this.countdown);
+	  this.slide_ctrl = $('<div class="slide-ctrl"></div>');
+	  this.slide_ctrl.append(this.start_link).append(this.stop_link);
 	  
-	  var delay_lazy = this.settings.speed;
+	  var delay_lazy = this.settings.animation_speed;
       this.countdown.hide();
       var context = this;
       this.start_link.click(
         function() {
-			
-		$(this).parents('.ad-slideshow-controls').parents('.ad-controls').siblings('.ad-image-wrapper').siblings(".lazy-load").remove();
-	    $(this).parents('.ad-controls').siblings('.ad-image-wrapper').before('<div class="lazy-load" style="background:#000;width:100%;height:1px; display: none;z-index:8;position:absolute"></div>');
-	    $(this).parents('.ad-controls').siblings('.ad-image-wrapper').siblings(".lazy-load").animate( { width: "0px" },delay_lazy );	
-          context.start();
+			context.start();
+		  	$(this).parents('.slide-ctrl').parents('.ad-image-wrapper').siblings(".lazy-load").remove();
         }
       );
 	  
       this.stop_link.click(
 	  
         function() {
-			$(this).parents('.ad-slideshow-controls').parents('.ad-controls').siblings('.ad-image-wrapper').children(".lazy-load").remove();
-          context.stop();
-        }
-      );
-	  
-	 $('.ad-slideshow-start-slide').live("click",
-        function() {
-          context.start();
-		  $(this).parents('.slide-ctrl').parents('.ad-image-wrapper').siblings(".lazy-load").remove();
-	      $(this).parents('.slide-ctrl').parents('.ad-image-wrapper').before('<div class="lazy-load" style="background:#000;width:100%;height:1px; display: none;z-index:8;position:absolute"></div>');
-	    $(this).parents('.slide-ctrl').parents('.ad-image-wrapper').siblings(".lazy-load").animate( { width: "0px" },delay_lazy );	
-        }
-      );
-	  
-      $('.ad-slideshow-stop-slide').live("click",
-	  
-        function() {
+			//$(this).parents('.slide-ctrl').removeClass('ad-slideshow-running');
 			$(this).parents('.slide-ctrl').parents('.ad-image-wrapper').siblings(".lazy-load").remove();
-          context.stop();
+          	context.stop();
         }
       );
 	  
@@ -893,7 +887,7 @@
           };
         }
       );
-      return this.controls;
+      return this.slide_ctrl;
     },
     disable: function() {
       this.enabled = false;
@@ -916,11 +910,10 @@
       if(this.running || !this.enabled) return false;
       var context = this;
       this.running = true;
-      this.controls.addClass('ad-slideshow-running');
-	  $('.slide-ctrl').addClass('ad-slideshow-running');
+      this.slide_ctrl.addClass('ad-slideshow-running');
       this._next();
 	  
-      this.fireCallback(this.settings.onStart);
+      this.fireCallback(this.settings.slideshow.onStart);
       return true;
     },
     stop: function() {
@@ -929,27 +922,26 @@
       this.running = false;
       this.countdown.hide();
 	  		
-      this.controls.removeClass('ad-slideshow-running');
-	  $('.slide-ctrl').removeClass('ad-slideshow-running');
+      this.slide_ctrl.removeClass('ad-slideshow-running');
+	  
       clearInterval(this.countdown_interval);
-      this.fireCallback(this.settings.onStop);
+      this.fireCallback(this.settings.slideshow.onStop);
 
       return true;
     },
     _next: function() {
-	  $('.slide-ctrl').addClass('ad-slideshow-running');
       var context = this;
-      var pre = this.settings.countdown_prefix;
-      var su = this.settings.countdown_sufix;
+      var pre = this.settings.slideshow.countdown_prefix;
+      var su = this.settings.slideshow.countdown_sufix;
       clearInterval(context.countdown_interval);
-      this.countdown.show().html(pre + (this.settings.speed / 1000) + su);
+      this.countdown.show().html(pre + ( parseInt(this.settings.slideshow.speed) / 1000) + su);
       var slide_timer = 0;
+	  var slide_next_timer = 0;
       this.countdown_interval = setInterval(
         function() {
           slide_timer += 1000;
-          if(slide_timer >= context.settings.speed) {
-			
-  
+		  context.first_load_item = false;
+          if(slide_timer >= parseInt(context.settings.slideshow.speed) ) {
             var whenNextIsShown = function() {
               // A check so the user hasn't stoped the slideshow during the
               // animation

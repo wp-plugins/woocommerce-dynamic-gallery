@@ -39,7 +39,7 @@ class WC_Dynamic_Gallery {
 			update_option('thumb_spacing',2);
 		}
 		if( trim(get_option('product_gallery_speed')) == '' || $reset ){
-			update_option('product_gallery_speed',5);
+			update_option('product_gallery_speed',4);
 		}
 		if( trim(get_option('product_gallery_effect')) == '' || $reset ){
 			update_option('product_gallery_effect','slide-vert');
@@ -697,7 +697,7 @@ class WC_Dynamic_Gallery {
 			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_thumb_end'),
 			
-			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<a href="'.admin_url("admin-ajax.php").'?security='.$woo_dynamic_gallery.'" class="preview_allery">'.__( 'Click here to preview gallery', 'woo_dgallery' ).'</a>. ', 'id' => 'preview_gallery' ),
+			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<a href="'.admin_url("admin-ajax.php").'?security='.$woo_dynamic_gallery.'" class="preview_gallery">'.__( 'Click here to preview gallery', 'woo_dgallery' ).'</a>. ', 'id' => 'preview_gallery' ),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_preview_end')
         ));
 	}
