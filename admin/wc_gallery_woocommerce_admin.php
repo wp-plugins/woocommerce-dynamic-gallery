@@ -4,7 +4,7 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_version', '1.0.4');
+	update_option('a3rev_woo_dgallery_version', '1.0.6');
 	WC_Dynamic_Gallery::wc_dynamic_gallery_set_setting(true, true);
 }
 
@@ -19,6 +19,8 @@ add_action('init', 'wc_dynamic_gallery_init');
 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WC_Dynamic_Gallery', 'plugin_extra_links'), 10, 2 );
+
+add_filter( 'attachment_fields_to_edit', array('WC_Dynamic_Gallery_Variations', 'media_fields'), 10, 2 );
 
 add_action( 'wp', 'setup_dynamic_gallery', 20);
 function setup_dynamic_gallery() {
@@ -55,7 +57,7 @@ if(version_compare(get_option('a3rev_woo_dgallery_version'), '1.0.4') === -1){
 	update_option('a3rev_woo_dgallery_version', '1.0.4');
 }
 
-update_option('a3rev_woo_dgallery_version', '1.0.4');
+update_option('a3rev_woo_dgallery_version', '1.0.6');
 
 global $wc_dg;
 $wc_dg = new WC_Dynamic_Gallery();

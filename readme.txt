@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, woothemes, wordpress ecommerce
 Requires at least: 3.3
-Tested up to: 3.4.1
-Stable tag: 1.0.5
+Tested up to: 3.4.2
+Stable tag: 1.0.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,11 +29,11 @@ As soon as you install WooCommerce Dynamic Gallery it <strong>brings your store 
 
 = Premium Upgrade =
 
-The Premium Gallery upgrade unlocks a host of great premium features. You will see all of the available upgrade features on the plugins admin panel. Those Pro features include: 
+The Premium Gallery upgrade activates all the features that make WooCommerce Dynamic gallery Pro the most flexible and popular WooCommerce product image gallery. You will see all of the available upgrade features on the plugins admin panel. Those Pro features include: 
 
-* Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up.
+* NEW** Show Multiple Product Variation images in gallery. Choose any option from the single product page add to cart options menu and the product image auto shows in the Dynamic Gallery complete with caption text. Check this incredible feature out on our [DEMO SITE](http://compare.a3rev.com/shop/plain-t-shirts)
+* Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up.
 * Option to turn the Gallery off on single product pages. If you only have 1 image on some product pages and don't want the Gallery, just turn it off for that product.
-* Option to set gallery to show all product variation images in the product page Galleries.
 * Option to over-ride show product variation images on any single product page.
 * Activate these up to 25 different feature options to set the look and unique workings of each part of the Gallery including:
 
@@ -111,6 +111,10 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/#help) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 1.0.6 - 2012/10/31
+
+* Upgraded code with new PRO Version Variation Products Image manager to allow for seamless upgrade to Pro version.
 
 = 1.0.5 - 2012/10/26 = 
 

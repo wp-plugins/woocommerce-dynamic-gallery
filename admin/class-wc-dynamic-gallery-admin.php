@@ -128,10 +128,8 @@ class WC_Dynamic_Gallery {
         // Add the settings fields to each tab.
         add_action('woocommerce_dynamic_gallery_settings', array(&$this, 'add_settings_fields'), 10);
 		
-		add_action('admin_head', array(&$this, 'wc_dynamic_gallery_add_script'), 10);
-		
-		add_action('wp_ajax_woo_dynamic_gallery', array('WC_Gallery_Display_Class','wc_dynamic_gallery_preview'));
-		add_action('wp_ajax_nopriv_woo_dynamic_gallery', array('WC_Gallery_Display_Class','wc_dynamic_gallery_preview'));
+		add_action('wp_ajax_woo_dynamic_gallery', array('WC_Gallery_Preview_Display','wc_dynamic_gallery_preview'));
+		add_action('wp_ajax_nopriv_woo_dynamic_gallery', array('WC_Gallery_Preview_Display','wc_dynamic_gallery_preview'));
 
 	}
 	
@@ -735,17 +733,13 @@ class WC_Dynamic_Gallery {
 		$html .= '<h3>'.__('No Donations Accepted', 'woo_dgallery').'</h3>';
 		$html .= '<img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/btn_donate.png" />';
 		$html .= '<p>'.__("We don't ask for or accept donations for our plugins because we do not build them as a hobby and we are not a charity. We are a business that building quality WordPress themes and plugins. If we were paid to develop this plugin at our client per hour development rate this plugin cost was USD$6,600 to bring from inception to launch.", 'woo_dgallery').'</p>';
-		$html .= '<h3>'.__('Lite v Pro version', 'woo_dgallery').'</h3>';
-		$html .= '<p>'.__('Our Lite version plugins here on WordPress while fully functional are designed to give you a good taste of what the fully featured Pro version of the plugin can do for your WooCommerce store. See the list below for the features and benefits to you from upgrading to this plugins Pro version', 'woo_dgallery').'</p>';
+		$html .= '<h3>'.__('PRO UPGRADE FEATURES', 'woo_dgallery').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>1. '.__('Unlocks the 22 advanced Gallery settings in this yellow border.', 'woo_dgallery').'</li>';
-		$html .= '<li>2. '.__('Activate Responsive Gallery feature.', 'woo_dgallery').'</li>';
-		$html .= '<li>3. '.__('Activate option to deactiavte the Gallery on any signle product page.', 'woo_dgallery').'</li>';
-		$html .= '<li>4. '.__('Activate Show product variation images in the gallery.', 'woo_dgallery').'</li>';
-		$html .= '<li>5. '.__('Activate option to over-ride show variation images on single product page.', 'woo_dgallery').'</li>';
-		$html .= '<li>6. '.__('Guaranteed Pro version same day support.', 'woo_dgallery').'</li>';
-		$html .= '<li>7. '.__('Pro Version only future feature enhancements.', 'woo_dgallery').'</li>';
+		$html .= '<li>1. '.__('Show Multiple Product Variation images in Gallery. As users selects options from the drop down menu that options product image auto shows in the Dynamic Gallery complete with caption text.', 'woo_dgallery').'</li>';
+		$html .= '<li>2. '.__('Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up.', 'woo_dgallery').'</li>';
+		$html .= '<li>3. '.__('Activate all of the Gallery customization settings you see here on this page to style and fine tune your product presentation.', 'woo_dgallery').'</li>';
+		$html .= '<li>4. '.__('Option to Deactivate the Gallery on any Single product page - default WooCommerce product image will show.', 'woo_dgallery').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
 		$html .= '<p>* '.__('See the Pro version on the', 'woo_dgallery').' <a href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/" target="_blank">'.__('A3 market place', 'woo_dgallery').'</a></p>';

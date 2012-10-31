@@ -330,3 +330,6 @@
 	display:block;
 }
 .ad-gallery .ad-thumbs li div img{margin:auto;}
+.gallery_loading {
+	background: url("loader.gif") no-repeat scroll center center transparent !important;
+}
