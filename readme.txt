@@ -112,7 +112,7 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 == Changelog ==
 
-= 1.0.6 - 2012/10/31
+= 1.0.6 - 2012/10/31 =
 
 * Upgraded code with new PRO Version Variation Products Image manager to allow for seamless upgrade to Pro version.
 
