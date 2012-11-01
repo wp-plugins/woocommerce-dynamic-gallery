@@ -7,7 +7,6 @@
  * Table Of Contents
  *
  * media_fields()
- * save_media_fields()
  */
 class WC_Dynamic_Gallery_Variations{
 	
@@ -84,7 +83,7 @@ class WC_Dynamic_Gallery_Variations{
 				$form_fields['end_variation'] = array(
 						'label' => '',
 						'input' => 'html',
-						'html' => '',
+						'html' => '&nbsp;',
 						'value' => ''
 					);
 			}
