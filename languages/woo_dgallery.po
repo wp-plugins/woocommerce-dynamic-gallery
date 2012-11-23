@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce Dynamic Gallery FREE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-31 14:53+0700\n"
-"PO-Revision-Date: 2012-10-31 14:53+0700\n"
+"POT-Creation-Date: 2012-11-23 16:32+0700\n"
+"PO-Revision-Date: 2012-11-23 16:32+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -475,107 +475,103 @@ msgstr ""
 msgid "Click here to preview gallery"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:731
-msgid "Help us help you!"
-msgstr ""
-
 #: admin/class-wc-dynamic-gallery-admin.php:732
-msgid "Creating a great plugin, keeping it upgraded, giving support. listening to feedback and building in enhancements takes a lot of time and money."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:733
 msgid "No Donations Accepted"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:735
-msgid "We don't ask for or accept donations for our plugins because we do not build them as a hobby and we are not a charity. We are a business that building quality WordPress themes and plugins. If we were paid to develop this plugin at our client per hour development rate this plugin cost was USD$6,600 to bring from inception to launch."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:736
+#: admin/class-wc-dynamic-gallery-admin.php:734
 msgid "PRO UPGRADE FEATURES"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:739
+#: admin/class-wc-dynamic-gallery-admin.php:737
 msgid "Show Multiple Product Variation images in Gallery. As users selects options from the drop down menu that options product image auto shows in the Dynamic Gallery complete with caption text."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:740
+#: admin/class-wc-dynamic-gallery-admin.php:738
 msgid "Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:741
+#: admin/class-wc-dynamic-gallery-admin.php:739
 msgid "Activate all of the Gallery customization settings you see here on this page to style and fine tune your product presentation."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:742
+#: admin/class-wc-dynamic-gallery-admin.php:740
 msgid "Option to Deactivate the Gallery on any Single product page - default WooCommerce product image will show."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:745
+#: admin/class-wc-dynamic-gallery-admin.php:743
 msgid "See the Pro version on the"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:745
+#: admin/class-wc-dynamic-gallery-admin.php:743
 msgid "A3 market place"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:746
+#: admin/class-wc-dynamic-gallery-admin.php:744
 msgid "Go Pro and help us help you."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:747
+#: admin/class-wc-dynamic-gallery-admin.php:745
 msgid "Your small once only Pro upgrade license fee help fund and support the maintenance and ongoing development of this plugin."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:748
+#: admin/class-wc-dynamic-gallery-admin.php:746
 msgid "More quality WooCommerce Plugins from A3 Rev"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:751
+#: admin/class-wc-dynamic-gallery-admin.php:749
+msgid "NEW"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:749
+msgid "WooCommerce Widget Product Slideshow"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:750
 msgid "WooCommerce Predictive Search"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:752
+#: admin/class-wc-dynamic-gallery-admin.php:751
 msgid "WooCommerce Compare Products"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:753
+#: admin/class-wc-dynamic-gallery-admin.php:752
 msgid "WooCommerce Global Email Template"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:754
+#: admin/class-wc-dynamic-gallery-admin.php:753
 msgid "WooCommerce Email Inquiry & Cart View (Pro only)"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:757
+#: admin/class-wc-dynamic-gallery-admin.php:756
 msgid "Spreading the Word about this plugin."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:758
+#: admin/class-wc-dynamic-gallery-admin.php:757
 msgid "Things you can do to help others find this plugin"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:760
+#: admin/class-wc-dynamic-gallery-admin.php:759
 msgid "Rate this plugin 5"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:760
+#: admin/class-wc-dynamic-gallery-admin.php:759
 msgid "on WordPress.org"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:761
+#: admin/class-wc-dynamic-gallery-admin.php:760
 msgid "Write about it in your blog"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:764
+#: admin/class-wc-dynamic-gallery-admin.php:763
 msgid "Thank you for your support!"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:781
+#: admin/class-wc-dynamic-gallery-admin.php:780
 msgid "Documentation"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:782
+#: admin/class-wc-dynamic-gallery-admin.php:781
 msgid "Support"
 msgstr ""
 
@@ -602,27 +598,31 @@ msgstr ""
 msgid "ZOOM +"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:24
+#: classes/class-wc-dynamic-gallery-variations.php:23
 msgid "Enabling this option will hide it from the product page image gallery."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:24
+#: classes/class-wc-dynamic-gallery-variations.php:23
 msgid "If assigned to variations below the image will show when option is selected. (Show Product Variations in Gallery is a"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:24
+#: classes/class-wc-dynamic-gallery-variations.php:23
 msgid "Pro Version"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:24
+#: classes/class-wc-dynamic-gallery-variations.php:23
 msgid "only feature"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:40
+#: classes/class-wc-dynamic-gallery-variations.php:39
 msgid "Variations"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:44
+#: classes/class-wc-dynamic-gallery-variations.php:43
 msgid "Upgrade to the PRO version to use this feature."
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-variations.php:69
+msgid "Apply to All"
 msgstr ""
 

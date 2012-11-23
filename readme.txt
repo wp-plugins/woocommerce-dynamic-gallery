@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, woothemes, wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.4.2
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,7 +31,7 @@ As soon as you install WooCommerce Dynamic Gallery it <strong>brings your store 
 
 The Premium Gallery upgrade activates all the features that make WooCommerce Dynamic gallery Pro the most flexible and popular WooCommerce product image gallery. You will see all of the available upgrade features on the plugins admin panel. Those Pro features include: 
 
-* NEW** Show Multiple Product Variation images in gallery. Choose any option from the single product page add to cart options menu and the product image auto shows in the Dynamic Gallery complete with caption text. Check this incredible feature out on our [DEMO SITE](http://compare.a3rev.com/shop/plain-t-shirts)
+* <strong>NEW</strong> Show Multiple Product Variation images in gallery. Choose any option from the single product page add to cart options menu and the product image auto shows in the Dynamic Gallery complete with caption text. Check this incredible feature out on our [DEMO SITE](http://compare.a3rev.com/shop/plain-t-shirts)
 * Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up.
 * Option to turn the Gallery off on single product pages. If you only have 1 image on some product pages and don't want the Gallery, just turn it off for that product.
 * Option to over-ride show product variation images on any single product page.
@@ -111,6 +111,13 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/#help) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 1.0.7 - 2012/11/23 =
+
+* Feature: Dynamic Gallery now only recognizes image formats .jpg, .jpeg, .gif, .png. It won't recognize another file and won't show in gallery, or on Image gallery manager meta box. Mean that files like PDF's can be uploaded and the gallery does not show them or on the Pro version create variations for them in the pop up image manager.
+* Tweak - Added link to Dynamic gallery Admin tab for our New WordPress version of WooCommerce Product Widget Slideshow plugin.
+* Feature: PRO version now supports WPMU - Pro Version Single License now works on any domain or sub domain that the Plugin is installed on with the WPMU environment. Note it only works on 1. WPMU license option coming soon.
+* Feature: Added 'Apply to All' option on Gallery Image manager pop-up - this feature allows PRO Version user to Apply all variations in a set to the selected image with one click - Thanks to Shawn for the feedback and the idea.
 
 = 1.0.6 - 2012/10/31 =
 

@@ -37,6 +37,7 @@ class WC_Dynamic_Gallery_Meta_Boxes{
 		echo '<div class="woocommerce_options_panel">';
 		$attached_images = (array)get_posts( array(
 			'post_type'   => 'attachment',
+			'post_mime_type' => 'image',
 			'numberposts' => -1,
 			'post_status' => null,
 			'post_parent' => $post->ID ,

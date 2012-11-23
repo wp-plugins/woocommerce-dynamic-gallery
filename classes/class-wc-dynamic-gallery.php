@@ -357,36 +357,17 @@ class WC_Gallery_Display_Class{
                         
 						
                         $thumbid = get_post_thumbnail_id($post->ID);
+						
 						$attached_images = (array)get_posts( array(
-								'post_type'   => 'attachment',
-								'numberposts' => -1,
-								'post_status' => null,
-								'post_parent' => $post->ID ,
-								
-								'orderby'     => 'menu_order',
-								'order'       => 'ASC',
+							'post_type'   => 'attachment',
+							'post_mime_type' => 'image',
+							'numberposts' => -1,
+							'post_status' => null,
+							'post_parent' => $post->ID ,
+							'orderby'     => 'menu_order',
+							'order'       => 'ASC',
 						) );
-						if(has_post_thumbnail($post->ID) && empty( $attached_images )) {
-							$attached_images = (array)get_posts( array(
-								'post_type'   => 'attachment',
-								'numberposts' => -1,
-								'post_status' => null,
-								'post_parent' => $post->ID ,
-								
-								'orderby'     => 'menu_order',
-								'order'       => 'ASC',
-							) );
-							
-						}else{
-							$attached_images = (array)get_posts( array(
-								'post_type'   => 'attachment',
-								'numberposts' => -1,
-								'post_status' => null,
-								'post_parent' => $post->ID ,
-								'orderby'     => 'menu_order',
-								'order'       => 'ASC',
-							) );
-						}
+
                         if ( !empty( $attached_images ) ){	
                             $id_thumb = array();
                             if(has_post_thumbnail($post->ID)) {

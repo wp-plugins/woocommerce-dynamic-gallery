@@ -728,11 +728,9 @@ class WC_Dynamic_Gallery {
 	
 	function wc_dynamic_gallery_extension() {
 		$html = '';
-		$html .= '<div id="wc_dynamic_gallery_extensions"><h3>'.__('Help us help you!', 'woo_dgallery').'</h3>';
-		$html .= '<p>'.__('Creating a great plugin, keeping it upgraded, giving support. listening to feedback and building in enhancements takes a lot of time and money.', 'woo_dgallery').'</p>';
+		$html .= '<div id="wc_dynamic_gallery_extensions">';
 		$html .= '<h3>'.__('No Donations Accepted', 'woo_dgallery').'</h3>';
 		$html .= '<img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/btn_donate.png" />';
-		$html .= '<p>'.__("We don't ask for or accept donations for our plugins because we do not build them as a hobby and we are not a charity. We are a business that building quality WordPress themes and plugins. If we were paid to develop this plugin at our client per hour development rate this plugin cost was USD$6,600 to bring from inception to launch.", 'woo_dgallery').'</p>';
 		$html .= '<h3>'.__('PRO UPGRADE FEATURES', 'woo_dgallery').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
@@ -748,6 +746,7 @@ class WC_Dynamic_Gallery {
 		$html .= '<h3>'.__('More quality WooCommerce Plugins from A3 Rev', 'woo_dgallery').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woo-widget-product-slideshow/" target="_blank"><strong>'.__('NEW', 'woo_dgallery').'</strong> - '.__('WooCommerce Widget Product Slideshow', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-predictive-search/" target="_blank">'.__('WooCommerce Predictive Search', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-compare-products/" target="_blank">'.__('WooCommerce Compare Products', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-email-template/" target="_blank">'.__('WooCommerce Global Email Template', 'woo_dgallery').'</a></li>';

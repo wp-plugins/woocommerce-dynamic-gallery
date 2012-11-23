@@ -16,7 +16,7 @@ class WC_Dynamic_Gallery_Variations{
 		
 		$product_id = $_GET['post_id'];
 		
-		if( get_post_type($product_id) == 'product' ) {
+		if( get_post_type($product_id) == 'product' && wp_attachment_is_image($attachment->ID) ) {
 			
 			$woocommerce_exclude_image_fields = $form_fields['woocommerce_exclude_image'];
 			
@@ -66,9 +66,11 @@ class WC_Dynamic_Gallery_Variations{
 						
 							$html = "<style>.in_variations_".$attribute." {border-width:0 2px;border-style:solid ;border-color:#E6DB55;}</style>";
 							
+							$html .= "<input disabled='disabled' type='checkbox' id='".$attachment->ID."_".$attribute."' name='".$attachment->ID."_".$attribute."' value=''> <label for='".$attachment->ID."_".$attribute."'><strong>".__('Apply to All', 'woo_dgallery')."</strong></label><br />";
+							
 							$i = 0; foreach($values as $value) {
 								$slug = sanitize_title($value);
-								$html .= "<input disabled='disabled' type='checkbox' id='".$attachment->ID."_".$attribute."_".$i."'> <label for='".$attachment->ID."_".$attribute."_".$i."'>".$value."</label><br />";
+								$html .= "&nbsp;- &nbsp; <input disabled='disabled' type='checkbox' id='".$attachment->ID."_".$attribute."_".$i."'> <label for='".$attachment->ID."_".$attribute."_".$i."'>".$value."</label><br />";
 							$i++; }
 						
 							$form_fields['in_variations_'.$attribute] = array(
