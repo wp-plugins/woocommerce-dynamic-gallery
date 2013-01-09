@@ -1,9 +1,55 @@
-*** WooCommerce Dynamic Gallery Changelog ***
+== Changelog ==
 
-2012.07.17 - version 1.0.1
- * Fix - Set Gallery z index to a low number so that theme Nav bar dropdowns don't show behind the gallery.
- * Fix - Remove gallery script that makes wide of block class to 100% which was causing some themes footer widgets to show 100% wide.
+= 1.0.8 - 2013/01/09 =
 
-2012.07.14 - version 1.0.0
- * Initial release.
- 
+* Tweak: Updated Support and Pro Version link URL's on wordpress.org description, plugins and plugins dashboard. Links were returning 404 errors since the launch of the all new a3rev.com mobile responsive site as the base e-commerce permalinks is changed.
+
+
+= 1.0.7 - 2012/11/23 =
+
+* Feature: Dynamic Gallery now only recognizes image formats .jpg, .jpeg, .gif, .png. It won't recognize another file and won't show in gallery, or on Image gallery manager meta box. Mean that files like PDF's can be uploaded and the gallery does not show them or on the Pro version create variations for them in the pop up image manager.
+* Tweak - Added link to Dynamic gallery Admin tab for our New WordPress version of WooCommerce Product Widget Slideshow plugin.
+* Feature: PRO version now supports WPMU - Pro Version Single License now works on any domain or sub domain that the Plugin is installed on with the WPMU environment. Note it only works on 1. WPMU license option coming soon.
+* Feature: Added 'Apply to All' option on Gallery Image manager pop-up - this feature allows PRO Version user to Apply all variations in a set to the selected image with one click - Thanks to Shawn for the feedback and the idea.
+
+= 1.0.6 - 2012/10/31 =
+
+* Upgraded code with new PRO Version Variation Products Image manager to allow for seamless upgrade to Pro version.
+
+= 1.0.5 - 2012/10/26 = 
+
+* Fixed: Stopped Lazy load scrolling on Gallery initial load for auto start (Lite and Pro Versions) and when Auto Start not activated on Pro Version. Now the Lazy load scroll only starts when transition to second image in the Gallery starts.
+* Fixed: Lazy Load scroll duration now sync with and set by the transition effect speed setting (Lite and Pro Versions).
+* Fixed: Caption text pop-up now sync with and set by the Time between transitions settings (Lite and Pro Versions). 
+* Fixed: Make center for image in gallery frame
+
+= 1.0.4 - 2012/10/01 =
+
+* Fixed: Single image click zoom function. The current image now opens when Zoom or the image is clicked.
+* Tweak: Added display:inline-block !important; into css file for image class
+* Tweak: Update dashboard to show new Pro version features - responsive setting and include product variation images.
+* Tweak; Added Pro Version check box features for deactivate gallery and variation images to product page gallery manager.
+
+= 1.0.3 - 2012/09/03 =
+
+* Fixed : Fixed: Gallery preview not working on sites that do not have wp_enqueue_script( 'thickbox' ) by default. Added call to wp_enqueue_script( 'thickbox' ) if it does not exist so that preview window can open.
+* Fixed : Updated depreciated php function ereg() with stristr() so that Pro version auto plugin auto upgrade feature work without error for WordPress 3.4.0 and later
+* Feature: Add fancybox script to plugin so that if the theme does not support fancybox or it is disabled in the admin panel then the gallery image zoom can still work.
+* Feature: Enqueue plugin script into footer use wp_enqueue_script so that now it is only loaded when needed rather than site-wide and has zero impact on page load speeds.
+* Feature: Enqueue plugin style into header use wp_enqueue_style so that now it is only loaded when needed rather than site-wide and has zero impact on page load speeds.
+* Feature: Add plugin Documentation and Support links to the wp plugins dashboard description.
+* Tweak: Add plugin description to wp plugins dashboard.
+* Tweak: Change localization file path from actual to base path
+
+= 1.0.2 - 2012/07/18 =
+
+* Fix - Edit Javascript to fix Image Scaling Issue.
+
+= 1.0.1 - 2012/07/17 =
+
+* Fix - Set Gallery z index to a low number so that theme Nav bar dropdowns don't show behind the gallery.
+* Fix - Remove gallery script that makes wide of block class to 100% which was causing some themes footer widgets to show 100% wide.
+
+= 1.0 - 2012/07/14 =
+
+* Initial release.

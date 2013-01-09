@@ -1,8 +1,9 @@
 <?php
 /*
 Plugin Name: WooCommerce Dynamic Gallery LITE
+Plugin URI: http://a3rev.com/shop/woocommerce-dynamic-gallery/
 Description: Auto adds a fully customizable dynamic images gallery to every single product page with thumbnails, caption text and lazy-load. Over 28 settings to fine tune every aspect of the gallery. Creates an image gallery manager on every product edit page - greatly simplifies managing product images. Search engine optimized images with WooCommerce Dynamic Gallery Pro.
-Version: 1.0.7
+Version: 1.0.8
 Author: A3 Revolution
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -18,14 +19,6 @@ License: GPLv2 or later
 	Gympie 4570
 	QLD Australia
 */
-
-/*
-== Changelog ==
-
-= 1.0.0 - 12/07/2012 =
-* First working release of the modification
-*/
-
 ?>
 <?php
 define( 'WOO_DYNAMIC_GALLERY_FILE_PATH', dirname(__FILE__) );

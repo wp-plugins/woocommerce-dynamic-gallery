@@ -4,7 +4,7 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_version', '1.0.7');
+	update_option('a3rev_woo_dgallery_version', '1.0.8');
 	WC_Dynamic_Gallery::wc_dynamic_gallery_set_setting(true, true);
 }
 
@@ -57,7 +57,7 @@ if(version_compare(get_option('a3rev_woo_dgallery_version'), '1.0.4') === -1){
 	update_option('a3rev_woo_dgallery_version', '1.0.4');
 }
 
-update_option('a3rev_woo_dgallery_version', '1.0.7');
+update_option('a3rev_woo_dgallery_version', '1.0.8');
 
 global $wc_dg;
 $wc_dg = new WC_Dynamic_Gallery();

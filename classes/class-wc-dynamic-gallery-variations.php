@@ -20,7 +20,7 @@ class WC_Dynamic_Gallery_Variations{
 			
 			$woocommerce_exclude_image_fields = $form_fields['woocommerce_exclude_image'];
 			
-			$form_fields['woocommerce_exclude_image']['helps'] = __('Enabling this option will hide it from the product page image gallery.', 'woocommerce').' '.__('If assigned to variations below the image will show when option is selected. (Show Product Variations in Gallery is a', 'woo_dgallery').' <a href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/" target="_blank">'.__('Pro Version', 'woo_dgallery').'</a> '.__('only feature', 'woo_dgallery').')';
+			$form_fields['woocommerce_exclude_image']['helps'] = __('Enabling this option will hide it from the product page image gallery.', 'woocommerce').' '.__('If assigned to variations below the image will show when option is selected. (Show Product Variations in Gallery is a', 'woo_dgallery').' <a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/" target="_blank">'.__('Pro Version', 'woo_dgallery').'</a> '.__('only feature', 'woo_dgallery').')';
 					
 			$attributes = (array) maybe_unserialize(get_post_meta($product_id, '_product_attributes', true) );
 						

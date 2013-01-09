@@ -729,9 +729,9 @@ class WC_Dynamic_Gallery {
 	function wc_dynamic_gallery_extension() {
 		$html = '';
 		$html .= '<div id="wc_dynamic_gallery_extensions">';
-		$html .= '<h3>'.__('No Donations Accepted', 'woo_dgallery').'</h3>';
-		$html .= '<img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/btn_donate.png" />';
-		$html .= '<h3>'.__('PRO UPGRADE FEATURES', 'woo_dgallery').'</h3>';
+		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/a3logo.png" /></a>';
+		$html .= '<h3>'.__('Upgrade to Dynamic Gallery Pro', 'woo_dgallery').'</h3>';
+		$html .= '<p>'.__("Visit the", 'woo_dgallery').' <a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/" target="_blank">'.__("a3rev website", 'woo_dgallery').'</a> '.__("to see all the extra features the Pro version of this plugin offers like", 'woo_dgallery').':</p>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>1. '.__('Show Multiple Product Variation images in Gallery. As users selects options from the drop down menu that options product image auto shows in the Dynamic Gallery complete with caption text.', 'woo_dgallery').'</li>';
@@ -740,29 +740,46 @@ class WC_Dynamic_Gallery {
 		$html .= '<li>4. '.__('Option to Deactivate the Gallery on any Single product page - default WooCommerce product image will show.', 'woo_dgallery').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '<p>* '.__('See the Pro version on the', 'woo_dgallery').' <a href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/" target="_blank">'.__('A3 market place', 'woo_dgallery').'</a></p>';
-		$html .= '<h3>'.__('Go Pro and help us help you.', 'woo_dgallery').'</h3>';
-		$html .= '<p>'.__('Your small once only Pro upgrade license fee help fund and support the maintenance and ongoing development of this plugin.', 'woo_dgallery').'</p>';
-		$html .= '<h3>'.__('More quality WooCommerce Plugins from A3 Rev', 'woo_dgallery').'</h3>';
+		$html .= '<h3>'.__('Plugin Documentation', 'woo_dgallery').'</h3>';
+		$html .= '<p>'.__('All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request', 'woo_dgallery').'. <a href="http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/" target="_blank">'.__('Visit the a3rev wiki.', 'woo_dgallery').'</a></p>';
+		$html .= '<h3>'.__('More a3rev Quality Plugins', 'woo_dgallery').'</h3>';
+		$html .= '<p>'.__('Below is a list of the a3rev plugins that are available for free download from wordpress.org', 'woo_dgallery').'</p>';
+		$html .= '<h3>'.__('WooCommerce Plugins', 'woo_dgallery').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woo-widget-product-slideshow/" target="_blank"><strong>'.__('NEW', 'woo_dgallery').'</strong> - '.__('WooCommerce Widget Product Slideshow', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-dynamic-gallery/" target="_blank">'.__('WooCommerce Dynamic Products Gallery', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-predictive-search/" target="_blank">'.__('WooCommerce Predictive Search', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-compare-products/" target="_blank">'.__('WooCommerce Compare Products', 'woo_dgallery').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-email-template/" target="_blank">'.__('WooCommerce Global Email Template', 'woo_dgallery').'</a></li>';
-		$html .= '<li>* <a href="http://a3rev.com/products-page/woocommerce/woo-email-inquiry-and-cart-options/" target="_blank">'.__('WooCommerce Email Inquiry & Cart View (Pro only)', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woo-widget-product-slideshow/" target="_blank">'.__('WooCommerce Widget Product Slideshow', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://a3rev.com/shop/woocommerce-email-inquiry-and-cart-options/" target="_blank">'.__('WooCommerce Email Inquiry & Cart Options', 'woo_dgallery').'</a>'.__(' - Pro Version only from a3rev', 'woo_dgallery').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '<h3>'.__('Spreading the Word about this plugin.', 'woo_dgallery').'</h3>';
+		$html .= '<h3>'.__('WordPress Plugins', 'woo_dgallery').'</h3>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'woo_dgallery').'</a></li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '<h3>'.__('WP e-Commerce Plugins', 'woo_dgallery').'</h3>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-dynamic-gallery/" target="_blank">'.__('WP e-Commerce Dynamic Gallery', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-predictive-search/" target="_blank">'.__('WP e-Commerce Predictive Search', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('WP e-Commerce Compare Products', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-catalog-visibility-and-email-inquiry/" target="_blank">'.__('WP e-Commerce Catalog Visibility & Email Inquiry', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-grid-view/" target="_blank">'.__('WP e-Commerce Grid View', 'woo_dgallery').'</a></li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '<h3>'.__('Help spread the Word about this plugin', 'woo_dgallery').'</h3>';
 		$html .= '<p>'.__("Things you can do to help others find this plugin", 'woo_dgallery');
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-dynamic-gallery/" target="_blank">'.__('Rate this plugin 5', 'woo_dgallery').' <img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/stars.png" align="top" /> '.__('on WordPress.org', 'woo_dgallery').'</a></li>';
-		$html .= '<li>* <a href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/" target="_blank">'.__('Write about it in your blog', 'woo_dgallery').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-dynamic-gallery/" target="_blank">'.__('Mark the plugin as a fourite', 'woo_dgallery').'</a></li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '<h3>'.__('Thank you for your support!', 'woo_dgallery').'</h3>';
 		$html .= '</div>';
-		return $html;	
+		return $html;
 	}
 	
 	function wc_dynamic_gallery_upgrade_area_start() {
@@ -778,7 +795,7 @@ class WC_Dynamic_Gallery {
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/" target="_blank">'.__('Documentation', 'woo_dgallery').'</a>';
-		$links[] = '<a href="http://a3rev.com/products-page/woocommerce/woocommerce-dynamic-gallery/#help" target="_blank">'.__('Support', 'woo_dgallery').'</a>';
+		$links[] = '<a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/#tab-reviews" target="_blank">'.__('Support', 'woo_dgallery').'</a>';
 		return $links;
 	}
 }
