@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce Dynamic Gallery FREE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-09 10:31+0700\n"
-"PO-Revision-Date: 2013-01-09 10:31+0700\n"
+"POT-Creation-Date: 2013-01-23 14:13+0700\n"
+"PO-Revision-Date: 2013-01-23 14:13+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -17,605 +17,617 @@ msgstr ""
 msgid "Dynamic Gallery"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:270
+#: admin/class-wc-dynamic-gallery-admin.php:271
 msgid "Set at 100 and choose % to activate responsive gallery (Pro version feature)"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:275
+#: admin/class-wc-dynamic-gallery-admin.php:276
 msgid "Gallery"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:281
+#: admin/class-wc-dynamic-gallery-admin.php:282
 msgid "Gallery width"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:289
+#: admin/class-wc-dynamic-gallery-admin.php:290
 msgid "Gallery height"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:310
+#: admin/class-wc-dynamic-gallery-admin.php:311
 msgid "Product Variation images"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:311
+#: admin/class-wc-dynamic-gallery-admin.php:312
 msgid "Show Product Variation images in Gallery. Can disable this feature of individual products from product edit page."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:318
+#: admin/class-wc-dynamic-gallery-admin.php:319
 msgid "Auto start"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:325
+#: admin/class-wc-dynamic-gallery-admin.php:326
 msgid "False"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:326
+#: admin/class-wc-dynamic-gallery-admin.php:327
 msgid "True"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:331
+#: admin/class-wc-dynamic-gallery-admin.php:332
 msgid "Time between transitions"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:339
+#: admin/class-wc-dynamic-gallery-admin.php:340
 msgid "Slide transition effect"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:346
+#: admin/class-wc-dynamic-gallery-admin.php:347
 msgid "None"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:347
+#: admin/class-wc-dynamic-gallery-admin.php:348
 msgid "Fade"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:348
+#: admin/class-wc-dynamic-gallery-admin.php:349
 msgid "Slide Hori"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:349
+#: admin/class-wc-dynamic-gallery-admin.php:350
 msgid "Slide vert"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:350
+#: admin/class-wc-dynamic-gallery-admin.php:351
 msgid "Resize"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:356
+#: admin/class-wc-dynamic-gallery-admin.php:357
 msgid "Transition effect speed"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:363
+#: admin/class-wc-dynamic-gallery-admin.php:364
 msgid "1"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:364
+#: admin/class-wc-dynamic-gallery-admin.php:365
 msgid "2"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:365
+#: admin/class-wc-dynamic-gallery-admin.php:366
 msgid "3"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:366
+#: admin/class-wc-dynamic-gallery-admin.php:367
 msgid "4"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:367
+#: admin/class-wc-dynamic-gallery-admin.php:368
 msgid "5"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:368
+#: admin/class-wc-dynamic-gallery-admin.php:369
 msgid "6"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:369
+#: admin/class-wc-dynamic-gallery-admin.php:370
 msgid "7"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:370
+#: admin/class-wc-dynamic-gallery-admin.php:371
 msgid "8"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:371
+#: admin/class-wc-dynamic-gallery-admin.php:372
 msgid "9"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:372
+#: admin/class-wc-dynamic-gallery-admin.php:373
 msgid "10"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:377
+#: admin/class-wc-dynamic-gallery-admin.php:379
+msgid "Single Image Transition"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:380
+msgid "<em class=\"description\">Check to auto deactivate image transition effect when only 1 image is loaded to gallery.</em>"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:387
 msgid "Image background colour"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:378
+#: admin/class-wc-dynamic-gallery-admin.php:388
 msgid "Gallery image background colour. Default <code>#FFFFFF</code>."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:385
+#: admin/class-wc-dynamic-gallery-admin.php:395
 msgid "Border colour"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:386
+#: admin/class-wc-dynamic-gallery-admin.php:396
 msgid "Gallery border colour. Default <code>#CCCCCC</code>."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:392
+#: admin/class-wc-dynamic-gallery-admin.php:402
 msgid "Gallery popup"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:399
+#: admin/class-wc-dynamic-gallery-admin.php:409
 msgid "Fancybox"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:400
+#: admin/class-wc-dynamic-gallery-admin.php:410
 msgid "Lightbox"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:409
+#: admin/class-wc-dynamic-gallery-admin.php:411
+msgid "Deactivate"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:420
 msgid "Caption text"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:415
-#: admin/class-wc-dynamic-gallery-admin.php:523
-msgid "Font"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:422
-#: admin/class-wc-dynamic-gallery-admin.php:530
-msgid "Arial"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:423
-#: admin/class-wc-dynamic-gallery-admin.php:531
-msgid "Verdana"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:424
-#: admin/class-wc-dynamic-gallery-admin.php:532
-msgid "Trebuchet"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:425
-#: admin/class-wc-dynamic-gallery-admin.php:533
-msgid "Georgia"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:426
 #: admin/class-wc-dynamic-gallery-admin.php:534
-msgid "Times New Roman"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:427
-#: admin/class-wc-dynamic-gallery-admin.php:535
-msgid "Tahoma"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:428
-#: admin/class-wc-dynamic-gallery-admin.php:536
-msgid "Palatino"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:429
-#: admin/class-wc-dynamic-gallery-admin.php:537
-msgid "Helvetica*"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:430
-#: admin/class-wc-dynamic-gallery-admin.php:538
-msgid "Calibri*"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:431
-#: admin/class-wc-dynamic-gallery-admin.php:539
-msgid "Myriad Pro*"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:432
-#: admin/class-wc-dynamic-gallery-admin.php:540
-msgid "Lucida"
+msgid "Font"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:433
 #: admin/class-wc-dynamic-gallery-admin.php:541
-msgid "Arial Black"
+msgid "Arial"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:434
 #: admin/class-wc-dynamic-gallery-admin.php:542
-msgid "Gill Sans*"
+msgid "Verdana"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:435
 #: admin/class-wc-dynamic-gallery-admin.php:543
-msgid "Geneva*"
+msgid "Trebuchet"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:436
 #: admin/class-wc-dynamic-gallery-admin.php:544
-msgid "Impact"
+msgid "Georgia"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:437
 #: admin/class-wc-dynamic-gallery-admin.php:545
-msgid "Courier"
+msgid "Times New Roman"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:438
 #: admin/class-wc-dynamic-gallery-admin.php:546
-msgid "Century Gothic"
+msgid "Tahoma"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:439
+#: admin/class-wc-dynamic-gallery-admin.php:547
+msgid "Palatino"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:440
+#: admin/class-wc-dynamic-gallery-admin.php:548
+msgid "Helvetica*"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:441
+#: admin/class-wc-dynamic-gallery-admin.php:549
+msgid "Calibri*"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:442
+#: admin/class-wc-dynamic-gallery-admin.php:550
+msgid "Myriad Pro*"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:443
 #: admin/class-wc-dynamic-gallery-admin.php:551
-msgid "Font size"
+msgid "Lucida"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:450
-#: admin/class-wc-dynamic-gallery-admin.php:558
-msgid "9px"
+#: admin/class-wc-dynamic-gallery-admin.php:444
+#: admin/class-wc-dynamic-gallery-admin.php:552
+msgid "Arial Black"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:451
-#: admin/class-wc-dynamic-gallery-admin.php:559
-msgid "10px"
+#: admin/class-wc-dynamic-gallery-admin.php:445
+#: admin/class-wc-dynamic-gallery-admin.php:553
+msgid "Gill Sans*"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:452
-#: admin/class-wc-dynamic-gallery-admin.php:560
-msgid "11px"
+#: admin/class-wc-dynamic-gallery-admin.php:446
+#: admin/class-wc-dynamic-gallery-admin.php:554
+msgid "Geneva*"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:453
-#: admin/class-wc-dynamic-gallery-admin.php:561
-msgid "12px"
+#: admin/class-wc-dynamic-gallery-admin.php:447
+#: admin/class-wc-dynamic-gallery-admin.php:555
+msgid "Impact"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:448
+#: admin/class-wc-dynamic-gallery-admin.php:556
+msgid "Courier"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:449
+#: admin/class-wc-dynamic-gallery-admin.php:557
+msgid "Century Gothic"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:454
 #: admin/class-wc-dynamic-gallery-admin.php:562
-msgid "13px"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:455
-#: admin/class-wc-dynamic-gallery-admin.php:563
-msgid "14px"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:456
-#: admin/class-wc-dynamic-gallery-admin.php:564
-msgid "15px"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:457
-#: admin/class-wc-dynamic-gallery-admin.php:565
-msgid "16px"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:458
-#: admin/class-wc-dynamic-gallery-admin.php:566
-msgid "17px"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:459
-#: admin/class-wc-dynamic-gallery-admin.php:567
-msgid "18px"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:460
-#: admin/class-wc-dynamic-gallery-admin.php:568
-msgid "19px"
+msgid "Font size"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:461
 #: admin/class-wc-dynamic-gallery-admin.php:569
-msgid "20px"
+msgid "9px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:462
 #: admin/class-wc-dynamic-gallery-admin.php:570
-msgid "21px"
+msgid "10px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:463
 #: admin/class-wc-dynamic-gallery-admin.php:571
-msgid "22px"
+msgid "11px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:464
 #: admin/class-wc-dynamic-gallery-admin.php:572
-msgid "23px"
+msgid "12px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:465
 #: admin/class-wc-dynamic-gallery-admin.php:573
-msgid "24px"
+msgid "13px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:466
 #: admin/class-wc-dynamic-gallery-admin.php:574
-msgid "25px"
+msgid "14px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:467
 #: admin/class-wc-dynamic-gallery-admin.php:575
-msgid "26px"
+msgid "15px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:468
 #: admin/class-wc-dynamic-gallery-admin.php:576
-msgid "27px"
+msgid "16px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:469
 #: admin/class-wc-dynamic-gallery-admin.php:577
-msgid "28px"
+msgid "17px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:470
-#: admin/class-wc-dynamic-gallery-admin.php:471
 #: admin/class-wc-dynamic-gallery-admin.php:578
+msgid "18px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:471
 #: admin/class-wc-dynamic-gallery-admin.php:579
-msgid "29px"
+msgid "19px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:472
+#: admin/class-wc-dynamic-gallery-admin.php:580
+msgid "20px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:473
+#: admin/class-wc-dynamic-gallery-admin.php:581
+msgid "21px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:474
+#: admin/class-wc-dynamic-gallery-admin.php:582
+msgid "22px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:475
+#: admin/class-wc-dynamic-gallery-admin.php:583
+msgid "23px"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:476
 #: admin/class-wc-dynamic-gallery-admin.php:584
+msgid "24px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:477
+#: admin/class-wc-dynamic-gallery-admin.php:585
+msgid "25px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:478
+#: admin/class-wc-dynamic-gallery-admin.php:586
+msgid "26px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:479
+#: admin/class-wc-dynamic-gallery-admin.php:587
+msgid "27px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:480
+#: admin/class-wc-dynamic-gallery-admin.php:588
+msgid "28px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:481
+#: admin/class-wc-dynamic-gallery-admin.php:482
+#: admin/class-wc-dynamic-gallery-admin.php:589
+#: admin/class-wc-dynamic-gallery-admin.php:590
+msgid "29px"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:487
+#: admin/class-wc-dynamic-gallery-admin.php:595
 msgid "Font style"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:483
-#: admin/class-wc-dynamic-gallery-admin.php:591
+#: admin/class-wc-dynamic-gallery-admin.php:494
+#: admin/class-wc-dynamic-gallery-admin.php:602
 msgid "Normal"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:484
-#: admin/class-wc-dynamic-gallery-admin.php:592
+#: admin/class-wc-dynamic-gallery-admin.php:495
+#: admin/class-wc-dynamic-gallery-admin.php:603
 msgid "Italic"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:485
-#: admin/class-wc-dynamic-gallery-admin.php:593
+#: admin/class-wc-dynamic-gallery-admin.php:496
+#: admin/class-wc-dynamic-gallery-admin.php:604
 msgid "Bold"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:486
-#: admin/class-wc-dynamic-gallery-admin.php:594
+#: admin/class-wc-dynamic-gallery-admin.php:497
+#: admin/class-wc-dynamic-gallery-admin.php:605
 msgid "Bold/Italic"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:491
-#: admin/class-wc-dynamic-gallery-admin.php:599
-#: admin/class-wc-dynamic-gallery-admin.php:639
+#: admin/class-wc-dynamic-gallery-admin.php:502
+#: admin/class-wc-dynamic-gallery-admin.php:610
+#: admin/class-wc-dynamic-gallery-admin.php:650
 msgid "Colour"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:492
+#: admin/class-wc-dynamic-gallery-admin.php:503
 msgid "Caption text color. Default <code>#FFFFFF</code>."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:499
+#: admin/class-wc-dynamic-gallery-admin.php:510
 msgid "Background"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:500
+#: admin/class-wc-dynamic-gallery-admin.php:511
 msgid "Caption text background colour. Default <code>#000000</code>."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:509
+#: admin/class-wc-dynamic-gallery-admin.php:520
 msgid "Nav Bar"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:515
-#: admin/class-wc-dynamic-gallery-admin.php:631
+#: admin/class-wc-dynamic-gallery-admin.php:526
+#: admin/class-wc-dynamic-gallery-admin.php:642
 msgid "Control"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:516
+#: admin/class-wc-dynamic-gallery-admin.php:527
 msgid "Enable Nav bar Control"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:600
+#: admin/class-wc-dynamic-gallery-admin.php:611
 msgid "Nav bar background colour. Default <code>#FFFFFF</code>."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:607
+#: admin/class-wc-dynamic-gallery-admin.php:618
 msgid "Text"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:608
+#: admin/class-wc-dynamic-gallery-admin.php:619
 msgid "Nav bar text color. Default <code>#000000</code>."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:615
+#: admin/class-wc-dynamic-gallery-admin.php:626
 msgid "Container height"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:625
+#: admin/class-wc-dynamic-gallery-admin.php:636
 msgid "Lazy-load scroll"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:632
+#: admin/class-wc-dynamic-gallery-admin.php:643
 msgid "Enable lazy-load scroll"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:640
+#: admin/class-wc-dynamic-gallery-admin.php:651
 msgid "Scroll bar colour. Default <code>#000000</code>."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:649
+#: admin/class-wc-dynamic-gallery-admin.php:660
 msgid "Image Thumbnails"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:655
+#: admin/class-wc-dynamic-gallery-admin.php:666
 msgid "Show thumbnails"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:656
+#: admin/class-wc-dynamic-gallery-admin.php:667
 msgid "Enable thumbnail gallery"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:673
+#: admin/class-wc-dynamic-gallery-admin.php:684
 msgid "Thumbnail width"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:681
+#: admin/class-wc-dynamic-gallery-admin.php:692
 msgid "Thumbnail height"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:689
+#: admin/class-wc-dynamic-gallery-admin.php:700
 msgid "Thumbnail spacing"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:698
+#: admin/class-wc-dynamic-gallery-admin.php:709
 msgid "Preview"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:698
+#: admin/class-wc-dynamic-gallery-admin.php:709
 msgid "Click here to preview gallery"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:733
+#: admin/class-wc-dynamic-gallery-admin.php:744
 msgid "Upgrade to Dynamic Gallery Pro"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:734
+#: admin/class-wc-dynamic-gallery-admin.php:745
 msgid "Visit the"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:734
+#: admin/class-wc-dynamic-gallery-admin.php:745
 msgid "a3rev website"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:734
+#: admin/class-wc-dynamic-gallery-admin.php:745
 msgid "to see all the extra features the Pro version of this plugin offers like"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:737
+#: admin/class-wc-dynamic-gallery-admin.php:748
 msgid "Show Multiple Product Variation images in Gallery. As users selects options from the drop down menu that options product image auto shows in the Dynamic Gallery complete with caption text."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:738
+#: admin/class-wc-dynamic-gallery-admin.php:749
 msgid "Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:739
+#: admin/class-wc-dynamic-gallery-admin.php:750
 msgid "Activate all of the Gallery customization settings you see here on this page to style and fine tune your product presentation."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:740
+#: admin/class-wc-dynamic-gallery-admin.php:751
 msgid "Option to Deactivate the Gallery on any Single product page - default WooCommerce product image will show."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:743
+#: admin/class-wc-dynamic-gallery-admin.php:754
 msgid "Plugin Documentation"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:744
+#: admin/class-wc-dynamic-gallery-admin.php:755
 msgid "All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:744
+#: admin/class-wc-dynamic-gallery-admin.php:755
 msgid "Visit the a3rev wiki."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:745
+#: admin/class-wc-dynamic-gallery-admin.php:756
 msgid "More a3rev Quality Plugins"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:746
+#: admin/class-wc-dynamic-gallery-admin.php:757
 msgid "Below is a list of the a3rev plugins that are available for free download from wordpress.org"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:747
+#: admin/class-wc-dynamic-gallery-admin.php:758
 msgid "WooCommerce Plugins"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:750
+#: admin/class-wc-dynamic-gallery-admin.php:761
 msgid "WooCommerce Dynamic Products Gallery"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:751
+#: admin/class-wc-dynamic-gallery-admin.php:762
 msgid "WooCommerce Predictive Search"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:752
+#: admin/class-wc-dynamic-gallery-admin.php:763
 msgid "WooCommerce Compare Products"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:753
+#: admin/class-wc-dynamic-gallery-admin.php:764
 msgid "WooCommerce Widget Product Slideshow"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:754
+#: admin/class-wc-dynamic-gallery-admin.php:765
 msgid "WooCommerce Email Inquiry & Cart Options"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:754
+#: admin/class-wc-dynamic-gallery-admin.php:765
 msgid " - Pro Version only from a3rev"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:757
+#: admin/class-wc-dynamic-gallery-admin.php:768
 msgid "WordPress Plugins"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:760
+#: admin/class-wc-dynamic-gallery-admin.php:771
 msgid "WordPress Email Template"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:761
+#: admin/class-wc-dynamic-gallery-admin.php:772
 msgid "Page View Count"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:764
+#: admin/class-wc-dynamic-gallery-admin.php:775
 msgid "WP e-Commerce Plugins"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:767
+#: admin/class-wc-dynamic-gallery-admin.php:778
 msgid "WP e-Commerce Dynamic Gallery"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:768
+#: admin/class-wc-dynamic-gallery-admin.php:779
 msgid "WP e-Commerce Predictive Search"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:769
+#: admin/class-wc-dynamic-gallery-admin.php:780
 msgid "WP e-Commerce Compare Products"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:770
+#: admin/class-wc-dynamic-gallery-admin.php:781
 msgid "WP e-Commerce Catalog Visibility & Email Inquiry"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:771
+#: admin/class-wc-dynamic-gallery-admin.php:782
 msgid "WP e-Commerce Grid View"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:774
+#: admin/class-wc-dynamic-gallery-admin.php:785
 msgid "Help spread the Word about this plugin"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:775
+#: admin/class-wc-dynamic-gallery-admin.php:786
 msgid "Things you can do to help others find this plugin"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:777
+#: admin/class-wc-dynamic-gallery-admin.php:788
 msgid "Rate this plugin 5"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:777
+#: admin/class-wc-dynamic-gallery-admin.php:788
 msgid "on WordPress.org"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:778
+#: admin/class-wc-dynamic-gallery-admin.php:789
 msgid "Mark the plugin as a fourite"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:797
+#: admin/class-wc-dynamic-gallery-admin.php:808
 msgid "Documentation"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:798
+#: admin/class-wc-dynamic-gallery-admin.php:809
 msgid "Support"
 msgstr ""
 

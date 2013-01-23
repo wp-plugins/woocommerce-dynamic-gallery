@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.9 - 2013/01/23 =
+
+* Feature: Massive 2 times improvement in gallery image load times. Reworked the way that the Gallery image thumbnails are loaded with a resulting 50% reduction in gallery load speed.
+
+* Tweak: Tested gallery on WooCanvas theme for 100% compatibility in Fire Fox, Google Chrome, Safari, IE8  , IE9, ios5, ios6 and Android.
+
+
 = 1.0.8 - 2013/01/09 =
 
 * Tweak: Updated Support and Pro Version link URL's on wordpress.org description, plugins and plugins dashboard. Links were returning 404 errors since the launch of the all new a3rev.com mobile responsive site as the base e-commerce permalinks is changed.

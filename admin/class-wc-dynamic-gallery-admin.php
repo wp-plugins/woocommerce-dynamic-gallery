@@ -204,6 +204,7 @@ class WC_Dynamic_Gallery {
 				$("#product_gallery_speed").attr('disabled', 'disabled');
 				$("#product_gallery_effect").attr('disabled', 'disabled');
 				$("#product_gallery_animation_speed").attr('disabled', 'disabled');
+				$("#dynamic_gallery_stop_scroll_1image").attr('disabled', 'disabled');
 				$("#bg_image_wrapper").attr('disabled', 'disabled');
 				$("#border_image_wrapper_color").attr('disabled', 'disabled');
 				$("#popup_gallery").attr('disabled', 'disabled');
@@ -373,6 +374,15 @@ class WC_Dynamic_Gallery {
 				),
 				'desc_tip'	=>  false,
 			),
+			
+			array(  
+				'name' 		=> __( 'Single Image Transition', 'woo_dgallery' ),
+				'desc' 		=> __( '<em class="description">Check to auto deactivate image transition effect when only 1 image is loaded to gallery.</em>', 'woo_dgallery' ),
+				'id' 		=> 'dynamic_gallery_stop_scroll_1image',
+				'std' 		=> '0',
+				'type' 		=> 'checkbox',
+			),
+			
 			array(  
 				'name' => __( 'Image background colour', 'woo_dgallery' ),
 				'desc' 		=> __( 'Gallery image background colour. Default <code>#FFFFFF</code>.', 'woo_dgallery' ),
@@ -396,8 +406,9 @@ class WC_Dynamic_Gallery {
 				'std' 		=> 'fb',
 				'type' 		=> 'select',
 				'options' => array( 
-					'fb'  			=> __( 'Fancybox', 'woo_dgallery' ),
-					'lb'		=> __( 'Lightbox', 'woo_dgallery' ),
+					'fb'			=> __( 'Fancybox', 'woo_dgallery' ),
+					'lb'			=> __( 'Lightbox', 'woo_dgallery' ),
+					'deactivate'	=> __( 'Deactivate', 'woo_dgallery' ),
 				),
 				'desc_tip'	=>  false,
 			),

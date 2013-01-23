@@ -417,10 +417,14 @@ class WC_Gallery_Display_Class{
                                     if($i == 0){ $li_class = 'first_item';}elseif($i == count($attached_images)-1){$li_class = 'last_item';}
                                     $image_attribute = wp_get_attachment_image_src( $item_thumb->ID, 'full');
                                     $image_lager_default_url = $image_attribute[0];
+									
+									$image_thumb_attribute = wp_get_attachment_image_src( $item_thumb->ID, 'wc-dynamic-gallery-thumb');
+                                    $image_thumb_default_url = $image_thumb_attribute[0];
+									
                                     $thumb_height = $g_thumb_height;
                                     $thumb_width = $g_thumb_width;
-                                    $width_old = $image_attribute[1];
-                                    $height_old = $image_attribute[2];
+                                    $width_old = $image_thumb_attribute[1];
+                                    $height_old = $image_thumb_attribute[2];
                                      if($width_old > $g_thumb_width || $height_old > $g_thumb_height){
                                         if($height_old > $g_thumb_height) {
                                             $factor = ($height_old / $g_thumb_height);
@@ -446,7 +450,7 @@ class WC_Gallery_Display_Class{
                                    $alt = get_post_meta($item_thumb->ID, '_wp_attachment_image_alt', true);
 								   $img_description = $item_thumb->post_excerpt;
                                             
-                                    echo '<li class="'.$li_class.'"><a alt="'.$alt.'" class="" title="'.$img_description.'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img idx="'.$idx.'" style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_lager_default_url.'" alt="'.$img_description.'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
+                                    echo '<li class="'.$li_class.'"><a alt="'.$alt.'" class="" title="'.$img_description.'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img idx="'.$idx.'" style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_thumb_default_url.'" alt="'.$img_description.'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
                                     $img_description = trim(strip_tags(stripslashes(str_replace("'","", str_replace('"', '', $img_description)))));
                                     if($img_description != ''){
                                         $script_lightbox .= $common.'"'.$image_lager_default_url.'?lightbox[title]='.$img_description.'"';

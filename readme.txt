@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, woothemes, wordpress ecommerce
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -111,6 +111,13 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 Support and access to this plugin documents are available from the [HELP tab](http://a3rev.com/shop/woocommerce-dynamic-gallery/#tab-reviews) on the Pro Versions Home page.
 
 == Changelog ==
+
+= 1.0.9 - 2013/01/23 =
+
+* Feature: Massive 2 times improvement in gallery image load times. Reworked the way that the Gallery image thumbnails are loaded with a resulting 50% reduction in gallery load speed.
+
+* Tweak: Tested gallery on WooCanvas theme for 100% compatibility in Fire Fox, Google Chrome, Safari, IE8  , IE9, ios5, ios6 and Android.
+
 
 = 1.0.8 - 2013/01/09 =
 
