@@ -118,6 +118,8 @@ Support and access to this plugin documents are available from the [HELP tab](ht
 
 * Tweak: Tested gallery on WooCanvas theme for 100% compatibility in Fire Fox, Google Chrome, Safari, IE8  , IE9, ios5, ios6 and Android.
 
+* Tweak - Added Thumbnail help text on admin panel, warning not to set the Thumbnail width and height to '0' empty as it causes a .php error 'not divisible by zero'  message to show on product pages instead of the Gallery.
+
 
 = 1.0.8 - 2013/01/09 =
 

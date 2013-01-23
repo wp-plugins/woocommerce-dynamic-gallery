@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce Dynamic Gallery FREE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-23 14:13+0700\n"
-"PO-Revision-Date: 2013-01-23 14:13+0700\n"
+"POT-Creation-Date: 2013-01-23 15:43+0700\n"
+"PO-Revision-Date: 2013-01-23 15:43+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -469,6 +469,11 @@ msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:684
 msgid "Thumbnail width"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:685
+#: admin/class-wc-dynamic-gallery-admin.php:693
+msgid "IMPORTANT! Do not set this value to '0' or empty. A &lt;not divisible by 0&gt; error will show instead of the Gallery if you do."
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:692

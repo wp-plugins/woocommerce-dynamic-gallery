@@ -682,7 +682,7 @@ class WC_Dynamic_Gallery {
            	),
 			array(  
 				'name' => __( 'Thumbnail width', 'woo_dgallery' ),
-				'desc' 		=> 'px',
+				'desc' 		=> 'px. '.__("IMPORTANT! Do not set this value to '0' or empty. A &lt;not divisible by 0&gt; error will show instead of the Gallery if you do.", 'woo_dgallery'),
 				'id' 		=> 'thumb_width',
 				'type' 		=> 'text',
 				'css' 		=> 'width:7em;',
@@ -690,7 +690,7 @@ class WC_Dynamic_Gallery {
 			),
 			array(  
 				'name' => __( 'Thumbnail height', 'woo_dgallery' ),
-				'desc' 		=> 'px',
+				'desc' 		=> 'px. '.__("IMPORTANT! Do not set this value to '0' or empty. A &lt;not divisible by 0&gt; error will show instead of the Gallery if you do.", 'woo_dgallery'),
 				'id' 		=> 'thumb_height',
 				'type' 		=> 'text',
 				'css' 		=> 'width:7em;',
