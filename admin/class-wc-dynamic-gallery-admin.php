@@ -223,6 +223,7 @@ class WC_Dynamic_Gallery {
 				$("#lazy_load_scroll").attr('disabled', 'disabled');
 				$("#transition_scroll_bar").attr('disabled', 'disabled');
 				$("#enable_gallery_thumb").attr('disabled', 'disabled');
+				$("#dynamic_gallery_hide_thumb_1image").attr('disabled', 'disabled');
 			});
 	   })(jQuery);
 	   </script>
@@ -666,9 +667,16 @@ class WC_Dynamic_Gallery {
 				'name' 		=> __( 'Show thumbnails', 'woo_dgallery' ),
 				'desc' 		=> __( 'Enable thumbnail gallery', 'woo_dgallery' ),
 				'id' 		=> 'enable_gallery_thumb',
-				'std' 		=> 'yes',
+				'std' 		=> '1',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> 'start'
+			),
+			array(  
+				'name' 		=> __( 'Single Image Thumbnail', 'woo_dgallery' ),
+				'desc' 		=> __( "Check to hide thumbnail when only 1 image is loaded to gallery.", 'woo_dgallery' ),
+				'id' 		=> 'dynamic_gallery_hide_thumb_1image',
+				'std' 		=> '1',
+				'type' 		=> 'checkbox',
 			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_thumb_end'),
 			
