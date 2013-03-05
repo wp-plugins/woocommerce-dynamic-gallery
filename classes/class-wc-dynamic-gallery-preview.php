@@ -16,6 +16,7 @@ class WC_Gallery_Preview_Display{
 		 * Single Product Image
 		 */
 		global $post, $woocommerce;
+		$current_db_version = get_option( 'woocommerce_db_version', null );
 		check_ajax_referer( 'woo_dynamic_gallery', 'security' );
 		$woo_a3_gallery_settings = $request;
 		$lightbox_class = 'lightbox';
@@ -278,6 +279,12 @@ class WC_Gallery_Preview_Display{
 			}
 			
 			echo '
+			/* Pretty Photo style */
+			.pp_content_container .pp_gallery {
+				display:block !important;
+				opacity: 1 !important;
+				filter: alpha(opacity = 100) !important;
+			}
             </style>';
             
             echo '<script type="text/javascript">
@@ -332,6 +339,9 @@ class WC_Gallery_Preview_Display{
                         
                         $script_lightbox = '';
 						$script_fancybox = '';
+						$script_prettyPhoto = '';
+						$prettyPhoto_images = '[';
+						$prettyPhoto_titles = '[';
                         if ( !empty( $imgs ) ){	
                             $i = 0;
                             $display = '';
@@ -339,12 +349,17 @@ class WC_Gallery_Preview_Display{
                             if(is_array($imgs) && count($imgs)>0){
                                 $script_lightbox .= '<script type="text/javascript">';
 								$script_fancybox .= '<script type="text/javascript">';
+								$script_prettyPhoto .= '<script type="text/javascript">';
                                 $script_lightbox .= '(function($){';		  
-								$script_fancybox .= '(function($){';		  
+								$script_fancybox .= '(function($){';
+								$script_prettyPhoto .= '(function($){';		  
                                 $script_lightbox .= '$(function(){';
 								$script_fancybox .= '$(function(){';
+								$script_prettyPhoto .= '$(function(){';
                                 $script_lightbox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {';
 								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
+								var idx = $(".ad-image img").attr("idx");';
+								$script_prettyPhoto .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 								var idx = $(".ad-image img").attr("idx");';
                                 if(count($imgs) <= 1 ){
                                     $script_lightbox .= '$.lightbox(';
@@ -353,6 +368,11 @@ class WC_Gallery_Preview_Display{
                                     $script_lightbox .= '$.lightbox([';
 									$script_fancybox .= '$.fancybox([';
                                 }
+								//if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
+									$script_prettyPhoto .= '$().prettyPhoto({modals: "true", social_tools: false, theme: "light_square"}); $.prettyPhoto.open(';
+								//} else {
+								//	$script_prettyPhoto .= '$().prettyPhoto({modals: "true", social_tools: false, theme: "pp_woocommerce"}); $.prettyPhoto.open(';
+								//}
                                 $common = '';
                                 $idx = 0;
                                 foreach($imgs as $item_thumb){
@@ -399,40 +419,58 @@ class WC_Gallery_Preview_Display{
                                         $script_lightbox .= $common.'"'.$image_lager_default_url.'"';
 										$script_fancybox .= $common.'{href:\''.$image_lager_default_url.'\',title:\'\'}';
                                     }
+									$prettyPhoto_images .= $common.'"'.$image_lager_default_url.'"';
+									$prettyPhoto_titles .= $common.'"'.$img_description.'"';
                                     $common = ',';
                                     $i++;
 									$idx++;
                                  }
+								$prettyPhoto_images .= ']';
+								$prettyPhoto_titles .= ']';
+								
 								 //$.fancybox([ {href : 'img1.jpg', title : 'Title'}, {href : 'img2.jpg', title : 'Title'} ])
                                 if(count($imgs) <= 1 ){
                                     $script_lightbox .= ');';
 									$script_fancybox .= ');';
+									$script_prettyPhoto .= $prettyPhoto_images. ', '. $prettyPhoto_titles .');';
                                 }else{
                                     $script_lightbox .= ']);';
 									$script_fancybox .= '],{
         \'index\': idx
       });';
+	  								$script_prettyPhoto .= $prettyPhoto_images. ', '. $prettyPhoto_titles .'); $.prettyPhoto.changePage( parseInt(idx) );';
                                 }
                                 $script_lightbox .= 'ev.preventDefault();';
                                 $script_lightbox .= '} });';
 								$script_fancybox .= '} });';
+								$script_prettyPhoto .= '} });';
                                 $script_lightbox .= '});';
 								$script_fancybox .= '});';
+								$script_prettyPhoto .= '});';
                                 $script_lightbox .= '})(jQuery);';
 								$script_fancybox .= '})(jQuery);';
+								$script_prettyPhoto .= '})(jQuery);';
                                 $script_lightbox .= '</script>';
 								$script_fancybox .= '</script>';
+								$script_prettyPhoto .= '</script>';
                             }
                         }else{
-                            echo '<li> <a class="" rel="gallery_product_'.$post->ID.'" href="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png"> <img src="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png" class="image" alt=""> </a> </li>';
+                            echo '<li> <a class="lightbox" rel="gallery_product_'.$post->ID.'" href="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png"> <img src="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png" class="image" alt=""> </a> </li>';
 							
 							
 									
                         }
-						if($popup_gallery == 'lb'){
+						
+						if ($popup_gallery == 'deactivate') {
+							$script_lightbox = '';
+							$script_fancybox = '';
+							$script_prettyPhoto = '';
+						} else if($popup_gallery == 'lb'){
                         	echo $script_lightbox;
-						}else{
+						} elseif($popup_gallery == 'fb') {
 							echo $script_fancybox;
+						} else {
+							echo $script_prettyPhoto;
 						}
                         echo '</ul>
                         </div>

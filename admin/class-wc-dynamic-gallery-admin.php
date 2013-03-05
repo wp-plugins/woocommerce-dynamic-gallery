@@ -6,6 +6,7 @@
  *
  * Table Of Contents
  *
+ * custom_types()
  * wc_dynamic_gallery_set_setting()
  * __construct()
  * on_add_tab()
@@ -14,16 +15,26 @@
  * get_tab_in_view()
  * init_form_fields()
  * save_settings()
+ * reset_products_galleries_activate()
  * setting()
+ * wc_dynamic_gallery_width()
  * wc_dynamic_gallery_extension()
  * wc_dynamic_gallery_upgrade_area_start()
  * wc_dynamic_gallery_upgrade_area_end()
  * plugin_extra_links()
  */
 class WC_Dynamic_Gallery {
+	public function custom_types() {
+		$custom_type = array('wc_dynamic_gallery_width');
+		
+		return $custom_type;
+	}
 	public function wc_dynamic_gallery_set_setting($reset=false, $free_version=false){
 		global $wpdb;
-		if( ( trim(get_option('product_gallery_width')) == '' || $reset) && !$free_version){
+		if( ( get_option('wc_dgallery_activate') === false || $reset) && !$free_version ){
+			update_option('wc_dgallery_activate','yes');
+		}
+		if( ( trim(get_option('product_gallery_width')) == '' || $reset) && !$free_version ){
 			update_option('product_gallery_width','320');
 		}
 		if( (trim(get_option('product_gallery_height')) == '' || $reset) && !$free_version ){
@@ -72,7 +83,7 @@ class WC_Dynamic_Gallery {
 			update_option('bg_nav_text_color','#886bab');
 		}
 		if( trim(get_option('popup_gallery')) == '' || $reset ){
-			update_option('popup_gallery','fb');
+			update_option('popup_gallery','prettyphoto');
 		}
 		if( trim(get_option('enable_gallery_thumb')) == '' || $reset ){
 			update_option('enable_gallery_thumb','yes');
@@ -115,6 +126,11 @@ class WC_Dynamic_Gallery {
         	'dynamic_gallery' => __('Dynamic Gallery', 'woothemes')
         );
         add_action('woocommerce_settings_tabs', array(&$this, 'on_add_tab'), 10);
+		
+		// add custom type to woocommerce fields
+		foreach ($this->custom_types() as $custom_type) {
+			add_action('woocommerce_admin_field_'.$custom_type, array(&$this, $custom_type) );
+		}
 
         // Run these actions when generating the settings tabs.
         foreach ( $this->settings_tabs as $name => $label ) {
@@ -134,6 +150,9 @@ class WC_Dynamic_Gallery {
 	}
 	
 	function wc_dynamic_gallery_add_script(){
+		global $woocommerce;
+		$current_db_version = get_option( 'woocommerce_db_version', null );
+		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('farbtastic');
 		wp_enqueue_style('farbtastic');
@@ -150,6 +169,14 @@ class WC_Dynamic_Gallery {
 			
 		wp_enqueue_style( 'woocommerce_fancybox_styles', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.css' );
 		wp_enqueue_script( 'fancybox', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.min.js', array(), false, true );
+		
+		//if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
+			wp_enqueue_style( 'woocommerce_prettyPhoto_css', WOO_DYNAMIC_GALLERY_JS_URL . '/prettyPhoto/prettyPhoto.css');
+			wp_enqueue_script( 'prettyPhoto', WOO_DYNAMIC_GALLERY_JS_URL . '/prettyPhoto/jquery.prettyPhoto'.$suffix.'.js', array(), false, true);
+		//} else {
+		//	wp_enqueue_style( 'woocommerce_prettyPhoto_css', $woocommerce->plugin_url() . '/assets/css/prettyPhoto.css' );
+		//	wp_enqueue_script( 'prettyPhoto', $woocommerce->plugin_url() . '/assets/js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js' );
+		//}
 	}
 
     /*
@@ -200,6 +227,7 @@ class WC_Dynamic_Gallery {
 	   (function($){
 			$(function(){
 				$("#dynamic_gallery_show_variation").attr('disabled', 'disabled');
+				$("#wc_dgallery_reset_variation_activate").attr('disabled', 'disabled');
 				$("#product_gallery_auto_start").attr('disabled', 'disabled');
 				$("#product_gallery_speed").attr('disabled', 'disabled');
 				$("#product_gallery_effect").attr('disabled', 'disabled');
@@ -265,12 +293,7 @@ class WC_Dynamic_Gallery {
 	function init_form_fields() {
 		global $wpdb;
 		$woo_dynamic_gallery = wp_create_nonce("woo_dynamic_gallery");
-		
-		$with_type_html = '<select name="width_type" id="width_type" style="margin: 0px; height: 21px;">
-          <option value="%">%</option>
-          <option value="px" selected="selected">px</option>
-        </select> <span class="description">'.__('Set at 100 and choose % to activate responsive gallery (Pro version feature)', 'woo_dgallery').'</span>';
-		
+				
   		// Define settings			
      	$this->fields['dynamic_gallery'] = apply_filters('woocommerce_dynamic_gallery_settings_fields', array(
       		array(
@@ -280,12 +303,29 @@ class WC_Dynamic_Gallery {
           		'id' => 'dynamic_gallery_settings_start'
            	),
 			array(  
+				'name' 		=> __( 'Gallery Activation Default', 'woo_dgallery' ),
+				'desc' 		=> '<em class="description">'.__( 'Checked = Gallery Activated on Product Pages. Unchecked = Decativated. Note: Changing this setting will not over-ride any custom Gallery activation settings made on single product pages.', 'woo_dgallery' ).'</em>',
+				'id' 		=> 'wc_dgallery_activate',
+				'std' 		=> '1',
+				'default'	=> 'yes',
+				'type' 		=> 'checkbox',
+			),
+			array(  
+				'name' 		=> __( 'Reset Activation to default', 'woo_dgallery' ),
+				'desc' 		=> '<em class="description">'.__( "Checked this box and 'Save Changes' to reset ALL products to the default 'Gallery Activation' status you set above including ALL individual custom Product Page Gallery activation settings.", 'woo_dgallery' ).'</em>',
+				'id' 		=> 'wc_dgallery_reset_galleries_activate',
+				'std' 		=> '0',
+				'default'	=> 'no',
+				'type' 		=> 'checkbox',
+			),
+			array(  
 				'name' => __( 'Gallery width', 'woo_dgallery' ),
-				'desc' 		=> $with_type_html,
+				'desc' 		=> __('Set at 100 and choose % to activate responsive gallery (Pro version feature)', 'woo_dgallery'),
 				'id' 		=> 'product_gallery_width',
-				'type' 		=> 'text',
+				'type' 		=> 'wc_dynamic_gallery_width',
 				'css' 		=> 'width:7em;',
-				'std' 		=> '320'
+				'std' 		=> '320',
+				'default'	=> '320'
 			),
 			array(  
 				'name' => __( 'Gallery height', 'woo_dgallery' ),
@@ -293,7 +333,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'product_gallery_height',
 				'type' 		=> 'text',
 				'css' 		=> 'width:7em;',
-				'std' 		=> '215'
+				'std' 		=> '215',
+				'default'	=> '215'
 			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_settings_end'),
 			array(
@@ -309,19 +350,30 @@ class WC_Dynamic_Gallery {
           		'id' => 'dynamic_gallery_settings_start'
            	),
 			array(  
-				'name' 		=> __( 'Product Variation images', 'woo_dgallery' ),
-				'desc' 		=> __( 'Show Product Variation images in Gallery. Can disable this feature of individual products from product edit page.', 'woo_dgallery' ),
+				'name' 		=> __( 'Variations Activation Default', 'woo_dgallery' ),
+				'desc' 		=> '<em class="description">'.__( 'Checked = Variation Images Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Variation Images activation settings made on single product pages.', 'woo_dgallery' ).'</em>',
 				'id' 		=> 'dynamic_gallery_show_variation',
 				'std' 		=> '0',
+				'default'	=> 'no',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> 'start'
 			),
+			array(  
+				'name' 		=> __( 'Reset Activation to default', 'woo_dgallery' ),
+				'desc' 		=> '<em class="description">'.__( "Checked this box and 'Save Changes' to reset ALL products to the default 'Variations Activation' status you set above. NOTE:  ALL individual custom Product Page Variation Images Activation settings will be changed to the default.", 'woo_dgallery' ).'</em>',
+				'id' 		=> 'wc_dgallery_reset_variation_activate',
+				'std' 		=> '0',
+				'default'	=> 'no',
+				'type' 		=> 'checkbox',
+			),
+			
 			array(  
 				'name' => __( 'Auto start', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'product_gallery_auto_start',
 				'css' 		=> 'width:7em;',
-				'std' 		=> 'true',
+				'std' 		=> '1',
+				'default'	=> 'true',
 				'type' 		=> 'select',
 				'options' => array( 
 					'false'  			=> __( 'False', 'woo_dgallery' ),
@@ -335,7 +387,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'product_gallery_speed',
 				'type' 		=> 'text',
 				'css' 		=> 'width:7em;',
-				'std' 		=> '5'
+				'std' 		=> '5',
+				'default'	=> '5'
 			),
 			array(  
 				'name' => __( 'Slide transition effect', 'woo_dgallery' ),
@@ -343,6 +396,7 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'product_gallery_effect',
 				'css' 		=> 'width:7em;',
 				'std' 		=> 'slide-hori',
+				'default'	=> 'slide-hori',
 				'type' 		=> 'select',
 				'options' => array( 
 					'none'  			=> __( 'None', 'woo_dgallery' ),
@@ -360,6 +414,7 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'product_gallery_animation_speed',
 				'css' 		=> 'width:7em;',
 				'std' 		=> '2',
+				'default'	=> '2',
 				'type' 		=> 'select',
 				'options' => array( 
 					'1'  			=> __( '1', 'woo_dgallery' ),
@@ -381,6 +436,7 @@ class WC_Dynamic_Gallery {
 				'desc' 		=> __( '<em class="description">Check to auto deactivate image transition effect when only 1 image is loaded to gallery.</em>', 'woo_dgallery' ),
 				'id' 		=> 'dynamic_gallery_stop_scroll_1image',
 				'std' 		=> '0',
+				'default'	=> 'no',
 				'type' 		=> 'checkbox',
 			),
 			
@@ -390,7 +446,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'bg_image_wrapper',
 				'type' 		=> 'color',
 				'css' 		=> 'width:7em;text-transform: uppercase;',
-				'std' 		=> '#FFFFFF'
+				'std' 		=> '#FFFFFF',
+				'default'	=> '#FFFFFF'
 			),
 			array(  
 				'name' => __( 'Border colour', 'woo_dgallery' ),
@@ -398,16 +455,19 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'border_image_wrapper_color',
 				'type' 		=> 'color',
 				'css' 		=> 'width:7em;text-transform: uppercase;',
-				'std' 		=> '#CCCCCC'
+				'std' 		=> '#CCCCCC',
+				'default'	=> '#CCCCCC'
 			),array(  
 				'name' => __( 'Gallery popup', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'popup_gallery',
 				'css' 		=> 'width:7em;',
-				'std' 		=> 'fb',
+				'std' 		=> 'prettyphoto',
+				'default'	=> 'prettyphoto',
 				'type' 		=> 'select',
 				'options' => array( 
-					'fb'			=> __( 'Fancybox', 'woo_dgallery' ),
+					'prettyphoto'	=> __( 'PrettyPhoto', 'woo_dgallery' ),
+					'fb'  			=> __( 'Fancybox', 'woo_dgallery' ),
 					'lb'			=> __( 'Lightbox', 'woo_dgallery' ),
 					'deactivate'	=> __( 'Deactivate', 'woo_dgallery' ),
 				),
@@ -429,6 +489,7 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'caption_font',
 				'css' 		=> 'width:7em;',
 				'std' 		=> 'Arial, sans-serif',
+				'default'	=> 'Arial, sans-serif',
 				'type' 		=> 'select',
 				'options' => array( 
 					'Arial, sans-serif'  			=> __( 'Arial', 'woo_dgallery' ),
@@ -457,6 +518,7 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'caption_font_size',
 				'css' 		=> 'width:7em;',
 				'std' 		=> '12px',
+				'default'	=> '12px',
 				'type' 		=> 'select',
 				'options' => array( 
 					'9px'  				=> __( '9px', 'woo_dgallery' ),
@@ -490,6 +552,7 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'caption_font_style',
 				'css' 		=> 'width:7em;',
 				'std' 		=> 'normal',
+				'default'	=> 'normal',
 				'type' 		=> 'select',
 				'options' => array( 
 					'normal'  				=> __( 'Normal', 'woo_dgallery' ),
@@ -505,7 +568,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'product_gallery_text_color',
 				'type' 		=> 'color',
 				'css' 		=> 'width:7em;text-transform: uppercase;',
-				'std' 		=> '#FFFFFF'
+				'std' 		=> '#FFFFFF',
+				'default'	=> '#FFFFFF'
 			),
 			array(  
 				'name' => __( 'Background', 'woo_dgallery' ),
@@ -513,7 +577,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'product_gallery_bg_des',
 				'type' 		=> 'color',
 				'css' 		=> 'width:7em;text-transform: uppercase;',
-				'std' 		=> '#000000'
+				'std' 		=> '#000000',
+				'default'	=> '#000000'
 			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_caption_end'),
 			
@@ -527,7 +592,8 @@ class WC_Dynamic_Gallery {
 				'name' 		=> __( 'Control', 'woo_dgallery' ),
 				'desc' 		=> __( 'Enable Nav bar Control', 'woo_dgallery' ),
 				'id' 		=> 'product_gallery_nav',
-				'std' 		=> 'yes',
+				'std' 		=> '1',
+				'default'	=> 'yes',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> 'start'
 			),
@@ -537,6 +603,7 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'navbar_font',
 				'css' 		=> 'width:7em;',
 				'std' 		=> 'Arial, sans-serif',
+				'default'	=> 'Arial, sans-serif',
 				'type' 		=> 'select',
 				'options' => array( 
 					'Arial, sans-serif'  			=> __( 'Arial', 'woo_dgallery' ),
@@ -565,6 +632,7 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'navbar_font_size',
 				'css' 		=> 'width:7em;',
 				'std' 		=> '13px',
+				'default'	=> '13px',
 				'type' 		=> 'select',
 				'options' => array( 
 					'9px'  				=> __( '9px', 'woo_dgallery' ),
@@ -598,6 +666,7 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'navbar_font_style',
 				'css' 		=> 'width:7em;',
 				'std' 		=> 'bold',
+				'default'	=> 'bold',
 				'type' 		=> 'select',
 				'options' => array( 
 					'normal'  				=> __( 'Normal', 'woo_dgallery' ),
@@ -613,7 +682,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'bg_nav_color',
 				'type' 		=> 'color',
 				'css' 		=> 'width:7em;text-transform: uppercase;',
-				'std' 		=> '#FFFFFF'
+				'std' 		=> '#FFFFFF',
+				'default'	=> '#FFFFFF'
 			),
 			array(  
 				'name' => __( 'Text', 'woo_dgallery' ),
@@ -621,7 +691,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'bg_nav_text_color',
 				'type' 		=> 'color',
 				'css' 		=> 'width:7em;text-transform: uppercase;',
-				'std' 		=> '#000000'
+				'std' 		=> '#000000',
+				'default'	=> '#000000'
 			),
 			array(  
 				'name' => __( 'Container height', 'woo_dgallery' ),
@@ -629,7 +700,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'navbar_height',
 				'type' 		=> 'text',
 				'css' 		=> 'width:7em;',
-				'std' 		=> '25'
+				'std' 		=> '25',
+				'default'	=> '25'
 			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_navbar_end'),
 			
@@ -643,7 +715,8 @@ class WC_Dynamic_Gallery {
 				'name' 		=> __( 'Control', 'woo_dgallery' ),
 				'desc' 		=> __( 'Enable lazy-load scroll', 'woo_dgallery' ),
 				'id' 		=> 'lazy_load_scroll',
-				'std' 		=> 'yes',
+				'std' 		=> '1',
+				'default'	=> 'yes',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> 'start'
 			),
@@ -653,7 +726,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'transition_scroll_bar',
 				'type' 		=> 'color',
 				'css' 		=> 'width:7em;text-transform: uppercase;',
-				'std' 		=> '#000000'
+				'std' 		=> '#000000',
+				'default'	=> '#000000'
 			),
             array('type' => 'sectionend', 'id' => 'dynamic_gallery_lazyload_end'),
 			
@@ -668,6 +742,7 @@ class WC_Dynamic_Gallery {
 				'desc' 		=> __( 'Enable thumbnail gallery', 'woo_dgallery' ),
 				'id' 		=> 'enable_gallery_thumb',
 				'std' 		=> '1',
+				'default'	=> 'yes',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> 'start'
 			),
@@ -676,6 +751,7 @@ class WC_Dynamic_Gallery {
 				'desc' 		=> __( "Check to hide thumbnail when only 1 image is loaded to gallery.", 'woo_dgallery' ),
 				'id' 		=> 'dynamic_gallery_hide_thumb_1image',
 				'std' 		=> '1',
+				'default'	=> 'yes',
 				'type' 		=> 'checkbox',
 			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_thumb_end'),
@@ -694,7 +770,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'thumb_width',
 				'type' 		=> 'text',
 				'css' 		=> 'width:7em;',
-				'std' 		=> '105'
+				'std' 		=> '105',
+				'default'	=> '105'
 			),
 			array(  
 				'name' => __( 'Thumbnail height', 'woo_dgallery' ),
@@ -702,7 +779,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'thumb_height',
 				'type' 		=> 'text',
 				'css' 		=> 'width:7em;',
-				'std' 		=> '75'
+				'std' 		=> '75',
+				'default'	=> '75'
 			),
 			array(  
 				'name' => __( 'Thumbnail spacing', 'woo_dgallery' ),
@@ -710,7 +788,8 @@ class WC_Dynamic_Gallery {
 				'id' 		=> 'thumb_spacing',
 				'type' 		=> 'text',
 				'css' 		=> 'width:7em;',
-				'std' 		=> '2'
+				'std' 		=> '2',
+				'default'	=> '2'
 			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_thumb_end'),
 			
@@ -733,7 +812,21 @@ class WC_Dynamic_Gallery {
         $current_tab = $this->get_tab_in_view(current_filter(), 'woocommerce_update_options_');
 
 		woocommerce_update_options($woocommerce_settings[$current_tab]);
+
+		// save custom type value
+		update_option('product_gallery_width', (int) $_REQUEST['product_gallery_width']);
 		WC_Dynamic_Gallery::wc_dynamic_gallery_set_setting(true, true);
+		update_option('wc_dgallery_reset_galleries_activate', 'no');
+		if ( isset($_POST['wc_dgallery_reset_galleries_activate']) && $_POST['wc_dgallery_reset_galleries_activate'] == '1') {
+			$this->reset_products_galleries_activate();
+		}
+		update_option('wc_dgallery_reset_variation_activate', 'no');
+		
+	}
+	
+	function reset_products_galleries_activate() {
+		global $wpdb;
+		$wpdb->query( "DELETE FROM ".$wpdb->postmeta." WHERE meta_key='_actived_d_gallery' " );
 	}
 
     /** Helper functions ***************************************************** */
@@ -743,6 +836,75 @@ class WC_Dynamic_Gallery {
      */
     public function setting($key) {
 		return get_option($key);
+	}
+	
+	function wc_dynamic_gallery_width($value) {
+		global $woocommerce;
+		// Custom attribute handling
+		$custom_attributes = array();
+
+		if ( ! empty( $value['custom_attributes'] ) && is_array( $value['custom_attributes'] ) )
+			foreach ( $value['custom_attributes'] as $attribute => $attribute_value )
+				$custom_attributes[] = esc_attr( $attribute ) . '="' . esc_attr( $attribute_value ) . '"';
+
+		// Description handling
+		if ( $value['desc_tip'] === true ) {
+			$description = '';
+			$tip = $value['desc'];
+		} elseif ( ! empty( $value['desc_tip'] ) ) {
+			$description = $value['desc'];
+			$tip = $value['desc_tip'];
+		} elseif ( ! empty( $value['desc'] ) ) {
+			$description = $value['desc'];
+			$tip = '';
+		} else {
+			$description = $tip = '';
+		}
+		
+		if ( $description && in_array( $value['type'], array( 'textarea', 'radio' ) ) ) {
+			$description = '<p style="margin-top:0">' . wp_kses_post( $description ) . '</p>';
+		} elseif ( $description ) {
+			$description = '<span class="description">' . wp_kses_post( $description ) . '</span>';
+		}
+
+		if ( $tip && in_array( $value['type'], array( 'checkbox' ) ) ) {
+
+			$tip = '<p class="description">' . $tip . '</p>';
+
+		} elseif ( $tip ) {
+
+			$tip = '<img class="help_tip" data-tip="' . esc_attr( $tip ) . '" src="' . $woocommerce->plugin_url() . '/assets/images/help.png" height="16" width="16" />';
+
+		}
+		
+		$option_value = get_option($value['id']);
+		if (!$option_value && isset($value['default']) ) $option_value = $value['default'];
+		elseif (!$option_value && isset($value['std']) ) $option_value = $value['std'];
+		elseif (!$option_value) $option_value = 320;
+		
+	?>
+    	<tr valign="top">
+			<th scope="row" class="titledesc">
+				<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['name'] ); ?></label>
+				<?php echo $tip; ?>
+			</th>
+			<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
+					<input
+                    		name="<?php echo esc_attr( $value['id'] ); ?>"
+                    		id="<?php echo esc_attr( $value['id'] ); ?>"
+                    		type="text"
+                    		style="<?php echo esc_attr( $value['css'] ); ?>"
+                    		value="<?php echo esc_attr( $option_value ); ?>"
+                    		class="<?php echo esc_attr( $value['class'] ); ?>"
+                    		<?php echo implode( ' ', $custom_attributes ); ?>
+                    		/> 
+					<select name="woo_dg_width_type" id="woo_dg_width_type" style="margin: 0px; height: 21px;">
+          <option value="%">%</option>
+          <option value="px" selected="selected">px</option>
+        </select> <?php echo $description; ?>
+			</td>
+		</tr>
+    <?php
 	}
 	
 	function wc_dynamic_gallery_extension() {

@@ -52,7 +52,55 @@ class WC_Gallery_Display_Class{
 		 * Single Product Image
 		 */
 		global $post, $woocommerce;
+		$current_db_version = get_option( 'woocommerce_db_version', null );
 		$lightbox_class = 'lightbox';
+		
+		// Get all attached images to this product
+						
+		$featured_img_id = (int)get_post_meta($post->ID, '_thumbnail_id', true);
+		$attached_images = (array)get_posts( array(
+			'post_type'   => 'attachment',
+			'post_mime_type' => 'image',
+			'numberposts' => -1,
+			'post_status' => null,
+			'post_parent' => $post->ID ,
+			'orderby'     => 'menu_order',
+			'order'       => 'ASC',
+			'exclude'	  => array($featured_img_id),
+		) );
+		
+		
+		$attached_thumb = array();
+		if ($featured_img_id > 0) {
+			$feature_image_data = get_post( $featured_img_id );
+				
+			if ( $feature_image_data && $feature_image_data->post_parent == $post->ID ) {
+				if ( get_post_meta( $featured_img_id, '_woocommerce_exclude_image', true ) != 1 ) {
+					$attached_thumb[0] = $feature_image_data;
+					$all_image_thumb[0] = $feature_image_data;
+				}
+			} else {
+				$attached_thumb[0] = $feature_image_data;
+				$all_image_thumb[0] = $feature_image_data;
+			}
+		}
+		if($attached_images && count($attached_images) > 0 ){
+			$i = 0;
+			foreach($attached_images as $key=>$object){
+				if (get_post_meta( $object->ID, '_woocommerce_exclude_image', true ) == 1) continue;
+				
+				$i++;
+				$attached_thumb[$i] = $object;
+			}	
+		}
+		ksort($attached_thumb);
+		$product_id .= '_'.rand(100,10000);
+		$have_image = false;
+		$attached_images = array();
+		if(is_array($attached_thumb) && count($attached_thumb) > 0) {
+			$attached_images = $attached_thumb;
+			$have_image = true;
+		}
 		?>
         <div class="images gallery_container">
           <div class="product_gallery">
@@ -302,6 +350,12 @@ class WC_Gallery_Display_Class{
 			}
 			
 			echo '
+			/* Pretty Photo style */
+			.pp_content_container .pp_gallery {
+				display:block !important;
+				opacity: 1 !important;
+				filter: alpha(opacity = 100) !important;
+			}
             </style>';
             
             echo '<script type="text/javascript">
@@ -352,52 +406,32 @@ class WC_Gallery_Display_Class{
                 <div class="ad-controls"> </div>
                   <div class="ad-nav">
                     <div class="ad-thumbs">
-                      <ul class="ad-thumb-list">';
-                        // Get all attached images to this product
-                        
-						
-                        $thumbid = get_post_thumbnail_id($post->ID);
-						
-						$attached_images = (array)get_posts( array(
-							'post_type'   => 'attachment',
-							'post_mime_type' => 'image',
-							'numberposts' => -1,
-							'post_status' => null,
-							'post_parent' => $post->ID ,
-							'orderby'     => 'menu_order',
-							'order'       => 'ASC',
-						) );
-
-                        if ( !empty( $attached_images ) ){	
-                            $id_thumb = array();
-                            if(has_post_thumbnail($post->ID)) {
-								
-                                $id_thumb[] = $thumbid;
-                            }
-                            foreach($attached_images as $icon_img){
-                                $id_thumb[] = $icon_img->ID;
-                            }
-                        }
-                        
+                      <ul class="ad-thumb-list">';                        
                         
                         $script_lightbox = '';
 						$script_fancybox = '';
+						$script_prettyPhoto = '';
+						$prettyPhoto_images = '[';
+						$prettyPhoto_titles = '[';
                         if ( !empty( $attached_images ) ){	
                             $i = 0;
                             $display = '';
-							
-							
 			
                             if(is_array($attached_images) && count($attached_images)>0){
                                 $script_lightbox .= '<script type="text/javascript">';
 								$script_fancybox .= '<script type="text/javascript">';
+								$script_prettyPhoto .= '<script type="text/javascript">';
                                 $script_lightbox .= '(function($){';		  
-								$script_fancybox .= '(function($){';		  
+								$script_fancybox .= '(function($){';	
+								$script_prettyPhoto .= '(function($){';
                                 $script_lightbox .= '$(function(){';
 								$script_fancybox .= '$(function(){';
+								$script_prettyPhoto .= '$(function(){';
 								$script_lightbox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 									var idx = $("#gallery_'.$post->ID.' .ad-image img").attr("idx");';
 								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
+									var idx = $("#gallery_'.$post->ID.' .ad-image img").attr("idx");';
+								$script_prettyPhoto .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 									var idx = $("#gallery_'.$post->ID.' .ad-image img").attr("idx");';
                                 if(count($attached_images) <= 1 ){
                                     $script_lightbox .= '$.lightbox(';
@@ -406,13 +440,16 @@ class WC_Gallery_Display_Class{
                                     $script_lightbox .= '$.lightbox([';
 									$script_fancybox .= '$.fancybox([';
                                 }
+								if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
+									$script_prettyPhoto .= '$().prettyPhoto({modals: "true", social_tools: false, theme: "light_square"}); $.prettyPhoto.open(';
+								} else {
+									$script_prettyPhoto .= '$().prettyPhoto({modals: "true", social_tools: false, theme: "pp_woocommerce"}); $.prettyPhoto.open(';
+								}
                                 $common = '';
                                 
                                 
-                                if($id_thumb){
 								$idx = 0;
                                 foreach($attached_images as $item_thumb){
-									if ( get_post_meta( $item_thumb->ID, '_woocommerce_exclude_image', true ) == 1 ) continue;
                                     $li_class = '';
                                     if($i == 0){ $li_class = 'first_item';}elseif($i == count($attached_images)-1){$li_class = 'last_item';}
                                     $image_attribute = wp_get_attachment_image_src( $item_thumb->ID, 'full');
@@ -459,41 +496,65 @@ class WC_Gallery_Display_Class{
                                         $script_lightbox .= $common.'"'.$image_lager_default_url.'"';
 										$script_fancybox .= $common.'{href:\''.$image_lager_default_url.'\',title:\'\'}';
                                     }
+									$prettyPhoto_images .= $common.'"'.$image_lager_default_url.'"';
+									$prettyPhoto_titles .= $common.'"'.$img_description.'"';
                                     $common = ',';
                                     $i++;
 									$idx++;
-                                 }
 								}
-								 //$.fancybox([ {href : 'img1.jpg', title : 'Title'}, {href : 'img2.jpg', title : 'Title'} ])
+								$prettyPhoto_images .= ']';
+								$prettyPhoto_titles .= ']';
+																
                                 if(count($attached_images) <= 1 ){
                                     $script_lightbox .= ');';
 									$script_fancybox .= ');';
+									$script_prettyPhoto .= $prettyPhoto_images. ', '. $prettyPhoto_titles .');';
                                 }else{
                                     $script_lightbox .= ']);';
 									$script_fancybox .= '],{
         \'index\': idx
       });';
+	  								$script_prettyPhoto .= $prettyPhoto_images. ', '. $prettyPhoto_titles .'); $.prettyPhoto.changePage( parseInt(idx) );';
                                 }
                                 $script_lightbox .= 'ev.preventDefault();';
                                 $script_lightbox .= '} });';
 								$script_fancybox .= '} });';
+								$script_prettyPhoto .= '} });';
                                 $script_lightbox .= '});';
 								$script_fancybox .= '});';
+								$script_prettyPhoto .= '});';
                                 $script_lightbox .= '})(jQuery);';
 								$script_fancybox .= '})(jQuery);';
+								$script_prettyPhoto .= '})(jQuery);';
                                 $script_lightbox .= '</script>';
 								$script_fancybox .= '</script>';
+								$script_prettyPhoto .= '</script>';
+								
+								if (!$have_image) {
+									$script_lightbox = '';
+									$script_fancybox = '';
+									$script_prettyPhoto = '';
+									echo '<li style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;"> <a style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" class="" rel="gallery_product_'.$product_id.'" href="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png"> <div><img style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" src="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png" class="image" alt=""> </div></a> </li>';
+								}
                             }
                         }else{
                             echo '<li style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;"> <a style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" class="" rel="gallery_product_'.$post->ID.'" href="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png"> <div><img style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" src="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png" class="image" alt=""> </div></a> </li>';	
 								
                         }
-						if($popup_gallery == 'lb'){
+						if ($popup_gallery == 'deactivate') {
+							$script_lightbox = '';
+							$script_fancybox = '';
+							$script_prettyPhoto = '';
+						} else if($popup_gallery == 'lb'){
                         	echo $script_lightbox;
-						}else{
+						} elseif($popup_gallery == 'fb') {
 							echo $script_fancybox;
+						} else {
+							echo $script_prettyPhoto;
 						}
+						
                         echo '</ul>
+						
                         </div>
                       </div>
                     </div>';

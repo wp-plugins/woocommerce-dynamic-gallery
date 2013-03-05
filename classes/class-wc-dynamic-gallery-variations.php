@@ -7,6 +7,7 @@
  * Table Of Contents
  *
  * media_fields()
+ * save_media_fields()
  */
 class WC_Dynamic_Gallery_Variations{
 	
@@ -16,11 +17,23 @@ class WC_Dynamic_Gallery_Variations{
 		
 		$product_id = $_GET['post_id'];
 		
-		if( get_post_type($product_id) == 'product' && wp_attachment_is_image($attachment->ID) ) {
+		if( isset($_GET['tab']) && $_GET['tab'] == 'gallery' && get_post_type($product_id) == 'product' && wp_attachment_is_image($attachment->ID) ) {
 			
-			$woocommerce_exclude_image_fields = $form_fields['woocommerce_exclude_image'];
-			
-			$form_fields['woocommerce_exclude_image']['helps'] = __('Enabling this option will hide it from the product page image gallery.', 'woocommerce').' '.__('If assigned to variations below the image will show when option is selected. (Show Product Variations in Gallery is a', 'woo_dgallery').' <a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/" target="_blank">'.__('Pro Version', 'woo_dgallery').'</a> '.__('only feature', 'woo_dgallery').')';
+			if (!isset($form_fields['woocommerce_exclude_image'])) {
+				$checked_exclude_image = '';
+				$exclude_image = (int)get_post_meta($attachment->ID, '_woocommerce_exclude_image', true);
+				if ($exclude_image == 1) $checked_exclude_image = 'checked="checked"';
+				$form_fields['woocommerce_exclude_image'] = array(
+						'label' => __('Exclude image', 'woo_dgallery'),
+						'input' => 'html',
+						'html' =>  '<label><input type="hidden" name="woo_dynamic_gallery_exclude_image" value="1" /><input type="checkbox" '.$checked_exclude_image.' name="attachments['.$attachment->ID.'][woocommerce_exclude_image]" id="attachments['.$attachment->ID.'][woocommerce_exclude_image]" /> '.__('Enabling this option will hide it from the product page image gallery.', 'woo_dgallery').' '.__('If assigned to variations below the image will show when option is selected.', 'woo_dgallery').'</label>',
+						'value' => '',
+						'helps' => '',
+				);
+				
+			} else {
+				$form_fields['woocommerce_exclude_image']['helps'] = __('Enabling this option will hide it from the product page image gallery.', 'woo_dgallery').' '.__('If assigned to variations below the image will show when option is selected.', 'woo_dgallery');
+			}
 					
 			$attributes = (array) maybe_unserialize(get_post_meta($product_id, '_product_attributes', true) );
 						
@@ -28,7 +41,7 @@ class WC_Dynamic_Gallery_Variations{
 			
 			if (is_array( $attributes ) && count($attributes) > 0 ) {
 				foreach($attributes as $attribute => $data) {
-					if($data['is_variation']) {
+					if(isset($data['is_variation']) && $data['is_variation']) {
 						$have_variation = true;
 						break;
 					}
@@ -44,8 +57,11 @@ class WC_Dynamic_Gallery_Variations{
 					);
 				foreach($attributes as $attribute => $data) {
 					
-					if($data['is_variation']) {
-					
+					if(isset($data['is_variation']) && $data['is_variation']) {
+						$html = "<style>.in_variations_".$attribute." {border-width:0 2px;border-style:solid ;border-color:#E6DB55;}</style>";
+						
+						$html .= "<input disabled='disabled' type='checkbox' class='assign_image_all_variations' id='".$attachment->ID."_".$attribute."' name='".$attachment->ID."_".$attribute."' value=''> <label for='".$attachment->ID."_".$attribute."'><strong>".__('Apply to All', 'woo_dgallery')."</strong></label><br />";
+						
 						if (strpos($data['name'], 'pa_') !== false) {
 							
 							$terms = wp_get_post_terms( $product_id, $data['name'] );
@@ -58,20 +74,21 @@ class WC_Dynamic_Gallery_Variations{
 							$data['name'] = str_replace('pa_','',$data['name']);
 							$data['name'] = ucwords($data['name']);
 							
+							$i = 0; foreach($values as $slug => $value) {
+								$html .= "&nbsp;- &nbsp; <input disabled='disabled' class='".$attachment->ID."_".$attribute."' type='checkbox' id='".$attachment->ID."_".$attribute."_".$i."' name='attachments[".$attachment->ID."][in_variations][".$attribute."][".$i."]' value='".$slug."' > <label for='".$attachment->ID."_".$attribute."_".$i."'>".$value."</label><br />";
+							$i++; }
+							
 						} else {
-				
+							
 							$values = explode('|', $data['value']);
 							
-						} // End check to see if attribute is defined through woocomm, or manually
-						
-							$html = "<style>.in_variations_".$attribute." {border-width:0 2px;border-style:solid ;border-color:#E6DB55;}</style>";
-							
-							$html .= "<input disabled='disabled' type='checkbox' id='".$attachment->ID."_".$attribute."' name='".$attachment->ID."_".$attribute."' value=''> <label for='".$attachment->ID."_".$attribute."'><strong>".__('Apply to All', 'woo_dgallery')."</strong></label><br />";
-							
 							$i = 0; foreach($values as $value) {
-								$slug = sanitize_title($value);
-								$html .= "&nbsp;- &nbsp; <input disabled='disabled' type='checkbox' id='".$attachment->ID."_".$attribute."_".$i."'> <label for='".$attachment->ID."_".$attribute."_".$i."'>".$value."</label><br />";
+								$slug = esc_attr($value);
+								$html .= "&nbsp;- &nbsp; <input disabled='disabled' class='".$attachment->ID."_".$attribute."' type='checkbox' id='".$attachment->ID."_".$attribute."_".$i."' name='attachments[".$attachment->ID."][in_variations][".$attribute."][".$i."]' value='".$slug."' > <label for='".$attachment->ID."_".$attribute."_".$i."'>".$value."</label><br />";
 							$i++; }
+				
+							
+						} // End check to see if attribute is defined through woocomm, or manually
 						
 							$form_fields['in_variations_'.$attribute] = array(
 								'label' => $data['name'],
@@ -93,6 +110,21 @@ class WC_Dynamic_Gallery_Variations{
 		} // if('product')
 	
 		return $form_fields;
+	}
+	
+	function save_media_fields( $post, $attachment ) {
+		if (substr($post['post_mime_type'], 0, 5) == 'image') {
+			if (isset($_REQUEST['woo_dynamic_gallery_exclude_image'])) {
+				if (isset($_REQUEST['attachments'][$post['ID']]['woocommerce_exclude_image'])) :
+					delete_post_meta( (int) $post['ID'], '_woocommerce_exclude_image' );
+					update_post_meta( (int) $post['ID'], '_woocommerce_exclude_image', 1);
+				else :
+					delete_post_meta( (int) $post['ID'], '_woocommerce_exclude_image' );
+					update_post_meta( (int) $post['ID'], '_woocommerce_exclude_image', 0);
+				endif;
+			}
+		}
+		return $post;
 	}
 }
 ?>
