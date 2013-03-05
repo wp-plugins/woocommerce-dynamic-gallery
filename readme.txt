@@ -46,7 +46,7 @@ Once you have the plugin installed and activated please refer to the plugins com
 
 When you install WooCommerce Dynamic Gallery you will see on the admin panel all of the added functionality that the PRO Version offers. The plugin is designed so that upgrading is completely seamless. Nothing changes except all the features of  WooCommerce Dynamic Gallery that you see on the Lite version are activated. Many thousands of WooCommerce store owners find the Free version has all the features that they need and never upgrade. If you find you want the added features and functionality that you see below and on the plugins dashboard you can upgrade at any time, completely risk free.
 
-= Pro Version Advanced Features.=
+= Pro Version Advanced Features =
 
 * The Only WooCommerce Product gallery that shows Variation images in gallery when the variation or combination of variations is selected by user.
 * Check this incredible feature out on our [DEMO SITE](http://compare.a3rev.com/shop/plain-t-shirts)

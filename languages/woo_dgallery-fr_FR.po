@@ -1,0 +1,852 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Dynamic Gallery LITE v1.0.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-05 14:52+0700\n"
+"PO-Revision-Date: 2013-03-05 14:52+0700\n"
+"Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ woothemes
+#: admin/class-wc-dynamic-gallery-admin.php:126
+msgid "Dynamic Gallery"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:300
+msgid "Gallery"
+msgstr "Galerie"
+
+#: admin/class-wc-dynamic-gallery-admin.php:306
+msgid "Gallery Activation Default"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:307
+msgid "Checked = Gallery Activated on Product Pages. Unchecked = Decativated. Note: Changing this setting will not over-ride any custom Gallery activation settings made on single product pages."
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:314
+#: admin/class-wc-dynamic-gallery-admin.php:362
+msgid "Reset Activation to default"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:315
+msgid "Checked this box and 'Save Changes' to reset ALL products to the default 'Gallery Activation' status you set above including ALL individual custom Product Page Gallery activation settings."
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:322
+msgid "Gallery width"
+msgstr "Largeur de la galerie"
+
+#: admin/class-wc-dynamic-gallery-admin.php:323
+msgid "Set at 100 and choose % to activate responsive gallery (Pro version feature)"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:331
+msgid "Gallery height"
+msgstr "Hauteur de la galerie"
+
+#: admin/class-wc-dynamic-gallery-admin.php:353
+msgid "Variations Activation Default"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:354
+msgid "Checked = Variation Images Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Variation Images activation settings made on single product pages."
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:363
+msgid "Checked this box and 'Save Changes' to reset ALL products to the default 'Variations Activation' status you set above. NOTE:  ALL individual custom Product Page Variation Images Activation settings will be changed to the default."
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:371
+msgid "Auto start"
+msgstr "Lecture automatique"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:379
+msgid "False"
+msgstr "Non"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:380
+msgid "True"
+msgstr "Oui"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:385
+msgid "Time between transitions"
+msgstr "Temps de transition"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:394
+msgid "Slide transition effect"
+msgstr "Effet de transition"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:402
+msgid "None"
+msgstr "Aucun"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:403
+msgid "Fade"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:404
+msgid "Slide Hori"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:405
+msgid "Slide vert"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:406
+msgid "Resize"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:412
+msgid "Transition effect speed"
+msgstr "Vitesse de transition"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:420
+msgid "1"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:421
+msgid "2"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:422
+msgid "3"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:423
+msgid "4"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:424
+msgid "5"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:425
+msgid "6"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:426
+msgid "7"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:427
+msgid "8"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:428
+msgid "9"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:429
+msgid "10"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:435
+msgid "Single Image Transition"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:436
+msgid "<em class=\"description\">Check to auto deactivate image transition effect when only 1 image is loaded to gallery.</em>"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:444
+msgid "Image background colour"
+msgstr "Couleur de l’arrière plan des images"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:445
+msgid "Gallery image background colour. Default <code>#FFFFFF</code>."
+msgstr "Couleur de l’arrière plan de la galerie. Par défaut <code>#FFFFFF</code>."
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:453
+msgid "Border colour"
+msgstr "Couleur de la bordure"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:454
+#, fuzzy
+msgid "Gallery border colour. Default <code>#CCCCCC</code>."
+msgstr "Couleur de la bordure de la galerie"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:461
+msgid "Gallery popup"
+msgstr "Galerie popup"
+
+#: admin/class-wc-dynamic-gallery-admin.php:469
+msgid "PrettyPhoto"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:470
+msgid "Fancybox"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:471
+msgid "Lightbox"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:472
+msgid "Deactivate"
+msgstr ""
+
+# @ woothemes
+#: admin/class-wc-dynamic-gallery-admin.php:481
+msgid "Caption text"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:487
+#: admin/class-wc-dynamic-gallery-admin.php:601
+msgid "Font"
+msgstr "Police"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:495
+#: admin/class-wc-dynamic-gallery-admin.php:609
+msgid "Arial"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:496
+#: admin/class-wc-dynamic-gallery-admin.php:610
+msgid "Verdana"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:497
+#: admin/class-wc-dynamic-gallery-admin.php:611
+msgid "Trebuchet"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:498
+#: admin/class-wc-dynamic-gallery-admin.php:612
+msgid "Georgia"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:499
+#: admin/class-wc-dynamic-gallery-admin.php:613
+msgid "Times New Roman"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:500
+#: admin/class-wc-dynamic-gallery-admin.php:614
+msgid "Tahoma"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:501
+#: admin/class-wc-dynamic-gallery-admin.php:615
+msgid "Palatino"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:502
+#: admin/class-wc-dynamic-gallery-admin.php:616
+msgid "Helvetica*"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:503
+#: admin/class-wc-dynamic-gallery-admin.php:617
+msgid "Calibri*"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:504
+#: admin/class-wc-dynamic-gallery-admin.php:618
+msgid "Myriad Pro*"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:505
+#: admin/class-wc-dynamic-gallery-admin.php:619
+msgid "Lucida"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:506
+#: admin/class-wc-dynamic-gallery-admin.php:620
+msgid "Arial Black"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:507
+#: admin/class-wc-dynamic-gallery-admin.php:621
+msgid "Gill Sans*"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:508
+#: admin/class-wc-dynamic-gallery-admin.php:622
+msgid "Geneva*"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:509
+#: admin/class-wc-dynamic-gallery-admin.php:623
+msgid "Impact"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:510
+#: admin/class-wc-dynamic-gallery-admin.php:624
+msgid "Courier"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:511
+#: admin/class-wc-dynamic-gallery-admin.php:625
+msgid "Century Gothic"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:516
+#: admin/class-wc-dynamic-gallery-admin.php:630
+msgid "Font size"
+msgstr "Taille de la police"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:524
+#: admin/class-wc-dynamic-gallery-admin.php:638
+msgid "9px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:525
+#: admin/class-wc-dynamic-gallery-admin.php:639
+msgid "10px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:526
+#: admin/class-wc-dynamic-gallery-admin.php:640
+msgid "11px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:527
+#: admin/class-wc-dynamic-gallery-admin.php:641
+msgid "12px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:528
+#: admin/class-wc-dynamic-gallery-admin.php:642
+msgid "13px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:529
+#: admin/class-wc-dynamic-gallery-admin.php:643
+msgid "14px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:530
+#: admin/class-wc-dynamic-gallery-admin.php:644
+msgid "15px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:531
+#: admin/class-wc-dynamic-gallery-admin.php:645
+msgid "16px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:532
+#: admin/class-wc-dynamic-gallery-admin.php:646
+msgid "17px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:533
+#: admin/class-wc-dynamic-gallery-admin.php:647
+msgid "18px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:534
+#: admin/class-wc-dynamic-gallery-admin.php:648
+msgid "19px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:535
+#: admin/class-wc-dynamic-gallery-admin.php:649
+msgid "20px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:536
+#: admin/class-wc-dynamic-gallery-admin.php:650
+msgid "21px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:537
+#: admin/class-wc-dynamic-gallery-admin.php:651
+msgid "22px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:538
+#: admin/class-wc-dynamic-gallery-admin.php:652
+msgid "23px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:539
+#: admin/class-wc-dynamic-gallery-admin.php:653
+msgid "24px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:540
+#: admin/class-wc-dynamic-gallery-admin.php:654
+msgid "25px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:541
+#: admin/class-wc-dynamic-gallery-admin.php:655
+msgid "26px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:542
+#: admin/class-wc-dynamic-gallery-admin.php:656
+msgid "27px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:543
+#: admin/class-wc-dynamic-gallery-admin.php:657
+msgid "28px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:544
+#: admin/class-wc-dynamic-gallery-admin.php:545
+#: admin/class-wc-dynamic-gallery-admin.php:658
+#: admin/class-wc-dynamic-gallery-admin.php:659
+msgid "29px"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:550
+#: admin/class-wc-dynamic-gallery-admin.php:664
+msgid "Font style"
+msgstr "Style de la police"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:558
+#: admin/class-wc-dynamic-gallery-admin.php:672
+msgid "Normal"
+msgstr "Normal"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:559
+#: admin/class-wc-dynamic-gallery-admin.php:673
+msgid "Italic"
+msgstr "Italique"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:560
+#: admin/class-wc-dynamic-gallery-admin.php:674
+msgid "Bold"
+msgstr "Gras"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:561
+#: admin/class-wc-dynamic-gallery-admin.php:675
+msgid "Bold/Italic"
+msgstr "Gras / Italique"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:566
+#: admin/class-wc-dynamic-gallery-admin.php:680
+#: admin/class-wc-dynamic-gallery-admin.php:724
+msgid "Colour"
+msgstr "Couleur"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:567
+msgid "Caption text color. Default <code>#FFFFFF</code>."
+msgstr "Couleur de la police de légende, par défaut <code>#FFFFFF</code>."
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:575
+msgid "Background"
+msgstr "Arrière plan"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:576
+msgid "Caption text background colour. Default <code>#000000</code>."
+msgstr "Couleur de l'arrière plan de la légende, par défaut <code>#000000</code>."
+
+# @ woothemes
+#: admin/class-wc-dynamic-gallery-admin.php:586
+msgid "Nav Bar"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:592
+#: admin/class-wc-dynamic-gallery-admin.php:715
+msgid "Control"
+msgstr "Contrôle"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:593
+msgid "Enable Nav bar Control"
+msgstr "Activer le contrôle de la barre de navigation "
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:681
+msgid "Nav bar background colour. Default <code>#FFFFFF</code>."
+msgstr "Couleur de l’arrière plan de la barre de navigation"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:689
+msgid "Text"
+msgstr "Texte"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:690
+msgid "Nav bar text color. Default <code>#000000</code>."
+msgstr "Couleur du texte de la barre de navigation, par défaut <code>#000000</code>."
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:698
+msgid "Container height"
+msgstr "Hauteur du contenu"
+
+# @ woothemes
+#: admin/class-wc-dynamic-gallery-admin.php:709
+msgid "Lazy-load scroll"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:716
+msgid "Enable lazy-load scroll"
+msgstr "Activer lazy-charge défilement"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:725
+msgid "Scroll bar colour. Default <code>#000000</code>."
+msgstr "Couleur d la barre de défilement, par défaut <code>#000000</code>."
+
+# @ woothemes
+#: admin/class-wc-dynamic-gallery-admin.php:735
+msgid "Image Thumbnails"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:741
+msgid "Show thumbnails"
+msgstr "Afficher les miniatures"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:742
+msgid "Enable thumbnail gallery"
+msgstr "Activer les vignettes de la galerie"
+
+#: admin/class-wc-dynamic-gallery-admin.php:750
+msgid "Single Image Thumbnail"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:751
+msgid "Check to hide thumbnail when only 1 image is loaded to gallery."
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:768
+msgid "Thumbnail width"
+msgstr "Largeur des miniatures"
+
+#: admin/class-wc-dynamic-gallery-admin.php:769
+#: admin/class-wc-dynamic-gallery-admin.php:778
+msgid "IMPORTANT! Do not set this value to '0' or empty. A &lt;not divisible by 0&gt; error will show instead of the Gallery if you do."
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:777
+msgid "Thumbnail height"
+msgstr "Hauteur des miniatures"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:786
+msgid "Thumbnail spacing"
+msgstr "Espacement entre les miniatures"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:796
+msgid "Preview"
+msgstr "Aperçue"
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:796
+msgid "Click here to preview gallery"
+msgstr "Cliquer ici pour afficher l'aperçue"
+
+#: admin/class-wc-dynamic-gallery-admin.php:914
+msgid "Upgrade to Dynamic Gallery Pro"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:915
+msgid "Visit the"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:915
+msgid "a3rev website"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:915
+msgid "to see all the extra features the Pro version of this plugin offers like"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:918
+msgid "Show Multiple Product Variation images in Gallery. As users selects options from the drop down menu that options product image auto shows in the Dynamic Gallery complete with caption text."
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:919
+msgid "Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up."
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:920
+msgid "Activate all of the Gallery customization settings you see here on this page to style and fine tune your product presentation."
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:921
+msgid "Option to Deactivate the Gallery on any Single product page - default WooCommerce product image will show."
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:924
+msgid "Plugin Documentation"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:925
+msgid "All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:925
+msgid "Visit the a3rev wiki."
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:926
+msgid "More a3rev Quality Plugins"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:927
+msgid "Below is a list of the a3rev plugins that are available for free download from wordpress.org"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:928
+msgid "WooCommerce Plugins"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:931
+msgid "WooCommerce Dynamic Products Gallery"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:932
+msgid "WooCommerce Predictive Search"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:933
+msgid "WooCommerce Compare Products"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:934
+msgid "WooCommerce Widget Product Slideshow"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:935
+msgid "WooCommerce Email Inquiry & Cart Options"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:935
+msgid " - Pro Version only from a3rev"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:938
+msgid "WordPress Plugins"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:941
+msgid "WordPress Email Template"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:942
+msgid "Page View Count"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:945
+msgid "WP e-Commerce Plugins"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:948
+msgid "WP e-Commerce Dynamic Gallery"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:949
+msgid "WP e-Commerce Predictive Search"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:950
+msgid "WP e-Commerce Compare Products"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:951
+msgid "WP e-Commerce Catalog Visibility & Email Inquiry"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:952
+msgid "WP e-Commerce Grid View"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:955
+msgid "Help spread the Word about this plugin"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:956
+msgid "Things you can do to help others find this plugin"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:958
+msgid "Rate this plugin 5"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:958
+msgid "on WordPress.org"
+msgstr ""
+
+#: admin/class-wc-dynamic-gallery-admin.php:959
+msgid "Mark the plugin as a fourite"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:978
+msgid "Documentation"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/class-wc-dynamic-gallery-admin.php:979
+msgid "Support"
+msgstr ""
+
+# @ woo_dgallery
+#: classes/class-wc-dynamic-gallery-metaboxes.php:33
+msgid "A3 Dynamic Image Gallery activated"
+msgstr "A3 Dynamic Image Galerie activé"
+
+# @ woo_dgallery
+#: classes/class-wc-dynamic-gallery-metaboxes.php:33
+msgid "Product Variation Images activated"
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-metaboxes.php:106
+msgid "'This image is a 'Featured Image' from the WordPress Media Library. Dynamic Gallery is showing it but you cannot edit or manage it in the Gallery Manager like images uploaded to the Gallery. Please click the red X to remove the 'feature' and upload the image to this Products Gallery and feature it. NOTE: If you feature another image from this Products Gallery this image will not show if you have not uploaded it to the Gallery.'"
+msgstr ""
+
+# @ woo_dgallery
+#: classes/class-wc-dynamic-gallery-preview.php:309
+#: classes/class-wc-dynamic-gallery.php:380
+msgid "START SLIDESHOW"
+msgstr ""
+
+# @ woo_dgallery
+#: classes/class-wc-dynamic-gallery-preview.php:310
+#: classes/class-wc-dynamic-gallery.php:381
+msgid "STOP SLIDESHOW"
+msgstr ""
+
+# @ woo_dgallery
+#: classes/class-wc-dynamic-gallery-preview.php:311
+#: classes/class-wc-dynamic-gallery.php:382
+msgid "ZOOM +"
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-variations.php:27
+msgid "Exclude image"
+msgstr ""
+
+# @ woocommerce
+#: classes/class-wc-dynamic-gallery-variations.php:29
+#: classes/class-wc-dynamic-gallery-variations.php:35
+msgid "Enabling this option will hide it from the product page image gallery."
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-variations.php:29
+#: classes/class-wc-dynamic-gallery-variations.php:35
+msgid "If assigned to variations below the image will show when option is selected."
+msgstr ""
+
+# @ woo_dgallery
+#: classes/class-wc-dynamic-gallery-variations.php:52
+msgid "Variations"
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-variations.php:56
+msgid "Upgrade to the PRO version to use this feature."
+msgstr ""
+
+# @ woo_dgallery
+#: classes/class-wc-dynamic-gallery-variations.php:63
+msgid "Apply to All"
+msgstr ""
+
+# @ woo_dgallery
+#~ msgid "Product Variation images"
+#~ msgstr "Variation des images de produit"
+# @ woo_dgallery
+#, fuzzy
+#~ msgid ""
+#~ "Show Product Variation images in Gallery. Can disable this feature of "
+#~ "individual products from product edit page."
+#~ msgstr ""
+#~ "Afficher la variation du produit dans la galerie. Vous pouvez désactiver "
+#~ "cette fonction à partir de différents produits lors de leur édition dans "
+#~ "la page \\\"ajouter un produit\\\""
