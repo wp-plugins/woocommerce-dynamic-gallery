@@ -158,6 +158,12 @@ class WC_Gallery_Display_Class{
 			
 			$popup_gallery = get_option('popup_gallery');
 			
+			$zoom_label = __('ZOOM +', 'woo_dgallery');
+			if ($popup_gallery == 'deactivate') {
+				$zoom_label = '';
+				$lightbox_class = '';
+			}
+			
 			$bg_des = WC_Gallery_Display_Class::html2rgb($product_gallery_bg_des,true);
 			$des_background =str_replace('#','',$product_gallery_bg_des);
 			                
@@ -349,6 +355,8 @@ class WC_Gallery_Display_Class{
 				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/pause.png) !important;height: 50px !important;text-indent: -999em !important; width: 50px !important;}';
 			}
 			
+			if ($popup_gallery == 'deactivate') echo '#gallery_'.$post->ID.' .ad-image-wrapper .ad-image img{cursor: default;} #gallery_'.$post->ID.' .icon_zoom{cursor: default;}';
+			
 			echo '
 			/* Pretty Photo style */
 			.pp_content_container .pp_gallery {
@@ -379,7 +387,7 @@ class WC_Gallery_Display_Class{
                             speed: '.$g_speed.'000,
                             start_label: "'.__('START SLIDESHOW', 'woo_dgallery').'",
                             stop_label: "'.__('STOP SLIDESHOW', 'woo_dgallery').'",
-							zoom_label: "'.__('ZOOM +', 'woo_dgallery').'",
+							zoom_label: "'.$zoom_label.'",
                             stop_on_scroll: true,
                             countdown_prefix: \'(\',
                             countdown_sufix: \')\',

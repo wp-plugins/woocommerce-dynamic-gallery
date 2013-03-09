@@ -82,7 +82,7 @@ class WC_Dynamic_Gallery {
 		if( trim(get_option('bg_nav_text_color')) == '' || $reset ){
 			update_option('bg_nav_text_color','#886bab');
 		}
-		if( trim(get_option('popup_gallery')) == '' || $reset ){
+		if( (trim(get_option('popup_gallery')) == '' || $reset) && !$free_version ){
 			update_option('popup_gallery','prettyphoto');
 		}
 		if( trim(get_option('enable_gallery_thumb')) == '' || $reset ){
@@ -137,9 +137,19 @@ class WC_Dynamic_Gallery {
         	add_action('woocommerce_settings_tabs_' . $name, array(&$this, 'settings_tab_action'), 10);
           	add_action('woocommerce_update_options_' . $name, array(&$this, 'save_settings'), 10);
         }
+				
+		// Add sub tabs
+		add_action('woocommerce_settings_dynamic_gallery_settings_end_after', array(&$this, 'dynamic_gallery_settings_end_after') );
+		add_action('woocommerce_settings_dynamic_gallery_global_settings_end_after', array(&$this, 'dynamic_gallery_global_settings_end_after') );
 		
-		add_action( 'woocommerce_settings_dynamic_gallery_upgrade_start', array(&$this, 'wc_dynamic_gallery_upgrade_area_start') );
-		add_action( 'woocommerce_settings_dynamic_gallery_upgrade_end', array(&$this, 'wc_dynamic_gallery_upgrade_area_end') );
+		add_action('woocommerce_settings_dynamic_gallery_caption_end_after', array(&$this, 'dynamic_gallery_caption_end_after') );
+		add_action('woocommerce_settings_dynamic_gallery_navbar_end_after', array(&$this, 'dynamic_gallery_navbar_end_after') );
+		add_action('woocommerce_settings_dynamic_gallery_lazyload_end_after', array(&$this, 'dynamic_gallery_lazyload_end_after') );
+		
+		// Add disable fields container
+		add_action('woocommerce_settings_dynamic_gallery_dimensions_end_after', array(&$this, 'dynamic_gallery_dimensions_end_after') );
+		add_action('woocommerce_settings_dynamic_gallery_on_of_end_after', array(&$this, 'dynamic_gallery_on_of_end_after') );
+		add_action('woocommerce_settings_dynamic_gallery_thumb_option_end_after', array(&$this, 'dynamic_gallery_thumb_option_end_after') );
 
         // Add the settings fields to each tab.
         add_action('woocommerce_dynamic_gallery_settings', array(&$this, 'add_settings_fields'), 10);
@@ -177,6 +187,10 @@ class WC_Dynamic_Gallery {
 		//	wp_enqueue_style( 'woocommerce_prettyPhoto_css', $woocommerce->plugin_url() . '/assets/css/prettyPhoto.css' );
 		//	wp_enqueue_script( 'prettyPhoto', $woocommerce->plugin_url() . '/assets/js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js' );
 		//}
+		wp_enqueue_style( 'a3rev-chosen-style', WOO_DYNAMIC_GALLERY_JS_URL . '/chosen/chosen.css' );
+		wp_enqueue_script( 'chosen', WOO_DYNAMIC_GALLERY_JS_URL . '/chosen/chosen.jquery'.$suffix.'.js', array(), false, true );
+		
+		wp_enqueue_script( 'a3rev-chosen-script-init', WOO_DYNAMIC_GALLERY_JS_URL.'/init-chosen.js', array(), false, true );
 	}
 
     /*
@@ -209,42 +223,79 @@ class WC_Dynamic_Gallery {
         // Hook onto this from another function to keep things clean.
         // do_action( 'woocommerce_newsletter_settings' );
 
-       do_action('woocommerce_dynamic_gallery_settings');
+       	do_action('woocommerce_dynamic_gallery_settings');
 		add_action('admin_footer', array(&$this, 'wc_dynamic_gallery_add_script'), 10);
 	   ?>
-       <style>
-	   .form-table { margin:0; }
-	   #wc_dgallery_upgrade_area { border:2px solid #E6DB55;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; padding:0 40% 0 0; position:relative; background:#FFFBCC;}
-	   #wc_dgallery_upgrade_inner { background:#FFF; -webkit-border-radius:10px 0 0 10px;-moz-border-radius:10px 0 0 10px;-o-border-radius:10px 0 0 10px; border-radius: 10px 0 0 10px;}
-	   #wc_dgallery_upgrade_inner h3{ margin-left:10px;}
-	   #wc_dynamic_gallery_extensions { -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 5px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 38%; right:0; top:0px;}
-	   </style>
-		<?php
-       // Display settings for this tab (make sure to add the settings to the tab).
-       woocommerce_admin_fields($woocommerce_settings[$current_tab]);
-	   ?>
-       <script>
-	   (function($){
+		<style>
+		.form-table { margin:0; }
+		#wc_dgallery_panel_container { position:relative; margin-top:10px;}
+		#wc_dgallery_panel_fields {width:60%; float:left;}
+		#wc_dgallery_upgrade_area { position:relative; margin-left: 60%; padding-left:10px;}
+		#wc_dynamic_gallery_extensions { border:2px solid #E6DB55;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; color: #555555; margin: 0px; padding: 5px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); background:#FFFBCC; }
+		.pro_feature_fields { margin-right: -12px; position: relative; z-index: 10; border:2px solid #E6DB55;-webkit-border-radius:10px 0 0 10px;-moz-border-radius:10px 0 0 10px;-o-border-radius:10px 0 0 10px; border-radius: 10px 0 0 10px; border-right: 2px solid #FFFFFF; }
+		.pro_feature_fields h3, .pro_feature_fields p { margin-left:5px; }
+		</style>
+        <div id="wc_dgallery_panel_container">
+            <div id="wc_dgallery_panel_fields" class="a3_subsubsub_section">
+                <ul class="subsubsub">
+                    <li><a href="#gallery-settings" class="current"><?php _e('Gallery', 'woo_dgallery'); ?></a> | </li>
+                    <li><a href="#global-settings"><?php _e('Global Settings', 'woo_dgallery'); ?></a> | </li>
+                    <li><a href="#caption-text"><?php _e('Caption text', 'woo_dgallery'); ?></a> | </li>
+                    <li><a href="#nav-bar"><?php _e('Nav Bar', 'woo_dgallery'); ?></a> | </li>
+                    <li><a href="#lazy-load-scroll"><?php _e('Lazy-load scroll', 'woo_dgallery'); ?></a> | </li>
+                    <li><a href="#image-thumbnails"><?php _e('Image Thumbnails', 'woo_dgallery'); ?></a></li>
+                </ul>
+                <br class="clear">
+                <div class="section" id="gallery-settings">
+                <?php
+                // Display settings for this tab (make sure to add the settings to the tab).
+                woocommerce_admin_fields($woocommerce_settings[$current_tab]);
+                ?>
+                </div>
+            </div>
+            <div id="wc_dgallery_upgrade_area"><?php echo $this->wc_dynamic_gallery_extension(); ?></div>
+        </div>
+        <div style="clear:both;"></div>
+		<script>
+				jQuery(window).load(function(){
+					// Subsubsub tabs
+					jQuery('div.a3_subsubsub_section ul.subsubsub li a:eq(0)').addClass('current');
+					jQuery('div.a3_subsubsub_section .section:gt(0)').hide();
+
+					jQuery('div.a3_subsubsub_section ul.subsubsub li a').click(function(){
+						var $clicked = jQuery(this);
+						var $section = $clicked.closest('.a3_subsubsub_section');
+						var $target  = $clicked.attr('href');
+
+						$section.find('a').removeClass('current');
+
+						if ( $section.find('.section:visible').size() > 0 ) {
+							$section.find('.section:visible').fadeOut( 100, function() {
+								$section.find( $target ).fadeIn('fast');
+							});
+						} else {
+							$section.find( $target ).fadeIn('fast');
+						}
+
+						$clicked.addClass('current');
+						jQuery('#last_tab').val( $target );
+
+						return false;
+					});
+
+					<?php if (isset($_GET['subtab']) && $_GET['subtab']) echo 'jQuery("div.a3_subsubsub_section ul.subsubsub li a[href=#'.$_GET['subtab'].']").click();'; ?>
+				});
+		(function($){
 			$(function(){
 				$("#dynamic_gallery_show_variation").attr('disabled', 'disabled');
 				$("#wc_dgallery_reset_variation_activate").attr('disabled', 'disabled');
-				$("#product_gallery_auto_start").attr('disabled', 'disabled');
 				$("#product_gallery_speed").attr('disabled', 'disabled');
-				$("#product_gallery_effect").attr('disabled', 'disabled');
-				$("#product_gallery_animation_speed").attr('disabled', 'disabled');
 				$("#dynamic_gallery_stop_scroll_1image").attr('disabled', 'disabled');
 				$("#bg_image_wrapper").attr('disabled', 'disabled');
 				$("#border_image_wrapper_color").attr('disabled', 'disabled');
-				$("#popup_gallery").attr('disabled', 'disabled');
-				$("#caption_font").attr('disabled', 'disabled');
-				$("#caption_font_size").attr('disabled', 'disabled');
-				$("#caption_font_style").attr('disabled', 'disabled');
 				$("#product_gallery_text_color").attr('disabled', 'disabled');
 				$("#product_gallery_bg_des").attr('disabled', 'disabled');
 				$("#product_gallery_nav").attr('disabled', 'disabled');
-				$("#navbar_font").attr('disabled', 'disabled');
-				$("#navbar_font_size").attr('disabled', 'disabled');
-				$("#navbar_font_style").attr('disabled', 'disabled');
 				$("#bg_nav_color").attr('disabled', 'disabled');
 				$("#bg_nav_text_color").attr('disabled', 'disabled');
 				$("#navbar_height").attr('disabled', 'disabled');
@@ -253,9 +304,41 @@ class WC_Dynamic_Gallery {
 				$("#enable_gallery_thumb").attr('disabled', 'disabled');
 				$("#dynamic_gallery_hide_thumb_1image").attr('disabled', 'disabled');
 			});
-	   })(jQuery);
-	   </script>
-       <?php
+		})(jQuery);
+		</script>
+		<?php
+	}
+	
+	function dynamic_gallery_dimensions_end_after() {
+		echo '<div class="pro_feature_fields">';
+	}
+	
+	function dynamic_gallery_settings_end_after() {
+		echo '</div></div><div class="section" id="global-settings">';
+	}
+	
+	function dynamic_gallery_on_of_end_after() {
+		echo '<div class="pro_feature_fields">';
+	}
+	
+	function dynamic_gallery_global_settings_end_after() {
+		echo '</div></div><div class="section" id="caption-text"><div class="pro_feature_fields">';
+	}
+		
+	function dynamic_gallery_caption_end_after() {
+		echo '</div></div><div class="section" id="nav-bar"><div class="pro_feature_fields">';
+	}
+	
+	function dynamic_gallery_navbar_end_after() {
+		echo '</div></div><div class="section" id="lazy-load-scroll"><div class="pro_feature_fields">';
+	}
+	
+	function dynamic_gallery_lazyload_end_after() {
+		echo '</div></div><div class="section" id="image-thumbnails"><div class="pro_feature_fields">';
+	}
+	
+	function dynamic_gallery_thumb_option_end_after() {
+		echo '</div>';
 	}
 
 	/**
@@ -296,34 +379,17 @@ class WC_Dynamic_Gallery {
 				
   		// Define settings			
      	$this->fields['dynamic_gallery'] = apply_filters('woocommerce_dynamic_gallery_settings_fields', array(
-      		array(
-            	'name' => __('Gallery', 'woo_dgallery'),
-                'type' => 'title',
-                'desc' => '',
-          		'id' => 'dynamic_gallery_settings_start'
-           	),
-			array(  
-				'name' 		=> __( 'Gallery Activation Default', 'woo_dgallery' ),
-				'desc' 		=> '<em class="description">'.__( 'Checked = Gallery Activated on Product Pages. Unchecked = Decativated. Note: Changing this setting will not over-ride any custom Gallery activation settings made on single product pages.', 'woo_dgallery' ).'</em>',
-				'id' 		=> 'wc_dgallery_activate',
-				'std' 		=> '1',
-				'default'	=> 'yes',
-				'type' 		=> 'checkbox',
-			),
-			array(  
-				'name' 		=> __( 'Reset Activation to default', 'woo_dgallery' ),
-				'desc' 		=> '<em class="description">'.__( "Checked this box and 'Save Changes' to reset ALL products to the default 'Gallery Activation' status you set above including ALL individual custom Product Page Gallery activation settings.", 'woo_dgallery' ).'</em>',
-				'id' 		=> 'wc_dgallery_reset_galleries_activate',
-				'std' 		=> '0',
-				'default'	=> 'no',
-				'type' 		=> 'checkbox',
-			),
+			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<a href="'.admin_url("admin-ajax.php").'?security='.$woo_dynamic_gallery.'" class="preview_gallery">'.__( 'Click here to preview gallery', 'woo_dgallery' ).'</a>. ', 'id' => 'preview_gallery' ),
+			
+			array('type' => 'sectionend', 'id' => 'dynamic_gallery_preview_end'),
+			
+			array(	'name' => __('Gallery Dimensions', 'woo_dgallery'), 'type' => 'title'),
 			array(  
 				'name' => __( 'Gallery width', 'woo_dgallery' ),
-				'desc' 		=> __('Set at 100 and choose % to activate responsive gallery (Pro version feature)', 'woo_dgallery'),
+				'desc' 		=> '',
 				'id' 		=> 'product_gallery_width',
 				'type' 		=> 'wc_dynamic_gallery_width',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:7em; float:left; margin-right:10px;',
 				'std' 		=> '320',
 				'default'	=> '320'
 			),
@@ -336,44 +402,17 @@ class WC_Dynamic_Gallery {
 				'std' 		=> '215',
 				'default'	=> '215'
 			),
-			array('type' => 'sectionend', 'id' => 'dynamic_gallery_settings_end'),
-			array(
-            	'name' => '',
-                'type' => 'title',
-                'desc' => '',
-          		'id' => 'dynamic_gallery_upgrade_start'
-           	),
-			array(
-            	'name' => '',
-                'type' => 'title',
-                'desc' => '',
-          		'id' => 'dynamic_gallery_settings_start'
-           	),
-			array(  
-				'name' 		=> __( 'Variations Activation Default', 'woo_dgallery' ),
-				'desc' 		=> '<em class="description">'.__( 'Checked = Variation Images Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Variation Images activation settings made on single product pages.', 'woo_dgallery' ).'</em>',
-				'id' 		=> 'dynamic_gallery_show_variation',
-				'std' 		=> '0',
-				'default'	=> 'no',
-				'type' 		=> 'checkbox',
-				'checkboxgroup'		=> 'start'
-			),
-			array(  
-				'name' 		=> __( 'Reset Activation to default', 'woo_dgallery' ),
-				'desc' 		=> '<em class="description">'.__( "Checked this box and 'Save Changes' to reset ALL products to the default 'Variations Activation' status you set above. NOTE:  ALL individual custom Product Page Variation Images Activation settings will be changed to the default.", 'woo_dgallery' ).'</em>',
-				'id' 		=> 'wc_dgallery_reset_variation_activate',
-				'std' 		=> '0',
-				'default'	=> 'no',
-				'type' 		=> 'checkbox',
-			),
+			array('type' => 'sectionend', 'id' => 'dynamic_gallery_dimensions_end'),
 			
+			array(	'name' => __('Gallery Special Effects', 'woo_dgallery'), 'type' => 'title'),
 			array(  
 				'name' => __( 'Auto start', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'product_gallery_auto_start',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> '1',
 				'default'	=> 'true',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'false'  			=> __( 'False', 'woo_dgallery' ),
@@ -394,15 +433,16 @@ class WC_Dynamic_Gallery {
 				'name' => __( 'Slide transition effect', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'product_gallery_effect',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> 'slide-hori',
 				'default'	=> 'slide-hori',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'none'  			=> __( 'None', 'woo_dgallery' ),
 					'fade'		=> __( 'Fade', 'woo_dgallery' ),
 					'slide-hori'		=> __( 'Slide Hori', 'woo_dgallery' ),
-					'slide-vert'		=> __( 'Slide vert', 'woo_dgallery' ),
+					'slide-vert'		=> __( 'Slide Vert', 'woo_dgallery' ),
 					'resize'		=> __( 'Resize', 'woo_dgallery' ),
 				),
 				'desc_tip'	=>  false,
@@ -412,9 +452,10 @@ class WC_Dynamic_Gallery {
 				'name' => __( 'Transition effect speed', 'woo_dgallery' ),
 				'desc' 		=> 'seconds',
 				'id' 		=> 'product_gallery_animation_speed',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> '2',
 				'default'	=> '2',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'1'  			=> __( '1', 'woo_dgallery' ),
@@ -439,7 +480,9 @@ class WC_Dynamic_Gallery {
 				'default'	=> 'no',
 				'type' 		=> 'checkbox',
 			),
+			array('type' => 'sectionend'),
 			
+			array(	'name' => __('Gallery Style', 'woo_dgallery'), 'type' => 'title'),
 			array(  
 				'name' => __( 'Image background colour', 'woo_dgallery' ),
 				'desc' 		=> __( 'Gallery image background colour. Default <code>#FFFFFF</code>.', 'woo_dgallery' ),
@@ -457,13 +500,19 @@ class WC_Dynamic_Gallery {
 				'css' 		=> 'width:7em;text-transform: uppercase;',
 				'std' 		=> '#CCCCCC',
 				'default'	=> '#CCCCCC'
-			),array(  
+			),
+			
+			array('type' => 'sectionend', 'id' => 'dynamic_gallery_settings_end'),
+			
+			array(	'name' => __( 'Image Zoom Function', 'woo_dgallery' ), 'type' => 'title'),
+			array(  
 				'name' => __( 'Gallery popup', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'popup_gallery',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> 'prettyphoto',
 				'default'	=> 'prettyphoto',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'prettyphoto'	=> __( 'PrettyPhoto', 'woo_dgallery' ),
@@ -473,8 +522,51 @@ class WC_Dynamic_Gallery {
 				),
 				'desc_tip'	=>  false,
 			),
-			array('type' => 'sectionend', 'id' => 'dynamic_gallery_settings_end'),
+			array('type' => 'sectionend', 'id' => 'dynamic_gallery_popup_end'),
 			
+      		array(
+            	'name' => __('Gallery On / Off', 'woo_dgallery'),
+                'type' => 'title',
+                'desc' => '',
+          		'id' => 'dynamic_gallery_settings_start'
+           	),
+			array(  
+				'name' 		=> __( 'Gallery Activation Default', 'woo_dgallery' ),
+				'desc' 		=> '<em class="description">'.__( 'Checked = Gallery Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Gallery activation settings made on single product pages.', 'woo_dgallery' ).'</em>',
+				'id' 		=> 'wc_dgallery_activate',
+				'std' 		=> '1',
+				'default'	=> 'yes',
+				'type' 		=> 'checkbox',
+			),
+			array(  
+				'name' 		=> __( 'Reset Activation to default', 'woo_dgallery' ),
+				'desc' 		=> '<em class="description">'.__( "Checked this box and 'Save Changes' to reset ALL products to the default 'Gallery Activation' status you set above including ALL individual custom Product Page Gallery activation settings.", 'woo_dgallery' ).'</em>',
+				'id' 		=> 'wc_dgallery_reset_galleries_activate',
+				'std' 		=> '0',
+				'default'	=> 'no',
+				'type' 		=> 'checkbox',
+			),
+			array('type' => 'sectionend', 'id' => 'dynamic_gallery_on_of_end'),
+			
+			array(	'name' => __( 'Image Variation Feature', 'woo_dgallery' ), 'type' => 'title'),
+			array(  
+				'name' 		=> __( 'Variations Activation Default', 'woo_dgallery' ),
+				'desc' 		=> '<em class="description">'.__( 'Checked = Variation Images Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Variation Images activation settings made on single product pages.', 'woo_dgallery' ).'</em>',
+				'id' 		=> 'dynamic_gallery_show_variation',
+				'std' 		=> '0',
+				'default'	=> 'no',
+				'type' 		=> 'checkbox',
+				'checkboxgroup'		=> 'start'
+			),
+			array(  
+				'name' 		=> __( 'Reset Activation to default', 'woo_dgallery' ),
+				'desc' 		=> '<em class="description">'.__( "Checked this box and 'Save Changes' to reset ALL products to the default 'Variations Activation' status you set above. NOTE:  ALL individual custom Product Page Variation Images Activation settings will be changed to the default.", 'woo_dgallery' ).'</em>',
+				'id' 		=> 'wc_dgallery_reset_variation_activate',
+				'std' 		=> '0',
+				'default'	=> 'no',
+				'type' 		=> 'checkbox',
+			),
+			array('type' => 'sectionend', 'id' => 'dynamic_gallery_global_settings_end'),
 			
 			
 			array(
@@ -487,9 +579,10 @@ class WC_Dynamic_Gallery {
 				'name' => __( 'Font', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'caption_font',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> 'Arial, sans-serif',
 				'default'	=> 'Arial, sans-serif',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'Arial, sans-serif'  			=> __( 'Arial', 'woo_dgallery' ),
@@ -516,9 +609,10 @@ class WC_Dynamic_Gallery {
 				'name' => __( 'Font size', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'caption_font_size',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> '12px',
 				'default'	=> '12px',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'9px'  				=> __( '9px', 'woo_dgallery' ),
@@ -550,9 +644,10 @@ class WC_Dynamic_Gallery {
 				'name' => __( 'Font style', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'caption_font_style',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> 'normal',
 				'default'	=> 'normal',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'normal'  				=> __( 'Normal', 'woo_dgallery' ),
@@ -601,9 +696,10 @@ class WC_Dynamic_Gallery {
 				'name' => __( 'Font', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'navbar_font',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> 'Arial, sans-serif',
 				'default'	=> 'Arial, sans-serif',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'Arial, sans-serif'  			=> __( 'Arial', 'woo_dgallery' ),
@@ -630,9 +726,10 @@ class WC_Dynamic_Gallery {
 				'name' => __( 'Font size', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'navbar_font_size',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> '13px',
 				'default'	=> '13px',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'9px'  				=> __( '9px', 'woo_dgallery' ),
@@ -664,9 +761,10 @@ class WC_Dynamic_Gallery {
 				'name' => __( 'Font style', 'woo_dgallery' ),
 				'desc' 		=> '',
 				'id' 		=> 'navbar_font_style',
-				'css' 		=> 'width:7em;',
+				'css' 		=> 'width:120px;',
 				'std' 		=> 'bold',
 				'default'	=> 'bold',
+				'class'		=> 'chzn-select',
 				'type' 		=> 'select',
 				'options' => array( 
 					'normal'  				=> __( 'Normal', 'woo_dgallery' ),
@@ -754,16 +852,9 @@ class WC_Dynamic_Gallery {
 				'default'	=> 'yes',
 				'type' 		=> 'checkbox',
 			),
-			array('type' => 'sectionend', 'id' => 'dynamic_gallery_thumb_end'),
+			array('type' => 'sectionend', 'id' => 'dynamic_gallery_thumb_option_end'),
 			
-			array('type' => 'sectionend', 'id' => 'dynamic_gallery_upgrade_end'),
-			
-			array(
-            	'name' => '',
-                'type' => 'title',
-                'desc' => '',
-          		'id' => 'dynamic_gallery_thumbnail_settings'
-           	),
+			array(	'name' => '', 'type' => 'title'),
 			array(  
 				'name' => __( 'Thumbnail width', 'woo_dgallery' ),
 				'desc' 		=> 'px. '.__("IMPORTANT! Do not set this value to '0' or empty. A &lt;not divisible by 0&gt; error will show instead of the Gallery if you do.", 'woo_dgallery'),
@@ -793,8 +884,6 @@ class WC_Dynamic_Gallery {
 			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_thumb_end'),
 			
-			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<a href="'.admin_url("admin-ajax.php").'?security='.$woo_dynamic_gallery.'" class="preview_gallery">'.__( 'Click here to preview gallery', 'woo_dgallery' ).'</a>. ', 'id' => 'preview_gallery' ),
-			array('type' => 'sectionend', 'id' => 'dynamic_gallery_preview_end')
         ));
 	}
 
@@ -898,7 +987,7 @@ class WC_Dynamic_Gallery {
                     		class="<?php echo esc_attr( $value['class'] ); ?>"
                     		<?php echo implode( ' ', $custom_attributes ); ?>
                     		/> 
-					<select name="woo_dg_width_type" id="woo_dg_width_type" style="margin: 0px; height: 21px;">
+					<select name="woo_dg_width_type" id="woo_dg_width_type" style="width:120px; margin: 0px; height: 21px;" class="chzn-select">
           <option value="%">%</option>
           <option value="px" selected="selected">px</option>
         </select> <?php echo $description; ?>
@@ -912,15 +1001,17 @@ class WC_Dynamic_Gallery {
 		$html .= '<div id="wc_dynamic_gallery_extensions">';
 		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/a3logo.png" /></a>';
 		$html .= '<h3>'.__('Upgrade to Dynamic Gallery Pro', 'woo_dgallery').'</h3>';
-		$html .= '<p>'.__("Visit the", 'woo_dgallery').' <a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/" target="_blank">'.__("a3rev website", 'woo_dgallery').'</a> '.__("to see all the extra features the Pro version of this plugin offers like", 'woo_dgallery').':</p>';
+		$html .= '<p>'.__("<strong>NOTE:</strong> Settings inside the Yellow border are Pro Version advanced Features and are not activated. Visit the", 'woo_dgallery').' <a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/" target="_blank">'.__("a3rev site", 'woo_dgallery').'</a> '.__("if you wish to upgrade to activate these features", 'woo_dgallery').':</p>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>1. '.__('Show Multiple Product Variation images in Gallery. As users selects options from the drop down menu that options product image auto shows in the Dynamic Gallery complete with caption text.', 'woo_dgallery').'</li>';
 		$html .= '<li>2. '.__('Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up.', 'woo_dgallery').'</li>';
-		$html .= '<li>3. '.__('Activate all of the Gallery customization settings you see here on this page to style and fine tune your product presentation.', 'woo_dgallery').'</li>';
+		$html .= '<li>3. '.__('Activate all of the Gallery customization settings to style and fine tune your product image presentation.', 'woo_dgallery').'</li>';
 		$html .= '<li>4. '.__('Option to Deactivate the Gallery on any Single product page - default WooCommerce product image will show.', 'woo_dgallery').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
+		$html .= '<h3>'.__('Discount Upgrade Coupon', 'woo_dgallery').':</h3>';
+		$html .= '<p><a href="http://a3rev.com/current-discount-coupon-codes/" target="_blank">'.__('Click here to visit the a3rev site', 'woo_dgallery').'</a> '.__('to see current upgrade Discount Coupons available exclusively to a3rev Lite Version plugin users.', 'woo_dgallery').'</p>';
 		$html .= '<h3>'.__('Plugin Documentation', 'woo_dgallery').'</h3>';
 		$html .= '<p>'.__('All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request', 'woo_dgallery').'. <a href="http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/" target="_blank">'.__('Visit the a3rev wiki.', 'woo_dgallery').'</a></p>';
 		$html .= '<h3>'.__('More a3rev Quality Plugins', 'woo_dgallery').'</h3>';
@@ -932,7 +1023,7 @@ class WC_Dynamic_Gallery {
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-predictive-search/" target="_blank">'.__('WooCommerce Predictive Search', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-compare-products/" target="_blank">'.__('WooCommerce Compare Products', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woo-widget-product-slideshow/" target="_blank">'.__('WooCommerce Widget Product Slideshow', 'woo_dgallery').'</a></li>';
-		$html .= '<li>* <a href="http://a3rev.com/shop/woocommerce-email-inquiry-and-cart-options/" target="_blank">'.__('WooCommerce Email Inquiry & Cart Options', 'woo_dgallery').'</a>'.__(' - Pro Version only from a3rev', 'woo_dgallery').'</li>';
+		$html .= '<li>* <a href="http://a3rev.com/shop/woocommerce-email-inquiry-and-cart-options/" target="_blank">'.__('WooCommerce Email Inquiry & Cart Options', 'woo_dgallery').'</a></li>';
 		$html .= '</ul>';
 		$html .= '</p>';
 		$html .= '<h3>'.__('WordPress Plugins', 'woo_dgallery').'</h3>';
@@ -940,16 +1031,6 @@ class WC_Dynamic_Gallery {
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'woo_dgallery').'</a></li>';
-		$html .= '</ul>';
-		$html .= '</p>';
-		$html .= '<h3>'.__('WP e-Commerce Plugins', 'woo_dgallery').'</h3>';
-		$html .= '<p>';
-		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-dynamic-gallery/" target="_blank">'.__('WP e-Commerce Dynamic Gallery', 'woo_dgallery').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-predictive-search/" target="_blank">'.__('WP e-Commerce Predictive Search', 'woo_dgallery').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('WP e-Commerce Compare Products', 'woo_dgallery').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-catalog-visibility-and-email-inquiry/" target="_blank">'.__('WP e-Commerce Catalog Visibility & Email Inquiry', 'woo_dgallery').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-grid-view/" target="_blank">'.__('WP e-Commerce Grid View', 'woo_dgallery').'</a></li>';
 		$html .= '</ul>';
 		$html .= '</p>';
 		$html .= '<h3>'.__('Help spread the Word about this plugin', 'woo_dgallery').'</h3>';
@@ -963,20 +1044,12 @@ class WC_Dynamic_Gallery {
 		return $html;
 	}
 	
-	function wc_dynamic_gallery_upgrade_area_start() {
-		echo '<tr valign="top"><td style="padding:0;"><div id="wc_dgallery_upgrade_area">'.$this->wc_dynamic_gallery_extension().'<div id="wc_dgallery_upgrade_inner">';
-	}
-	
-	function wc_dynamic_gallery_upgrade_area_end() {
-		echo '</div></div></td></tr>';
-	}
-	
 	function plugin_extra_links($links, $plugin_name) {
 		if ( $plugin_name != WOO_DYNAMIC_GALLERY_NAME) {
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/" target="_blank">'.__('Documentation', 'woo_dgallery').'</a>';
-		$links[] = '<a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/#tab-reviews" target="_blank">'.__('Support', 'woo_dgallery').'</a>';
+		$links[] = '<a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/#help_tab" target="_blank">'.__('Support', 'woo_dgallery').'</a>';
 		return $links;
 	}
 }

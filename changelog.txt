@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 1.1.4 - 2013/03/09 =
+* Feature: Added Fancybox and Lightbox pop-up tools support for Gallery image Zoom.
+* Feature: UI Enhancement. Complete rework of the admin dashboard.
+* Feature: Admin panel content broken up into sub nav tabs for ease of feature management. Gallery | Global Settings | Caption text | Nav Bar | Lazy-load scroll | Image Thumbnails
+* Feature: Added WooCommerce Chosen script for dropdowns and options.
+* Fixed: Undefined PrettyPhoto script include. Defined script to load from footer after jQuery script. In some sites this was causing the image Zoom not to work.
+* Fixed: Conflict with Chrome browser add on AdBlocker. Chrome extension Adblocker was hiding the gallery class name ad-images which was causing the main gallery images not to show. Edited style so now gallery shows with that add-on activated.
+* Tweak: Updated plugins wiki documentation to show the new admin UI and features
+
 
 = 1.1.3 - 2013/03/04 =
 * Feature: Updated all plugin code to be 100% compatible with WooCommerce V2.0 and backwards.

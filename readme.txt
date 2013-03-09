@@ -1,9 +1,9 @@
 === WooCommerce Dynamic Gallery  ===
 Contributors: a3rev, A3 Revolution Software Development team
-Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, woothemes, wordpress ecommerce
+Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.1.0
+Stable tag: 1.1.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -30,11 +30,12 @@ As soon as you install WooCommerce Dynamic Gallery it <strong>brings your store 
 * Manual image click to scroll next or previous.
 * Set Dynamic Gallery Wide and tall from the admin panel to fit perfectly on your site.
 * Set Gallery thumbnail wide, tall and spacing from the admin panel. 
-* ZOOM - shows full size image with caption text and manual scroll through entire gallery. NOTE: Version 1.1.0 + uses the default PrettyPhoto pop-up tool, requires WordPress 3.5
+* ZOOM - shows full size image with caption text and manual scroll through entire gallery. 
+* Choice of 3 different pop-up tools - PrettyPhoto (default), Fancybox and Lightbox.
 * START SLIDE SHOW | STOP SLIDESHOW control
 * Gallery thumbnails scroll left and right on hover.
 * WPMU compatible.
-* Full browser compatibility - Safari, Firefox, Chrome, IE8, IE9
+* Full browser compatibility - Safari, Firefox, Chrome, IE8, IE9, IE10
 
 = Support =
 
@@ -54,7 +55,6 @@ When you install WooCommerce Dynamic Gallery you will see on the admin panel all
 Users see Product variation images in gallery as they select options. Variation Product Images auto show in gallery as user selects variations, including caption text. 
 * Meet all customers needs and sell more - works beautifully on PCs, laptops, tablets and mobiles.
 * Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up.
-* Choice of 3 different pop-up tools - PrettyPhoto (default), Fancybox and Lightbox.
 * Option to not show thumbnails (if thumbnails are activated) when only 1 image is shown in the gallery, example for a variation.
 * Option to set so that whenever a single image is selected in the Gallery the image transition settings don't apply.
 * Global options to Activate and Deactivate the Dynamic gallery and the Variation Images feature on all product pages from the admin panel.
@@ -133,6 +133,15 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.1.4 - 2013/03/09 =
+* Feature: Added Fancybox and Lightbox pop-up tools support for Gallery image Zoom.
+* Feature: UI Enhancement. Complete rework of the admin dashboard.
+* Feature: Admin panel content broken up into sub nav tabs for ease of feature management. Gallery | Global Settings | Caption text | Nav Bar | Lazy-load scroll | Image Thumbnails
+* Feature: Added WooCommerce Chosen script for dropdowns and options.
+* Fixed: Undefined PrettyPhoto script include. Defined script to load from footer after jQuery script. In some sites this was causing the image Zoom not to work.
+* Fixed: Conflict with Chrome browser add on AdBlocker. Chrome extension Adblocker was hiding the gallery class name ad-images which was causing the main gallery images not to show. Edited style so now gallery shows with that add-on activated.
+* Tweak: Updated plugins wiki documentation to show the new admin UI and features
+
 
 = 1.1.3 - 2013/03/04 =
 * Feature: Updated all plugin code to be 100% compatible with WooCommerce V2.0 and backwards.
@@ -140,7 +149,8 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 * Feature: On install Dynamic Gallery can now show product feature images that have been created from the WordPress Media Library. Previously the gallery could not find these images and would show no image.
 * Feature: Added delete WordPress Media Library Featured image from the Dynamic Gallery Product Page Meta. The Media Library thumbnail has a Red X on it and pop up on hover text to explain why users should delete the image and upload it to the Dynamic gallery.
 * Feature: Added option to Admin dashboard to set 'Gallery Activation Default'. From the dashboard you can Activate or Deactivate the Dynamic Gallery for all Product Pages excluding Product Pages that have a custom gallery activation setting.
-* Feature: Added option to Admin Panel to 'Reset Activation to default', This option allows you to rest all Gallery Activation settings to the default you have set.   
+* Feature: Added option to Admin Panel to 'Reset Activation to default', This option allows you to rest all Gallery Activation settings to the default you have set.
+* Tweak: Jumped version from 1.0.9 to 1.1.3 to keep in synch with Pro License Version.   
 
 
 = 1.0.9 - 2013/01/23 =
