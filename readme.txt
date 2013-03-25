@@ -135,7 +135,7 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 = 1.1.5 - 2013/03/25 =
 * Fixed: Lightbox pop-up script bug. When using the Lightbox tool for the image pop-up the current image did not show - instead showed first image in the gallery. Could never resolve this so we have replaced the old Lightbox pop-up script with new Colorbox script. This fixes this long standing issue. 
-* Fixed: Bug for users who have https: (SSL) on their sites wp-admin but have http on sites front end. This was causing search results to show a -1 in the Gallery Container instead of the current image because wp-admin with SSL applied only allows https:, but the url of admin-ajax.php is http: and it is denied hence returning the ajax -1 error. Fixed by writing a filter to recognize when https is configured on wp-admin and parsing correctly. If you do not have this configuration nothing changes for you, if you do have https on your wp-admin (or install it in the future) and http on the front end then Dynamic Gallery will automatically detect that and works as it should.
+* Fixed: Bug for users who have https: (SSL) on their sites wp-admin but have http on sites front end. This was causing a -1 to show in the Gallery Container instead of the current image because wp-admin with SSL applied only allows https:, but the url of admin-ajax.php is http: and it is denied hence returning the ajax -1 error. Fixed by writing a filter to recognize when https is configured on wp-admin and parsing correctly. If you do not have this configuration nothing changes for you, if you do have https on your wp-admin (or install it in the future) and http on the front end then Dynamic Gallery will automatically detect that and works as it should.
 
 
 = 1.1.4 - 2013/03/09 =
