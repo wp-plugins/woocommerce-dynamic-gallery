@@ -174,8 +174,8 @@ class WC_Dynamic_Gallery {
 		wp_enqueue_style( 'ad-gallery-style', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.ad-gallery.css' );
 		wp_enqueue_script( 'ad-gallery-script', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.ad-gallery.js', array(), false, true );
 		
-		wp_enqueue_style( 'a3_lightbox_style', WOO_DYNAMIC_GALLERY_JS_URL . '/lightbox/themes/default/jquery.lightbox.css' );
-		wp_enqueue_script( 'lightbox2_script', WOO_DYNAMIC_GALLERY_JS_URL . '/lightbox/jquery.lightbox.min.js', array(), false, true );
+		wp_enqueue_style( 'a3_colorbox_style', WOO_DYNAMIC_GALLERY_JS_URL . '/colorbox/colorbox.css' );
+		wp_enqueue_script( 'colorbox_script', WOO_DYNAMIC_GALLERY_JS_URL . '/colorbox/jquery.colorbox'.$suffix.'.js', array(), false, true );
 			
 		wp_enqueue_style( 'woocommerce_fancybox_styles', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.css' );
 		wp_enqueue_script( 'fancybox', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.min.js', array(), false, true );
@@ -379,7 +379,7 @@ class WC_Dynamic_Gallery {
 				
   		// Define settings			
      	$this->fields['dynamic_gallery'] = apply_filters('woocommerce_dynamic_gallery_settings_fields', array(
-			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<a href="'.admin_url("admin-ajax.php").'?security='.$woo_dynamic_gallery.'" class="preview_gallery">'.__( 'Click here to preview gallery', 'woo_dgallery' ).'</a>. ', 'id' => 'preview_gallery' ),
+			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<a href="'. ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ) .'?security='.$woo_dynamic_gallery.'" class="preview_gallery">'.__( 'Click here to preview gallery', 'woo_dgallery' ).'</a>. ', 'id' => 'preview_gallery' ),
 			
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_preview_end'),
 			
@@ -517,7 +517,7 @@ class WC_Dynamic_Gallery {
 				'options' => array( 
 					'prettyphoto'	=> __( 'PrettyPhoto', 'woo_dgallery' ),
 					'fb'  			=> __( 'Fancybox', 'woo_dgallery' ),
-					'lb'			=> __( 'Lightbox', 'woo_dgallery' ),
+					'colorbox'		=> __( 'ColorBox', 'woo_dgallery' ),
 					'deactivate'	=> __( 'Deactivate', 'woo_dgallery' ),
 				),
 				'desc_tip'	=>  false,

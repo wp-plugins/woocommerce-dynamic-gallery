@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Dynamic Gallery LITE v1.0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-09 12:09+0700\n"
-"PO-Revision-Date: 2013-03-09 12:09+0700\n"
+"POT-Creation-Date: 2013-03-25 12:10+0700\n"
+"PO-Revision-Date: 2013-03-25 12:10+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -245,8 +245,9 @@ msgstr ""
 
 # @ woo_dgallery
 #: admin/class-wc-dynamic-gallery-admin.php:520
-msgid "Lightbox"
-msgstr ""
+#, fuzzy
+msgid "ColorBox"
+msgstr "Couleur"
 
 #: admin/class-wc-dynamic-gallery-admin.php:521
 msgid "Deactivate"
@@ -812,19 +813,19 @@ msgstr ""
 
 # @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-preview.php:81
-#: classes/class-wc-dynamic-gallery.php:161
+#: classes/class-wc-dynamic-gallery.php:159
 msgid "ZOOM +"
 msgstr ""
 
 # @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-preview.php:316
-#: classes/class-wc-dynamic-gallery.php:388
+#: classes/class-wc-dynamic-gallery.php:386
 msgid "START SLIDESHOW"
 msgstr ""
 
 # @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-preview.php:317
-#: classes/class-wc-dynamic-gallery.php:389
+#: classes/class-wc-dynamic-gallery.php:387
 msgid "STOP SLIDESHOW"
 msgstr ""
 

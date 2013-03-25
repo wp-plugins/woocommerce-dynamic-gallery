@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -133,8 +133,12 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.1.5 - 2013/03/25 =
+* Fixed: Lightbox pop-up script bug. When using the Lightbox tool for the image pop-up the current image did not show - instead showed first image in the gallery. Could never resolve this so we have replaced the old Lightbox pop-up script with new Colorbox script. This fixes this long standing issue. 
+* Fixed: Bug for users who have https: (SSL) on their sites wp-admin but have http on sites front end. This was causing search results to show a -1 in the Gallery Container instead of the current image because wp-admin with SSL applied only allows https:, but the url of admin-ajax.php is http: and it is denied hence returning the ajax -1 error. Fixed by writing a filter to recognize when https is configured on wp-admin and parsing correctly. If you do not have this configuration nothing changes for you, if you do have https on your wp-admin (or install it in the future) and http on the front end then Dynamic Gallery will automatically detect that and works as it should.
+
+
 = 1.1.4 - 2013/03/09 =
-* Feature: Added Fancybox and Lightbox pop-up tools support for Gallery image Zoom.
 * Feature: UI Enhancement. Complete rework of the admin dashboard.
 * Feature: Admin panel content broken up into sub nav tabs for ease of feature management. Gallery | Global Settings | Caption text | Nav Bar | Lazy-load scroll | Image Thumbnails
 * Feature: Added WooCommerce Chosen script for dropdowns and options.

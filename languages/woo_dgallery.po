@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce Dynamic Gallery FREE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-09 12:08+0700\n"
-"PO-Revision-Date: 2013-03-09 12:09+0700\n"
+"POT-Creation-Date: 2013-03-25 12:09+0700\n"
+"PO-Revision-Date: 2013-03-25 12:09+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -198,7 +198,7 @@ msgid "Fancybox"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:520
-msgid "Lightbox"
+msgid "ColorBox"
 msgstr ""
 
 #: admin/class-wc-dynamic-gallery-admin.php:521
@@ -694,17 +694,17 @@ msgid "'This image is a 'Featured Image' from the WordPress Media Library. Dynam
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-preview.php:81
-#: classes/class-wc-dynamic-gallery.php:161
+#: classes/class-wc-dynamic-gallery.php:159
 msgid "ZOOM +"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-preview.php:316
-#: classes/class-wc-dynamic-gallery.php:388
+#: classes/class-wc-dynamic-gallery.php:386
 msgid "START SLIDESHOW"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-preview.php:317
-#: classes/class-wc-dynamic-gallery.php:389
+#: classes/class-wc-dynamic-gallery.php:387
 msgid "STOP SLIDESHOW"
 msgstr ""
 

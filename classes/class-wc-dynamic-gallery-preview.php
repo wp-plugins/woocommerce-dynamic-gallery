@@ -344,7 +344,7 @@ class WC_Gallery_Preview_Display{
 						$url_demo_img =  '/assets/js/mygallery/images/';
                         $imgs = array($url_demo_img.'image_1.jpg',$url_demo_img.'image_2.jpg',$url_demo_img.'image_3.jpg',$url_demo_img.'image_4.jpg');
                         
-                        $script_lightbox = '';
+                        $script_colorbox = '';
 						$script_fancybox = '';
 						$script_prettyPhoto = '';
 						$prettyPhoto_images = '[';
@@ -354,25 +354,26 @@ class WC_Gallery_Preview_Display{
                             $display = '';
 			
                             if(is_array($imgs) && count($imgs)>0){
-                                $script_lightbox .= '<script type="text/javascript">';
+                                $script_colorbox .= '<script type="text/javascript">';
 								$script_fancybox .= '<script type="text/javascript">';
 								$script_prettyPhoto .= '<script type="text/javascript">';
-                                $script_lightbox .= '(function($){';		  
+                                $script_colorbox .= '(function($){';		  
 								$script_fancybox .= '(function($){';
 								$script_prettyPhoto .= '(function($){';		  
-                                $script_lightbox .= '$(function(){';
+                                $script_colorbox .= '$(function(){';
 								$script_fancybox .= '$(function(){';
 								$script_prettyPhoto .= '$(function(){';
-                                $script_lightbox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {';
+                                $script_colorbox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
+								var idx = $(".ad-image img").attr("idx");';
 								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 								var idx = $(".ad-image img").attr("idx");';
 								$script_prettyPhoto .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 								var idx = $(".ad-image img").attr("idx");';
                                 if(count($imgs) <= 1 ){
-                                    $script_lightbox .= '$.lightbox(';
+                                    $script_colorbox .= '$(".gallery_product_'.$post->ID.'").colorbox({open:true, maxWidth:"100%", title: function() { return "&nbsp;";} });';
 									$script_fancybox .= '$.fancybox(';
                                 }else{
-                                    $script_lightbox .= '$.lightbox([';
+                                    $script_colorbox .= '$(".gallery_product_'.$post->ID.'").colorbox({rel:"gallery_product_'.$post->ID.'", maxWidth:"100%", title: function() { return "&nbsp;";} }); $(".gallery_product_'.$post->ID.'_"+idx).colorbox({open:true, maxWidth:"100%", title: function() { return "&nbsp;";} });';
 									$script_fancybox .= '$.fancybox([';
                                 }
 								//if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
@@ -417,13 +418,11 @@ class WC_Gallery_Preview_Display{
                                         
                                     $img_description = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
                                             
-                                    echo '<li class="'.$li_class.'"><a class="" title="'.$img_description.'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img idx="'.$idx.'" style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_lager_default_url.'" alt="'.$img_description.'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
+                                    echo '<li class="'.$li_class.'"><a class="gallery_product_'.$post->ID.' gallery_product_'.$post->ID.'_'.$idx.'" title="'.$img_description.'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img idx="'.$idx.'" style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_lager_default_url.'" alt="'.$img_description.'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
                                     $img_description = trim(strip_tags(stripslashes(str_replace("'","", str_replace('"', '', $img_description)))));
                                     if($img_description != ''){
-                                        $script_lightbox .= $common.'"'.$image_lager_default_url.'?lightbox[title]='.$img_description.'"';
 										$script_fancybox .= $common.'{href:\''.$image_lager_default_url.'\',title:\''.$img_description.'\'}';
                                     }else{
-                                        $script_lightbox .= $common.'"'.$image_lager_default_url.'"';
 										$script_fancybox .= $common.'{href:\''.$image_lager_default_url.'\',title:\'\'}';
                                     }
 									$prettyPhoto_images .= $common.'"'.$image_lager_default_url.'"';
@@ -437,27 +436,25 @@ class WC_Gallery_Preview_Display{
 								
 								 //$.fancybox([ {href : 'img1.jpg', title : 'Title'}, {href : 'img2.jpg', title : 'Title'} ])
                                 if(count($imgs) <= 1 ){
-                                    $script_lightbox .= ');';
 									$script_fancybox .= ');';
 									$script_prettyPhoto .= $prettyPhoto_images. ', '. $prettyPhoto_titles .');';
                                 }else{
-                                    $script_lightbox .= ']);';
 									$script_fancybox .= '],{
         \'index\': idx
       });';
 	  								$script_prettyPhoto .= $prettyPhoto_images. ', '. $prettyPhoto_titles .'); $.prettyPhoto.changePage( parseInt(idx) );';
                                 }
-                                $script_lightbox .= 'ev.preventDefault();';
-                                $script_lightbox .= '} });';
+                                $script_colorbox .= 'ev.preventDefault();';
+                                $script_colorbox .= '} });';
 								$script_fancybox .= '} });';
 								$script_prettyPhoto .= '} });';
-                                $script_lightbox .= '});';
+                                $script_colorbox .= '});';
 								$script_fancybox .= '});';
 								$script_prettyPhoto .= '});';
-                                $script_lightbox .= '})(jQuery);';
+                                $script_colorbox .= '})(jQuery);';
 								$script_fancybox .= '})(jQuery);';
 								$script_prettyPhoto .= '})(jQuery);';
-                                $script_lightbox .= '</script>';
+                                $script_colorbox .= '</script>';
 								$script_fancybox .= '</script>';
 								$script_prettyPhoto .= '</script>';
                             }
@@ -469,11 +466,11 @@ class WC_Gallery_Preview_Display{
                         }
 						
 						if ($popup_gallery == 'deactivate') {
-							$script_lightbox = '';
+							$script_colorbox = '';
 							$script_fancybox = '';
 							$script_prettyPhoto = '';
-						} else if($popup_gallery == 'lb'){
-                        	echo $script_lightbox;
+						} else if($popup_gallery == 'colorbox'){
+                        	echo $script_colorbox;
 						} elseif($popup_gallery == 'fb') {
 							echo $script_fancybox;
 						} else {

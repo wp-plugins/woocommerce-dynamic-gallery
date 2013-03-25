@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.5 - 2013/03/25 =
+* Fixed: Lightbox pop-up script bug. When using the Lightbox tool for the image pop-up the current image did not show - instead showed first image in the gallery. Could never resolve this so we have replaced the old Lightbox pop-up script with new Colorbox script. This fixes this long standing issue. 
+* Fixed: Bug for users who have https: (SSL) on their sites wp-admin but have http on sites front end. This was causing search results to show a -1 in the Gallery Container instead of the current image because wp-admin with SSL applied only allows https:, but the url of admin-ajax.php is http: and it is denied hence returning the ajax -1 error. Fixed by writing a filter to recognize when https is configured on wp-admin  and parsing correctly. If you do not have this configuration nothing changes for you, if you do have https on your wp-admin (or install it in the future) and http on the front end then Dynamic Gallery will automatically detect that and works as it should.
+
 = 1.1.4 - 2013/03/09 =
 * Feature: Added Fancybox and Lightbox pop-up tools support for Gallery image Zoom.
 * Feature: UI Enhancement. Complete rework of the admin dashboard.
@@ -8,7 +12,6 @@
 * Fixed: Undefined PrettyPhoto script include. Defined script to load from footer after jQuery script. In some sites this was causing the image Zoom not to work.
 * Fixed: Conflict with Chrome browser add on AdBlocker. Chrome extension Adblocker was hiding the gallery class name ad-images which was causing the main gallery images not to show. Edited style so now gallery shows with that add-on activated.
 * Tweak: Updated plugins wiki documentation to show the new admin UI and features
-
 
 = 1.1.3 - 2013/03/04 =
 * Feature: Updated all plugin code to be 100% compatible with WooCommerce V2.0 and backwards.
