@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,7 +15,9 @@ As soon as you install WooCommerce Dynamic Gallery it <strong>brings your store 
  
 = Key Features =
 
-* The #1 Product Page image gallery for WooCommerce. 
+* The #1 Product Page image gallery for WooCommerce Products page.
+* Dynamic product image Gallery that displays beautifully in Firefox, Safari, Chrome and Opera on Apple OS X and on Widows XP to Windows 8 in IE7 to IE10.
+* Full mobile device oprimization for IOS mobile Safari - all iPads and iPhones, Android Browser all Tablets and mobiles and Opera Mobile all tablets and mobiles.
 * Instantly adds a scrolling gallery to every product page and adds all product images to each gallery
 * Gallery scales images to fit inside the container no matter what the size or shape.
 * Search Engine friendly images. Image Alt tags if set are visible to search engines
@@ -35,7 +37,7 @@ As soon as you install WooCommerce Dynamic Gallery it <strong>brings your store 
 * START SLIDE SHOW | STOP SLIDESHOW control
 * Gallery thumbnails scroll left and right on hover.
 * WPMU compatible.
-* Full browser compatibility - Safari, Firefox, Chrome, IE8, IE9, IE10
+
 
 = Support =
 
@@ -109,6 +111,7 @@ The manual installation method involves downloading our plugin and uploading it 
 1. WooCommerce Dynamic Gallery
 2. WooCommerce Dynamic Gallery activated admin settings (cut down view)
 3. WooCommerce Dynamic Gallery on-page Gallery Image easy manager
+4. Optimized for all major legacy browsers.
 
 == Usage ==
 
@@ -133,10 +136,19 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.1.6 - 2013/04/04 =
+* Fixed: Long standing issue with Gallery main image not showing in bespoke themes in Windows 7 and Widows 8 with IE browsers 8.0, 9.0, 10.0 and 10.0 Desktop. Many thanks to Nemanja from the Art Binaire Team for providing the solution.
+* Feature: The above fixed allowed us to complete full Gallery Optimization in Windows XP, IE 7, IE8, Windows 7, IE8 and IE9 and Windows 8, IE10 and IE10 Desktop. 
+* Feature: Full Gallery test and optimization for  all 3 Windows operating systems - for these legacy browsers - Firefox, Safari, Chrome and Opera.
+* Feature: Fully Gallery test and optimization for Apple OS X operating systems. Snow leopard, Lion and Mountain Lion using these legacy Browsers - Firefox, Safari, Chrome and Opera
+* Feature: Full Gallery test and optimization for Apple IOS Mobile Safari in iPhones and all iPads.
+* Feature: Fully Gallery test and optimization for Android Browser on all models of these manufacturers tablets that use the Android operating system - Amazon Kindle Fire, Google Nexus 7, Samsung Galaxy Note, Samsung Galaxy Tab 2
+* Feature: Fully Gallery test and optimization for Android Browser on all models of these manufacturers phone that use the Android operating system (to many to list)  mobile phones that support - Samsung Galaxy, Motorola, HTC, Sony and LG
+* Feature: Full Gallery test and optimization for Opera Mobile - Samsung Galaxy Tablet and Mobiles HTC Wildfire. Nokia 5800, Samsung Galaxy S II, Motorola Droid X and Motorola Atrix 4G    
+
 = 1.1.5 - 2013/03/25 =
 * Fixed: Lightbox pop-up script bug. When using the Lightbox tool for the image pop-up the current image did not show - instead showed first image in the gallery. Could never resolve this so we have replaced the old Lightbox pop-up script with new Colorbox script. This fixes this long standing issue. 
 * Fixed: Bug for users who have https: (SSL) on their sites wp-admin but have http on sites front end. This was causing a -1 to show in the Gallery Container instead of the current image because wp-admin with SSL applied only allows https:, but the url of admin-ajax.php is http: and it is denied hence returning the ajax -1 error. Fixed by writing a filter to recognize when https is configured on wp-admin and parsing correctly. If you do not have this configuration nothing changes for you, if you do have https on your wp-admin (or install it in the future) and http on the front end then Dynamic Gallery will automatically detect that and works as it should.
-
 
 = 1.1.4 - 2013/03/09 =
 * Feature: UI Enhancement. Complete rework of the admin dashboard.
@@ -145,7 +157,6 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 * Fixed: Undefined PrettyPhoto script include. Defined script to load from footer after jQuery script. In some sites this was causing the image Zoom not to work.
 * Fixed: Conflict with Chrome browser add on AdBlocker. Chrome extension Adblocker was hiding the gallery class name ad-images which was causing the main gallery images not to show. Edited style so now gallery shows with that add-on activated.
 * Tweak: Updated plugins wiki documentation to show the new admin UI and features
-
 
 = 1.1.3 - 2013/03/04 =
 * Feature: Updated all plugin code to be 100% compatible with WooCommerce V2.0 and backwards.
@@ -156,16 +167,13 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 * Feature: Added option to Admin Panel to 'Reset Activation to default', This option allows you to rest all Gallery Activation settings to the default you have set.
 * Tweak: Jumped version from 1.0.9 to 1.1.3 to keep in synch with Pro License Version.   
 
-
 = 1.0.9 - 2013/01/23 =
 * Feature: Massive 2 times improvement in gallery image load times. Reworked the way that the Gallery image thumbnails are loaded with a resulting 50% reduction in gallery load speed.
 * Tweak: Tested gallery on WooCanvas theme for 100% compatibility in Fire Fox, Google Chrome, Safari, IE8  , IE9, ios5, ios6 and Android.
 * Tweak - Added Thumbnail help text on admin panel, warning not to set the Thumbnail width and height to '0' empty as it causes a .php error 'not divisible by zero'  message to show on product pages instead of the Gallery.
 
-
 = 1.0.8 - 2013/01/09 =
 * Tweak: Updated Support and Pro Version link URL's on wordpress.org description, plugins and plugins dashboard. Links were returning 404 errors since the launch of the all new a3rev.com mobile responsive site as the base e-commerce permalinks is changed.
-
 
 = 1.0.7 - 2012/11/23 =
 * Feature: Dynamic Gallery now only recognizes image formats .jpg, .jpeg, .gif, .png. It won't recognize another file and won't show in gallery, or on Image gallery manager meta box. Mean that files like PDF's can be uploaded and the gallery does not show them or on the Pro version create variations for them in the pop up image manager.
@@ -173,10 +181,8 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 * Feature: PRO version now supports WPMU - Pro Version Single License now works on any domain or sub domain that the Plugin is installed on with the WPMU environment. Note it only works on 1. WPMU license option coming soon.
 * Feature: Added 'Apply to All' option on Gallery Image manager pop-up - this feature allows PRO Version user to Apply all variations in a set to the selected image with one click - Thanks to Shawn for the feedback and the idea.
 
-
 = 1.0.6 - 2012/10/31 =
 * Upgraded code with new PRO Version Variation Products Image manager to allow for seamless upgrade to Pro version.
-
 
 = 1.0.5 - 2012/10/26 = 
 * Fixed: Stopped Lazy load scrolling on Gallery initial load for auto start (Lite and Pro Versions) and when Auto Start not activated on Pro Version. Now the Lazy load scroll only starts when transition to second image in the Gallery starts.
@@ -184,13 +190,11 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 * Fixed: Caption text pop-up now sync with and set by the Time between transitions settings (Lite and Pro Versions). 
 * Fixed: Make center for image in gallery frame
 
-
 = 1.0.4 - 2012/10/01 =
 * Fixed: Single image click zoom function. The current image now opens when Zoom or the image is clicked.
 * Tweak: Added display:inline-block !important; into css file for image class
 * Tweak: Update dashboard to show new Pro version features - responsive setting and include product variation images.
 * Tweak; Added Pro Version check box features for deactivate gallery and variation images to product page gallery manager.
-
 
 = 1.0.3 - 2012/09/03 =
 * Fixed : Fixed: Gallery preview not working on sites that do not have wp_enqueue_script( 'thickbox' ) by default. Added call to wp_enqueue_script( 'thickbox' ) if it does not exist so that preview window can open.
@@ -202,15 +206,12 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 * Tweak: Add plugin description to wp plugins dashboard.
 * Tweak: Change localization file path from actual to base path
 
-
 = 1.0.2 - 2012/07/18 =
 * Fix - Edit Javascript to fix Image Scaling Issue.
-
 
 = 1.0.1 - 2012/07/17 =
 * Fix - Set Gallery z index to a low number so that theme Nav bar dropdowns don't show behind the gallery.
 * Fix - Remove gallery script that makes wide of block class to 100% which was causing some themes footer widgets to show 100% wide.
-
 
 = 1.0 - 2012/07/14 =
 * Initial release.

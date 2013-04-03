@@ -780,7 +780,7 @@
             img.load(
               function() {
                 image.preloaded = true;
-                image.size = { width: this.width, height: this.height };
+                image.size = { width: $(this).width(), height: $(this).height() };
                 context.fireCallback(callback);
               }
             ).error(
