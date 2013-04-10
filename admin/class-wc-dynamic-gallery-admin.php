@@ -178,7 +178,7 @@ class WC_Dynamic_Gallery {
 		wp_enqueue_script( 'colorbox_script', WOO_DYNAMIC_GALLERY_JS_URL . '/colorbox/jquery.colorbox'.$suffix.'.js', array(), false, true );
 			
 		wp_enqueue_style( 'woocommerce_fancybox_styles', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.css' );
-		wp_enqueue_script( 'fancybox', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.min.js', array(), false, true );
+		wp_enqueue_script( 'fancybox', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox'.$suffix.'.js', array(), false, true );
 		
 		//if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
 			wp_enqueue_style( 'woocommerce_prettyPhoto_css', WOO_DYNAMIC_GALLERY_JS_URL . '/prettyPhoto/prettyPhoto.css');
@@ -1010,8 +1010,6 @@ class WC_Dynamic_Gallery {
 		$html .= '<li>4. '.__('Option to Deactivate the Gallery on any Single product page - default WooCommerce product image will show.', 'woo_dgallery').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '<h3>'.__('Discount Upgrade Coupon', 'woo_dgallery').':</h3>';
-		$html .= '<p><a href="http://a3rev.com/current-discount-coupon-codes/" target="_blank">'.__('Click here to visit the a3rev site', 'woo_dgallery').'</a> '.__('to see current upgrade Discount Coupons available exclusively to a3rev Lite Version plugin users.', 'woo_dgallery').'</p>';
 		$html .= '<h3>'.__('Plugin Documentation', 'woo_dgallery').'</h3>';
 		$html .= '<p>'.__('All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request', 'woo_dgallery').'. <a href="http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/" target="_blank">'.__('Visit the a3rev wiki.', 'woo_dgallery').'</a></p>';
 		$html .= '<h3>'.__('More a3rev Quality Plugins', 'woo_dgallery').'</h3>';

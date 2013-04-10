@@ -4,7 +4,7 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_version', '1.1.6');
+	update_option('a3rev_woo_dgallery_version', '1.1.7');
 	WC_Dynamic_Gallery::wc_dynamic_gallery_set_setting(true, true);
 }
 
@@ -52,7 +52,7 @@ function setup_dynamic_gallery() {
 			//wp_enqueue_script('jquery');
 			if ($popup_gallery == 'fb') {
 				wp_enqueue_style( 'woocommerce_fancybox_styles', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.css' );
-				wp_enqueue_script( 'fancybox', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.min.js', array(), false, true );
+				wp_enqueue_script( 'fancybox', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox'.$suffix.'.js', array(), false, true );
 			} elseif ($popup_gallery == 'colorbox') {
 				wp_enqueue_style( 'a3_colorbox_style', WOO_DYNAMIC_GALLERY_JS_URL . '/colorbox/colorbox.css' );
 				wp_enqueue_script( 'colorbox_script', WOO_DYNAMIC_GALLERY_JS_URL . '/colorbox/jquery.colorbox'.$suffix.'.js', array(), false, true );
@@ -88,7 +88,7 @@ if(version_compare(get_option('a3rev_woo_dgallery_version'), '1.1.0') === -1){
 	update_option('a3rev_woo_dgallery_version', '1.1.0');
 }
 
-update_option('a3rev_woo_dgallery_version', '1.1.6');
+update_option('a3rev_woo_dgallery_version', '1.1.7');
 
 global $wc_dg;
 $wc_dg = new WC_Dynamic_Gallery();
