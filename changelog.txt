@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.8 - 2013/04/26 =
+* Feature: Reduction in memory used when loading images to the gallery in the edit product page Dynamic Gallery image uploader. We have made several tweaks to the output buffering function to achieve this. Particularly useful for those with servers running low on or operating on low memory resources.
+* Feature: Added when install and activate plugin link redirects to WooCommerce Dynamic Gallery admin panel instead of the wp-plugins dashboard.
+
 = 1.1.7 - 2013/04/10 =
 * Fixed: WooCommerce Reviews form opening in duplicate popup tools, PrettyPhoto and Fancybox caused by our old WooCommerce v1.6 fancybox lib.
 

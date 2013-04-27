@@ -146,8 +146,7 @@ class WC_Dynamic_Gallery_Meta_Boxes{
 		</script>
         
         <?php
-		$output = ob_get_contents();
-		ob_clean();
+		$output = ob_get_clean();
 		echo $output;	
 	}
 	

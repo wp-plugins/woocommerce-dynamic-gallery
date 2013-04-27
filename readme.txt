@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -136,6 +136,10 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.1.8 - 2013/04/26 =
+* Feature: Reduction in memory used when loading images to the gallery in the edit product page Dynamic Gallery image uploader. We have made several tweaks to the output buffering function to achieve this. Particularly useful for those with servers running low on or operating on low memory resources.
+* Feature: Added when install and activate plugin link redirects to WooCommerce Dynamic Gallery admin panel instead of the wp-plugins dashboard.
+
 = 1.1.7 - 2013/04/10 =
 * Fixed: WooCommerce Reviews form opening in duplicate popup tools, PrettyPhoto and Fancybox caused by our old WooCommerce v1.6 fancybox lib.
 
@@ -218,4 +222,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 = 1.0 - 2012/07/14 =
 * Initial release.
-  
+
+
+== Upgrade Notice ==
+
+= 1.1.8 =
+Install this upgrade for a reduction in memory used when uploading images via the Dynamic Gallery image uploader.

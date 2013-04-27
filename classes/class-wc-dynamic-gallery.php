@@ -92,7 +92,7 @@ class WC_Gallery_Display_Class{
 			}	
 		}
 		ksort($attached_thumb);
-		$product_id .= '_'.rand(100,10000);
+		$product_id = '_'.rand(100,10000);
 		$have_image = false;
 		$attached_images = array();
 		if(is_array($attached_thumb) && count($attached_thumb) > 0) {

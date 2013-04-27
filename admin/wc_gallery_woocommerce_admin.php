@@ -4,14 +4,21 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_version', '1.1.7');
+	update_option('a3rev_woo_dgallery_version', '1.1.8');
 	WC_Dynamic_Gallery::wc_dynamic_gallery_set_setting(true, true);
+	
+	update_option('a3rev_woo_dgallery_just_installed', true);
 }
 
 /**
  * Load languages file
  */
 function wc_dynamic_gallery_init() {
+	if ( get_option('a3rev_woo_dgallery_just_installed') ) {
+		delete_option('a3rev_woo_dgallery_just_installed');
+		wp_redirect( ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin.php?page=woocommerce&tab=dynamic_gallery' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin.php?page=woocommerce&tab=dynamic_gallery' ) ) ) );
+		exit;
+	}
 	load_plugin_textdomain( 'woo_dgallery', false, WOO_DYNAMIC_GALLERY_FOLDER.'/languages' );
 	$thumb_width = get_option('thumb_width');
 	$thumb_height = get_option('thumb_height');
@@ -88,7 +95,7 @@ if(version_compare(get_option('a3rev_woo_dgallery_version'), '1.1.0') === -1){
 	update_option('a3rev_woo_dgallery_version', '1.1.0');
 }
 
-update_option('a3rev_woo_dgallery_version', '1.1.7');
+update_option('a3rev_woo_dgallery_version', '1.1.8');
 
 global $wc_dg;
 $wc_dg = new WC_Dynamic_Gallery();
