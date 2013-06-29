@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
-Tested up to: 3.5.1
-Stable tag: 1.1.8
+Tested up to: 3.5.2
+Stable tag: 1.1.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -136,6 +136,13 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.1.9 - 2013/06/29 =
+* Features :
+	* Added - Show featured image for product grid view extracts but don't show it in the product page gallery. Check feature image exclude from Gallery to achieve this effect.
+	* Added House keeping function to settings. Clean up on Deletion.  Option - Choose if you ever delete this plugin it will completely remove all tables and data it created, leaving no trace it was ever here. Added to Global Settings sub tab.
+* Tweaks :
+	* Updated the plugins support links to the new plugins WordPress support forum.
+
 = 1.1.8 - 2013/04/26 =
 * Feature: Reduction in memory used when loading images to the gallery in the edit product page Dynamic Gallery image uploader. We have made several tweaks to the output buffering function to achieve this. Particularly useful for those with servers running low on or operating on low memory resources.
 * Feature: Added when install and activate plugin link redirects to WooCommerce Dynamic Gallery admin panel instead of the wp-plugins dashboard.
@@ -225,6 +232,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.1.9 =
+Update you plugin now for 2 new features and a tweak.
 
 = 1.1.8 =
 Install this upgrade for a reduction in memory used when uploading images via the Dynamic Gallery image uploader.

@@ -366,9 +366,9 @@ class WC_Gallery_Display_Class{
             
             echo '<script type="text/javascript">
                 jQuery(function() {
-                    var settings_defaults_'.$post->ID.' = { loader_image: \''.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/loader.gif\',
+                    var settings_defaults_'.$post->ID.' = { loader_image: "'.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/loader.gif",
                         start_at_index: 0,
-                        gallery_ID: \''.$post->ID.'\',
+                        gallery_ID: "'.$post->ID.'",
 						lightbox_class: "'.$lightbox_class.'",
                         description_wrapper: false,
                         thumb_opacity: 0.5,
@@ -378,7 +378,7 @@ class WC_Gallery_Display_Class{
                         height: false,
                         display_next_and_prev: true,
                         display_back_and_forward: true,
-                        scroll_jump: 0, // If 0, it jumps the width of the container
+                        scroll_jump: 0,
                         slideshow: {
                             enable: true,
                             autostart: '.$g_auto.',
@@ -387,12 +387,12 @@ class WC_Gallery_Display_Class{
                             stop_label: "'.__('STOP SLIDESHOW', 'woo_dgallery').'",
 							zoom_label: "'.$zoom_label.'",
                             stop_on_scroll: true,
-                            countdown_prefix: \'(\',
-                            countdown_sufix: \')\',
+                            countdown_prefix: "(",
+                            countdown_sufix: ")",
                             onStart: false,
                             onStop: false
                         },
-                        effect: \''.$g_effect.'\', 
+                        effect: "'.$g_effect.'", 
                         enable_keyboard_move: true,
                         cycle: true,
                         callbacks: {

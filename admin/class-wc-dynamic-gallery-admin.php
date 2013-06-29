@@ -566,6 +566,17 @@ class WC_Dynamic_Gallery {
 				'default'	=> 'no',
 				'type' 		=> 'checkbox',
 			),
+			array('type' => 'sectionend'),
+			
+			array(	'name' => __( 'House Keeping', 'woo_dgallery' ).' :', 'type' => 'title'),
+			array(  
+				'name' 		=> __( 'Clean up on Deletion', 'woo_dgallery' ),
+				'desc' 		=> '<em class="description">'.__( 'Check this box and if you ever delete this plugin it will completely remove all tables and data it created, leaving no trace it was ever here. If upgrading to the Pro Version this is not recommended.', 'woo_dgallery' ).'</em>',
+				'id' 		=> 'wc_dgallery_clean_on_deletion',
+				'std' 		=> '0',
+				'default'	=> 'no',
+				'type' 		=> 'checkbox',
+			),
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_global_settings_end'),
 			
 			
@@ -911,6 +922,12 @@ class WC_Dynamic_Gallery {
 		}
 		update_option('wc_dgallery_reset_variation_activate', 'no');
 		
+		if ( !get_option('wc_dgallery_clean_on_deletion') || get_option('wc_dgallery_clean_on_deletion') == 'no' ) {
+			$uninstallable_plugins = (array) get_option('uninstall_plugins');
+			unset($uninstallable_plugins[WOO_DYNAMIC_GALLERY_NAME]);
+			update_option('uninstall_plugins', $uninstallable_plugins);
+		}
+		
 	}
 	
 	function reset_products_galleries_activate() {
@@ -1047,7 +1064,7 @@ class WC_Dynamic_Gallery {
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/" target="_blank">'.__('Documentation', 'woo_dgallery').'</a>';
-		$links[] = '<a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/#help_tab" target="_blank">'.__('Support', 'woo_dgallery').'</a>';
+		$links[] = '<a href="http://wordpress.org/support/plugin/woocommerce-dynamic-gallery/" target="_blank">'.__('Support', 'woo_dgallery').'</a>';
 		return $links;
 	}
 }

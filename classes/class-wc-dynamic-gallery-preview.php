@@ -334,8 +334,8 @@ class WC_Gallery_Preview_Display{
                 jQuery("#gallery_'.$post->ID.'").adGallery(settings_defaults_'.$post->ID.');
             });
             </script>';
-            echo '<div id="gallery_'.$post->ID.'" class="ad-gallery">
-                <div class="ad-image-wrapper"></div>
+            echo '<div id="gallery_'.$post->ID.'" class="ad-gallery" style="width: '.$g_width.'px;">
+                <div class="ad-image-wrapper" style="width: 99.3%; height: '.($g_height-2).'px;"></div>
                 <div class="ad-controls"> </div>
                   <div class="ad-nav">
                     <div class="ad-thumbs">
