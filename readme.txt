@@ -137,10 +137,10 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 == Changelog ==
 
 = 1.2.0 - 2013/07/01 =
-* Fixed:
+* Fixes :
 	* Activated House Keeping feature setting in plugins Global Settings sub tab.
-* Tweaks:
-	* Updated House Keeping help text with clearer instructions and a clear Warning for those upgrading to the Pro Version
+* Tweaks :
+	* Updated House Keeping help text with clearer instructions and a clear Warning for those upgrading to the Pro Version.
 
 = 1.1.9 - 2013/06/29 =
 * Features :
