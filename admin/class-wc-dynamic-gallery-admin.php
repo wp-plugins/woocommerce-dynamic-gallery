@@ -117,7 +117,9 @@ class WC_Dynamic_Gallery {
 		if( trim(get_option('navbar_height')) == '' || $reset ){
 			update_option('navbar_height','25');
 		}
-		
+		if ( get_option('wc_dgallery_clean_on_deletion') == '' || $reset ) {
+			update_option('wc_dgallery_clean_on_deletion', 'no');
+		}
 	}
 	
 	public function __construct() {
@@ -140,6 +142,7 @@ class WC_Dynamic_Gallery {
 				
 		// Add sub tabs
 		add_action('woocommerce_settings_dynamic_gallery_settings_end_after', array(&$this, 'dynamic_gallery_settings_end_after') );
+		add_action('woocommerce_settings_dynamic_gallery_reset_activation_end_after', array(&$this, 'dynamic_gallery_reset_activation_end_after') );
 		add_action('woocommerce_settings_dynamic_gallery_global_settings_end_after', array(&$this, 'dynamic_gallery_global_settings_end_after') );
 		
 		add_action('woocommerce_settings_dynamic_gallery_caption_end_after', array(&$this, 'dynamic_gallery_caption_end_after') );
@@ -321,8 +324,12 @@ class WC_Dynamic_Gallery {
 		echo '<div class="pro_feature_fields">';
 	}
 	
+	function dynamic_gallery_reset_activation_end_after() {
+		echo '</div>';
+	}
+	
 	function dynamic_gallery_global_settings_end_after() {
-		echo '</div></div><div class="section" id="caption-text"><div class="pro_feature_fields">';
+		echo '</div><div class="section" id="caption-text"><div class="pro_feature_fields">';
 	}
 		
 	function dynamic_gallery_caption_end_after() {
@@ -474,7 +481,7 @@ class WC_Dynamic_Gallery {
 			
 			array(  
 				'name' 		=> __( 'Single Image Transition', 'woo_dgallery' ),
-				'desc' 		=> __( '<em class="description">Check to auto deactivate image transition effect when only 1 image is loaded to gallery.</em>', 'woo_dgallery' ),
+				'desc' 		=> __( 'Check to auto deactivate image transition effect when only 1 image is loaded to gallery.', 'woo_dgallery' ),
 				'id' 		=> 'dynamic_gallery_stop_scroll_1image',
 				'std' 		=> '0',
 				'default'	=> 'no',
@@ -532,7 +539,7 @@ class WC_Dynamic_Gallery {
            	),
 			array(  
 				'name' 		=> __( 'Gallery Activation Default', 'woo_dgallery' ),
-				'desc' 		=> '<em class="description">'.__( 'Checked = Gallery Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Gallery activation settings made on single product pages.', 'woo_dgallery' ).'</em>',
+				'desc' 		=> __( 'Checked = Gallery Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Gallery activation settings made on single product pages.', 'woo_dgallery' ),
 				'id' 		=> 'wc_dgallery_activate',
 				'std' 		=> '1',
 				'default'	=> 'yes',
@@ -540,7 +547,7 @@ class WC_Dynamic_Gallery {
 			),
 			array(  
 				'name' 		=> __( 'Reset Activation to default', 'woo_dgallery' ),
-				'desc' 		=> '<em class="description">'.__( "Checked this box and 'Save Changes' to reset ALL products to the default 'Gallery Activation' status you set above including ALL individual custom Product Page Gallery activation settings.", 'woo_dgallery' ).'</em>',
+				'desc' 		=> __( "Checked this box and 'Save Changes' to reset ALL products to the default 'Gallery Activation' status you set above including ALL individual custom Product Page Gallery activation settings.", 'woo_dgallery' ),
 				'id' 		=> 'wc_dgallery_reset_galleries_activate',
 				'std' 		=> '0',
 				'default'	=> 'no',
@@ -551,7 +558,7 @@ class WC_Dynamic_Gallery {
 			array(	'name' => __( 'Image Variation Feature', 'woo_dgallery' ), 'type' => 'title'),
 			array(  
 				'name' 		=> __( 'Variations Activation Default', 'woo_dgallery' ),
-				'desc' 		=> '<em class="description">'.__( 'Checked = Variation Images Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Variation Images activation settings made on single product pages.', 'woo_dgallery' ).'</em>',
+				'desc' 		=> __( 'Checked = Variation Images Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Variation Images activation settings made on single product pages.', 'woo_dgallery' ),
 				'id' 		=> 'dynamic_gallery_show_variation',
 				'std' 		=> '0',
 				'default'	=> 'no',
@@ -560,18 +567,18 @@ class WC_Dynamic_Gallery {
 			),
 			array(  
 				'name' 		=> __( 'Reset Activation to default', 'woo_dgallery' ),
-				'desc' 		=> '<em class="description">'.__( "Checked this box and 'Save Changes' to reset ALL products to the default 'Variations Activation' status you set above. NOTE:  ALL individual custom Product Page Variation Images Activation settings will be changed to the default.", 'woo_dgallery' ).'</em>',
+				'desc' 		=> __( "Checked this box and 'Save Changes' to reset ALL products to the default 'Variations Activation' status you set above. NOTE:  ALL individual custom Product Page Variation Images Activation settings will be changed to the default.", 'woo_dgallery' ),
 				'id' 		=> 'wc_dgallery_reset_variation_activate',
 				'std' 		=> '0',
 				'default'	=> 'no',
 				'type' 		=> 'checkbox',
 			),
-			array('type' => 'sectionend'),
+			array('type' => 'sectionend', 'id' => 'dynamic_gallery_reset_activation_end'),
 			
 			array(	'name' => __( 'House Keeping', 'woo_dgallery' ).' :', 'type' => 'title'),
 			array(  
 				'name' 		=> __( 'Clean up on Deletion', 'woo_dgallery' ),
-				'desc' 		=> '<em class="description">'.__( 'Check this box and if you ever delete this plugin it will completely remove all tables and data it created, leaving no trace it was ever here. If upgrading to the Pro Version this is not recommended.', 'woo_dgallery' ).'</em>',
+				'desc' 		=> __( 'Check this box and if you ever delete this plugin it will completely remove all of its code and tables it has created, leaving no trace it was ever here. It will not delete your product images! <strong>CAUTION</strong> This setting is <strong>not recommended</strong> if you are upgrading to the Pro Version as you will want to keep any gallery settings you have already made.', 'woo_dgallery' ),
 				'id' 		=> 'wc_dgallery_clean_on_deletion',
 				'std' 		=> '0',
 				'default'	=> 'no',

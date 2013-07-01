@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
 Tested up to: 3.5.2
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -135,6 +135,12 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.2.0 - 2013/07/01 =
+* Fixed:
+	* Activated House Keeping feature setting in plugins Global Settings sub tab.
+* Tweaks:
+	* Updated House Keeping help text with clearer instructions and a clear Warning for those upgrading to the Pro Version
 
 = 1.1.9 - 2013/06/29 =
 * Features :
