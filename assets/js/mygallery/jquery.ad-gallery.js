@@ -286,17 +286,17 @@
           var thumb = link.find('img');
 		  var alt = link.attr('alt');
           // Check if the thumb has already loaded
-          /*if(!context.isImageLoaded(thumb[0])) {
+          if(!context.isImageLoaded(thumb[0])) {
             thumb.load(
               function() {
                 thumb_wrapper_width += this.parentNode.parentNode.offsetWidth;
                 thumbs_loaded++;
               }
             );
-          } else{*/
+          } else{
             thumb_wrapper_width += thumb[0].parentNode.parentNode.offsetWidth;
             thumbs_loaded++;
-          /*};*/
+          };
           link.addClass('ad-thumb'+ i);
           link.click(
             function() {
@@ -774,7 +774,7 @@
         if(!this.images[index].preloaded) {
           var img = $(new Image());
           img.attr('src', image.image);
-          /*if(!this.isImageLoaded(img[0])) {
+          if(!this.isImageLoaded(img[0])) {
             this.preloads.append(img);
             var context = this;
             img.load(
@@ -790,11 +790,11 @@
                 image.size = false;
               }
             );
-          } else {*/
+          } else {
             image.preloaded = true;
             image.size = { width: img[0].width, height: img[0].height };
             this.fireCallback(callback);
-          //};
+          };
         } else {
           this.fireCallback(callback);
         };

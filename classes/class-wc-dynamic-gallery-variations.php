@@ -9,9 +9,10 @@
  * media_fields()
  * save_media_fields()
  */
-class WC_Dynamic_Gallery_Variations{
+class WC_Dynamic_Gallery_Variations
+{
 	
-	function media_fields( $form_fields, $attachment ) {
+	public static function media_fields( $form_fields, $attachment ) {
 	
 		global $woocommerce;
 		
@@ -75,7 +76,7 @@ class WC_Dynamic_Gallery_Variations{
 							$data['name'] = ucwords($data['name']);
 							
 							$i = 0; foreach($values as $slug => $value) {
-								$html .= "&nbsp;- &nbsp; <input disabled='disabled' class='".$attachment->ID."_".$attribute."' type='checkbox' id='".$attachment->ID."_".$attribute."_".$i."' name='attachments[".$attachment->ID."][in_variations][".$attribute."][".$i."]' value='".$slug."' > <label for='".$attachment->ID."_".$attribute."_".$i."'>".$value."</label><br />";
+								$html .= "&nbsp;- &nbsp; <input disabled='disabled' class='".$attachment->ID."_".$attribute."' type='checkbox' id='".$attachment->ID."_".$attribute."_".$i."' name='attachments[".$attachment->ID."][wc_dgallery_in_variations][".$attribute."][".$i."]' value='".$slug."' > <label for='".$attachment->ID."_".$attribute."_".$i."'>".$value."</label><br />";
 							$i++; }
 							
 						} else {
@@ -84,7 +85,7 @@ class WC_Dynamic_Gallery_Variations{
 							
 							$i = 0; foreach($values as $value) {
 								$slug = esc_attr($value);
-								$html .= "&nbsp;- &nbsp; <input disabled='disabled' class='".$attachment->ID."_".$attribute."' type='checkbox' id='".$attachment->ID."_".$attribute."_".$i."' name='attachments[".$attachment->ID."][in_variations][".$attribute."][".$i."]' value='".$slug."' > <label for='".$attachment->ID."_".$attribute."_".$i."'>".$value."</label><br />";
+								$html .= "&nbsp;- &nbsp; <input disabled='disabled' class='".$attachment->ID."_".$attribute."' type='checkbox' id='".$attachment->ID."_".$attribute."_".$i."' name='attachments[".$attachment->ID."][wc_dgallery_in_variations][".$attribute."][".$i."]' value='".$slug."' > <label for='".$attachment->ID."_".$attribute."_".$i."'>".$value."</label><br />";
 							$i++; }
 				
 							
@@ -112,7 +113,7 @@ class WC_Dynamic_Gallery_Variations{
 		return $form_fields;
 	}
 	
-	function save_media_fields( $post, $attachment ) {
+	public static function save_media_fields( $post, $attachment ) {
 		if (substr($post['post_mime_type'], 0, 5) == 'image') {
 			if (isset($_REQUEST['woo_dynamic_gallery_exclude_image'])) {
 				if (isset($_REQUEST['attachments'][$post['ID']]['woocommerce_exclude_image'])) :

@@ -8,9 +8,10 @@
  *
  * wc_dynamic_gallery_preview()
  */
-class WC_Gallery_Preview_Display{
+class WC_Gallery_Preview_Display
+{
 		
-	function wc_dynamic_gallery_preview($request = ''){
+	public static function wc_dynamic_gallery_preview($request = ''){
 		$request = $_REQUEST;
 		/**
 		 * Single Product Image
@@ -21,50 +22,51 @@ class WC_Gallery_Preview_Display{
 		$woo_a3_gallery_settings = $request;
 		$lightbox_class = 'lightbox';
 		?>
-        <div class="images" style="width:<?php echo $woo_a3_gallery_settings['product_gallery_width'].'px';?>;margin:30px auto;">
+        <div class="images" style="width:<?php echo $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width'].'px';?>;margin:30px auto;">
           <div class="product_gallery">
             <?php
 			
             
-            $g_width = $woo_a3_gallery_settings['product_gallery_width'];
-            $g_height = $woo_a3_gallery_settings['product_gallery_height'];
+            $g_width = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width'];
+            $g_height = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_height'];
             
-            $g_thumb_width = $woo_a3_gallery_settings['thumb_width'];
-            $g_thumb_height = $woo_a3_gallery_settings['thumb_height'];
-            $g_thumb_spacing = $woo_a3_gallery_settings['thumb_spacing'];
+            $g_thumb_width = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'thumb_width'];
+			if ( $g_thumb_width <= 0 ) $g_thumb_width = 105;
+            $g_thumb_height = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'thumb_height'];
+			if ( $g_thumb_height <= 0 ) $g_thumb_height = 75;
+            $g_thumb_spacing = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'thumb_spacing'];
                 
-            $g_auto = get_option('product_gallery_auto_start');
-            $g_speed = get_option('product_gallery_speed');
-            $g_effect = get_option('product_gallery_effect');
-            $g_animation_speed = get_option('product_gallery_animation_speed');
+            $g_auto = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_auto_start' );
+            $g_speed = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_speed' );
+            $g_effect = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_effect' );
+            $g_animation_speed = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_animation_speed' );
 			
-			$bg_nav_color = get_option('bg_nav_color');
-			$bg_nav_text_color = get_option('bg_nav_text_color');
+			$bg_nav_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'bg_nav_color' );
+			$bg_nav_text_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'bg_nav_text_color' );
 			
-			$bg_image_wrapper = get_option('bg_image_wrapper');
-			$border_image_wrapper_color = get_option('border_image_wrapper_color');
-			$border_image_wrapper_color = get_option('border_image_wrapper_color');
+			$bg_image_wrapper = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'bg_image_wrapper' );
+			$border_image_wrapper_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'border_image_wrapper_color' );
 			
-			$product_gallery_text_color = get_option('product_gallery_text_color');
-			$product_gallery_bg_des = get_option('product_gallery_bg_des');
+			$product_gallery_text_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_text_color' );
+			$product_gallery_bg_des = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_bg_des' );
 			
-			$enable_gallery_thumb = get_option('enable_gallery_thumb');
+			$enable_gallery_thumb = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'enable_gallery_thumb' );
 			
 			
-			$product_gallery_nav = get_option('product_gallery_nav');
+			$product_gallery_nav = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_nav' );
 			
-			$transition_scroll_bar = get_option('transition_scroll_bar');
+			$transition_scroll_bar = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'transition_scroll_bar' );
 			
-			$lazy_load_scroll = get_option('lazy_load_scroll');
+			$lazy_load_scroll = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'lazy_load_scroll' );
 			
-			$caption_font = get_option('caption_font');
-			$caption_font_size = get_option('caption_font_size');
-			$caption_font_style = get_option('caption_font_style');
+			$caption_font = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'caption_font' );
+			$caption_font_size = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'caption_font_size' );
+			$caption_font_style = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'caption_font_style' );
 			
-			$navbar_font = get_option('navbar_font');
-			$navbar_font_size = get_option('navbar_font_size');
-			$navbar_font_style = get_option('navbar_font_style');
-			$navbar_height = get_option('navbar_height');
+			$navbar_font = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font' );
+			$navbar_font_size = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font_size' );
+			$navbar_font_style = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font_style' );
+			$navbar_height = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_height' );
 			
 			if($product_gallery_nav == 'yes'){
 				$display_ctrl = 'display:block !important;';
@@ -77,7 +79,7 @@ class WC_Gallery_Preview_Display{
 				$ldm = '0';
 			}
 			
-			$popup_gallery = get_option('popup_gallery');
+			$popup_gallery = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'popup_gallery' );
 			$zoom_label = __('ZOOM +', 'woo_dgallery');
 			if ($popup_gallery == 'deactivate') {
 				$lightbox_class = '';
@@ -85,7 +87,7 @@ class WC_Gallery_Preview_Display{
 			}
 			
 			
-			$bg_des = WC_Gallery_Display_Class::html2rgb($product_gallery_bg_des,true);
+			$bg_des = WC_Dynamic_Gallery_Functions::html2rgb($product_gallery_bg_des,true);
 			$des_background =str_replace('#','',$product_gallery_bg_des);
 			
            
@@ -296,9 +298,9 @@ class WC_Gallery_Preview_Display{
             
             echo '<script type="text/javascript">
                 jQuery(function() {
-                    var settings_defaults_'.$post->ID.' = { loader_image: \''.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/loader.gif\',
+                    var settings_defaults_'.$post->ID.' = { loader_image: "'.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/loader.gif",
                         start_at_index: 0,
-                        gallery_ID: \''.$post->ID.'\',
+                        gallery_ID: "'.$post->ID.'",
 						lightbox_class: "'.$lightbox_class.'",
                         description_wrapper: false,
                         thumb_opacity: 0.5,
@@ -308,7 +310,7 @@ class WC_Gallery_Preview_Display{
                         height: false,
                         display_next_and_prev: true,
                         display_back_and_forward: true,
-                        scroll_jump: 0, // If 0, it jumps the width of the container
+                        scroll_jump: 0,
                         slideshow: {
                             enable: true,
                             autostart: '.$g_auto.',
@@ -317,12 +319,12 @@ class WC_Gallery_Preview_Display{
                             stop_label: "'.__('STOP SLIDESHOW', 'woo_dgallery').'",
 							zoom_label: "'.$zoom_label.'",
                             stop_on_scroll: true,
-                            countdown_prefix: \'(\',
-                            countdown_sufix: \')\',
+                            countdown_prefix: "(",
+                            countdown_sufix: ")",
                             onStart: false,
                             onStop: false
                         },
-                        effect: \''.$g_effect.'\', 
+                        effect: "'.$g_effect.'", 
                         enable_keyboard_move: true,
                         cycle: true,
                         callbacks: {
@@ -363,11 +365,11 @@ class WC_Gallery_Preview_Display{
                                 $script_colorbox .= '$(function(){';
 								$script_fancybox .= '$(function(){';
 								$script_prettyPhoto .= '$(function(){';
-                                $script_colorbox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
+                                $script_colorbox .= '$(document).on("click", ".ad-gallery .lightbox", function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 								var idx = $(".ad-image img").attr("idx");';
-								$script_fancybox .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
+								$script_fancybox .= '$(document).on("click", ".ad-gallery .lightbox", function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 								var idx = $(".ad-image img").attr("idx");';
-								$script_prettyPhoto .= '$(".ad-gallery .lightbox").live("click",function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
+								$script_prettyPhoto .= '$(document).on("click", ".ad-gallery .lightbox", function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 								var idx = $(".ad-image img").attr("idx");';
                                 if(count($imgs) <= 1 ){
                                     $script_colorbox .= '$(".gallery_product_'.$post->ID.'").colorbox({open:true, maxWidth:"100%", title: function() { return "&nbsp;";} });';
@@ -395,16 +397,16 @@ class WC_Gallery_Preview_Display{
                                     $width_old = $image_attribute[0];
                                     $height_old = $image_attribute[1];
                                      if($width_old > $g_thumb_width || $height_old > $g_thumb_height){
-                                        if($height_old > $g_thumb_height) {
+                                        if($height_old > $g_thumb_height && $g_thumb_height > 0 ) {
                                             $factor = ($height_old / $g_thumb_height);
                                             $thumb_height = $g_thumb_height;
                                             $thumb_width = $width_old / $factor;
                                         }
-                                        if($thumb_width > $g_thumb_width){
+                                        if($thumb_width > $g_thumb_width && $g_thumb_width > 0 ){
                                             $factor = ($width_old / $g_thumb_width);
                                             $thumb_height = $height_old / $factor;
                                             $thumb_width = $g_thumb_width;
-                                        }elseif($thumb_width == $g_thumb_width && $width_old > $g_thumb_width){
+                                        }elseif($thumb_width == $g_thumb_width && $width_old > $g_thumb_width && $g_thumb_width > 0 ){
                                             $factor = ($width_old / $g_thumb_width);
                                             $thumb_height = $height_old / $factor;
                                             $thumb_width = $g_thumb_width;

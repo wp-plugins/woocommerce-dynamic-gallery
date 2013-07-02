@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
 Tested up to: 3.5.2
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -136,6 +136,17 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.2.1 - 2013/07/02 =
+* Fixes :
+	* IE fix in v1.1.9 gallery preload function error, images don't show on first load, but do after refresh. Edited jquery.ad-gallery.js lib to fix.
+	* Fixed not divisible by zero error message that showed when 0 value entered or <empty> for thumbnail wide and tall. Updated feature help text. 
+	* Updated all JavaScript functions so that the plugin is compatible with jQuery Version1.9 and backwards to version 1.6. WordPress still uses jQuery version 1.8.3. Themes that use Google js Library instead of the WordPress jQuery are using the latest jQuery version 1.9. There are a number of functions in jQuery Version 1.9 that have been depreciated which was causing errors with the jQuery function in the plugin.
+* Tweaks :
+	* Replaced all global option keys with plugin registered prefix wc_dynamic to prevent other plugins conflict with input options.
+	* Complete review and tidy up of the source code. Tidied up namespacing.
+	* Ran WP_DEBUG All Uncaught exceptions errors and warnings fixed.
+	* Added PHP Public Static to functions in Class. Done so that Public Static warnings don't show in DE_BUG mode.
+
 = 1.2.0 - 2013/07/01 =
 * Fixes :
 	* Activated House Keeping feature setting in plugins Global Settings sub tab.
@@ -238,6 +249,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+Upgrade your plugin now to fix a bug that showed with version 1.1.9 plus a full and comprehensive core code review and overhaul.
 
 = 1.1.9 =
 Update you plugin now for 2 new features and a tweak.
