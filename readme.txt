@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
-Tested up to: 3.5.2
-Stable tag: 1.2.1
+Tested up to: 3.6
+Stable tag: 1.2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -136,6 +136,12 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.2.2 - 2013/08/03 =
+* Tweaks :
+	* Plugin in code tested fully compatible with WordPress v3.6.0
+* Fixes :
+	* Added Product Gallery Class attribute box-sizing:content-box for compatibility with new WordPress Twenty Thirteen default theme.
+
 = 1.2.1 - 2013/07/02 =
 * Fixes :
 	* IE fix in v1.1.9 gallery preload function error, images don't show on first load, but do after refresh. Edited jquery.ad-gallery.js lib to fix.
@@ -249,6 +255,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.2 =
+Upgrade your plugin now for an image variation bug fix and full compatibility with WordPress 3.6.0
 
 = 1.2.1 =
 Upgrade your plugin now to fix a bug that showed with version 1.1.9 plus a full and comprehensive core code review and overhaul.

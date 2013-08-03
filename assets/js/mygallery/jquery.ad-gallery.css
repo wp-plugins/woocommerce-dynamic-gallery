@@ -209,6 +209,11 @@
 }
 
 /*Product Gallery*/
+.product_gallery * {
+	box-sizing:content-box !important;
+	-moz-box-sizing:content-box !important;
+	-webkit-box-sizing:content-box !important;
+}
 .product_gallery .ad-gallery {
 	margin-top: 0px !important;
 }
