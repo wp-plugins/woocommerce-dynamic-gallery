@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -136,6 +136,11 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.2.3 - 2013/08/22 =
+* Fixes :
+	* Gallery images can't show on some bespoke themes that have #aside img { visibility: hidden; added  visibility: visible !important; to over ride the themes code and gallery images can show.
+	* Thanks to Hernan Bettello for reporting the issue and access to his site to find and fix the issue with his theme and the gallery.
+
 = 1.2.2 - 2013/08/03 =
 * Tweaks :
 	* Plugin in code tested fully compatible with WordPress v3.6.0
@@ -255,6 +260,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.3 =
+Upgrade now for 1 new bug fix.
 
 = 1.2.2 =
 Upgrade your plugin now for an image variation bug fix and full compatibility with WordPress 3.6.0

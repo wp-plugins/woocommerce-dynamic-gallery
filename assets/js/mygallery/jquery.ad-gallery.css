@@ -162,6 +162,7 @@
 	border:none !important;
 	background:none !important;
 	display:inline-block !important;
+	visibility: visible !important;
 }
 .ad-image img:hover {
 	cursor:pointer;
