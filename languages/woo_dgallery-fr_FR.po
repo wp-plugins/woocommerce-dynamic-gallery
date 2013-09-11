@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Dynamic Gallery LITE v1.0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-02 17:18+0700\n"
-"PO-Revision-Date: 2013-07-02 17:18+0700\n"
+"POT-Creation-Date: 2013-09-11 17:15+0700\n"
+"PO-Revision-Date: 2013-09-11 17:15+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,429 +24,439 @@ msgid "Dynamic Gallery"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:242
+#: admin/class-wc-dynamic-gallery-admin.php:256
 msgid "Gallery"
 msgstr "Galerie"
 
-#: admin/class-wc-dynamic-gallery-admin.php:243
+#: admin/class-wc-dynamic-gallery-admin.php:257
 msgid "Global Settings"
 msgstr ""
 
 # @ woothemes
-#: admin/class-wc-dynamic-gallery-admin.php:244
-#: admin/class-wc-dynamic-gallery-admin.php:591
+#: admin/class-wc-dynamic-gallery-admin.php:258
+#: admin/class-wc-dynamic-gallery-admin.php:605
 msgid "Caption text"
 msgstr ""
 
 # @ woothemes
-#: admin/class-wc-dynamic-gallery-admin.php:245
-#: admin/class-wc-dynamic-gallery-admin.php:658
+#: admin/class-wc-dynamic-gallery-admin.php:259
+#: admin/class-wc-dynamic-gallery-admin.php:672
 msgid "Nav Bar"
 msgstr ""
 
 # @ woothemes
-#: admin/class-wc-dynamic-gallery-admin.php:246
-#: admin/class-wc-dynamic-gallery-admin.php:743
+#: admin/class-wc-dynamic-gallery-admin.php:260
+#: admin/class-wc-dynamic-gallery-admin.php:757
 msgid "Lazy-load scroll"
 msgstr ""
 
 # @ woothemes
-#: admin/class-wc-dynamic-gallery-admin.php:247
-#: admin/class-wc-dynamic-gallery-admin.php:769
+#: admin/class-wc-dynamic-gallery-admin.php:261
+#: admin/class-wc-dynamic-gallery-admin.php:783
 msgid "Image Thumbnails"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:389
+#: admin/class-wc-dynamic-gallery-admin.php:403
 msgid "Preview"
 msgstr "Aperçue"
 
+#: admin/class-wc-dynamic-gallery-admin.php:403
+#: admin/class-wc-dynamic-gallery-admin.php:407
+#: admin/class-wc-dynamic-gallery-admin.php:607
+#: admin/class-wc-dynamic-gallery-admin.php:674
+#: admin/class-wc-dynamic-gallery-admin.php:759
+#: admin/class-wc-dynamic-gallery-admin.php:785
+#: classes/class-wc-dynamic-gallery-metaboxes.php:80
+msgid "View Docs"
+msgstr ""
+
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:389
+#: admin/class-wc-dynamic-gallery-admin.php:403
 msgid "Click here to preview gallery"
 msgstr "Cliquer ici pour afficher l'aperçue"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:393
+#: admin/class-wc-dynamic-gallery-admin.php:407
 #, fuzzy
 msgid "Gallery Dimensions"
 msgstr "Hauteur de la galerie"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:395
+#: admin/class-wc-dynamic-gallery-admin.php:409
 msgid "Gallery width"
 msgstr "Largeur de la galerie"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:404
+#: admin/class-wc-dynamic-gallery-admin.php:418
 msgid "Gallery height"
 msgstr "Hauteur de la galerie"
 
-#: admin/class-wc-dynamic-gallery-admin.php:414
+#: admin/class-wc-dynamic-gallery-admin.php:428
 msgid "Gallery Special Effects"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:416
+#: admin/class-wc-dynamic-gallery-admin.php:430
 msgid "Auto start"
 msgstr "Lecture automatique"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:425
+#: admin/class-wc-dynamic-gallery-admin.php:439
 msgid "False"
 msgstr "Non"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:426
+#: admin/class-wc-dynamic-gallery-admin.php:440
 msgid "True"
 msgstr "Oui"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:431
+#: admin/class-wc-dynamic-gallery-admin.php:445
 msgid "Time between transitions"
 msgstr "Temps de transition"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:440
+#: admin/class-wc-dynamic-gallery-admin.php:454
 msgid "Slide transition effect"
 msgstr "Effet de transition"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:449
+#: admin/class-wc-dynamic-gallery-admin.php:463
 msgid "None"
 msgstr "Aucun"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:450
+#: admin/class-wc-dynamic-gallery-admin.php:464
 msgid "Fade"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:451
+#: admin/class-wc-dynamic-gallery-admin.php:465
 msgid "Slide Hori"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:452
+#: admin/class-wc-dynamic-gallery-admin.php:466
 msgid "Slide Vert"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:453
+#: admin/class-wc-dynamic-gallery-admin.php:467
 msgid "Resize"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:459
+#: admin/class-wc-dynamic-gallery-admin.php:473
 msgid "Transition effect speed"
 msgstr "Vitesse de transition"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:468
+#: admin/class-wc-dynamic-gallery-admin.php:482
 msgid "1"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:469
+#: admin/class-wc-dynamic-gallery-admin.php:483
 msgid "2"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:470
+#: admin/class-wc-dynamic-gallery-admin.php:484
 msgid "3"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:471
+#: admin/class-wc-dynamic-gallery-admin.php:485
 msgid "4"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:472
+#: admin/class-wc-dynamic-gallery-admin.php:486
 msgid "5"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:473
+#: admin/class-wc-dynamic-gallery-admin.php:487
 msgid "6"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:474
+#: admin/class-wc-dynamic-gallery-admin.php:488
 msgid "7"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:475
+#: admin/class-wc-dynamic-gallery-admin.php:489
 msgid "8"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:476
+#: admin/class-wc-dynamic-gallery-admin.php:490
 msgid "9"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:477
+#: admin/class-wc-dynamic-gallery-admin.php:491
 msgid "10"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:483
+#: admin/class-wc-dynamic-gallery-admin.php:497
 msgid "Single Image Transition"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:484
+#: admin/class-wc-dynamic-gallery-admin.php:498
 msgid "Check to auto deactivate image transition effect when only 1 image is loaded to gallery."
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:492
+#: admin/class-wc-dynamic-gallery-admin.php:506
 #, fuzzy
 msgid "Gallery Style"
 msgstr "Galerie"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:494
+#: admin/class-wc-dynamic-gallery-admin.php:508
 msgid "Image background colour"
 msgstr "Couleur de l’arrière plan des images"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:495
+#: admin/class-wc-dynamic-gallery-admin.php:509
 msgid "Gallery image background colour. Default <code>#FFFFFF</code>."
 msgstr "Couleur de l’arrière plan de la galerie. Par défaut <code>#FFFFFF</code>."
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:503
+#: admin/class-wc-dynamic-gallery-admin.php:517
 msgid "Border colour"
 msgstr "Couleur de la bordure"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:504
+#: admin/class-wc-dynamic-gallery-admin.php:518
 #, fuzzy
 msgid "Gallery border colour. Default <code>#CCCCCC</code>."
 msgstr "Couleur de la bordure de la galerie"
 
-#: admin/class-wc-dynamic-gallery-admin.php:514
+#: admin/class-wc-dynamic-gallery-admin.php:528
 msgid "Image Zoom Function"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:516
+#: admin/class-wc-dynamic-gallery-admin.php:530
 msgid "Gallery popup"
 msgstr "Galerie popup"
 
-#: admin/class-wc-dynamic-gallery-admin.php:525
+#: admin/class-wc-dynamic-gallery-admin.php:539
 msgid "PrettyPhoto"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:526
+#: admin/class-wc-dynamic-gallery-admin.php:540
 msgid "Fancybox"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:527
+#: admin/class-wc-dynamic-gallery-admin.php:541
 #, fuzzy
 msgid "ColorBox"
 msgstr "Couleur"
 
-#: admin/class-wc-dynamic-gallery-admin.php:528
+#: admin/class-wc-dynamic-gallery-admin.php:542
 msgid "Deactivate"
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:535
+#: admin/class-wc-dynamic-gallery-admin.php:549
 #, fuzzy
 msgid "Gallery On / Off"
 msgstr "Galerie"
 
-#: admin/class-wc-dynamic-gallery-admin.php:541
+#: admin/class-wc-dynamic-gallery-admin.php:555
 msgid "Gallery Activation Default"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:542
+#: admin/class-wc-dynamic-gallery-admin.php:556
 msgid "Checked = Gallery Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Gallery activation settings made on single product pages."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:549
-#: admin/class-wc-dynamic-gallery-admin.php:569
+#: admin/class-wc-dynamic-gallery-admin.php:563
+#: admin/class-wc-dynamic-gallery-admin.php:583
 msgid "Reset Activation to default"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:550
+#: admin/class-wc-dynamic-gallery-admin.php:564
 msgid "Checked this box and 'Save Changes' to reset ALL products to the default 'Gallery Activation' status you set above including ALL individual custom Product Page Gallery activation settings."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:558
+#: admin/class-wc-dynamic-gallery-admin.php:572
 msgid "Image Variation Feature"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:560
+#: admin/class-wc-dynamic-gallery-admin.php:574
 msgid "Variations Activation Default"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:561
+#: admin/class-wc-dynamic-gallery-admin.php:575
 msgid "Checked = Variation Images Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Variation Images activation settings made on single product pages."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:570
+#: admin/class-wc-dynamic-gallery-admin.php:584
 msgid "Checked this box and 'Save Changes' to reset ALL products to the default 'Variations Activation' status you set above. NOTE:  ALL individual custom Product Page Variation Images Activation settings will be changed to the default."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:578
+#: admin/class-wc-dynamic-gallery-admin.php:592
 msgid "House Keeping"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:580
+#: admin/class-wc-dynamic-gallery-admin.php:594
 msgid "Clean up on Deletion"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:581
+#: admin/class-wc-dynamic-gallery-admin.php:595
 msgid "Check this box and if you ever delete this plugin it will completely remove all of its code and tables it has created, leaving no trace it was ever here. It will not delete your product images! <strong>CAUTION</strong> This setting is <strong>not recommended</strong> if you are upgrading to the Pro Version as you will want to keep any gallery settings you have already made."
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:597
-#: admin/class-wc-dynamic-gallery-admin.php:673
+#: admin/class-wc-dynamic-gallery-admin.php:611
+#: admin/class-wc-dynamic-gallery-admin.php:687
 msgid "Font"
 msgstr "Police"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:609
-#: admin/class-wc-dynamic-gallery-admin.php:685
+#: admin/class-wc-dynamic-gallery-admin.php:623
+#: admin/class-wc-dynamic-gallery-admin.php:699
 msgid "Font size"
 msgstr "Taille de la police"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:621
-#: admin/class-wc-dynamic-gallery-admin.php:697
+#: admin/class-wc-dynamic-gallery-admin.php:635
+#: admin/class-wc-dynamic-gallery-admin.php:711
 msgid "Font style"
 msgstr "Style de la police"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:630
-#: admin/class-wc-dynamic-gallery-admin.php:706
+#: admin/class-wc-dynamic-gallery-admin.php:644
+#: admin/class-wc-dynamic-gallery-admin.php:720
 msgid "Normal"
 msgstr "Normal"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:631
-#: admin/class-wc-dynamic-gallery-admin.php:707
+#: admin/class-wc-dynamic-gallery-admin.php:645
+#: admin/class-wc-dynamic-gallery-admin.php:721
 msgid "Italic"
 msgstr "Italique"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:632
-#: admin/class-wc-dynamic-gallery-admin.php:708
+#: admin/class-wc-dynamic-gallery-admin.php:646
+#: admin/class-wc-dynamic-gallery-admin.php:722
 msgid "Bold"
 msgstr "Gras"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:633
-#: admin/class-wc-dynamic-gallery-admin.php:709
+#: admin/class-wc-dynamic-gallery-admin.php:647
+#: admin/class-wc-dynamic-gallery-admin.php:723
 msgid "Bold/Italic"
 msgstr "Gras / Italique"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:638
-#: admin/class-wc-dynamic-gallery-admin.php:714
-#: admin/class-wc-dynamic-gallery-admin.php:758
+#: admin/class-wc-dynamic-gallery-admin.php:652
+#: admin/class-wc-dynamic-gallery-admin.php:728
+#: admin/class-wc-dynamic-gallery-admin.php:772
 msgid "Colour"
 msgstr "Couleur"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:639
+#: admin/class-wc-dynamic-gallery-admin.php:653
 msgid "Caption text color. Default <code>#FFFFFF</code>."
 msgstr "Couleur de la police de légende, par défaut <code>#FFFFFF</code>."
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:647
+#: admin/class-wc-dynamic-gallery-admin.php:661
 msgid "Background"
 msgstr "Arrière plan"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:648
+#: admin/class-wc-dynamic-gallery-admin.php:662
 msgid "Caption text background colour. Default <code>#000000</code>."
 msgstr "Couleur de l'arrière plan de la légende, par défaut <code>#000000</code>."
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:664
-#: admin/class-wc-dynamic-gallery-admin.php:749
+#: admin/class-wc-dynamic-gallery-admin.php:678
+#: admin/class-wc-dynamic-gallery-admin.php:763
 msgid "Control"
 msgstr "Contrôle"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:665
+#: admin/class-wc-dynamic-gallery-admin.php:679
 msgid "Enable Nav bar Control"
 msgstr "Activer le contrôle de la barre de navigation "
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:715
+#: admin/class-wc-dynamic-gallery-admin.php:729
 msgid "Nav bar background colour. Default <code>#FFFFFF</code>."
 msgstr "Couleur de l’arrière plan de la barre de navigation"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:723
+#: admin/class-wc-dynamic-gallery-admin.php:737
 msgid "Text"
 msgstr "Texte"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:724
+#: admin/class-wc-dynamic-gallery-admin.php:738
 msgid "Nav bar text color. Default <code>#000000</code>."
 msgstr "Couleur du texte de la barre de navigation, par défaut <code>#000000</code>."
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:732
+#: admin/class-wc-dynamic-gallery-admin.php:746
 msgid "Container height"
 msgstr "Hauteur du contenu"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:750
+#: admin/class-wc-dynamic-gallery-admin.php:764
 msgid "Enable lazy-load scroll"
 msgstr "Activer lazy-charge défilement"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:759
+#: admin/class-wc-dynamic-gallery-admin.php:773
 msgid "Scroll bar colour. Default <code>#000000</code>."
 msgstr "Couleur d la barre de défilement, par défaut <code>#000000</code>."
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:775
+#: admin/class-wc-dynamic-gallery-admin.php:789
 msgid "Show thumbnails"
 msgstr "Afficher les miniatures"
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:776
+#: admin/class-wc-dynamic-gallery-admin.php:790
 msgid "Enable thumbnail gallery"
 msgstr "Activer les vignettes de la galerie"
 
-#: admin/class-wc-dynamic-gallery-admin.php:784
+#: admin/class-wc-dynamic-gallery-admin.php:798
 msgid "Single Image Thumbnail"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:785
+#: admin/class-wc-dynamic-gallery-admin.php:799
 msgid "Check to hide thumbnail when only 1 image is loaded to gallery."
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:795
+#: admin/class-wc-dynamic-gallery-admin.php:809
 msgid "Thumbnail width"
 msgstr "Largeur des miniatures"
 
-#: admin/class-wc-dynamic-gallery-admin.php:796
+#: admin/class-wc-dynamic-gallery-admin.php:810
 msgid "Setting 0px will show at default 105px. Hiding thumbnails is a Pro Version feature."
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:804
+#: admin/class-wc-dynamic-gallery-admin.php:818
 msgid "Thumbnail height"
 msgstr "Hauteur des miniatures"
 
-#: admin/class-wc-dynamic-gallery-admin.php:805
+#: admin/class-wc-dynamic-gallery-admin.php:819
 msgid "Setting 0px will show at default 75px. Hiding thumbnails is a Pro Version feature."
 msgstr ""
 
 # @ woo_dgallery
-#: admin/class-wc-dynamic-gallery-admin.php:813
+#: admin/class-wc-dynamic-gallery-admin.php:827
 msgid "Thumbnail spacing"
 msgstr "Espacement entre les miniatures"
 
@@ -568,15 +578,19 @@ msgid "Option to Deactivate the Gallery on any Single product page - default Woo
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:108
-msgid "Plugin Documentation"
+msgid "View this plugins"
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-functions.php:108
+msgid "documentation"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:109
-msgid "All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request"
+msgid "Visit this plugins"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:109
-msgid "Visit the a3rev wiki."
+msgid "support forum"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:110
@@ -588,68 +602,56 @@ msgid "Below is a list of the a3rev plugins that are available for free download
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:112
-msgid "WooCommerce Plugins"
+msgid "More FREE a3rev WooCommerce Plugins"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:115
-msgid "WooCommerce Dynamic Products Gallery"
+msgid "WooCommerce Product Sort & Display"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:116
-msgid "WooCommerce Predictive Search"
+msgid "WooCommerce Products Quick View"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:117
-msgid "WooCommerce Compare Products"
+msgid "WooCommerce Predictive Search"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:118
-msgid "WooCommerce Widget Product Slideshow"
+msgid "WooCommerce Compare Products"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:119
+msgid "WooCommerce Widget Product Slideshow"
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-functions.php:120
 msgid "WooCommerce Email Inquiry & Cart Options"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:122
-msgid "WordPress Plugins"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:125
-msgid "WordPress Email Template"
+#: classes/class-wc-dynamic-gallery-functions.php:123
+msgid "FREE a3rev WordPress Plugins"
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:126
+msgid "Contact Us Page - Contact People"
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-functions.php:127
+msgid "WordPress Email Template"
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-functions.php:128
 msgid "Page View Count"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:129
-msgid "Help spread the Word about this plugin"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:130
-msgid "Things you can do to help others find this plugin"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:132
-msgid "Rate this plugin 5"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:132
-msgid "on WordPress.org"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:133
-msgid "Mark the plugin as a fourite"
-msgstr ""
-
 # @ woo_dgallery
-#: classes/class-wc-dynamic-gallery-functions.php:144
+#: classes/class-wc-dynamic-gallery-functions.php:139
 msgid "Documentation"
 msgstr ""
 
 # @ woo_dgallery
-#: classes/class-wc-dynamic-gallery-functions.php:145
+#: classes/class-wc-dynamic-gallery-functions.php:140
 msgid "Support"
 msgstr ""
 
@@ -663,7 +665,7 @@ msgstr "A3 Dynamic Image Galerie activé"
 msgid "Product Variation Images activated"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-metaboxes.php:108
+#: classes/class-wc-dynamic-gallery-metaboxes.php:109
 msgid "'This image is a 'Featured Image' from the WordPress Media Library. Dynamic Gallery is showing it but you cannot edit or manage it in the Gallery Manager like images uploaded to the Gallery. Please click the red X to remove the 'feature' and upload the image to this Products Gallery and feature it. NOTE: If you feature another image from this Products Gallery this image will not show if you have not uploaded it to the Gallery.'"
 msgstr ""
 
@@ -685,32 +687,32 @@ msgstr ""
 msgid "STOP SLIDESHOW"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:28
+#: classes/class-wc-dynamic-gallery-variations.php:29
 msgid "Exclude image"
 msgstr ""
 
 # @ woocommerce
-#: classes/class-wc-dynamic-gallery-variations.php:30
-#: classes/class-wc-dynamic-gallery-variations.php:36
+#: classes/class-wc-dynamic-gallery-variations.php:31
+#: classes/class-wc-dynamic-gallery-variations.php:37
 msgid "Enabling this option will hide it from the product page image gallery."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:30
-#: classes/class-wc-dynamic-gallery-variations.php:36
+#: classes/class-wc-dynamic-gallery-variations.php:31
+#: classes/class-wc-dynamic-gallery-variations.php:37
 msgid "If assigned to variations below the image will show when option is selected."
 msgstr ""
 
 # @ woo_dgallery
-#: classes/class-wc-dynamic-gallery-variations.php:53
+#: classes/class-wc-dynamic-gallery-variations.php:54
 msgid "Variations"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:57
+#: classes/class-wc-dynamic-gallery-variations.php:58
 msgid "Upgrade to the PRO version to use this feature."
 msgstr ""
 
 # @ woo_dgallery
-#: classes/class-wc-dynamic-gallery-variations.php:64
+#: classes/class-wc-dynamic-gallery-variations.php:65
 msgid "Apply to All"
 msgstr ""
 

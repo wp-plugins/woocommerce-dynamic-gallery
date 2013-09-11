@@ -77,6 +77,7 @@ class WC_Dynamic_Gallery_Meta_Boxes
 			cursor:pointer;
 		}
         </style>
+        <a class="add-new-h2 a3-view-docs-button" style="background-color: #FFFFE0 !important; border: 1px solid #E6DB55 !important; text-shadow:none !important; font-weight:normal !important; margin: 5px 10px 0 !important; display: inline-block !important;" target="_blank" href="<?php echo WOO_DYNAMIC_GALLERY_DOCS_URI; ?>#section-13" ><?php _e('View Docs', 'woo_dgallery'); ?></a>
 		<div class="woocommerce_options_panel">
         <?php
 		$featured_img_id = (int)get_post_meta($post->ID, '_thumbnail_id', true);

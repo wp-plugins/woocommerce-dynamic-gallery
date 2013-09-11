@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -74,7 +74,7 @@ Users see Product variation images in gallery as they select options. Variation 
 = Localization =
 * English (default) - always include.
 * .po file (woo_dgallery.po) in languages folder for translations.
-* Your translation? Please do yours and [send it to us](http://www.a3rev.com/contact/) We'll acknowledge your work and link to your site.
+* Your translation? Please do yours and [send it to us](http://a3rev.com/contact-us-page/) We'll acknowledge your work and link to your site.
 Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
 
 = Plugins resources =
@@ -135,6 +135,13 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.2.4 - 2013/09/11 =
+* Features :
+	* Added 'View Docs' link from the top of each admin panel to that menus section on the plugins docs.
+* Fixes :
+	* Gallery images not showing in Chrome with SSL on product pages. Stripped http// and https// protocols so browser will use the protocol that the page was loaded with. 
+	* Plugins admin script and style not loading in Firefox with SSL on admin. Stripped http// and https// protocols so browser will use the protocol that the page was loaded with.
 
 = 1.2.3 - 2013/08/22 =
 * Fixes :
@@ -260,6 +267,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.4 =
+Upgrade now for great new 'Help' feature - links from each admin page straight to that section of the docs. Plus 2 SSL Bug Fixes.
 
 = 1.2.3 =
 Upgrade now for 1 new bug fix.

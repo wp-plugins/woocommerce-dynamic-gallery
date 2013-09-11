@@ -16,6 +16,7 @@ class WC_Dynamic_Gallery_Variations
 	
 		global $woocommerce;
 		
+		if ( !isset( $_GET['post_id'] ) ) return $form_fields;
 		$product_id = $_GET['post_id'];
 		
 		if( isset($_GET['tab']) && $_GET['tab'] == 'gallery' && get_post_type($product_id) == 'product' && wp_attachment_is_image($attachment->ID) ) {

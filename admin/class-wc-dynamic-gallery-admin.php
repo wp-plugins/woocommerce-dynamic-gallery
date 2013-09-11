@@ -206,7 +206,7 @@ class WC_Dynamic_Gallery
         	$class = 'nav-tab';
       		if ( $this->current_tab == $name )
             	$class .= ' nav-tab-active';
-      		echo '<a href="' . admin_url('admin.php?page=woocommerce&tab=' . $name) . '" class="' . $class . '">' . $label . '</a>';
+      		echo '<a href="' . admin_url('admin.php?page=woocommerce_settings&tab=' . $name, 'relative' ) . '" class="' . $class . '">' . $label . '</a>';
      	endforeach;
 	}
 
@@ -229,6 +229,20 @@ class WC_Dynamic_Gallery
 	   ?>
 		<style>
 		.form-table { margin:0; }
+		.view-docs-container {
+			position:relative;	
+		}
+		.a3-view-docs-button {
+			background-color: #FFFFE0 !important;
+			border: 1px solid #E6DB55 !important;
+			text-shadow:none !important;
+			font-weight:normal !important;
+			margin-left:0 !important;
+			margin-bottom:5px !important;
+			position: absolute !important;
+			top: -36px !important;
+			left:150px !important;
+		}
 		#wc_dgallery_panel_container { position:relative; margin-top:10px;}
 		#wc_dgallery_panel_fields {width:60%; float:left;}
 		#wc_dgallery_upgrade_area { position:relative; margin-left: 60%; padding-left:10px;}
@@ -386,11 +400,11 @@ class WC_Dynamic_Gallery
 				
   		// Define settings			
      	$this->fields['dynamic_gallery'] = apply_filters('woocommerce_dynamic_gallery_settings_fields', array(
-			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<a href="'. admin_url( 'admin-ajax.php', 'relative') .'?security='.$woo_dynamic_gallery.'" class="preview_gallery">'.__( 'Click here to preview gallery', 'woo_dgallery' ).'</a>. ', 'id' => 'preview_gallery' ),
+			array(	'name' => __( 'Preview', 'woo_dgallery' ), 'type' => 'title', 'desc' => '<div class="view-docs-container"><a class="add-new-h2 a3-view-docs-button" target="_blank" href="'.WOO_DYNAMIC_GALLERY_DOCS_URI.'#section-4" >'.__('View Docs', 'woo_dgallery').'</a></div><a href="'. admin_url( 'admin-ajax.php', 'relative') .'?security='.$woo_dynamic_gallery.'" class="preview_gallery">'.__( 'Click here to preview gallery', 'woo_dgallery' ).'</a>. ', 'id' => 'preview_gallery' ),
 			
 			array('type' => 'sectionend', 'id' => 'dynamic_gallery_preview_end'),
 			
-			array(	'name' => __('Gallery Dimensions', 'woo_dgallery'), 'type' => 'title'),
+			array(	'name' => __('Gallery Dimensions', 'woo_dgallery'), 'desc' => '<div class="view-docs-container"><a class="add-new-h2 a3-view-docs-button" target="_blank" href="'.WOO_DYNAMIC_GALLERY_DOCS_URI.'#section-6" >'.__('View Docs', 'woo_dgallery').'</a></div>', 'type' => 'title'),
 			array(  
 				'name' => __( 'Gallery width', 'woo_dgallery' ),
 				'desc' 		=> '',
@@ -590,7 +604,7 @@ class WC_Dynamic_Gallery
 			array(
             	'name' => __('Caption text', 'woothemes'),
                 'type' => 'title',
-                'desc' => '',
+                'desc' => '<div class="view-docs-container"><a class="add-new-h2 a3-view-docs-button" target="_blank" href="'.WOO_DYNAMIC_GALLERY_DOCS_URI.'#section-7" >'.__('View Docs', 'woo_dgallery').'</a></div>',
           		'id' => 'dynamic_gallery_caption_start'
            	),
 			array(  
@@ -657,7 +671,7 @@ class WC_Dynamic_Gallery
 			array(
             	'name' => __('Nav Bar', 'woothemes'),
                 'type' => 'title',
-                'desc' => '',
+                'desc' => '<div class="view-docs-container"><a class="add-new-h2 a3-view-docs-button" target="_blank" href="'.WOO_DYNAMIC_GALLERY_DOCS_URI.'#section-8" >'.__('View Docs', 'woo_dgallery').'</a></div>',
           		'id' => 'dynamic_gallery_navbar_start'
            	),
 			array(  
@@ -742,7 +756,7 @@ class WC_Dynamic_Gallery
 			array(
             	'name' => __('Lazy-load scroll', 'woothemes'),
                 'type' => 'title',
-                'desc' => '',
+                'desc' => '<div class="view-docs-container"><a class="add-new-h2 a3-view-docs-button" target="_blank" href="'.WOO_DYNAMIC_GALLERY_DOCS_URI.'#section-9" >'.__('View Docs', 'woo_dgallery').'</a></div>',
           		'id' => 'dynamic_gallery_lazyload_start'
            	),
 			array(  
@@ -768,7 +782,7 @@ class WC_Dynamic_Gallery
 			array(
             	'name' => __('Image Thumbnails', 'woothemes'),
                 'type' => 'title',
-                'desc' => '',
+                'desc' => '<div class="view-docs-container"><a class="add-new-h2 a3-view-docs-button" target="_blank" href="'.WOO_DYNAMIC_GALLERY_DOCS_URI.'#section-10" >'.__('View Docs', 'woo_dgallery').'</a></div>',
           		'id' => 'dynamic_gallery_thumb_start'
            	),
 			array(  
