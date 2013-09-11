@@ -75,7 +75,7 @@ Users see Product variation images in gallery as they select options. Variation 
 * English (default) - always include.
 * .po file (woo_dgallery.po) in languages folder for translations.
 * Your translation? Please do yours and [send it to us](http://a3rev.com/contact-us-page/) We'll acknowledge your work and link to your site.
-Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
+Please [Contact us](http://a3rev.com/contact-us-page/) if you'd like to provide a translation or an update.
 
 = Plugins resources =
 
@@ -137,9 +137,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 == Changelog ==
 
 = 1.2.4 - 2013/09/11 =
-* Features :
+* Features:
 	* Added 'View Docs' link from the top of each admin panel to that menus section on the plugins docs.
-* Fixes :
+* Fixes:
 	* Gallery images not showing in Chrome with SSL on product pages. Stripped http// and https// protocols so browser will use the protocol that the page was loaded with. 
 	* Plugins admin script and style not loading in Firefox with SSL on admin. Stripped http// and https// protocols so browser will use the protocol that the page was loaded with.
 
