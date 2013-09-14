@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -136,6 +136,11 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.2.5 - 2013/09/14 =
+* Fixes:
+	* Use browser protocol http or https on page load fix in v1.2.4 caused sites that use Minify plugins to crash on update. Updated style url and script url to fix Minify conflict.
+	* Thanks to Roy Vella (USA) for reporting the issue and the wp-admin and ftp access to his site to find and fix the bug.
+
 = 1.2.4 - 2013/09/11 =
 * Features:
 	* Added 'View Docs' link from the top of each admin panel to that menus section on the plugins docs.
@@ -267,6 +272,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.5 =
+Upgrade now for very important conflict with Minify bug fix.
 
 = 1.2.4 =
 Upgrade now for great new 'Help' feature - links from each admin page straight to that section of the docs. Plus 2 SSL Bug Fixes.
