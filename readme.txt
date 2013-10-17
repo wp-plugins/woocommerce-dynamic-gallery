@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.3
-Tested up to: 3.6
-Stable tag: 1.2.5
+Tested up to: 3.6.1
+Stable tag: 1.2.5.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -135,6 +135,10 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.2.5.1 - 2013/10/17 =
+* Tweak :
+	* Plugin scripts checked for full compatibility with new WooCommerce Version 2.0.16
 
 = 1.2.5 - 2013/09/14 =
 * Fixes :
@@ -272,6 +276,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.5.1 =
+Upgrade now for full compatibility with new WooCommerce Version 2.0.16 - Upgrade is version 2.0.16 and backward compatible
 
 = 1.2.5 =
 Upgrade now for very important conflict with Minify bug fix.
