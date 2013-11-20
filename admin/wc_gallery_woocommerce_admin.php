@@ -4,9 +4,11 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_version', '1.2.5.1');
-	WC_Dynamic_Gallery::wc_dynamic_gallery_set_setting(true, true);
-	
+	update_option('a3rev_woo_dgallery_version', '1.2.5.2');
+	// Set Settings Default from Admin Init
+	global $wc_dgallery_admin_init;
+	$wc_dgallery_admin_init->set_default_settings();
+		
 	update_option('a3rev_woo_dgallery_just_installed', true);
 }
 
@@ -16,7 +18,7 @@ function wc_dynamic_gallery_install(){
 function wc_dynamic_gallery_init() {
 	if ( get_option('a3rev_woo_dgallery_just_installed') ) {
 		delete_option('a3rev_woo_dgallery_just_installed');
-		wp_redirect( admin_url( 'admin.php?page=woocommerce_settings&tab=dynamic_gallery', 'relative' ) );
+		wp_redirect( admin_url( 'admin.php?page=woo-dynamic-gallery', 'relative' ) );
 		exit;
 	}
 	load_plugin_textdomain( 'woo_dgallery', false, WOO_DYNAMIC_GALLERY_FOLDER.'/languages' );
@@ -31,6 +33,13 @@ add_action('init', 'wc_dynamic_gallery_init');
 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WC_Dynamic_Gallery_Functions', 'plugin_extra_links'), 10, 2 );
+
+// Need to call Admin Init to show Admin UI
+global $wc_dgallery_admin_init;
+$wc_dgallery_admin_init->init();
+
+// Add upgrade notice to Dashboard pages
+add_filter( $wc_dgallery_admin_init->plugin_name . '_plugin_extension', array( 'WC_Dynamic_Gallery_Functions', 'plugin_extension' ) );
 
 add_filter( 'attachment_fields_to_edit', array('WC_Dynamic_Gallery_Variations', 'media_fields'), 10, 2 );
 add_filter( 'attachment_fields_to_save', array('WC_Dynamic_Gallery_Variations', 'save_media_fields'), 10, 2 );
@@ -49,6 +58,9 @@ function setup_dynamic_gallery() {
 		}
 		
 		if($actived_d_gallery == 1){
+			// Include google fonts into header
+			add_action( 'wp_head', array( 'WC_Dynamic_Gallery_Functions', 'add_google_fonts'), 10 );
+			
 			remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
 			remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
 			
@@ -65,14 +77,6 @@ function setup_dynamic_gallery() {
 			} elseif ($popup_gallery == 'colorbox') {
 				wp_enqueue_style( 'a3_colorbox_style', WOO_DYNAMIC_GALLERY_JS_URL . '/colorbox/colorbox.css' );
 				wp_enqueue_script( 'colorbox_script', WOO_DYNAMIC_GALLERY_JS_URL . '/colorbox/jquery.colorbox'.$suffix.'.js', array(), false, true );
-			} elseif ($popup_gallery != 'deactivate') {
-				if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
-					wp_enqueue_style( 'woocommerce_prettyPhoto_css', WOO_DYNAMIC_GALLERY_JS_URL . '/prettyPhoto/prettyPhoto.css');
-					wp_enqueue_script( 'prettyPhoto', WOO_DYNAMIC_GALLERY_JS_URL . '/prettyPhoto/jquery.prettyPhoto'.$suffix.'.js', array(), false, true);
-				} else {
-					wp_enqueue_style( 'woocommerce_prettyPhoto_css', $woocommerce->plugin_url() . '/assets/css/prettyPhoto.css' );
-					wp_enqueue_script( 'prettyPhoto', $woocommerce->plugin_url() . '/assets/js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js', array(), false, true );
-				}
 			}
 	
 			if ( in_array( 'woocommerce-professor-cloud/woocommerce-professor-cloud.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && get_option('woocommerce_cloud_enableCloud') == 'true' ) :
@@ -104,8 +108,13 @@ if (version_compare(get_option('a3rev_woo_dgallery_version'), '1.2.1') === -1) {
 	update_option('a3rev_woo_dgallery_version', '1.2.1');
 }
 
-update_option('a3rev_woo_dgallery_version', '1.2.5.1');
+// Upgrade to 1.2.1
+if (version_compare(get_option('a3rev_woo_dgallery_version'), '1.2.5.2') === -1) {
+	WC_Dynamic_Gallery_Functions::upgrade_1_2_5_2();
+	
+	update_option('a3rev_woo_dgallery_version', '1.2.5.2');
+}
 
-global $wc_dg;
-$wc_dg = new WC_Dynamic_Gallery();
+update_option('a3rev_woo_dgallery_version', '1.2.5.2');
+
 ?>

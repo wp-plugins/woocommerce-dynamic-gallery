@@ -101,12 +101,12 @@ class WC_Dynamic_Gallery_Meta_Boxes
 				if ( $feature_image_data && $feature_image_data->post_parent == $post->ID ) {
 					if ( get_post_meta( $featured_img_id, '_woocommerce_exclude_image', true ) != 1 ) {
 		?>
-        		<a href="#" class="wc_dgallery_feature_image wc_dgallery_a_container upload_image_button" rel="<?php echo $post->ID; ?>"><img class="image_item" src="<?php echo $image_attribute[0]; ?>" /><input type="hidden" name="upload_image_id[2]" class="upload_image_id" value="<?php echo $item_thumb->ID; ?>" /></a>
+        		<a href="#" class="wc_dgallery_feature_image wc_dgallery_a_container upload_image_button" rel="<?php echo $post->ID; ?>"><img class="image_item" src="<?php echo $image_attribute[0]; ?>" /><input type="hidden" name="upload_image_id[2]" class="upload_image_id" value="<?php echo $featured_img_id; ?>" /></a>
         <?php	
 					}
 				} else {
 		?>
-        		<span class="wc_dg_help_tip wc_dgallery_feature_image wc_dgallery_a_container" rel="<?php echo $post->ID; ?>" data-tip="<?php _e("'This image is a 'Featured Image' from the WordPress Media Library. Dynamic Gallery is showing it but you cannot edit or manage it in the Gallery Manager like images uploaded to the Gallery. Please click the red X to remove the 'feature' and upload the image to this Products Gallery and feature it. NOTE: If you feature another image from this Products Gallery this image will not show if you have not uploaded it to the Gallery.'", 'woo_dgallery'); ?>"><img class="image_item" src="<?php echo $image_attribute[0]; ?>" /><input type="hidden" name="upload_image_id[2]" class="upload_image_id" value="<?php echo $item_thumb->ID; ?>" /><span class="wc_dgallery_delete_feature_image">&nbsp;</span></span>
+        		<span class="wc_dg_help_tip wc_dgallery_feature_image wc_dgallery_a_container" rel="<?php echo $post->ID; ?>" data-tip="<?php _e("'This image is a 'Featured Image' from the WordPress Media Library. Dynamic Gallery is showing it but you cannot edit or manage it in the Gallery Manager like images uploaded to the Gallery. Please click the red X to remove the 'feature' and upload the image to this Products Gallery and feature it. NOTE: If you feature another image from this Products Gallery this image will not show if you have not uploaded it to the Gallery.'", 'woo_dgallery'); ?>"><img class="image_item" src="<?php echo $image_attribute[0]; ?>" /><input type="hidden" name="upload_image_id[2]" class="upload_image_id" value="<?php echo $featured_img_id; ?>" /><span class="wc_dgallery_delete_feature_image">&nbsp;</span></span>
         <?php
 				}
 			}

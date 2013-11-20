@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Dynamic Gallery LITE
 Plugin URI: http://a3rev.com/shop/woocommerce-dynamic-gallery/
 Description: Auto adds a fully customizable dynamic images gallery to every single product page with thumbnails, caption text and lazy-load. Over 28 settings to fine tune every aspect of the gallery. Creates an image gallery manager on every product edit page - greatly simplifies managing product images. Search engine optimized images with WooCommerce Dynamic Gallery Pro.
-Version: 1.2.5.1
+Version: 1.2.5.2
 Author: A3 Revolution
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -33,12 +33,18 @@ define( 'WOO_DYNAMIC_GALLERY_PREFIX', 'wc_dgallery_' );
 if(!defined("WOO_DYNAMIC_GALLERY_DOCS_URI"))
     define("WOO_DYNAMIC_GALLERY_DOCS_URI", "http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/");
 
+include('admin/admin-ui.php');
+include('admin/admin-interface.php');
+
+include('admin/admin-pages/dynamic-gallery-page.php');
+
+include('admin/admin-init.php');
+
 include('classes/class-wc-dynamic-gallery-functions.php');
 include('classes/class-wc-dynamic-gallery-variations.php');
 include('classes/class-wc-dynamic-gallery.php');
 include('classes/class-wc-dynamic-gallery-preview.php');
 include('classes/class-wc-dynamic-gallery-metaboxes.php');
-include('admin/class-wc-dynamic-gallery-admin.php');
 include('admin/wc_gallery_woocommerce_admin.php');
 
 /**
@@ -87,6 +93,9 @@ function wc_dynamic_gallery_uninstall() {
 		delete_option( 'wc_dgallery_thumb_width' );
 		delete_option( 'wc_dgallery_thumb_height' );
 		delete_option( 'wc_dgallery_thumb_spacing' );
+		
+		delete_option( 'wc_dgallery_product_gallery_width_responsive' );
+		delete_option( 'wc_dgallery_product_gallery_width_fixed' );
 		
 		delete_option('wc_dgallery_clean_on_deletion');
 		

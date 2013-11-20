@@ -5,19 +5,29 @@
  * Table Of Contents
  *
  * reset_products_galleries_activate()
+ * add_google_fonts()
  * html2rgb()
- * rgb2html()
- * get_font()
- * get_font_sizes()
  * wc_dynamic_gallery_extension()
  * plugin_extra_links()
  * upgrade_1_2_1()
+ * upgrade_1_2_5_2()
  */
 class WC_Dynamic_Gallery_Functions 
 {	
 	public function reset_products_galleries_activate() {
 		global $wpdb;
 		$wpdb->query( "DELETE FROM ".$wpdb->postmeta." WHERE meta_key='_actived_d_gallery' " );
+	}
+	
+	public static function add_google_fonts() {
+		global $wc_dgallery_fonts_face;
+		
+		$caption_font = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'caption_font' );
+			
+		$navbar_font = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font' );
+		
+		$google_fonts = array( $caption_font['face'], $navbar_font['face'] );
+		$wc_dgallery_fonts_face->generate_google_webfonts( $google_fonts );
 	}
 	
 	public static function html2rgb($color,$text = false){
@@ -41,59 +51,8 @@ class WC_Dynamic_Gallery_Functions
 		}
 	}
 	
-	public static function rgb2html($r, $g=-1, $b=-1){
-		if (is_array($r) && sizeof($r) == 3)
-			list($r, $g, $b) = $r;
-	
-		$r = intval($r); $g = intval($g);
-		$b = intval($b);
-	
-		$r = dechex($r<0?0:($r>255?255:$r));
-		$g = dechex($g<0?0:($g>255?255:$g));
-		$b = dechex($b<0?0:($b>255?255:$b));
-	
-		$color = (strlen($r) < 2?'0':'').$r;
-		$color .= (strlen($g) < 2?'0':'').$g;
-		$color .= (strlen($b) < 2?'0':'').$b;
-		return '#'.$color;
-	}
-	
-	public static function get_font() {
-		$fonts = array( 
-			'Arial, sans-serif'													=> __( 'Arial', 'woo_dgallery' ),
-			'Verdana, Geneva, sans-serif'										=> __( 'Verdana', 'woo_dgallery' ),
-			'Trebuchet MS, Tahoma, sans-serif'								=> __( 'Trebuchet', 'woo_dgallery' ),
-			'Georgia, serif'													=> __( 'Georgia', 'woo_dgallery' ),
-			'Times New Roman, serif'											=> __( 'Times New Roman', 'woo_dgallery' ),
-			'Tahoma, Geneva, Verdana, sans-serif'								=> __( 'Tahoma', 'woo_dgallery' ),
-			'Palatino, Palatino Linotype, serif'								=> __( 'Palatino', 'woo_dgallery' ),
-			'Helvetica Neue, Helvetica, sans-serif'							=> __( 'Helvetica*', 'woo_dgallery' ),
-			'Calibri, Candara, Segoe, Optima, sans-serif'						=> __( 'Calibri*', 'woo_dgallery' ),
-			'Myriad Pro, Myriad, sans-serif'									=> __( 'Myriad Pro*', 'woo_dgallery' ),
-			'Lucida Grande, Lucida Sans Unicode, Lucida Sans, sans-serif'	=> __( 'Lucida', 'woo_dgallery' ),
-			'Arial Black, sans-serif'											=> __( 'Arial Black', 'woo_dgallery' ),
-			'Gill Sans, Gill Sans MT, Calibri, sans-serif'					=> __( 'Gill Sans*', 'woo_dgallery' ),
-			'Geneva, Tahoma, Verdana, sans-serif'								=> __( 'Geneva*', 'woo_dgallery' ),
-			'Impact, Charcoal, sans-serif'										=> __( 'Impact', 'woo_dgallery' ),
-			'Courier, Courier New, monospace'									=> __( 'Courier', 'woo_dgallery' ),
-			'Century Gothic, sans-serif'										=> __( 'Century Gothic', 'woo_dgallery' ),
-		);
-		
-		return apply_filters('wc_dynamic_gallery_fonts_support', $fonts );
-	}
-	
-	public static function get_font_sizes($start = 9, $end = 30, $unit = 'px') {
-		$font_sizes = array();
-		for ($start; $start <= $end; $start ++) {
-			$font_sizes[$start.''.$unit] = $start.''.$unit;
-		}
-		
-		return $font_sizes;
-	}
-	
-	public static function wc_dynamic_gallery_extension() {
+	public static function plugin_extension() {
 		$html = '';
-		$html .= '<div id="wc_dynamic_gallery_extensions">';
 		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/a3logo.png" /></a>';
 		$html .= '<h3>'.__('Upgrade to Dynamic Gallery Pro', 'woo_dgallery').'</h3>';
 		$html .= '<p>'.__("<strong>NOTE:</strong> Settings inside the Yellow border are Pro Version advanced Features and are not activated. Visit the", 'woo_dgallery').' <a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/" target="_blank">'.__("a3rev site", 'woo_dgallery').'</a> '.__("if you wish to upgrade to activate these features", 'woo_dgallery').':</p>';
@@ -128,7 +87,6 @@ class WC_Dynamic_Gallery_Functions
 		$html .= '<li>* <a href="http://wordpress.org/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'woo_dgallery').'</a></li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '</div>';
 		return $html;
 	}
 	
@@ -181,6 +139,11 @@ class WC_Dynamic_Gallery_Functions
 		global $wpdb;
 		$wpdb->query( "UPDATE ".$wpdb->postmeta." SET meta_key='_wc_dgallery_show_variation' WHERE meta_key='_show_variation' " );
 		$wpdb->query( "UPDATE ".$wpdb->postmeta." SET meta_key='_wc_dgallery_in_variations' WHERE meta_key='_in_variations' " );
+	}
+	
+	public static function upgrade_1_2_5_2() {
+		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width_responsive', get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width') );
+		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width_fixed', get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width') );
 	}
 }
 ?>

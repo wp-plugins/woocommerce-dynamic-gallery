@@ -2,563 +2,687 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce Dynamic Gallery FREE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-11 17:15+0700\n"
-"PO-Revision-Date: 2013-09-11 17:15+0700\n"
-"Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
+"POT-Creation-Date: 2013-11-20 16:34+0700\n"
+"PO-Revision-Date: 2013-11-20 16:34+0700\n"
+"Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-wc-dynamic-gallery-admin.php:126
-msgid "Dynamic Gallery"
+#: admin/admin-interface.php:120
+msgid "Settings successfully saved."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:256
-msgid "Gallery"
+#: admin/admin-interface.php:128
+msgid "Error: Settings can not save."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:257
-msgid "Global Settings"
+#: admin/admin-interface.php:136
+msgid "Settings successfully reseted."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:258
-#: admin/class-wc-dynamic-gallery-admin.php:605
-msgid "Caption text"
+#: admin/admin-interface.php:157
+msgid "Thin"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:259
-#: admin/class-wc-dynamic-gallery-admin.php:672
-msgid "Nav Bar"
+#: admin/admin-interface.php:158
+msgid "Thin/Italic"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:260
-#: admin/class-wc-dynamic-gallery-admin.php:757
-msgid "Lazy-load scroll"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:261
-#: admin/class-wc-dynamic-gallery-admin.php:783
-msgid "Image Thumbnails"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:403
-msgid "Preview"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:403
-#: admin/class-wc-dynamic-gallery-admin.php:407
-#: admin/class-wc-dynamic-gallery-admin.php:607
-#: admin/class-wc-dynamic-gallery-admin.php:674
-#: admin/class-wc-dynamic-gallery-admin.php:759
-#: admin/class-wc-dynamic-gallery-admin.php:785
-#: classes/class-wc-dynamic-gallery-metaboxes.php:80
-msgid "View Docs"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:403
-msgid "Click here to preview gallery"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:407
-msgid "Gallery Dimensions"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:409
-msgid "Gallery width"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:418
-msgid "Gallery height"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:428
-msgid "Gallery Special Effects"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:430
-msgid "Auto start"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:439
-msgid "False"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:440
-msgid "True"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:445
-msgid "Time between transitions"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:454
-msgid "Slide transition effect"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:463
-msgid "None"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:464
-msgid "Fade"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:465
-msgid "Slide Hori"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:466
-msgid "Slide Vert"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:467
-msgid "Resize"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:473
-msgid "Transition effect speed"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:482
-msgid "1"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:483
-msgid "2"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:484
-msgid "3"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:485
-msgid "4"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:486
-msgid "5"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:487
-msgid "6"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:488
-msgid "7"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:489
-msgid "8"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:490
-msgid "9"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:491
-msgid "10"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:497
-msgid "Single Image Transition"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:498
-msgid "Check to auto deactivate image transition effect when only 1 image is loaded to gallery."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:506
-msgid "Gallery Style"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:508
-msgid "Image background colour"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:509
-msgid "Gallery image background colour. Default <code>#FFFFFF</code>."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:517
-msgid "Border colour"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:518
-msgid "Gallery border colour. Default <code>#CCCCCC</code>."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:528
-msgid "Image Zoom Function"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:530
-msgid "Gallery popup"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:539
-msgid "PrettyPhoto"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:540
-msgid "Fancybox"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:541
-msgid "ColorBox"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:542
-msgid "Deactivate"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:549
-msgid "Gallery On / Off"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:555
-msgid "Gallery Activation Default"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:556
-msgid "Checked = Gallery Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Gallery activation settings made on single product pages."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:563
-#: admin/class-wc-dynamic-gallery-admin.php:583
-msgid "Reset Activation to default"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:564
-msgid "Checked this box and 'Save Changes' to reset ALL products to the default 'Gallery Activation' status you set above including ALL individual custom Product Page Gallery activation settings."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:572
-msgid "Image Variation Feature"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:574
-msgid "Variations Activation Default"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:575
-msgid "Checked = Variation Images Activated on Product Pages. Unchecked = Deactivated. Note: Changing this setting will not over-ride any custom Variation Images activation settings made on single product pages."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:584
-msgid "Checked this box and 'Save Changes' to reset ALL products to the default 'Variations Activation' status you set above. NOTE:  ALL individual custom Product Page Variation Images Activation settings will be changed to the default."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:592
-msgid "House Keeping"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:594
-msgid "Clean up on Deletion"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:595
-msgid "Check this box and if you ever delete this plugin it will completely remove all of its code and tables it has created, leaving no trace it was ever here. It will not delete your product images! <strong>CAUTION</strong> This setting is <strong>not recommended</strong> if you are upgrading to the Pro Version as you will want to keep any gallery settings you have already made."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:611
-#: admin/class-wc-dynamic-gallery-admin.php:687
-msgid "Font"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:623
-#: admin/class-wc-dynamic-gallery-admin.php:699
-msgid "Font size"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:635
-#: admin/class-wc-dynamic-gallery-admin.php:711
-msgid "Font style"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:644
-#: admin/class-wc-dynamic-gallery-admin.php:720
+#: admin/admin-interface.php:159
 msgid "Normal"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:645
-#: admin/class-wc-dynamic-gallery-admin.php:721
+#: admin/admin-interface.php:160
 msgid "Italic"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:646
-#: admin/class-wc-dynamic-gallery-admin.php:722
+#: admin/admin-interface.php:161
 msgid "Bold"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:647
-#: admin/class-wc-dynamic-gallery-admin.php:723
+#: admin/admin-interface.php:162
 msgid "Bold/Italic"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:652
-#: admin/class-wc-dynamic-gallery-admin.php:728
-#: admin/class-wc-dynamic-gallery-admin.php:772
-msgid "Colour"
+#: admin/admin-interface.php:172
+msgid "Solid"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:653
-msgid "Caption text color. Default <code>#FFFFFF</code>."
+#: admin/admin-interface.php:173
+msgid "Double"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:661
+#: admin/admin-interface.php:174
+msgid "Dashed"
+msgstr ""
+
+#: admin/admin-interface.php:175
+msgid "Dotted"
+msgstr ""
+
+#: admin/admin-interface.php:176
+msgid "Groove"
+msgstr ""
+
+#: admin/admin-interface.php:177
+msgid "Ridge"
+msgstr ""
+
+#: admin/admin-interface.php:178
+msgid "Inset"
+msgstr ""
+
+#: admin/admin-interface.php:179
+msgid "Outset"
+msgstr ""
+
+#: admin/admin-interface.php:1214 admin/admin-interface.php:1304
+#: admin/admin-interface.php:1333 admin/settings/global-settings.php:255
+#: admin/settings/global-settings.php:267
+#: admin/settings/global-settings.php:284
+#: admin/settings/global-settings.php:295
+#: admin/settings/global-settings.php:310
+msgid "ON"
+msgstr ""
+
+#: admin/admin-interface.php:1215 admin/admin-interface.php:1305
+#: admin/admin-interface.php:1334 admin/settings/global-settings.php:256
+#: admin/settings/global-settings.php:268
+#: admin/settings/global-settings.php:285
+#: admin/settings/global-settings.php:296
+#: admin/settings/global-settings.php:311
+msgid "OFF"
+msgstr ""
+
+#: admin/admin-interface.php:1375
+msgid "Width"
+msgstr ""
+
+#: admin/admin-interface.php:1377
+msgid "Height"
+msgstr ""
+
+#: admin/admin-interface.php:1379
+msgid "Hard Crop"
+msgstr ""
+
+#: admin/admin-interface.php:1457
+msgid "-- Default Fonts --"
+msgstr ""
+
+#: admin/admin-interface.php:1468
+msgid "-- Google Fonts --"
+msgstr ""
+
+#: admin/admin-interface.php:1509
+msgid "Preview your customized typography settings"
+msgstr ""
+
+#: admin/admin-interface.php:1643 admin/admin-interface.php:1886
+msgid "Preview your customized border settings"
+msgstr ""
+
+#: admin/admin-interface.php:1652 admin/admin-interface.php:1877
+msgid "Rounded"
+msgstr ""
+
+#: admin/admin-interface.php:1653 admin/admin-interface.php:1878
+msgid "Square"
+msgstr ""
+
+#: admin/admin-interface.php:1663 admin/admin-interface.php:1891
+msgid "Top Left Corner"
+msgstr ""
+
+#: admin/admin-interface.php:1679 admin/admin-interface.php:1907
+msgid "Top Right Corner"
+msgstr ""
+
+#: admin/admin-interface.php:1695 admin/admin-interface.php:1923
+msgid "Bottom Right Corner"
+msgstr ""
+
+#: admin/admin-interface.php:1711 admin/admin-interface.php:1939
+msgid "Bottom Left Corner"
+msgstr ""
+
+#: admin/admin-interface.php:1800
+msgid "Preview your customized border styles settings"
+msgstr ""
+
+#: admin/admin-interface.php:1996
+#: admin/settings/gallery-style-settings.php:281
+#: admin/settings/gallery-style-settings.php:328
+#: admin/settings/gallery-style-settings.php:373
+#: admin/settings/gallery-style-settings.php:416
+#: admin/settings/thumbnails-settings.php:211
+#: admin/settings/thumbnails-settings.php:228
+msgid "YES"
+msgstr ""
+
+#: admin/admin-interface.php:1997
+#: admin/settings/gallery-style-settings.php:282
+#: admin/settings/gallery-style-settings.php:329
+#: admin/settings/gallery-style-settings.php:374
+#: admin/settings/gallery-style-settings.php:417
+#: admin/settings/thumbnails-settings.php:212
+#: admin/settings/thumbnails-settings.php:229
+msgid "NO"
+msgstr ""
+
+#: admin/admin-interface.php:2011
+msgid "Horizontal Shadow"
+msgstr ""
+
+#: admin/admin-interface.php:2029
+msgid "Vertical Shadow"
+msgstr ""
+
+#: admin/admin-interface.php:2047
+msgid "Blur Distance"
+msgstr ""
+
+#: admin/admin-interface.php:2065
+msgid "Spread Size"
+msgstr ""
+
+#: admin/admin-interface.php:2083
+msgid "INNER"
+msgstr ""
+
+#: admin/admin-interface.php:2084
+msgid "OUTER"
+msgstr ""
+
+#: admin/admin-interface.php:2102
+msgid "Preview your customized box shadow settings"
+msgstr ""
+
+#: admin/admin-interface.php:2286
+msgid "Save changes"
+msgstr ""
+
+#: admin/admin-interface.php:2287
+msgid "Reset Settings"
+msgstr ""
+
+#: admin/admin-pages/dynamic-gallery-page.php:63
+#: admin/admin-pages/dynamic-gallery-page.php:64
+msgid "Dynamic Gallery"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:149
+msgid "Upload"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:169
+msgid "View File"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:188
+msgid "Use this Image"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:189
+msgid "Use as"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:199
+msgid "Previously Uploaded"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:81
+msgid "Dynamic Gallery Style successfully saved."
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:82
+msgid "Error: Dynamic Gallery Style can not save."
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:83
+msgid "Dynamic Gallery Style successfully reseted."
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:161
+#: admin/settings/gallery-style-settings.php:332
+#: admin/tabs/gallery-style-tab.php:78
+msgid "Gallery Style"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:208
+msgid "Preview"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:209
+msgid "Click here to preview gallery"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:214
+msgid "Gallery Dimensions"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:220
+msgid "Gallery width"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:227
+msgid "Responsive"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:228
+msgid "Fixed Wide"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:263
+msgid "Gallery height"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:272
+msgid "Gallery Special Effects"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:274
+msgid "Auto start"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:285
+msgid "Slide transition effect"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:292
+msgid "None"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:293
+msgid "Fade"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:294
+msgid "Slide Hori"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:295
+msgid "Slide Vert"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:296
+msgid "Resize"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:300
+msgid "Time between transitions"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:310
+msgid "Transition effect speed"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:321
+msgid "Single Image Transition"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:322
+msgid ""
+"YES to auto deactivate image transition effect when only 1 image is loaded "
+"to gallery."
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:334
+msgid "Image background colour"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:335
+msgid "Gallery image background colour. Default <code>#FFFFFF</code>."
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:341
+msgid "Border colour"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:342
+msgid "Gallery border colour. Default <code>#CCCCCC</code>."
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:348
+msgid "Caption text"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:350
+#: admin/settings/gallery-style-settings.php:382
+msgid "Font"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:356
+#: admin/settings/gallery-style-settings.php:388
 msgid "Background"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:662
-msgid "Caption text background colour. Default <code>#000000</code>."
+#: admin/settings/gallery-style-settings.php:357
+msgid "Caption text background colour. Default [default_value]"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:678
-#: admin/class-wc-dynamic-gallery-admin.php:763
+#: admin/settings/gallery-style-settings.php:363
+msgid "Nav Bar"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:365
+#: admin/settings/gallery-style-settings.php:408
 msgid "Control"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:679
-msgid "Enable Nav bar Control"
+#: admin/settings/gallery-style-settings.php:366
+msgid "YES to enable Nav bar Control"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:729
-msgid "Nav bar background colour. Default <code>#FFFFFF</code>."
+#: admin/settings/gallery-style-settings.php:389
+msgid "Nav bar background colour. Default [default_value]."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:737
-msgid "Text"
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:738
-msgid "Nav bar text color. Default <code>#000000</code>."
-msgstr ""
-
-#: admin/class-wc-dynamic-gallery-admin.php:746
+#: admin/settings/gallery-style-settings.php:395
 msgid "Container height"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:764
-msgid "Enable lazy-load scroll"
+#: admin/settings/gallery-style-settings.php:404
+msgid "Lazy-load scroll"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:773
-msgid "Scroll bar colour. Default <code>#000000</code>."
+#: admin/settings/gallery-style-settings.php:409
+msgid "YES to enable lazy-load scroll"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:789
+#: admin/settings/gallery-style-settings.php:426
+msgid "Colour"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:427
+msgid "Scroll bar colour. Default [default_value]."
+msgstr ""
+
+#: admin/settings/global-settings.php:81
+msgid "Dynamic Gallery Settings successfully saved."
+msgstr ""
+
+#: admin/settings/global-settings.php:82
+msgid "Error: Dynamic Gallery Settings can not save."
+msgstr ""
+
+#: admin/settings/global-settings.php:83
+msgid "Dynamic Gallery Settings successfully reseted."
+msgstr ""
+
+#: admin/settings/global-settings.php:165
+#: admin/tabs/global-settings-tab.php:78
+msgid "Settings"
+msgstr ""
+
+#: admin/settings/global-settings.php:208
+msgid "Image Zoom Function"
+msgstr ""
+
+#: admin/settings/global-settings.php:210
+msgid "Gallery popup"
+msgstr ""
+
+#: admin/settings/global-settings.php:219
+msgid "Fancybox"
+msgstr ""
+
+#: admin/settings/global-settings.php:226
+msgid "ColorBox"
+msgstr ""
+
+#: admin/settings/global-settings.php:233
+msgid "Deactivate"
+msgstr ""
+
+#: admin/settings/global-settings.php:243
+msgid "Gallery On / Off"
+msgstr ""
+
+#: admin/settings/global-settings.php:247
+msgid "Gallery Activation Default"
+msgstr ""
+
+#: admin/settings/global-settings.php:248
+msgid ""
+"ON = Gallery Activated on Product Pages. OFF = Deactivated. Note: Changing "
+"this setting will not over-ride any custom Gallery activation settings made "
+"on single product pages."
+msgstr ""
+
+#: admin/settings/global-settings.php:259
+#: admin/settings/global-settings.php:288
+msgid "Reset Activation to default"
+msgstr ""
+
+#: admin/settings/global-settings.php:260
+msgid ""
+"<strong>Warning:</strong> Set to ON and Save Changes will reset ALL products "
+"to the default 'Gallery Activation' status you set above including ALL "
+"individual custom Product Page Gallery activation settings."
+msgstr ""
+
+#: admin/settings/global-settings.php:272
+msgid "Image Variation Feature"
+msgstr ""
+
+#: admin/settings/global-settings.php:277
+msgid "Variations Activation Default"
+msgstr ""
+
+#: admin/settings/global-settings.php:278
+msgid ""
+"ON = Variation Images Activated on Product Pages. OFF = Deactivated. Note: "
+"Changing this setting will not over-ride any custom Variation Images "
+"activation settings made on single product pages."
+msgstr ""
+
+#: admin/settings/global-settings.php:289
+msgid ""
+"<strong>Warning:</strong> Set to ON and Save Changes will reset ALL products "
+"to the default 'Variations Activation' status you set above. NOTE:  ALL "
+"individual custom Product Page Variation Images Activation settings will be "
+"changed to the default."
+msgstr ""
+
+#: admin/settings/global-settings.php:300
+msgid "House Keeping"
+msgstr ""
+
+#: admin/settings/global-settings.php:302
+msgid "Clean up on Deletion"
+msgstr ""
+
+#: admin/settings/global-settings.php:303
+msgid ""
+"On deletion (not deactivate) the plugin it will completely remove all of its "
+"code and tables it has created, leaving no trace it was ever here. It will "
+"not delete your product images! <strong>WARNING</strong> All of the gallery "
+"settings you have made will be deleted forever. If you ever reinstall the "
+"gallery you will have to reset them all."
+msgstr ""
+
+#: admin/settings/thumbnails-settings.php:81
+msgid "Thumbnails Settings successfully saved."
+msgstr ""
+
+#: admin/settings/thumbnails-settings.php:82
+msgid "Error: Thumbnails Settings can not save."
+msgstr ""
+
+#: admin/settings/thumbnails-settings.php:83
+msgid "Thumbnails Settings successfully reseted."
+msgstr ""
+
+#: admin/settings/thumbnails-settings.php:154
+#: admin/settings/thumbnails-settings.php:198 admin/tabs/thumbnails-tab.php:78
+msgid "Image Thumbnails"
+msgstr ""
+
+#: admin/settings/thumbnails-settings.php:203
 msgid "Show thumbnails"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:790
-msgid "Enable thumbnail gallery"
+#: admin/settings/thumbnails-settings.php:204
+msgid "YES to enable thumbnail gallery"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:798
+#: admin/settings/thumbnails-settings.php:221
 msgid "Single Image Thumbnail"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:799
-msgid "Check to hide thumbnail when only 1 image is loaded to gallery."
+#: admin/settings/thumbnails-settings.php:222
+msgid "YES to hide thumbnail when only 1 image is loaded to gallery."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:809
+#: admin/settings/thumbnails-settings.php:237
 msgid "Thumbnail width"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:810
-msgid "Setting 0px will show at default 105px. Hiding thumbnails is a Pro Version feature."
+#: admin/settings/thumbnails-settings.php:238
+msgid ""
+"Setting 0px will show at default 105px. Please use the disable thumbnails "
+"feature if you want to hide them."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:818
+#: admin/settings/thumbnails-settings.php:246
 msgid "Thumbnail height"
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:819
-msgid "Setting 0px will show at default 75px. Hiding thumbnails is a Pro Version feature."
+#: admin/settings/thumbnails-settings.php:247
+msgid ""
+"Setting 0px will show at default 75px. Please use the disable thumbnails "
+"feature if you want to hide them."
 msgstr ""
 
-#: admin/class-wc-dynamic-gallery-admin.php:827
+#: admin/settings/thumbnails-settings.php:255
 msgid "Thumbnail spacing"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:63
-msgid "Arial"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:64
-msgid "Verdana"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:65
-msgid "Trebuchet"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:66
-msgid "Georgia"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:67
-msgid "Times New Roman"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:68
-msgid "Tahoma"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:69
-msgid "Palatino"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:70
-msgid "Helvetica*"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:71
-msgid "Calibri*"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:72
-msgid "Myriad Pro*"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:73
-msgid "Lucida"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:74
-msgid "Arial Black"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:75
-msgid "Gill Sans*"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:76
-msgid "Geneva*"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:77
-msgid "Impact"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:78
-msgid "Courier"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:79
-msgid "Century Gothic"
-msgstr ""
-
-#: classes/class-wc-dynamic-gallery-functions.php:98
+#: classes/class-wc-dynamic-gallery-functions.php:56
 msgid "Upgrade to Dynamic Gallery Pro"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:99
-msgid "<strong>NOTE:</strong> Settings inside the Yellow border are Pro Version advanced Features and are not activated. Visit the"
+#: classes/class-wc-dynamic-gallery-functions.php:57
+msgid ""
+"<strong>NOTE:</strong> Settings inside the Yellow border are Pro Version "
+"advanced Features and are not activated. Visit the"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:99
+#: classes/class-wc-dynamic-gallery-functions.php:57
 msgid "a3rev site"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:99
+#: classes/class-wc-dynamic-gallery-functions.php:57
 msgid "if you wish to upgrade to activate these features"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:102
-msgid "Show Multiple Product Variation images in Gallery. As users selects options from the drop down menu that options product image auto shows in the Dynamic Gallery complete with caption text."
+#: classes/class-wc-dynamic-gallery-functions.php:60
+msgid ""
+"Show Multiple Product Variation images in Gallery. As users selects options "
+"from the drop down menu that options product image auto shows in the Dynamic "
+"Gallery complete with caption text."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:103
-msgid "Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up."
+#: classes/class-wc-dynamic-gallery-functions.php:61
+msgid ""
+"Fully Responsive Gallery option. Set gallery wide to % and it becomes fully "
+"responsive image product gallery including the image zoom pop up."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:104
-msgid "Activate all of the Gallery customization settings to style and fine tune your product image presentation."
+#: classes/class-wc-dynamic-gallery-functions.php:62
+msgid ""
+"Activate all of the Gallery customization settings to style and fine tune "
+"your product image presentation."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:105
-msgid "Option to Deactivate the Gallery on any Single product page - default WooCommerce product image will show."
+#: classes/class-wc-dynamic-gallery-functions.php:63
+msgid ""
+"Option to Deactivate the Gallery on any Single product page - default "
+"WooCommerce product image will show."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:108
+#: classes/class-wc-dynamic-gallery-functions.php:66
 msgid "View this plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:108
+#: classes/class-wc-dynamic-gallery-functions.php:66
 msgid "documentation"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:109
+#: classes/class-wc-dynamic-gallery-functions.php:67
 msgid "Visit this plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:109
+#: classes/class-wc-dynamic-gallery-functions.php:67
 msgid "support forum"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:110
+#: classes/class-wc-dynamic-gallery-functions.php:68
 msgid "More a3rev Quality Plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:111
-msgid "Below is a list of the a3rev plugins that are available for free download from wordpress.org"
+#: classes/class-wc-dynamic-gallery-functions.php:69
+msgid ""
+"Below is a list of the a3rev plugins that are available for free download "
+"from wordpress.org"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:112
+#: classes/class-wc-dynamic-gallery-functions.php:70
 msgid "More FREE a3rev WooCommerce Plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:115
+#: classes/class-wc-dynamic-gallery-functions.php:73
 msgid "WooCommerce Product Sort & Display"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:116
+#: classes/class-wc-dynamic-gallery-functions.php:74
 msgid "WooCommerce Products Quick View"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:117
+#: classes/class-wc-dynamic-gallery-functions.php:75
 msgid "WooCommerce Predictive Search"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:118
+#: classes/class-wc-dynamic-gallery-functions.php:76
 msgid "WooCommerce Compare Products"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:119
+#: classes/class-wc-dynamic-gallery-functions.php:77
 msgid "WooCommerce Widget Product Slideshow"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:120
+#: classes/class-wc-dynamic-gallery-functions.php:78
 msgid "WooCommerce Email Inquiry & Cart Options"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:123
+#: classes/class-wc-dynamic-gallery-functions.php:81
 msgid "FREE a3rev WordPress Plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:126
+#: classes/class-wc-dynamic-gallery-functions.php:84
 msgid "Contact Us Page - Contact People"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:127
+#: classes/class-wc-dynamic-gallery-functions.php:85
 msgid "WordPress Email Template"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:128
+#: classes/class-wc-dynamic-gallery-functions.php:86
 msgid "Page View Count"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:139
+#: classes/class-wc-dynamic-gallery-functions.php:96
 msgid "Documentation"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:140
+#: classes/class-wc-dynamic-gallery-functions.php:97
 msgid "Support"
 msgstr ""
 
@@ -570,22 +694,32 @@ msgstr ""
 msgid "Product Variation Images activated"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-metaboxes.php:109
-msgid "'This image is a 'Featured Image' from the WordPress Media Library. Dynamic Gallery is showing it but you cannot edit or manage it in the Gallery Manager like images uploaded to the Gallery. Please click the red X to remove the 'feature' and upload the image to this Products Gallery and feature it. NOTE: If you feature another image from this Products Gallery this image will not show if you have not uploaded it to the Gallery.'"
+#: classes/class-wc-dynamic-gallery-metaboxes.php:80
+msgid "View Docs"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-preview.php:83
-#: classes/class-wc-dynamic-gallery.php:124
+#: classes/class-wc-dynamic-gallery-metaboxes.php:109
+msgid ""
+"'This image is a 'Featured Image' from the WordPress Media Library. Dynamic "
+"Gallery is showing it but you cannot edit or manage it in the Gallery "
+"Manager like images uploaded to the Gallery. Please click the red X to "
+"remove the 'feature' and upload the image to this Products Gallery and "
+"feature it. NOTE: If you feature another image from this Products Gallery "
+"this image will not show if you have not uploaded it to the Gallery.'"
+msgstr ""
+
+#: classes/class-wc-dynamic-gallery-preview.php:85
+#: classes/class-wc-dynamic-gallery.php:118
 msgid "ZOOM +"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-preview.php:318
-#: classes/class-wc-dynamic-gallery.php:351
+#: classes/class-wc-dynamic-gallery-preview.php:292
+#: classes/class-wc-dynamic-gallery.php:316
 msgid "START SLIDESHOW"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-preview.php:319
-#: classes/class-wc-dynamic-gallery.php:352
+#: classes/class-wc-dynamic-gallery-preview.php:293
+#: classes/class-wc-dynamic-gallery.php:317
 msgid "STOP SLIDESHOW"
 msgstr ""
 
@@ -600,7 +734,8 @@ msgstr ""
 
 #: classes/class-wc-dynamic-gallery-variations.php:31
 #: classes/class-wc-dynamic-gallery-variations.php:37
-msgid "If assigned to variations below the image will show when option is selected."
+msgid ""
+"If assigned to variations below the image will show when option is selected."
 msgstr ""
 
 #: classes/class-wc-dynamic-gallery-variations.php:54
@@ -614,4 +749,3 @@ msgstr ""
 #: classes/class-wc-dynamic-gallery-variations.php:65
 msgid "Apply to All"
 msgstr ""
-

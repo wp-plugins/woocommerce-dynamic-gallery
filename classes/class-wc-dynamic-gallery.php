@@ -15,7 +15,7 @@ class WC_Gallery_Display_Class
 		/**
 		 * Single Product Image
 		 */
-		global $post, $woocommerce;
+		global $post, $woocommerce, $wc_dgallery_fonts_face;
 		$current_db_version = get_option( 'woocommerce_db_version', null );
 		$lightbox_class = 'lightbox';
 		
@@ -67,7 +67,7 @@ class WC_Gallery_Display_Class
         <div class="images gallery_container">
           <div class="product_gallery">
             <?php
-            $g_width = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width' );
+			$g_width = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width_fixed' );
             $g_height = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_height' );
             
             $g_thumb_width = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'thumb_width' );
@@ -82,12 +82,10 @@ class WC_Gallery_Display_Class
             $g_animation_speed = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_animation_speed' );
 			
 			$bg_nav_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'bg_nav_color' );
-			$bg_nav_text_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'bg_nav_text_color' );
 			
 			$bg_image_wrapper = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'bg_image_wrapper' );
 			$border_image_wrapper_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'border_image_wrapper_color' );
 			
-			$product_gallery_text_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_text_color' );
 			$product_gallery_bg_des = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_bg_des' );
 			
 			$enable_gallery_thumb = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'enable_gallery_thumb' );
@@ -100,12 +98,8 @@ class WC_Gallery_Display_Class
 			$lazy_load_scroll = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'lazy_load_scroll' );
 			
 			$caption_font = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'caption_font' );
-			$caption_font_size = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'caption_font_size' );
-			$caption_font_style = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'caption_font_style' );
 			
 			$navbar_font = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font' );
-			$navbar_font_size = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font_size' );
-			$navbar_font_style = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font_style' );
 			$navbar_height = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_height' );
 			
 			if($product_gallery_nav == 'yes'){
@@ -219,21 +213,8 @@ class WC_Gallery_Display_Class
 					background: rgba('.$bg_des.',0.5);
 					filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr="#88'.$des_background.'", EndColorStr="#88'.$des_background.'");
 
-					margin: 0 0 '.$mg.'px !important;
-					color: '.$product_gallery_text_color.' !important;
-					font-family:'.$caption_font.' !important;
-					font-size: '.$caption_font_size.';';
-					
-					if($caption_font_style == 'bold'){
-						echo 'font-weight:bold !important;';
-					}elseif($caption_font_style == 'normal'){
-						echo 'font-weight:normal !important;';
-					}elseif($caption_font_style == 'italic'){
-						echo 'font-style:italic !important;';
-					}elseif($caption_font_style == 'bold_italic'){
-						echo 'font-weight:bold !important;';
-						echo 'font-style:italic !important;';
-					}
+					margin: 0 0 '.$mg.'px !important;';
+					echo $wc_dgallery_fonts_face->generate_font_css( $caption_font );
 					
 					echo '
 					left: 0;
@@ -252,20 +233,9 @@ class WC_Gallery_Display_Class
 				}
 				.product_gallery .slide-ctrl, .product_gallery .icon_zoom {
 					'.$display_ctrl.';
-					font-family:'.$navbar_font.' !important;
-					font-size: '.$navbar_font_size.';
 					height: '.($navbar_height-16).'px !important;
 					line-height: '.($navbar_height-16).'px !important;';
-					if($navbar_font_style == 'bold'){
-						echo 'font-weight:bold !important;';
-					}elseif($navbar_font_style == 'normal'){
-						echo 'font-weight:normal !important;';
-					}elseif($navbar_font_style == 'italic'){
-						echo 'font-style:italic !important;';
-					}elseif($navbar_font_style == 'bold_italic'){
-						echo 'font-weight:bold !important;';
-						echo 'font-style:italic !important;';
-					}
+					echo $wc_dgallery_fonts_face->generate_font_css( $navbar_font );
 				echo '
 				}';
 				if($lazy_load_scroll == 'yes'){
@@ -290,8 +260,9 @@ class WC_Gallery_Display_Class
 					border-top: 1px solid '.$border_image_wrapper_color.';
 				}
 				.product_gallery .slide-ctrl .ad-slideshow-stop-slide,.product_gallery .slide-ctrl .ad-slideshow-start-slide,.product_gallery .icon_zoom{
-					color:'.$bg_nav_text_color.';
-					line-height: '.($navbar_height-16).'px !important;
+					line-height: '.($navbar_height-16).'px !important;';
+					echo $wc_dgallery_fonts_face->generate_font_css( $navbar_font );
+				echo '
 				}
 				.product_gallery .ad-gallery .ad-thumbs li a {
 					border:1px solid '.$border_image_wrapper_color.' !important;
@@ -321,12 +292,6 @@ class WC_Gallery_Display_Class
 			if ($popup_gallery == 'deactivate') echo '#gallery_'.$post->ID.' .ad-image-wrapper .ad-image img{cursor: default;} #gallery_'.$post->ID.' .icon_zoom{cursor: default;}';
 			
 			echo '
-			/* Pretty Photo style */
-			.pp_content_container .pp_gallery {
-				display:block !important;
-				opacity: 1 !important;
-				filter: alpha(opacity = 100) !important;
-			}
             </style>';
             
             echo '<script type="text/javascript">
@@ -381,9 +346,6 @@ class WC_Gallery_Display_Class
                         
                         $script_colorbox = '';
 						$script_fancybox = '';
-						$script_prettyPhoto = '';
-						$prettyPhoto_images = '[';
-						$prettyPhoto_titles = '[';
                         if ( !empty( $attached_images ) ){	
                             $i = 0;
                             $display = '';
@@ -391,19 +353,15 @@ class WC_Gallery_Display_Class
                             if(is_array($attached_images) && count($attached_images)>0){
                                 $script_colorbox .= '<script type="text/javascript">';
 								$script_fancybox .= '<script type="text/javascript">';
-								$script_prettyPhoto .= '<script type="text/javascript">';
                                 $script_colorbox .= '(function($){';		  
 								$script_fancybox .= '(function($){';	
-								$script_prettyPhoto .= '(function($){';
                                 $script_colorbox .= '$(function(){';
 								$script_fancybox .= '$(function(){';
-								$script_prettyPhoto .= '$(function(){';
 								$script_colorbox .= '$(document).on("click", ".ad-gallery .lightbox", function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 									var idx = $("#gallery_'.$post->ID.' .ad-image img").attr("idx");';
 								$script_fancybox .= '$(document).on("click", ".ad-gallery .lightbox", function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
 									var idx = $("#gallery_'.$post->ID.' .ad-image img").attr("idx");';
-								$script_prettyPhoto .= '$(document).on("click", ".ad-gallery .lightbox", function(ev) { if( $(this).attr("rel") == "gallery_'.$post->ID.'") {
-									var idx = $("#gallery_'.$post->ID.' .ad-image img").attr("idx");';
+								
                                 if(count($attached_images) <= 1 ){
                                     $script_colorbox .= '$(".gallery_product_'.$post->ID.'").colorbox({open:true, maxWidth:"100%", title: function() { return "&nbsp;";} });';
 									$script_fancybox .= '$.fancybox(';
@@ -411,11 +369,7 @@ class WC_Gallery_Display_Class
                                     $script_colorbox .= '$(".gallery_product_'.$post->ID.'").colorbox({rel:"gallery_product_'.$post->ID.'", maxWidth:"100%", title: function() { return "&nbsp;";} }); $(".gallery_product_'.$post->ID.'_"+idx).colorbox({open:true, maxWidth:"100%", title: function() { return "&nbsp;";} });';
 									$script_fancybox .= '$.fancybox([';
                                 }
-								if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
-									$script_prettyPhoto .= '$().prettyPhoto({modals: "true", social_tools: false, theme: "light_square"}); $.prettyPhoto.open(';
-								} else {
-									$script_prettyPhoto .= '$().prettyPhoto({modals: "true", social_tools: false, theme: "pp_woocommerce"}); $.prettyPhoto.open(';
-								}
+								
                                 $common = '';
                                 
                                 
@@ -465,42 +419,31 @@ class WC_Gallery_Display_Class
                                     }else{
 										$script_fancybox .= $common.'{href:\''.$image_lager_default_url.'\',title:\'\'}';
                                     }
-									$prettyPhoto_images .= $common.'"'.$image_lager_default_url.'"';
-									$prettyPhoto_titles .= $common.'"'.$img_description.'"';
                                     $common = ',';
                                     $i++;
 									$idx++;
 								}
-								$prettyPhoto_images .= ']';
-								$prettyPhoto_titles .= ']';
 																
                                 if(count($attached_images) <= 1 ){
 									$script_fancybox .= ');';
-									$script_prettyPhoto .= $prettyPhoto_images. ', '. $prettyPhoto_titles .');';
                                 }else{
 									$script_fancybox .= '],{
         \'index\': idx
       });';
-	  								$script_prettyPhoto .= $prettyPhoto_images. ', '. $prettyPhoto_titles .'); $.prettyPhoto.changePage( parseInt(idx) );';
                                 }
                                 $script_colorbox .= 'ev.preventDefault();';
                                 $script_colorbox .= '} });';
 								$script_fancybox .= '} });';
-								$script_prettyPhoto .= '} });';
                                 $script_colorbox .= '});';
 								$script_fancybox .= '});';
-								$script_prettyPhoto .= '});';
                                 $script_colorbox .= '})(jQuery);';
 								$script_fancybox .= '})(jQuery);';
-								$script_prettyPhoto .= '})(jQuery);';
                                 $script_colorbox .= '</script>';
 								$script_fancybox .= '</script>';
-								$script_prettyPhoto .= '</script>';
 								
 								if (!$have_image) {
 									$script_colorbox = '';
 									$script_fancybox = '';
-									$script_prettyPhoto = '';
 									echo '<li style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;"> <a style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" class="" rel="gallery_product_'.$product_id.'" href="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png"> <div><img style="width:'.$g_thumb_width.'px;height:'.$g_thumb_height.'px;" src="'.WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/no-image.png" class="image" alt=""> </div></a> </li>';
 								}
                             }
@@ -511,13 +454,10 @@ class WC_Gallery_Display_Class
 						if ($popup_gallery == 'deactivate') {
 							$script_colorbox = '';
 							$script_fancybox = '';
-							$script_prettyPhoto = '';
 						} else if($popup_gallery == 'colorbox'){
                         	echo $script_colorbox;
-						} elseif($popup_gallery == 'fb') {
-							echo $script_fancybox;
 						} else {
-							echo $script_prettyPhoto;
+							echo $script_fancybox;
 						}
 						
                         echo '</ul>
