@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.5
 Tested up to: 3.7.1
-Stable tag: 1.2.5.2
+Stable tag: 1.2.5.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -138,6 +138,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
+= 1.2.5.3 - 2013/11/21 =
+* Fix - added admin-init.php file which failed to upload in version 1.2.5.3 SVN commit.
+
 = 1.2.5.2 - 2013/11/20 =
 * Feature - Upgraded the plugin to the newly developed a3rev admin Framework with app style interface.
 * Feature - New admin UI features check boxes replaced by switches, some dropdowns replaced by sliders.
@@ -271,6 +274,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.5.3 =
+Important bug fix for yesterday v1.2.5.2 release. Please upgrade your plugin now.
 
 = 1.2.5.2 =
 Upgrade your plugin now to the all new a3rev plugin framework with app style admin interface and full compatibility with WordPress 3.7.1 
