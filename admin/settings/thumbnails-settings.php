@@ -271,14 +271,14 @@ class WC_Dynamic_Gallery_Thumbnails_Settings extends WC_Dynamic_Gallery_Admin_UI
 $(document).ready(function() {
 	
 	if ( $("input.enable_gallery_thumb:checked").val() == 'yes') {
-		$(".gallery_thumb_container").show();
+		$(".gallery_thumb_container").css( {'visibility': 'visible', 'height' : 'auto', 'overflow' : 'inherit'} );
 	} else {
-		$(".gallery_thumb_container").hide();
+		$(".gallery_thumb_container").css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden'} );
 	}
 	
 	$(document).on( "a3rev-ui-onoff_checkbox-switch", '.enable_gallery_thumb', function( event, value, status ) {
 		if ( status == 'true' ) {
-			$(".gallery_thumb_container").slideDown();
+			$(".gallery_thumb_container").hide().css( {'visibility': 'visible', 'height' : 'auto', 'overflow' : 'inherit'} ).slideDown();
 		} else {
 			$(".gallery_thumb_container").slideUp();
 		}

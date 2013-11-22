@@ -89,7 +89,6 @@ function setup_dynamic_gallery() {
 // Upgrade to 1.0.4
 if(version_compare(get_option('a3rev_woo_dgallery_version'), '1.0.4') === -1){
 	update_option('woo_dg_width_type','px');
-	WC_Dynamic_Gallery::wc_dynamic_gallery_set_setting(true, true);
 	update_option('a3rev_woo_dgallery_version', '1.0.4');
 }
 
