@@ -4,7 +4,7 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_version', '1.2.5.3');
+	update_option('a3rev_woo_dgallery_version', '1.2.5.4');
 	// Set Settings Default from Admin Init
 	global $wc_dgallery_admin_init;
 	$wc_dgallery_admin_init->set_default_settings();
@@ -114,6 +114,6 @@ if (version_compare(get_option('a3rev_woo_dgallery_version'), '1.2.5.2') === -1)
 	update_option('a3rev_woo_dgallery_version', '1.2.5.2');
 }
 
-update_option('a3rev_woo_dgallery_version', '1.2.5.3');
+update_option('a3rev_woo_dgallery_version', '1.2.5.4');
 
 ?>

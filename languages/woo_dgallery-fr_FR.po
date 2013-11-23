@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Dynamic Gallery LITE v1.0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-20 16:34+0700\n"
-"PO-Revision-Date: 2013-11-20 16:34+0700\n"
+"POT-Creation-Date: 2013-11-23 12:38+0700\n"
+"PO-Revision-Date: 2013-11-23 12:38+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -98,7 +98,7 @@ msgstr ""
 #: admin/settings/global-settings.php:267
 #: admin/settings/global-settings.php:284
 #: admin/settings/global-settings.php:295
-#: admin/settings/global-settings.php:310
+#: admin/settings/global-settings.php:309
 msgid "ON"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 #: admin/settings/global-settings.php:268
 #: admin/settings/global-settings.php:285
 #: admin/settings/global-settings.php:296
-#: admin/settings/global-settings.php:311
+#: admin/settings/global-settings.php:310
 msgid "OFF"
 msgstr ""
 
@@ -457,6 +457,28 @@ msgstr "Couleur"
 msgid "Scroll bar colour. Default [default_value]."
 msgstr "Couleur d la barre de défilement, par défaut <code>#000000</code>."
 
+#: admin/settings/gallery-style-settings.php:433
+msgid "Variations Galleries"
+msgstr ""
+
+# @ woo_dgallery
+#: admin/settings/gallery-style-settings.php:435
+#, fuzzy
+msgid "Gallery load effect"
+msgstr "Galerie"
+
+#: admin/settings/gallery-style-settings.php:443
+msgid "FADE"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:444
+msgid "DEFAULT"
+msgstr ""
+
+#: admin/settings/gallery-style-settings.php:452
+msgid "Load effect timing"
+msgstr ""
+
 #: admin/settings/global-settings.php:81
 msgid "Dynamic Gallery Settings successfully saved."
 msgstr ""
@@ -550,15 +572,15 @@ msgid ""
 "changed to the default."
 msgstr ""
 
-#: admin/settings/global-settings.php:300
+#: admin/settings/global-settings.php:299
 msgid "House Keeping"
 msgstr ""
 
-#: admin/settings/global-settings.php:302
+#: admin/settings/global-settings.php:301
 msgid "Clean up on Deletion"
 msgstr ""
 
-#: admin/settings/global-settings.php:303
+#: admin/settings/global-settings.php:302
 msgid ""
 "On deletion (not deactivate) the plugin it will completely remove all of its "
 "code and tables it has created, leaving no trace it was ever here. It will "
@@ -631,126 +653,126 @@ msgstr ""
 msgid "Thumbnail spacing"
 msgstr "Espacement entre les miniatures"
 
-#: classes/class-wc-dynamic-gallery-functions.php:56
+#: classes/class-wc-dynamic-gallery-functions.php:57
 msgid "Upgrade to Dynamic Gallery Pro"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:57
+#: classes/class-wc-dynamic-gallery-functions.php:58
 msgid ""
 "<strong>NOTE:</strong> Settings inside the Yellow border are Pro Version "
 "advanced Features and are not activated. Visit the"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:57
+#: classes/class-wc-dynamic-gallery-functions.php:58
 msgid "a3rev site"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:57
+#: classes/class-wc-dynamic-gallery-functions.php:58
 msgid "if you wish to upgrade to activate these features"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:60
+#: classes/class-wc-dynamic-gallery-functions.php:61
 msgid ""
 "Show Multiple Product Variation images in Gallery. As users selects options "
 "from the drop down menu that options product image auto shows in the Dynamic "
 "Gallery complete with caption text."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:61
+#: classes/class-wc-dynamic-gallery-functions.php:62
 msgid ""
 "Fully Responsive Gallery option. Set gallery wide to % and it becomes fully "
 "responsive image product gallery including the image zoom pop up."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:62
+#: classes/class-wc-dynamic-gallery-functions.php:63
 msgid ""
 "Activate all of the Gallery customization settings to style and fine tune "
 "your product image presentation."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:63
+#: classes/class-wc-dynamic-gallery-functions.php:64
 msgid ""
 "Option to Deactivate the Gallery on any Single product page - default "
 "WooCommerce product image will show."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:66
+#: classes/class-wc-dynamic-gallery-functions.php:67
 msgid "View this plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:66
+#: classes/class-wc-dynamic-gallery-functions.php:67
 msgid "documentation"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:67
+#: classes/class-wc-dynamic-gallery-functions.php:68
 msgid "Visit this plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:67
+#: classes/class-wc-dynamic-gallery-functions.php:68
 msgid "support forum"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:68
+#: classes/class-wc-dynamic-gallery-functions.php:69
 msgid "More a3rev Quality Plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:69
+#: classes/class-wc-dynamic-gallery-functions.php:70
 msgid ""
 "Below is a list of the a3rev plugins that are available for free download "
 "from wordpress.org"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:70
+#: classes/class-wc-dynamic-gallery-functions.php:71
 msgid "More FREE a3rev WooCommerce Plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:73
+#: classes/class-wc-dynamic-gallery-functions.php:74
 msgid "WooCommerce Product Sort & Display"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:74
+#: classes/class-wc-dynamic-gallery-functions.php:75
 msgid "WooCommerce Products Quick View"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:75
+#: classes/class-wc-dynamic-gallery-functions.php:76
 msgid "WooCommerce Predictive Search"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:76
+#: classes/class-wc-dynamic-gallery-functions.php:77
 msgid "WooCommerce Compare Products"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:77
+#: classes/class-wc-dynamic-gallery-functions.php:78
 msgid "WooCommerce Widget Product Slideshow"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:78
+#: classes/class-wc-dynamic-gallery-functions.php:79
 msgid "WooCommerce Email Inquiry & Cart Options"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:81
+#: classes/class-wc-dynamic-gallery-functions.php:82
 msgid "FREE a3rev WordPress Plugins"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:84
+#: classes/class-wc-dynamic-gallery-functions.php:85
 msgid "Contact Us Page - Contact People"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:85
+#: classes/class-wc-dynamic-gallery-functions.php:86
 msgid "WordPress Email Template"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-functions.php:86
+#: classes/class-wc-dynamic-gallery-functions.php:87
 msgid "Page View Count"
 msgstr ""
 
 # @ woo_dgallery
-#: classes/class-wc-dynamic-gallery-functions.php:96
+#: classes/class-wc-dynamic-gallery-functions.php:97
 msgid "Documentation"
 msgstr ""
 
 # @ woo_dgallery
-#: classes/class-wc-dynamic-gallery-functions.php:97
+#: classes/class-wc-dynamic-gallery-functions.php:98
 msgid "Support"
 msgstr ""
 

@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.5
 Tested up to: 3.7.1
-Stable tag: 1.2.5.3
+Stable tag: 1.2.5.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -137,6 +137,10 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.2.5.4 - 2013/11/23 =
+* Fix - remove class WC_Dynamic_Gallery that is not found when upgrade direct from older versions to v1.2.5.2 and cause a Fatal Error.
+* Fix - Single Image Thumbnail ON | OFF switch not displaying properly when first turn thumbnails ON.
 
 = 1.2.5.3 - 2013/11/21 =
 * Fix - added admin-init.php file which failed to upload in version 1.2.5.3 SVN commit.
@@ -274,6 +278,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.5.4 =
+Upgrade your plugin now for 2 new bug fixes.
 
 = 1.2.5.3 =
 Important bug fix for yesterday v1.2.5.2 release. Please upgrade your plugin now.
