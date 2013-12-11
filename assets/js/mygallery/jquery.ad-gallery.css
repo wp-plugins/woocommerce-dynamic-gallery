@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+.ad-gallery .ad-image-wrapper {
+	margin-bottom:20px !important;	
+}
 .ad-gallery .ad-image-wrapper .ad-loader {
 	position: absolute;
 	z-index: 10;
@@ -91,6 +94,7 @@
 .ad-gallery .ad-nav {
 	position: relative;
 	width: 99.5%;
+	margin-bottom:20px;
 }
 .ad-gallery .ad-forward, .ad-gallery .ad-back {
 	position: absolute;

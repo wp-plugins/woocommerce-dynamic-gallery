@@ -66,11 +66,11 @@
 	  
     var current_top = parseInt(img_container.css('top'), 10);
     if(direction == 'left') {
-      var old_image_top = '-'+ this.image_wrapper.height() +'px';
-      img_container.css('top', this.image_wrapper.height() +'px');
+      var old_image_top = '-'+ this.image_wrapper_height +'px';
+      img_container.css('top', this.image_wrapper_height +'px');
     } else {
-      var old_image_top = this.image_wrapper.height() +'px';
-      img_container.css('top', '-'+ this.image_wrapper.height() +'px');
+      var old_image_top = this.image_wrapper_height +'px';
+      img_container.css('top', '-'+ this.image_wrapper_height +'px');
     };
     if(desc) {
       //desc.css('bottom', '-'+ desc[0].offsetHeight +'px');
@@ -87,11 +87,11 @@
 	img_container.css({left: 0});  
     var current_left = parseInt(img_container.css('left'), 10);
     if(direction == 'left') {
-      var old_image_left = '-'+ this.image_wrapper.width() +'px';
-      img_container.css('left',this.image_wrapper.width() +'px');
+      var old_image_left = '-'+ this.image_wrapper_width +'px';
+      img_container.css('left',this.image_wrapper_width +'px');
     } else {
-      var old_image_left = this.image_wrapper.width() +'px';
-      img_container.css('left','-'+ this.image_wrapper.width() +'px');
+      var old_image_left = this.image_wrapper_width +'px';
+      img_container.css('left','-'+ this.image_wrapper_width +'px');
     };
 	
     if(desc) {
@@ -111,10 +111,10 @@
     var image_height = img_container.height();
     var current_left = parseInt(img_container.css('left'), 10);
     var current_top = parseInt(img_container.css('top'), 10);
-    img_container.css({width: 0, height: 0, top: parseInt( this.image_wrapper.height() ) / 2, left: 0});
+    img_container.css({width: 0, height: 0, top: this.image_wrapper_height / 2, left: 0});
     return {old_image: {width: 0,
                         height: 0,
-                        top: parseInt( this.image_wrapper.height() ) / 2,
+                        top: this.image_wrapper_height / 2,
                         left: 0},
             new_image: {width: image_width,
                         height: image_height,
@@ -252,7 +252,7 @@
       this.nav = this.wrapper.find('.ad-nav');
       this.thumbs_wrapper = this.nav.find('.ad-thumbs');
       this.preloads = $('<div class="ad-preloads"></div>');
-      this.loader = $('<img class="ad-loader" src="'+ this.settings.loader_image +'" style="width:auto !important;" />');
+      this.loader = $('<img class="ad-loader" src="'+ this.settings.loader_image +'" style="width:auto;" />');
       this.image_wrapper.append(this.loader);
       this.loader.hide();
       $(document.body).append(this.preloads);
@@ -392,7 +392,7 @@
       this.prev_link.add(this.next_link).mouseover(
         function(e) {
           // IE 6 hides the wrapper div, so we have to set it's width
-          $(this).css('height', context.image_wrapper.height() );
+          $(this).css('height', context.image_wrapper_height);
           $(this).find('div').show();
         }
       ).mouseout(
@@ -472,8 +472,8 @@
       this.gallery_info.html((this.current_index + 1) +' / '+ this.images.length);
       if(!this.settings.cycle) {
         // Needed for IE
-        this.prev_link.show().css('height', this.image_wrapper.height());
-        this.next_link.show().css('height', this.image_wrapper.height());
+        this.prev_link.show().css('height', this.image_wrapper_height);
+        this.next_link.show().css('height', this.image_wrapper_height);
         if(this.current_index == (this.images.length - 1)) {
           this.next_link.hide();
         };
@@ -489,15 +489,15 @@
      * If it's not, shrink it proportionally
      */
     _getContainedImageSize: function(image_width, image_height) {
-      if(image_height > this.image_wrapper.height()) {
+      if(image_height > this.image_wrapper_height) {
         var ratio = image_width / image_height;
-        image_height = parseInt( this.image_wrapper.height() );
-        image_width = parseInt( this.image_wrapper.height() ) * ratio;
+        image_height = this.image_wrapper_height;
+        image_width = this.image_wrapper_height * ratio;
       };
-      if(image_width > parseInt( this.image_wrapper.width() ) ) {
+      if(image_width > this.image_wrapper_width) {
   	    var ratio = image_height / image_width;
-  	    image_width = parseInt( this.image_wrapper.width() );
-  	    image_height = parseInt( this.image_wrapper.width() ) * ratio;
+  	    image_width = this.image_wrapper_width;
+  	    image_height = this.image_wrapper_width * ratio;
   	  };
       return {width: image_width, height: image_height};
     },
@@ -507,13 +507,13 @@
      */
     _centerImage: function(img_container, image_width, image_height) {
       img_container.css('top', '0px');
-      if(image_height < parseInt( this.image_wrapper.height() ) ) {
-        var dif = parseInt( this.image_wrapper.height() ) - image_height;
+      if(image_height < this.image_wrapper_height) {
+        var dif = this.image_wrapper_height - image_height;
         img_container.css('top', (dif / 2) +'px');
       };
       img_container.css('left', '0px');
-      if(image_width < parseInt( this.image_wrapper.width() ) ) {
-        var dif = parseInt( this.image_wrapper.width() ) - image_width;
+      if(image_width < this.image_wrapper_width) {
+        var dif = this.image_wrapper_width - image_width;
         //img_container.css('left', (dif / 2) +'px');
 		img_container.css('left', (dif / 2) +'px');
       };

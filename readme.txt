@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.5
 Tested up to: 3.7.1
-Stable tag: 1.2.5.4
+Stable tag: 1.2.5.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -137,6 +137,10 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.2.5.5 - 2013/12/10 =
+* Tweak - Removed fixed height setting that shows on admin when Gallery Dimension - Responsive is selected. (Pro Version settings) 
+* Fix - Upgraded array_textareas type for Padding, Margin settings on the a3rev plugin framework
 
 = 1.2.5.4 - 2013/11/23 =
 * Fix - remove class WC_Dynamic_Gallery that is not found when upgrade direct from older versions to v1.2.5.2 and cause a Fatal Error.
@@ -278,6 +282,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.5.5 =
+Upgrade your plugin now for admin panel Tweak and bug fix.
 
 = 1.2.5.4 =
 Upgrade your plugin now for 2 new bug fixes.

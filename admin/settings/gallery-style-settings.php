@@ -213,11 +213,14 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 			array(	
 				'name' 		=> __('Gallery Dimensions', 'woo_dgallery'), 
 				'type' 		=> 'heading', 
-				'id' 		=> 'pro_gallery_width_type', 
 			),
 			
+			array(	
+				'type' 		=> 'heading', 
+				'id' 		=> 'pro_gallery_width_type', 
+			),
 			array(  
-				'name' 		=> __( 'Gallery width', 'woo_dgallery' ),
+				'name' 		=> __( 'Gallery type', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX . 'width_type',
 				'class'		=> 'gallery_width_type',
 				'type' 		=> 'switcher_checkbox',
@@ -227,13 +230,13 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'checked_label'		=> __( 'Responsive', 'woo_dgallery' ),
 				'unchecked_label' 	=> __( 'Fixed Wide', 'woo_dgallery' ),
 			),
+			
 			array(
             	'class' 	=> 'gallery_width_type_percent',
                 'type' 		=> 'heading',
-				'id'		=> 'pro_product_gallery_width_responsive',
            	),
 			array(  
-				'name' 		=> '',
+				'name' 		=> __( 'Gallery width', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX . 'product_gallery_width_responsive',
 				'desc'		=> '%',
 				'type' 		=> 'slider',
@@ -242,23 +245,27 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'max'		=> 100,
 				'increment'	=> 1,
 			),
+			
+			array(
+            	'class' 	=> 'gallery_width_type_percent',
+                'type' 		=> 'heading',
+				'id'		=> 'pro_product_gallery_width_responsive',
+				'desc'		=> '<table class="form-table"><tbody><tr valign="top"><th class="titledesc" scope="row"><label>' . __( 'Gallery height', 'woo_dgallery' ) . '</label></th><td class="forminp">' . __( "Show tall in proportion to wide", 'woo_dgallery' ) . '</td></tr></tbody></table>',
+           	),
+			
 			array(
             	'class' 	=> 'gallery_width_type_fixed',
                 'type' 		=> 'heading',
            	),
 			array(  
-				'name' 		=> '',
+				'name' 		=> __( 'Gallery width', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX . 'product_gallery_width_fixed',
 				'desc'		=> 'px',
 				'type' 		=> 'text',
 				'default'	=> 320,
 				'free_version'		=> true,
 				'css' 		=> 'width:40px;',
-			),
-			
-			array(
-                'type' 		=> 'heading',
-           	),
+			),			
 			array(  
 				'name' 		=> __( 'Gallery height', 'woo_dgallery' ),
 				'desc'		=> 'px',
@@ -269,7 +276,11 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'css' 		=> 'width:40px;',
 			),
 			
-			array(	'name' => __('Gallery Special Effects', 'woo_dgallery'), 'type' => 'heading', 'id' => 'pro_gallery_special_effects' ),
+			array(	
+				'name' => __('Gallery Special Effects', 'woo_dgallery'), 
+				'type' => 'heading', 
+				'id' => 'pro_gallery_special_effects' 
+			),
 			array(  
 				'name' => __( 'Auto start', 'woo_dgallery' ),
 				'desc' 		=> '',

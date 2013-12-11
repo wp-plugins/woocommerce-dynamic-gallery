@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Dynamic Gallery LITE
 Plugin URI: http://a3rev.com/shop/woocommerce-dynamic-gallery/
 Description: Auto adds a fully customizable dynamic images gallery to every single product page with thumbnails, caption text and lazy-load. Over 28 settings to fine tune every aspect of the gallery. Creates an image gallery manager on every product edit page - greatly simplifies managing product images. Search engine optimized images with WooCommerce Dynamic Gallery Pro.
-Version: 1.2.5.4
+Version: 1.2.5.5
 Author: A3 Revolution
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -52,8 +52,8 @@ include('admin/wc_gallery_woocommerce_admin.php');
 */
 register_activation_hook(__FILE__,'wc_dynamic_gallery_install');
 
-function wc_dynamic_gallery_uninstall() {
-	if ( get_option('wc_dgallery_clean_on_deletion') == 'yes' ) {
+function wc_dynamic_gallery_lite_uninstall() {
+	if ( get_option('wc_dgallery_lite_clean_on_deletion') == 'yes' ) {
 		delete_option( 'wc_dgallery_product_gallery_width' );
 		delete_option( 'wc_dgallery_width_type' );
 		delete_option( 'wc_dgallery_product_gallery_height' );
@@ -97,7 +97,7 @@ function wc_dynamic_gallery_uninstall() {
 		delete_option( 'wc_dgallery_product_gallery_width_responsive' );
 		delete_option( 'wc_dgallery_product_gallery_width_fixed' );
 		
-		delete_option('wc_dgallery_clean_on_deletion');
+		delete_option('wc_dgallery_lite_clean_on_deletion');
 		
 		delete_post_meta_by_key('_actived_d_gallery');
 		delete_post_meta_by_key('_wc_dgallery_show_variation');
@@ -105,7 +105,7 @@ function wc_dynamic_gallery_uninstall() {
 		delete_post_meta_by_key('_wc_dgallery_in_variations');
 	}
 }
-if ( get_option('wc_dgallery_clean_on_deletion') == 'yes' ) {
-	register_uninstall_hook( __FILE__, 'wc_dynamic_gallery_uninstall' );
+if ( get_option('wc_dgallery_lite_clean_on_deletion') == 'yes' ) {
+	register_uninstall_hook( __FILE__, 'wc_dynamic_gallery_lite_uninstall' );
 }
 ?>

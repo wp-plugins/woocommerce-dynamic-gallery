@@ -132,7 +132,7 @@ class WC_Dynamic_Gallery_Functions
 		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font_style', get_option('navbar_font_style') );
 		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_height', get_option('navbar_height') );
 		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'hide_thumb_1image', get_option('dynamic_gallery_hide_thumb_1image') );
-		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'clean_on_deletion', get_option('wc_dgallery_clean_on_deletion') );
+		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'clean_on_deletion', get_option('wc_dgallery_lite_clean_on_deletion') );
 		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'reset_galleries_activate', get_option('wc_dgallery_reset_galleries_activate') );
 		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'reset_variation_activate', get_option('wc_dgallery_reset_variation_activate') );
 		

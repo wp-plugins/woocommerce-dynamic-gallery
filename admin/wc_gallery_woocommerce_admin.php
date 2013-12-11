@@ -4,7 +4,7 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_version', '1.2.5.4');
+	update_option('a3rev_woo_dgallery_lite_version', '1.2.5.5');
 	// Set Settings Default from Admin Init
 	global $wc_dgallery_admin_init;
 	$wc_dgallery_admin_init->set_default_settings();
@@ -86,34 +86,11 @@ function setup_dynamic_gallery() {
 	}
 }
 
-// Upgrade to 1.0.4
-if(version_compare(get_option('a3rev_woo_dgallery_version'), '1.0.4') === -1){
-	update_option('woo_dg_width_type','px');
-	update_option('a3rev_woo_dgallery_version', '1.0.4');
-}
-
-// Upgrade to 1.1.0
-if(version_compare(get_option('a3rev_woo_dgallery_version'), '1.1.0') === -1){
-	if(get_option('wc_dgallery_activate') === false){
-		update_option('wc_dgallery_activate','yes');
-	}
-	update_option('a3rev_woo_dgallery_version', '1.1.0');
-}
-
-// Upgrade to 1.2.1
-if (version_compare(get_option('a3rev_woo_dgallery_version'), '1.2.1') === -1) {
-	WC_Dynamic_Gallery_Functions::upgrade_1_2_1();
+// Check upgrade functions
+add_action('plugins_loaded', 'woo_dgallery_lite_upgrade_plugin');
+function woo_dgallery_lite_upgrade_plugin () {
 	
-	update_option('a3rev_woo_dgallery_version', '1.2.1');
+	update_option('a3rev_woo_dgallery_lite_version', '1.2.5.5');
 }
-
-// Upgrade to 1.2.1
-if (version_compare(get_option('a3rev_woo_dgallery_version'), '1.2.5.2') === -1) {
-	WC_Dynamic_Gallery_Functions::upgrade_1_2_5_2();
-	
-	update_option('a3rev_woo_dgallery_version', '1.2.5.2');
-}
-
-update_option('a3rev_woo_dgallery_version', '1.2.5.4');
 
 ?>

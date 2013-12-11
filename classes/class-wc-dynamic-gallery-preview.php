@@ -23,8 +23,41 @@ class WC_Gallery_Preview_Display
 		$woo_a3_gallery_settings = $request;
 		$lightbox_class = 'lightbox';
 		
-		if ( !isset( $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'width_type'] ) || $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'width_type'] == 'px' ) $g_width = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width_fixed'].'px';
-		else $g_width = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width_responsive'].'%';
+		$post->ID = rand(10,10000);
+		
+		if ( !isset( $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'width_type'] ) || $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'width_type'] == 'px' ) {
+			$g_width = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width_fixed'].'px';
+			$g_height = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_height'];
+		} else {
+			$g_width = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width_responsive'].'%';
+			$g_height = false;
+			$max_height = 533;
+			$width_of_max_height = 400;
+			?>
+            <script type="text/javascript">
+			(function($){
+				$(function(){
+					a3revWCDynamicGallery_<?php echo $post->ID; ?> = {
+		
+						setHeightProportional: function () {
+							var image_wrapper_width = $( '#gallery_<?php echo $post->ID; ?>' ).find('.ad-image-wrapper').width();
+							var width_of_max_height = parseInt(<?php echo $width_of_max_height; ?>);
+							var image_wrapper_height = parseInt(<?php echo $max_height; ?>);
+							if( width_of_max_height > image_wrapper_width ) {
+								var ratio = width_of_max_height / image_wrapper_width;
+								image_wrapper_height = parseInt(<?php echo $max_height; ?>) / ratio;
+							}
+							$( '#gallery_<?php echo $post->ID; ?>' ).find('.ad-image-wrapper').css({ height: image_wrapper_height });
+						}
+					}
+					
+					a3revWCDynamicGallery_<?php echo $post->ID; ?>.setHeightProportional();
+					
+				});
+	  		})(jQuery);
+			</script>
+            <?php
+		}
 		
 		$caption_font = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'caption_font'];
 			
@@ -36,7 +69,6 @@ class WC_Gallery_Preview_Display
         <div class="images" style="width:<?php echo $g_width; ?>;margin:30px auto;">
           <div class="product_gallery">
             <?php
-            $g_height = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_height'];
             
             $g_thumb_width = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'thumb_width' );
 			if ($g_thumb_width <= 0) $g_thumb_width = 105;
@@ -93,8 +125,6 @@ class WC_Gallery_Preview_Display
 			$bg_des = WC_Dynamic_Gallery_Functions::html2rgb($product_gallery_bg_des,true);
 			$des_background =str_replace('#','',$product_gallery_bg_des);
 			
-           
-            $post->ID = rand(10,10000);
             echo '<style>
 			#TB_window{width:auto !important;}
                 .ad-gallery {
@@ -102,9 +132,9 @@ class WC_Gallery_Preview_Display
                 }
 				.ad-gallery .ad-image-wrapper {
 					background:#'.$bg_image_wrapper.';
-                    width: 99.3%;
-                    height: '.($g_height-2).'px;
-                    margin: 0px;
+                    width: 99.3%;'
+					. ( ( $g_height != false ) ? 'height: '.($g_height-2).'px;' : '' ) . 
+                    'margin: 0px;
                     position: relative;
                     overflow: hidden !important;
                     padding:0;
@@ -113,7 +143,7 @@ class WC_Gallery_Preview_Display
                 }
 				.ad-gallery .ad-image-wrapper .ad-image{width:100% !important;text-align:center;}
                 .ad-image img{
-                    max-width:'.$g_width.' !important;
+                    
                 }
                 .ad-gallery .ad-thumbs li{
                     padding-right: '.$g_thumb_spacing.'px !important;
@@ -165,9 +195,6 @@ class WC_Gallery_Preview_Display
 				.ad-gallery .ad-nav .ad-thumbs{
 					margin:7px 4% 0 !important;
 				}
-				.ad-gallery .ad-nav{
-					margin-top:20px !important;
-				}
 				.ad-gallery .ad-thumbs .ad-thumb-list {
 					margin-top: 0px !important;
 				}
@@ -202,9 +229,9 @@ class WC_Gallery_Preview_Display
 				}';
 				if($lazy_load_scroll == 'yes'){
 					echo '.ad-gallery .lazy-load{
-						background:'.$transition_scroll_bar.' !important;
-						top:'.($g_height + 9).'px !important;
-						opacity:1 !important;
+						background:'.$transition_scroll_bar.' !important;'
+						 . ( ( $g_height != false ) ? 'top:'.($g_height + 9).'px !important;' : '' ) . 
+						'opacity:1 !important;
 						margin-top:'.$ldm.'px !important;
 					}';
 				}else{
@@ -218,12 +245,6 @@ class WC_Gallery_Preview_Display
 					
 					echo $wc_dgallery_fonts_face->generate_font_css( $navbar_font );
 				echo '
-				}
-				.ad-gallery .lazy-load{
-					background:'.$transition_scroll_bar.' !important;
-					top:'.($g_height + 9).'px !important;
-					opacity:1 !important;
-					margin-top:'.$ldm.'px !important;
 				}
 				.product_gallery .icon_zoom {
 					background: '.$bg_nav_color.';
@@ -247,7 +268,7 @@ class WC_Gallery_Preview_Display
 					border: 1px solid '.$bg_nav_color.' !important;
 				}';
 			if($enable_gallery_thumb == 'no'){
-				echo '.ad-nav{display:none;}.woocommerce .images { margin-bottom: 15px;}';
+				echo '.ad-nav{display:none; height:1px;}.woocommerce .images { margin-bottom: 15px;}';
 			}	
 			
 			if($product_gallery_nav == 'no'){
@@ -311,7 +332,7 @@ class WC_Gallery_Preview_Display
             });
             </script>';
             echo '<div id="gallery_'.$post->ID.'" class="ad-gallery" style="">
-                <div class="ad-image-wrapper" style="width: 99.3%; height: '.($g_height-2).'px;"></div>
+                <div class="ad-image-wrapper" style="width: 99.3%; ' . ( ( $g_height != false ) ? 'height: '.($g_height-2).'px;' : '' ) . '"></div>
                 <div class="ad-controls"> </div>
                   <div class="ad-nav">
                     <div class="ad-thumbs">

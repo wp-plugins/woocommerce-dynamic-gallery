@@ -613,10 +613,36 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 						if ( ! isset( $value['type'] ) ) continue;
 						if ( in_array( $value['type'], array( 'heading' ) ) ) continue;
 						if ( ! isset( $value['id'] ) || trim( $value['id'] ) == '' ) continue;
-						if ( ! isset( $value['default'] ) ) $value['default'] = '';
-						if ( ! isset( $value['free_version'] ) ) $value['free_version'] = false;
-						if ( $value['free_version'] ) unset( $default_settings[ $value['id']] );
+						
+						switch ( $value['type'] ) {
+				
+							// Array textfields
+							case 'array_textfields' :
+								if ( !isset( $value['ids'] ) || !is_array( $value['ids'] ) || count( $value['ids'] ) < 1 ) break;
+								
+								foreach ( $value['ids'] as $text_field ) {
+									if ( ! isset( $text_field['id'] ) || trim( $text_field['id'] ) == '' ) continue;
+									if ( ! isset( $text_field['default'] ) ) $text_field['default'] = '';
+									if ( ! isset( $text_field['free_version'] ) ) {
+										if ( ! isset( $value['free_version'] ) ) 
+											$text_field['free_version'] = false;
+										else
+											$text_field['free_version'] = $value['free_version'];
+									}
+									if ( $text_field['free_version'] ) unset( $default_settings[ $text_field['id']] );
+								}
+								
+							break;
+							
+							default :
+								if ( ! isset( $value['default'] ) ) $value['default'] = '';
+								if ( ! isset( $value['free_version'] ) ) $value['free_version'] = false;
+								if ( $value['free_version'] ) unset( $default_settings[ $value['id']] );
+							
+							break;
+						}
 					}
+					
 					$current_settings = array_merge( $current_settings, $default_settings );
 					update_option( $option_name, $current_settings );
 				} else {
@@ -637,28 +663,75 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 			// For way it has an option name
 			if ( ! isset( $value['separate_option'] ) ) $value['separate_option'] = false;
 			
-			// Remove [, ] characters from id argument
-			if ( strstr( $value['id'], '[' ) ) {
-				parse_str( esc_attr( $value['id'] ), $option_array );
-	
-				// Option name is first key
-				$option_keys = array_keys( $option_array );
-				$first_key = current( $option_keys );
+			switch ( $value['type'] ) {
+				
+				// Array textfields
+				case 'array_textfields' :
+					if ( !isset( $value['ids'] ) || !is_array( $value['ids'] ) || count( $value['ids'] ) < 1 ) break;
+								
+					foreach ( $value['ids'] as $text_field ) {
+						if ( ! isset( $text_field['id'] ) || trim( $text_field['id'] ) == '' ) continue;
+						if ( ! isset( $text_field['default'] ) ) $text_field['default'] = '';
+						if ( ! isset( $text_field['free_version'] ) ) {
+							if ( ! isset( $value['free_version'] ) ) 
+								$text_field['free_version'] = false;
+							else
+								$text_field['free_version'] = $value['free_version'];
+						}
+						
+						// Remove [, ] characters from id argument
+						if ( strstr( $text_field['id'], '[' ) ) {
+							parse_str( esc_attr( $text_field['id'] ), $option_array );
+				
+							// Option name is first key
+							$option_keys = array_keys( $option_array );
+							$first_key = current( $option_keys );
+								
+							$id_attribute		= $first_key;
+						} else {
+							$id_attribute		= esc_attr( $text_field['id'] );
+						}
+						
+						if ( trim( $option_name ) == '' || $value['separate_option'] != false ) {
+							if ( $reset && $text_field['free_version'] && !$free_version ) {
+								update_option( $id_attribute,  $text_field['default'] );
+							} elseif ( $reset && !$text_field['free_version'] ) {
+								update_option( $id_attribute,  $text_field['default'] );
+							} else {
+								add_option( $id_attribute,  $text_field['default'] );
+							}
+						}
+					}
+								
+				break;
+							
+				default :
+					// Remove [, ] characters from id argument
+					if ( strstr( $value['id'], '[' ) ) {
+						parse_str( esc_attr( $value['id'] ), $option_array );
+			
+						// Option name is first key
+						$option_keys = array_keys( $option_array );
+						$first_key = current( $option_keys );
+							
+						$id_attribute		= $first_key;
+					} else {
+						$id_attribute		= esc_attr( $value['id'] );
+					}
 					
-				$id_attribute		= $first_key;
-			} else {
-				$id_attribute		= esc_attr( $value['id'] );
+					if ( trim( $option_name ) == '' || $value['separate_option'] != false ) {
+						if ( $reset && $value['free_version'] && !$free_version ) {
+							update_option( $id_attribute,  $value['default'] );
+						} elseif ( $reset && !$value['free_version'] ) {
+							update_option( $id_attribute,  $value['default'] );
+						} else {
+							add_option( $id_attribute,  $value['default'] );
+						}
+					}
+							
+				break;
 			}
 			
-			if ( trim( $option_name ) == '' || $value['separate_option'] != false ) {
-				if ( $reset && $value['free_version'] && !$free_version ) {
-					update_option( $id_attribute,  $value['default'] );
-				} elseif ( $reset && !$value['free_version'] ) {
-					update_option( $id_attribute,  $value['default'] );
-				} else {
-					add_option( $id_attribute,  $value['default'] );
-				}
-			}
 		}
 				
 	}
@@ -726,9 +799,10 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 	 *						   array( 'width' => '125', 'height' => '125', 'crop' => 1 ) : apply image_size only
 	 *						   array( 'size' => '9px', 'face' => 'Arial', 'style' => 'normal', 'color' => '#515151' ) : apply for typography only 
 	 *						   array( 'width' => '1px', 'style' => 'normal', 'color' => '#515151', 'corner' => 'rounded' | 'square' , 'top_left_corner' => 3, 
-	 *									'top_right_corner' => 3, 'bottom_left_corner' => 3, 'bottom_right_corner' => 3 ) : apply for border, border_styles only
+	 *									'top_right_corner' => 3, 'bottom_left_corner' => 3, 'bottom_right_corner' => 3 ) : apply for border only
+	  *						   array( 'width' => '1px', 'style' => 'normal', 'color' => '#515151' ) : apply for border_styles only
 	 *						   array( 'corner' => 'rounded' | 'square' , 'top_left_corner' => 3, 'top_right_corner' => 3, 'bottom_left_corner' => 3, 
-	 *									'bottom_right_corner' => 3 ) : apply for border, border_corner only
+	 *									'bottom_right_corner' => 3 ) : apply for border_corner only
 	 *						   array( 'enable' => 1|0, 'h_shadow' => '5px' , 'v_shadow' => '5px', 'blur' => '2px' , 'spread' => '2px', 'color' => '#515151', 
 	 *									'inset' => '' | 'insert' ) : apply for box_shadow only
 	 *
@@ -747,7 +821,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 	 * unchecked_label		=> text : apply for onoff_checkbox, switcher_checkbox only ( set it to show the text instead OFF word default  )
 	 * options				=> array : apply for select, multiselect, radio types
 	 *
-	 * onoff_options		=> array : apply for onoff_options only
+	 * onoff_options		=> array : apply for onoff_radio only
 	 *						   ---------------- example ---------------------
 	 *							array( 
 	 *								array(  'val' 				=> 1,
