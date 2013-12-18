@@ -105,8 +105,13 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 	/*-----------------------------------------------------------------------------------*/
 
 	public function admin_css_load () {
+		global $wp_version;
 		
 		wp_enqueue_style( 'a3rev-admin-ui-style', $this->admin_plugin_url() . '/assets/css/admin-ui-style.css' );
+		
+		if ( version_compare( $wp_version, '3.8', '>=' ) ) {
+			wp_enqueue_style( 'a3rev-admin-flat-ui-style', $this->admin_plugin_url() . '/assets/css/admin-flat-ui-style.css' );
+		}
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_style( 'a3rev-chosen-style', $this->admin_plugin_url() . '/assets/js/chosen/chosen.css' );
 		wp_enqueue_style( 'a3rev-tiptip-style', $this->admin_plugin_url() . '/assets/js/tipTip/tipTip.css' );
@@ -1032,7 +1037,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 	
 			} elseif ( $tip ) {
 	
-				$tip = '<img class="help_tip" data-tip="' . esc_attr( $tip ) . '" src="' . $this->admin_plugin_url() . '/assets/images/help.png" height="16" width="16" />';
+				$tip = '<div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="' . esc_attr( $tip ) . '"></div>';
 	
 			}
 			
@@ -1121,8 +1126,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 	
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<input
@@ -1146,8 +1151,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<input
@@ -1168,8 +1173,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 	
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<?php echo $description; ?>
@@ -1195,8 +1200,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 		
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<select
@@ -1236,8 +1241,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 	
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<fieldset>
@@ -1275,8 +1280,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 	
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<fieldset>
@@ -1380,8 +1385,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 		
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<input
@@ -1409,8 +1414,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 		
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<input
@@ -1443,7 +1448,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					}
 	
 					?><tr valign="top">
-						<th scope="row" class="titledesc"><?php echo esc_html( $value['name'] ) ?> <?php echo $tip; ?></th>
+						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 	
 							<label><?php _e( 'Width', 'woo_dgallery' ); ?> <input name="<?php echo $name_attribute; ?>[width]" id="<?php echo $id_attribute; ?>-width" type="text" class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-width" value="<?php echo $width; ?>" /></label>
@@ -1476,7 +1481,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 						$args = wp_parse_args( $value['args'], $args );
 	
 					?><tr valign="top">
-						<th scope="row" class="titledesc"><?php echo esc_html( $value['name'] ) ?> <?php echo $tip; ?></th>
+						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp">
 							<?php echo str_replace(' id=', " data-placeholder='" . esc_html( $value['placeholder'] ) .  "' style='" . $value['css'] . "' class='" . $value['class'] . "' id=", wp_dropdown_pages( $args ) ); ?> <?php echo $description; ?>
 						</td>
@@ -1501,7 +1506,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					}
 				
 					?><tr valign="top">
-						<th scope="row" class="titledesc"><?php echo esc_html( $value['name'] ) ?> <?php echo $tip; ?></th>
+						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp">
                         	<?php echo $description; ?>
                             <div class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-control">
@@ -1665,7 +1670,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					$bottom_right_corner = intval( $bottom_right_corner );
 				
 					?><tr valign="top">
-						<th scope="row" class="titledesc"><?php echo esc_html( $value['name'] ) ?> <?php echo $tip; ?></th>
+						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp forminp-border_corner">
                         	<?php echo $description; ?>
                             <div class="a3rev-ui-settings-control">
@@ -1734,69 +1739,85 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 							<!-- Border Rounded Value -->
 								<div class="a3rev-ui-border-corner-value-container">
                                 	<div class="a3rev-ui-border_corner-top_left">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Left Corner', 'woo_dgallery' ); ?></span> 
-                                        <div class="a3rev-ui-slide-container-start">
-                                            <div class="a3rev-ui-slide-container-end">
-												<div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-top_left_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Left Corner', 'woo_dgallery' ); ?></span>
+                                        <div class="a3rev-ui-slide-container">
+                                            <div class="a3rev-ui-slide-container-start">
+                                                <div class="a3rev-ui-slide-container-end">
+                                                    <div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-top_left_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <input
-                                            readonly="readonly"
-                                            name="<?php echo $name_attribute; ?>[top_left_corner]"
-                                            id="<?php echo $id_attribute; ?>-top_left_corner"
-                                            type="text"
-                                            value="<?php echo esc_attr( $top_left_corner ); ?>"
-                                            class="a3rev-ui-border_top_left_corner a3rev-ui-slider"
-                                        /> <span class="a3rev-ui-border_corner-px">px</span>
-                                	</div>
+                                            <div class="a3rev-ui-slide-result-container">
+                                            <input
+                                                readonly="readonly"
+                                                name="<?php echo $name_attribute; ?>[top_left_corner]"
+                                                id="<?php echo $id_attribute; ?>-top_left_corner"
+                                                type="text"
+                                                value="<?php echo esc_attr( $top_left_corner ); ?>"
+                                                class="a3rev-ui-border_top_left_corner a3rev-ui-slider"
+                                            /> <span class="a3rev-ui-border_corner-px">px</span>
+                                            </div>
+                                		</div>
+                                    </div>
                                     <div class="a3rev-ui-border_corner-top_right">
                                         <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Right Corner', 'woo_dgallery' ); ?></span> 
-                                        <div class="a3rev-ui-slide-container-start">
-                                            <div class="a3rev-ui-slide-container-end">
-												<div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-top_right_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                        <div class="a3rev-ui-slide-container">
+                                            <div class="a3rev-ui-slide-container-start">
+                                                <div class="a3rev-ui-slide-container-end">
+                                                    <div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-top_right_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <input
-                                            readonly="readonly"
-                                            name="<?php echo $name_attribute; ?>[top_right_corner]"
-                                            id="<?php echo $id_attribute; ?>-top_right_corner"
-                                            type="text"
-                                            value="<?php echo esc_attr( $top_right_corner ); ?>"
-                                            class="a3rev-ui-border_top_right_corner a3rev-ui-slider"
-                                        /> <span class="a3rev-ui-border_corner-px">px</span>
-                                	</div>
+                                            <div class="a3rev-ui-slide-result-container">
+                                            <input
+                                                readonly="readonly"
+                                                name="<?php echo $name_attribute; ?>[top_right_corner]"
+                                                id="<?php echo $id_attribute; ?>-top_right_corner"
+                                                type="text"
+                                                value="<?php echo esc_attr( $top_right_corner ); ?>"
+                                                class="a3rev-ui-border_top_right_corner a3rev-ui-slider"
+                                            /> <span class="a3rev-ui-border_corner-px">px</span>
+                                            </div>
+                                		</div>
+                                    </div>
                                     <div class="a3rev-ui-border_corner-bottom_right">
                                         <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Right Corner', 'woo_dgallery' ); ?></span> 
-                                        <div class="a3rev-ui-slide-container-start">
-                                            <div class="a3rev-ui-slide-container-end">
-												<div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-bottom_right_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                        <div class="a3rev-ui-slide-container">
+                                            <div class="a3rev-ui-slide-container-start">
+                                                <div class="a3rev-ui-slide-container-end">
+                                                    <div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-bottom_right_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <input
-                                            readonly="readonly"
-                                            name="<?php echo $name_attribute; ?>[bottom_right_corner]"
-                                            id="<?php echo $id_attribute; ?>-bottom_right_corner"
-                                            type="text"
-                                            value="<?php echo esc_attr( $bottom_right_corner ); ?>"
-                                            class="a3rev-ui-border_bottom_right_corner a3rev-ui-slider"
-                                        /> <span class="a3rev-ui-border_corner-px">px</span>
-                                	</div>
+                                            <div class="a3rev-ui-slide-result-container">
+                                            <input
+                                                readonly="readonly"
+                                                name="<?php echo $name_attribute; ?>[bottom_right_corner]"
+                                                id="<?php echo $id_attribute; ?>-bottom_right_corner"
+                                                type="text"
+                                                value="<?php echo esc_attr( $bottom_right_corner ); ?>"
+                                                class="a3rev-ui-border_bottom_right_corner a3rev-ui-slider"
+                                            /> <span class="a3rev-ui-border_corner-px">px</span>
+                                            </div>
+                                		</div>
+                                    </div>
                                     <div class="a3rev-ui-border_corner-bottom_left">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Left Corner', 'woo_dgallery' ); ?></span> 
-                                        <div class="a3rev-ui-slide-container-start">
-                                            <div class="a3rev-ui-slide-container-end">
-												<div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-bottom_left_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Left Corner', 'woo_dgallery' ); ?></span>
+                                        <div class="a3rev-ui-slide-container"> 
+                                            <div class="a3rev-ui-slide-container-start">
+                                                <div class="a3rev-ui-slide-container-end">
+                                                    <div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-bottom_left_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <input
-                                            readonly="readonly"
-                                            name="<?php echo $name_attribute; ?>[bottom_left_corner]"
-                                            id="<?php echo $id_attribute; ?>-bottom_left_corner"
-                                            type="text"
-                                            value="<?php echo esc_attr( $bottom_left_corner ); ?>"
-                                            class="a3rev-ui-border_bottom_left_corner a3rev-ui-slider"
-                                        /> <span class="a3rev-ui-border_corner-px">px</span>
-                                	</div>
+                                            <div class="a3rev-ui-slide-result-container">
+                                            <input
+                                                readonly="readonly"
+                                                name="<?php echo $name_attribute; ?>[bottom_left_corner]"
+                                                id="<?php echo $id_attribute; ?>-bottom_left_corner"
+                                                type="text"
+                                                value="<?php echo esc_attr( $bottom_left_corner ); ?>"
+                                                class="a3rev-ui-border_bottom_left_corner a3rev-ui-slider"
+                                            /> <span class="a3rev-ui-border_corner-px">px</span>
+                                            </div>
+                                		</div>
+                                    </div>
                                 </div>
                                 <div style="clear:both"></div>
 							</div>
@@ -1822,7 +1843,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					}
 				
 					?><tr valign="top">
-						<th scope="row" class="titledesc"><?php echo esc_html( $value['name'] ) ?> <?php echo $tip; ?></th>
+						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp">
                         	<?php echo $description; ?>
                             <div class="a3rev-ui-settings-control">
@@ -1939,7 +1960,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					$bottom_right_corner = intval( $bottom_right_corner );
 				
 					?><tr valign="top">
-						<th scope="row" class="titledesc"><?php echo esc_html( $value['name'] ) ?> <?php echo $tip; ?></th>
+						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
                         	<?php echo $description; ?>
                             <div class="a3rev-ui-settings-control">	
@@ -1962,69 +1983,85 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
                                	<!-- Border Rounded Value -->
 								<div class="a3rev-ui-border-corner-value-container">
                                 	<div class="a3rev-ui-border_corner-top_left">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Left Corner', 'woo_dgallery' ); ?></span> 
-                                        <div class="a3rev-ui-slide-container-start">
-                                            <div class="a3rev-ui-slide-container-end">
-												<div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-top_left_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Left Corner', 'woo_dgallery' ); ?></span>
+                                        <div class="a3rev-ui-slide-container">
+                                            <div class="a3rev-ui-slide-container-start">
+                                                <div class="a3rev-ui-slide-container-end">
+                                                    <div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-top_left_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <input
-                                            readonly="readonly"
-                                            name="<?php echo $name_attribute; ?>[top_left_corner]"
-                                            id="<?php echo $id_attribute; ?>-top_left_corner"
-                                            type="text"
-                                            value="<?php echo esc_attr( $top_left_corner ); ?>"
-                                            class="a3rev-ui-border_top_left_corner a3rev-ui-slider"
-                                        /> <span class="a3rev-ui-border_corner-px">px</span>
-                                	</div>
+                                            <div class="a3rev-ui-slide-result-container">
+                                            <input
+                                                readonly="readonly"
+                                                name="<?php echo $name_attribute; ?>[top_left_corner]"
+                                                id="<?php echo $id_attribute; ?>-top_left_corner"
+                                                type="text"
+                                                value="<?php echo esc_attr( $top_left_corner ); ?>"
+                                                class="a3rev-ui-border_top_left_corner a3rev-ui-slider"
+                                            /> <span class="a3rev-ui-border_corner-px">px</span>
+                                            </div>
+                                		</div>
+                                    </div>
                                     <div class="a3rev-ui-border_corner-top_right">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Right Corner', 'woo_dgallery' ); ?></span> 
-                                        <div class="a3rev-ui-slide-container-start">
-                                            <div class="a3rev-ui-slide-container-end">
-												<div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-top_right_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Right Corner', 'woo_dgallery' ); ?></span>
+                                        <div class="a3rev-ui-slide-container"> 
+                                            <div class="a3rev-ui-slide-container-start">
+                                                <div class="a3rev-ui-slide-container-end">
+                                                    <div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-top_right_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <input
-                                            readonly="readonly"
-                                            name="<?php echo $name_attribute; ?>[top_right_corner]"
-                                            id="<?php echo $id_attribute; ?>-top_right_corner"
-                                            type="text"
-                                            value="<?php echo esc_attr( $top_right_corner ); ?>"
-                                            class="a3rev-ui-border_top_right_corner a3rev-ui-slider"
-                                        /> <span class="a3rev-ui-border_corner-px">px</span>
-                                	</div>
+                                            <div class="a3rev-ui-slide-result-container">
+                                            <input
+                                                readonly="readonly"
+                                                name="<?php echo $name_attribute; ?>[top_right_corner]"
+                                                id="<?php echo $id_attribute; ?>-top_right_corner"
+                                                type="text"
+                                                value="<?php echo esc_attr( $top_right_corner ); ?>"
+                                                class="a3rev-ui-border_top_right_corner a3rev-ui-slider"
+                                            /> <span class="a3rev-ui-border_corner-px">px</span>
+                                            </div>
+                                		</div>
+                                    </div>
                                     <div class="a3rev-ui-border_corner-bottom_right">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Right Corner', 'woo_dgallery' ); ?></span> 
-                                        <div class="a3rev-ui-slide-container-start">
-                                            <div class="a3rev-ui-slide-container-end">
-												<div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-bottom_right_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Right Corner', 'woo_dgallery' ); ?></span>
+                                        <div class="a3rev-ui-slide-container"> 
+                                            <div class="a3rev-ui-slide-container-start">
+                                                <div class="a3rev-ui-slide-container-end">
+                                                    <div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-bottom_right_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <input
-                                            readonly="readonly"
-                                            name="<?php echo $name_attribute; ?>[bottom_right_corner]"
-                                            id="<?php echo $id_attribute; ?>-bottom_right_corner"
-                                            type="text"
-                                            value="<?php echo esc_attr( $bottom_right_corner ); ?>"
-                                            class="a3rev-ui-border_bottom_right_corner a3rev-ui-slider"
-                                        /> <span class="a3rev-ui-border_corner-px">px</span>
-                                	</div>
+                                            <div class="a3rev-ui-slide-result-container">
+                                            <input
+                                                readonly="readonly"
+                                                name="<?php echo $name_attribute; ?>[bottom_right_corner]"
+                                                id="<?php echo $id_attribute; ?>-bottom_right_corner"
+                                                type="text"
+                                                value="<?php echo esc_attr( $bottom_right_corner ); ?>"
+                                                class="a3rev-ui-border_bottom_right_corner a3rev-ui-slider"
+                                            /> <span class="a3rev-ui-border_corner-px">px</span>
+                                            </div>
+                                		</div>
+                                    </div>
                                     <div class="a3rev-ui-border_corner-bottom_left">
                                         <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Left Corner', 'woo_dgallery' ); ?></span> 
-                                        <div class="a3rev-ui-slide-container-start">
-                                            <div class="a3rev-ui-slide-container-end">
-												<div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-bottom_left_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                        <div class="a3rev-ui-slide-container">
+                                            <div class="a3rev-ui-slide-container-start">
+                                                <div class="a3rev-ui-slide-container-end">
+                                                    <div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>-bottom_left_corner_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <input
-                                            readonly="readonly"
-                                            name="<?php echo $name_attribute; ?>[bottom_left_corner]"
-                                            id="<?php echo $id_attribute; ?>-bottom_left_corner"
-                                            type="text"
-                                            value="<?php echo esc_attr( $bottom_left_corner ); ?>"
-                                            class="a3rev-ui-border_bottom_left_corner a3rev-ui-slider"
-                                        /> <span class="a3rev-ui-border_corner-px">px</span>
-                                	</div>
+                                            <div class="a3rev-ui-slide-result-container">
+                                            <input
+                                                readonly="readonly"
+                                                name="<?php echo $name_attribute; ?>[bottom_left_corner]"
+                                                id="<?php echo $id_attribute; ?>-bottom_left_corner"
+                                                type="text"
+                                                value="<?php echo esc_attr( $bottom_left_corner ); ?>"
+                                                class="a3rev-ui-border_bottom_left_corner a3rev-ui-slider"
+                                            /> <span class="a3rev-ui-border_corner-px">px</span>
+                                            </div>
+                                		</div>
+                                    </div>
                                 </div>
                                 <div style="clear:both"></div>
                             </div>
@@ -2060,7 +2097,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					}
 				
 					?><tr valign="top">
-						<th scope="row" class="titledesc"><?php echo esc_html( $value['name'] ) ?> <?php echo $tip; ?></th>
+						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp forminp-box_shadow">
                         	<?php echo $description; ?>
                             <input
@@ -2193,23 +2230,27 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 				
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
-                        <div class="a3rev-ui-slide-container-start"><div class="a3rev-ui-slide-container-end">
-                        	<div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
-                        </div></div>
-							<input
-                            	readonly="readonly"
-								name="<?php echo $name_attribute; ?>"
-								id="<?php echo $id_attribute; ?>"
-								type="text"
-								value="<?php echo esc_attr( $option_value ); ?>"
-								class="a3rev-ui-slider"
-								<?php echo implode( ' ', $custom_attributes ); ?>
-								/> <?php echo $description; ?>
-						</td>
+                        <div class="a3rev-ui-slide-container">
+                            <div class="a3rev-ui-slide-container-start"><div class="a3rev-ui-slide-container-end">
+                                <div class="a3rev-ui-slide" id="<?php echo $id_attribute; ?>_div" min="<?php echo esc_attr( $value['min'] ); ?>" max="<?php echo esc_attr( $value['max'] ); ?>" inc="<?php echo esc_attr( $value['increment'] ); ?>"></div>
+                            </div></div>
+                            <div class="a3rev-ui-slide-result-container">
+                                <input
+                                    readonly="readonly"
+                                    name="<?php echo $name_attribute; ?>"
+                                    id="<?php echo $id_attribute; ?>"
+                                    type="text"
+                                    value="<?php echo esc_attr( $option_value ); ?>"
+                                    class="a3rev-ui-slider"
+                                    <?php echo implode( ' ', $custom_attributes ); ?>
+                                    /> <?php echo $description; ?>
+							</div>
+                        </div>
+                        </td>
 					</tr><?php
 					
 				break;
@@ -2221,8 +2262,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 				
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
                         	<?php echo $description; ?>
@@ -2239,8 +2280,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
                         	<?php echo $description; ?>
@@ -2262,8 +2303,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
+                        	<?php echo $tip; ?>
 							<label for="<?php echo $id_attribute; ?>"><?php echo esc_html( $value['name'] ); ?></label>
-							<?php echo $tip; ?>
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
                         	<?php echo $description; ?>
@@ -2357,7 +2398,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 		?>
 		<?php do_action( $this->plugin_name . '-' . trim( $form_key ) . '_settings_end' ); ?>
             <p class="submit">
-                    <input type="submit" value="<?php _e('Save changes', 'woo_dgallery'); ?>" class="button-primary" name="bt_save_settings" />
+                    <input type="submit" value="<?php _e('Save changes', 'woo_dgallery'); ?>" class="button button-primary" name="bt_save_settings" />
                     <input type="submit" name="bt_reset_settings" class="button" value="<?php _e('Reset Settings', 'woo_dgallery'); ?>"  />
                     <input type="hidden" name="form_name_action" value="<?php echo $form_key; ?>"  />
                     <input type="hidden" class="last_tab" name="subtab" value="#<?php echo $current_subtab; ?>" />

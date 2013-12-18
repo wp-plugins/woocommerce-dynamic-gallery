@@ -31,7 +31,7 @@ class WC_Dynamic_Gallery_Meta_Boxes
 		} else {
 			$woocommerce_product_image_box = 'woocommerce-product-images';
 		}
-		add_meta_box( $woocommerce_product_image_box, '<label style="margin-right: 50px;">'.__('A3 Dynamic Image Gallery activated', 'woo_dgallery').' : <input type="checkbox" '.$check.' value="1" name="_actived_d_gallery" /></label> <label>'.__('Product Variation Images activated', 'woo_dgallery').' : <span><input disabled="disabled" type="checkbox" value="1" name="_wc_dgallery_show_variation" /></label>', array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_product_image_box'), 'product', 'normal', 'high' );
+		add_meta_box( $woocommerce_product_image_box, '<label class="a3_actived_d_gallery" style="margin-right: 50px;"><input type="checkbox" '.$check.' value="1" name="_actived_d_gallery" /> '.__('A3 Dynamic Image Gallery activated', 'woo_dgallery').'</label> <label class="a3_wc_dgallery_show_variation"><input disabled="disabled" type="checkbox" value="1" name="_wc_dgallery_show_variation" />'.__('Product Variation Images activated', 'woo_dgallery').'</label>', array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_product_image_box'), 'product', 'normal', 'high' );
 	}
 	
 	public static function woocommerce_product_image_box() {
@@ -75,6 +75,22 @@ class WC_Dynamic_Gallery_Meta_Boxes
 			width:10px;
 			height:10px;
 			cursor:pointer;
+		}
+		@media screen and ( max-width: 782px ) {
+			.a3_actived_d_gallery {
+				padding-bottom:5px;	
+				display:inline-block;
+			}
+			.a3_wc_dgallery_show_variation {
+				white-space:nowrap;
+				padding-bottom:5px;
+				display:inline-block;
+			}
+		}
+		@media screen and ( max-width: 480px ) {
+			.a3_wc_dgallery_show_variation {
+				white-space:inherit;
+			}
 		}
         </style>
         <a class="add-new-h2 a3-view-docs-button" style="background-color: #FFFFE0 !important; border: 1px solid #E6DB55 !important; text-shadow:none !important; font-weight:normal !important; margin: 5px 10px 0 !important; display: inline-block !important;" target="_blank" href="<?php echo WOO_DYNAMIC_GALLERY_DOCS_URI; ?>#section-13" ><?php _e('View Docs', 'woo_dgallery'); ?></a>

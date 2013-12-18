@@ -4,7 +4,7 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_lite_version', '1.2.5.5');
+	update_option('a3rev_woo_dgallery_lite_version', '1.2.5.6');
 	// Set Settings Default from Admin Init
 	global $wc_dgallery_admin_init;
 	$wc_dgallery_admin_init->set_default_settings();
@@ -30,6 +30,9 @@ function wc_dynamic_gallery_init() {
 }
 // Add language
 add_action('init', 'wc_dynamic_gallery_init');
+
+// Add custom style to dashboard
+add_action( 'admin_enqueue_scripts', array( 'WC_Dynamic_Gallery_Functions', 'a3_wp_admin' ) );
 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WC_Dynamic_Gallery_Functions', 'plugin_extra_links'), 10, 2 );
@@ -90,7 +93,7 @@ function setup_dynamic_gallery() {
 add_action('plugins_loaded', 'woo_dgallery_lite_upgrade_plugin');
 function woo_dgallery_lite_upgrade_plugin () {
 	
-	update_option('a3rev_woo_dgallery_lite_version', '1.2.5.5');
+	update_option('a3rev_woo_dgallery_lite_version', '1.2.5.6');
 }
 
 ?>

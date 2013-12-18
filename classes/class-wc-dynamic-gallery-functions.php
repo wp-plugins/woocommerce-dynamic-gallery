@@ -7,6 +7,7 @@
  * reset_products_galleries_activate()
  * add_google_fonts()
  * html2rgb()
+ * a3_wp_admin()
  * wc_dynamic_gallery_extension()
  * plugin_extra_links()
  * upgrade_1_2_1()
@@ -51,9 +52,13 @@ class WC_Dynamic_Gallery_Functions
 		}
 	}
 	
+	public static function a3_wp_admin() {
+		wp_enqueue_style( 'a3rev-wp-admin-style', WOO_DYNAMIC_GALLERY_CSS_URL . '/a3_wp_admin.css' );
+	}
+	
 	public static function plugin_extension() {
 		$html = '';
-		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><img src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/a3logo.png" /></a>';
+		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><div class="a3-plugin-ui-icon a3-plugin-ui-a3-rev-logo"></div></a>';
 		$html .= '<h3>'.__('Upgrade to Dynamic Gallery Pro', 'woo_dgallery').'</h3>';
 		$html .= '<p>'.__("<strong>NOTE:</strong> Settings inside the Yellow border are Pro Version advanced Features and are not activated. Visit the", 'woo_dgallery').' <a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/" target="_blank">'.__("a3rev site", 'woo_dgallery').'</a> '.__("if you wish to upgrade to activate these features", 'woo_dgallery').':</p>';
 		$html .= '<p>';

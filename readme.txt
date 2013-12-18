@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.5
-Tested up to: 3.7.1
-Stable tag: 1.2.5.5
+Tested up to: 3.8.0
+Stable tag: 1.2.5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,8 +16,9 @@ As soon as you install WooCommerce Dynamic Gallery it <strong>brings your store 
 = Key Features =
 
 * The #1 Product Page image gallery for WooCommerce Products page.
-* Dynamic product image Gallery that displays beautifully in Firefox, Safari, Chrome and Opera on Apple OS X and on Widows XP to Windows 8 in IE7 to IE10.
-* Full mobile device oprimization for IOS mobile Safari - all iPads and iPhones, Android Browser all Tablets and mobiles and Opera Mobile all tablets and mobiles.
+* Dynamic product image Gallery that displays beautifully in Firefox, Safari, Chrome and Opera on Apple OS X and on Widows XP to Windows 8.1 in IE7 to IE11.
+* Gallery images display beautifully in iOS mobile Safari - all iPads and iPhones, Android Browser all Tablets and mobiles and Opera Mobile all tablets and mobiles.
+* Note: In the Lite Version you set the Gallery Dimensions in px, these are fixed. Upgrade to the Pro Version to activate fluid responsive Gallery display. 
 * Instantly adds a scrolling gallery to every product page and adds all product images to each gallery
 * Gallery scales images to fit inside the container no matter what the size or shape.
 * Search Engine friendly images. Image Alt tags if set are visible to search engines
@@ -38,17 +39,29 @@ As soon as you install WooCommerce Dynamic Gallery it <strong>brings your store 
 * Gallery thumbnails scroll left and right on hover.
 * WPMU compatible.
 
+= Mobile Responsive App style admin interface =
+Like WordPress we believe that a3rev plugin users should be able to configure and tweak our plugins settings while on the go, right from their mobile or tablet. This plugins features an app style admin interface with Switches, Sliders and a smart interface that hides associated settings when a feature is not turned ON.
+
+* 100% compatible with WordPress v3.8.0 admin interface.
+* Backward compatibility to WordPress v3.5.0
+* App style admin interface.
+* Admin app interface is fully mobile and tablet responsive.
+
+= Lite & Pro Version Admin Interface =
+All a3rev Lite Version plugins have exactly the same admin interface as the Pro Version. Pro Version features and settings are easy to spot on the admin dashboard as they are inside of a Yellow border. The Pro Version settings are all active on the admin panels so they can be used BUT the settings do not save when changes are saved and hence are not applied to the front end. Upgrading to the Pro version activates all the Pro version Features and Settings and removes the Yellow side bar and borders.
 
 = Lite Version Support =
 
-As a Lite Version user please post all support requests to the plugins WordPress Support forum. We do not watch that forum and posting there you will be relying on another user for support not an a3rev team member. Pro Version Licence holders have 'write' access to the a3rev support forum and Lifetime priority support, not from support staff but from the developers.
+As a Lite Version user please post all support requests to the plugins WordPress Support forum. We do not watch that forum and posting there you will be relying on another user for support, not an a3rev team member. Upgrading to a Pro Version Licence gives 'write' access to the a3rev support forum and hence Lifetime priority support as part of the License.
 
 = Premium Upgrade =
 
-When you install WooCommerce Dynamic Gallery you will see on the admin panel all of the added functionality that the PRO Version offers. The plugin is designed so that upgrading is completely seamless. Nothing changes except all the features of  WooCommerce Dynamic Gallery that you see on the Lite version are activated. Many thousands of WooCommerce store owners find the Free version has all the features that they need and never upgrade. If you find you want the added features and functionality that you see below and on the plugins dashboard you can upgrade at any time, completely risk free.
+When you install WooCommerce Dynamic Gallery Lite you will see on the admin panel all of the added functionality that the PRO Version offers. The plugin is designed so that upgrading is completely seamless. Nothing changes except all the features of  WooCommerce Dynamic Gallery that you see on the Lite version are activated. Many thousands of WooCommerce store owners find the Free version has all the features that they need and never upgrade. If you find you want the added features and functionality that you see below and on the plugins dashboard you can upgrade at any time, completely risk free.
 
 = Pro Version Advanced Features =
 
+* Gallery has a 100% Responsive theme mobile and tablet display option. 
+* Switch On RESPONSIVE and gallery auto detects image dimensions (Tall and Wide) and resizes itself to show each image scaled proportion at 100% wide of your Themes product page image container.
 * The Only WooCommerce Product gallery that shows Variation images in gallery when the variation or combination of variations is selected by user.
 * Check this incredible feature out on our [DEMO SITE](http://compare.a3rev.com/shop/plain-t-shirts)
 * When variations are created they auto show on the Gallery Image Manager. Allows you to upload images using the WordPress media uploader or Dynamic Gallery image uploader and assign images to variations or variation sets. Makes handling variation images very quick and easy.
@@ -60,7 +73,7 @@ When you install WooCommerce Dynamic Gallery you will see on the admin panel all
 * Global options to Activate and Deactivate the Dynamic gallery and the Variation Images feature on all product pages from the admin panel.
 * Activate / Deactivate the Dynamic Gallery and the Variation Image Feature from any product page.
 * Option to turn the Gallery off on single product pages. If you only have 1 image on some product pages and don't want the Gallery, just turn it off for that product. 
-* Completely Customize the look and feel of your product page Dynamic Gallery without writing a single line of code. Featuring 27 different WYSIWYG options to style your gallery.
+* Completely Customize the look and feel of your product page Dynamic Gallery without writing a single line of code. Featuring 27 different poimy and click options to style your gallery.
 
  - Image Gallery - 8 Custom Options - Auto Start, Image transition timing, Transition effects (5 available effects), Transition effect speed, Show / Hide Single image transition, Gallery main image background colour, Border Colour, Gallery pop-up tool.
  - Caption Text - 5 Options - Font type (17 Web browser friendly fonts), Font size, Font styler, Font Colour and caption background colour.
@@ -71,7 +84,6 @@ When you install WooCommerce Dynamic Gallery you will see on the admin panel all
 = Priority Support =
 
 Please note that we do not provide support for our Lite Version plugins. Hundreds of thousands of plugin downloads has proven that vast majority of the support requests we get have nothing to do with our plugins but are related to bugs in the users theme or other plugins they have installed. We give priority support to those users who purchase a Pro Version license. In this plugins case, we offer a single payment, Lifetime License fee which includes access to and full support from the a3rev developers on the plugins support forum.
-
  
 = Localization =
 * English (default) - always include.
@@ -137,6 +149,14 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.2.5.6 - 2013/12/18 =
+* Feature - a3rev Plugin Framework admin interface upgraded to 100% Compatibility with WordPress v3.8.0 with backward compatibility.
+* Feature - a3rev Plugin framework admin interface 100% mobile and tablet responsive. Portrait and landscape viewing and use in any device.
+* Tweak - Upgraded dashboard switch and slider to Vector based display that shows when WordPress version 3.8.0 is activated.
+* Tweak - Upgraded all plugin .jpg icons and images to Vector based display for full compatibility with new WordPress version.
+* Tweak - Yellow sidebar on Pro Version Menus dose not show in Mobile screens to optimize admin panel screen space.
+* Tweak - Tested 100% compatible with WP 3.8.0
 
 = 1.2.5.5 - 2013/12/10 =
 * Tweak - Removed fixed height setting that shows on admin when Gallery Dimension - Responsive is selected. (Pro Version settings) 
@@ -282,6 +302,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.5.6 =
+Upgrade now for full a3rev Plugin Framework compatibility with WordPress version 3.8.0 and backwards. New admin interface full mobile and tablet responsive display.
 
 = 1.2.5.5 =
 Upgrade your plugin now for admin panel Tweak and bug fix.

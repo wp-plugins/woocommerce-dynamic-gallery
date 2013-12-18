@@ -404,12 +404,12 @@ class WC_Gallery_Preview_Display
                                         
                                     $img_description = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
                                             
-                                    echo '<li class="'.$li_class.'"><a class="gallery_product_'.$post->ID.' gallery_product_'.$post->ID.'_'.$idx.'" title="'.$img_description.'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img idx="'.$idx.'" style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_lager_default_url.'" alt="'.$img_description.'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
-                                    $img_description = trim(strip_tags(stripslashes(str_replace("'","", str_replace('"', '', $img_description)))));
+                                    echo '<li class="'.$li_class.'"><a class="gallery_product_'.$post->ID.' gallery_product_'.$post->ID.'_'.$idx.'" title="'. esc_attr( $img_description ) .'" rel="gallery_product_'.$post->ID.'" href="'.$image_lager_default_url.'"><div><img idx="'.$idx.'" style="width:'.$thumb_width.'px !important;height:'.$thumb_height.'px !important" src="'.$image_lager_default_url.'" alt="'. esc_attr( $img_description ) .'" class="image'.$i.'" width="'.$thumb_width.'" height="'.$thumb_height.'"></div></a></li>';
+                                    $img_description = esc_js( $img_description );
                                     if($img_description != ''){
-										$script_fancybox .= $common.'{href:\''.$image_lager_default_url.'\',title:\''.$img_description.'\'}';
+										$script_fancybox .= $common.'{href:"'.$image_lager_default_url.'",title:"'.$img_description.'"}';
                                     }else{
-										$script_fancybox .= $common.'{href:\''.$image_lager_default_url.'\',title:\'\'}';
+										$script_fancybox .= $common.'{href:"'.$image_lager_default_url.'",title:""}';
                                     }
                                     $common = ',';
                                     $i++;
