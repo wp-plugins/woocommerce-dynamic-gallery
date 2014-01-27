@@ -8,6 +8,7 @@
  *
  * woocommerce_meta_boxes_image()
  * woocommerce_product_image_box()
+ * save_actived_d_gallery()
  */
 class WC_Dynamic_Gallery_Meta_Boxes
 {
@@ -25,8 +26,8 @@ class WC_Dynamic_Gallery_Meta_Boxes
 		if($actived_d_gallery == 1){$check = 'checked="checked"';}
 		
 		// Products
-		$current_db_version = get_option( 'woocommerce_db_version', null );
-		if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
+		$woocommerce_db_version = get_option( 'woocommerce_db_version', null );
+		if ( version_compare( $woocommerce_db_version, '2.0', '<' ) && null !== $woocommerce_db_version ) {
 			$woocommerce_product_image_box = 'woocommerce-product-image';
 		} else {
 			$woocommerce_product_image_box = 'woocommerce-product-images';
@@ -117,7 +118,7 @@ class WC_Dynamic_Gallery_Meta_Boxes
 				if ( $feature_image_data && $feature_image_data->post_parent == $post->ID ) {
 					if ( get_post_meta( $featured_img_id, '_woocommerce_exclude_image', true ) != 1 ) {
 		?>
-        		<a href="#" class="wc_dgallery_feature_image wc_dgallery_a_container upload_image_button" rel="<?php echo $post->ID; ?>"><img class="image_item" src="<?php echo $image_attribute[0]; ?>" /><input type="hidden" name="upload_image_id[2]" class="upload_image_id" value="<?php echo $featured_img_id; ?>" /></a>
+        		<a href="#" class="wc_dgallery_feature_image wc_dgallery_a_container wc_dg_upload_image_button" rel="<?php echo $post->ID; ?>"><img class="image_item" src="<?php echo $image_attribute[0]; ?>" /><input type="hidden" name="upload_image_id[2]" class="upload_image_id" value="<?php echo $featured_img_id; ?>" /></a>
         <?php	
 					}
 				} else {
@@ -134,12 +135,29 @@ class WC_Dynamic_Gallery_Meta_Boxes
 				if ( get_post_meta( $item_thumb->ID, '_woocommerce_exclude_image', true ) == 1 ) continue;
 				$image_attribute = wp_get_attachment_image_src( $item_thumb->ID, array(70, 70));
 		?>
-			<a href="#" class="wc_dgallery_a_container upload_image_button" rel="<?php echo $post->ID; ?>"><img class="image_item" src="<?php echo $image_attribute[0]; ?>" /><input type="hidden" name="upload_image_id[<?php echo $i; ?>]" class="upload_image_id" value="<?php echo $item_thumb->ID; ?>" /></a>
+			<a href="#" class="wc_dgallery_a_container wc_dg_upload_image_button" rel="<?php echo $post->ID; ?>"><img class="image_item" src="<?php echo $image_attribute[0]; ?>" /><input type="hidden" name="upload_image_id[<?php echo $i; ?>]" class="upload_image_id" value="<?php echo $item_thumb->ID; ?>" /></a>
 		<?php
         	}
 		}
 		?>
 		</div>
+        
+        <?php
+		$woocommerce_db_version = get_option( 'woocommerce_db_version', null );
+		
+		if ( version_compare( $woocommerce_db_version, '2.1', '>=' ) ) {
+			if ( metadata_exists( 'post', $post->ID, '_product_image_gallery' ) ) {
+				$product_image_gallery = get_post_meta( $post->ID, '_product_image_gallery', true );
+			} else {
+				// Backwards compat
+				$attachment_ids = get_posts( 'post_parent=' . $post->ID . '&numberposts=-1&post_type=attachment&orderby=menu_order&order=ASC&post_mime_type=image&fields=ids&meta_key=_woocommerce_exclude_image&meta_value=0' );
+				$attachment_ids = array_diff( $attachment_ids, array( get_post_thumbnail_id() ) );
+				$product_image_gallery = implode( ',', $attachment_ids );
+			}
+		?>
+        	<input type="hidden" id="product_image_gallery" name="product_image_gallery" value="<?php echo esc_attr( $product_image_gallery ); ?>" />
+        <?php } ?>
+        
         <script type="text/javascript">
 		jQuery(".wc_dg_help_tip").tipTip({
 			"attribute" : "data-tip",
@@ -150,7 +168,7 @@ class WC_Dynamic_Gallery_Meta_Boxes
 		jQuery(document).on('click', '#woocommerce-product-image h3', function(){
 			jQuery('#woocommerce-product-image').removeClass("closed");
 		});
-		jQuery(document).on('click', '.upload_image_button', function(){
+		jQuery(document).on('click', '.wc_dg_upload_image_button', function(){
 			var post_id = <?php echo $post->ID; ?>;
 			//window.send_to_editor = window.send_to_termmeta;
 			tb_show('', 'media-upload.php?post_id=' + post_id + '&type=image&tab=gallery&TB_iframe=true');
@@ -187,6 +205,6 @@ class WC_Dynamic_Gallery_Meta_Boxes
 	}
 }
 
-add_action( 'add_meta_boxes', array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_meta_boxes_image'), 11 );
+add_action( 'add_meta_boxes', array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_meta_boxes_image'), 31 );
 add_action( 'save_post', array('WC_Dynamic_Gallery_Meta_Boxes','save_actived_d_gallery') );
 ?>

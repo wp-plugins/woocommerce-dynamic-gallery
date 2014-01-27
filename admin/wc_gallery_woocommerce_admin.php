@@ -4,7 +4,7 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_lite_version', '1.2.5.6');
+	update_option('a3rev_woo_dgallery_lite_version', '1.2.6');
 	// Set Settings Default from Admin Init
 	global $wc_dgallery_admin_init;
 	$wc_dgallery_admin_init->set_default_settings();
@@ -40,6 +40,8 @@ add_filter( 'plugin_row_meta', array('WC_Dynamic_Gallery_Functions', 'plugin_ext
 // Need to call Admin Init to show Admin UI
 global $wc_dgallery_admin_init;
 $wc_dgallery_admin_init->init();
+
+$woocommerce_db_version = get_option( 'woocommerce_db_version', null );
 
 // Add upgrade notice to Dashboard pages
 add_filter( $wc_dgallery_admin_init->plugin_name . '_plugin_extension', array( 'WC_Dynamic_Gallery_Functions', 'plugin_extension' ) );
@@ -93,7 +95,7 @@ function setup_dynamic_gallery() {
 add_action('plugins_loaded', 'woo_dgallery_lite_upgrade_plugin');
 function woo_dgallery_lite_upgrade_plugin () {
 	
-	update_option('a3rev_woo_dgallery_lite_version', '1.2.5.6');
+	update_option('a3rev_woo_dgallery_lite_version', '1.2.6');
 }
 
 ?>
