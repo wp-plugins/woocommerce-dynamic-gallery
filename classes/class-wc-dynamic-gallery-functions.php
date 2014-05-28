@@ -63,16 +63,16 @@ class WC_Dynamic_Gallery_Functions
 		$html .= '<p>'.__("<strong>NOTE:</strong> Settings inside the Yellow border are Pro Version advanced Features and are not activated. Visit the", 'woo_dgallery').' <a href="http://a3rev.com/shop/woocommerce-dynamic-gallery/" target="_blank">'.__("a3rev site", 'woo_dgallery').'</a> '.__("if you wish to upgrade to activate these features", 'woo_dgallery').':</p>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>1. '.__('Show Multiple Product Variation images in Gallery. As users selects options from the drop down menu that options product image auto shows in the Dynamic Gallery complete with caption text.', 'woo_dgallery').'</li>';
-		$html .= '<li>2. '.__('Fully Responsive Gallery option. Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up.', 'woo_dgallery').'</li>';
-		$html .= '<li>3. '.__('Activate all of the Gallery customization settings to style and fine tune your product image presentation.', 'woo_dgallery').'</li>';
-		$html .= '<li>4. '.__('Option to Deactivate the Gallery on any Single product page - default WooCommerce product image will show.', 'woo_dgallery').'</li>';
+		$html .= '<li>1. '.__('Show Multiple Product Variation images in Gallery.', 'woo_dgallery').'</li>';
+		$html .= '<li>2. '.__('As users selects options from the drop down menu that options product image auto shows in the Dynamic Gallery.', 'woo_dgallery').'</li>';
+		$html .= '<li>3. '.__('Fully Responsive Gallery option.', 'woo_dgallery').'</li>';
+		$html .= '<li>4. '.__('Set gallery wide to % and it becomes fully responsive image product gallery including the image zoom pop up.', 'woo_dgallery').'</li>';
+		$html .= '<li>5. '.__('Activate all of the Gallery customization settings to style and fine tune your product image presentation.', 'woo_dgallery').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
 		$html .= '<h3>'.__('View this plugins', 'woo_dgallery').' <a href="http://docs.a3rev.com/user-guides/woocommerce/woo-dynamic-gallery/" target="_blank">'.__('documentation', 'woo_dgallery').'</a></h3>';
 		$html .= '<h3>'.__('Visit this plugins', 'woo_dgallery').' <a href="http://wordpress.org/support/plugin/woocommerce-dynamic-gallery/" target="_blank">'.__('support forum', 'woo_dgallery').'</a></h3>';
-		$html .= '<h3>'.__('More a3rev Quality Plugins', 'woo_dgallery').'</h3>';
-		$html .= '<p>'.__('Below is a list of the a3rev plugins that are available for free download from wordpress.org', 'woo_dgallery').'</p>';
+
 		$html .= '<h3>'.__('More FREE a3rev WooCommerce Plugins', 'woo_dgallery').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
@@ -87,6 +87,7 @@ class WC_Dynamic_Gallery_Functions
 		$html .= '<h3>'.__('FREE a3rev WordPress Plugins', 'woo_dgallery').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/a3-responsive-slider/" target="_blank">'.__('a3 Responsive Slider * New released!', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/contact-us-page-contact-people/" target="_blank">'.__('Contact Us Page - Contact People', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'woo_dgallery').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'woo_dgallery').'</a></li>';
