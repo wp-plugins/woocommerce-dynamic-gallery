@@ -495,9 +495,9 @@ $(document).ready(function() {
 		$(".gallery_width_type_fixed").show();
 	}
 	if ( $("input.gallery_nav_control:checked").val() == 'yes') {
-		$(".nav_bar_container").show();
+		$('.nav_bar_container').css( {'visibility': 'visible', 'height' : 'auto', 'overflow' : 'inherit'} );
 	} else {
-		$(".nav_bar_container").hide();
+		$('.nav_bar_container').css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden'} );
 	}
 	if ( $("input.lazy_load_control:checked").val() == 'yes') {
 		$(".lazy_load_container").show();
@@ -521,6 +521,7 @@ $(document).ready(function() {
 	});
 	
 	$(document).on( "a3rev-ui-onoff_checkbox-switch", '.gallery_nav_control', function( event, value, status ) {
+		$('.nav_bar_container').hide().css( {'visibility': 'visible', 'height' : 'auto', 'overflow' : 'inherit'} );
 		if ( status == 'true' ) {
 			$(".nav_bar_container").slideDown();
 		} else {

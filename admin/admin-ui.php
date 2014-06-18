@@ -32,6 +32,14 @@ class WC_Dynamic_Gallery_Admin_UI
 	 */
 	public $plugin_name = 'woo_dynamic_gallery';
 	
+	public $is_free_plugin = true;
+	
+	/**
+	 * @var string
+	 * You must change to correct class name that you are working
+	 */
+	public $class_name = 'WC_Dynamic_Gallery';
+	
 	/**
 	 * @var string
 	 * You must change to correct pro plugin page url on a3rev site

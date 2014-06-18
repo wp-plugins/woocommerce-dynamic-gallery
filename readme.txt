@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.7
 Tested up to: 3.9.1
-Stable tag: 1.2.6.2
+Stable tag: 1.2.6.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -53,11 +53,13 @@ As soon as you install WooCommerce Dynamic Gallery it <strong>brings your store 
 * The Pro Version settings are all active on the admin panels But do not save and are not applied to the front end.
 * Upgrading to the Pro version activates all the Pro version Features and Settings and removes the Yellow side bar and borders.
 
-= Lite Version Support =
 
-* As a Lite Version user please post all support requests to the plugins WordPress Support forum.
-* We do not watch that forum and posting there you will be relying on another user for support, not an a3rev team member.
-* Upgrading to a Pro Version Trail Licence gives 'write' access to the a3rev support forum.
+>= Premium Support =
+
+>The a3rev team does not provide support for the WooCommerce Dynamic Product Gallery plugin on the WordPress.org forums. One on one developer support is available via the plugins [a3rev support forum](https://a3rev.com/forums/forum/woocommerce-plugins/dynamic-gallery/) to people who have purchased a [WooCommerce Dynamic Gallery Pro](http://a3rev.com/shop/woocommerce-dynamic-gallery/) plugin Lifetime License.
+
+>The Pro Version has lots of extra features (listed below) that coupled with developer support might be well worth your investment!
+
 
 = Pro Version Advanced Features =
 
@@ -146,6 +148,11 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.2.6.3 - 2014/06/18 =
+* Tweak - Updated chosen js script to latest version 1.0.1 on the a3rev Plugin Framework
+* Tweak - Updated plugins wordpress.org description text and admin panel yellow sidebar text.
+* Tweak - Tested 100% compatible with WooCommerce version 2.1.11
 
 = 1.2.6.2 - 2014/05/28 =
 * Feature - Added option to Hide or show the default WooCommerce Product Gallery Meta box on product edit pages.
@@ -325,6 +332,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.6.3 =
+Upgrade your plugin now for 1 framework code tweak that makes the plugin fully compatible with WooCommerce Version 2.1.11 and backwards.
 
 = 1.2.6.2 =
 Upgrade your plugin now for 2 new feature, 3 Framework code Tweaks and full compatibility with WooCommerce version 2.1.9 and WordPress version 3.9.1
