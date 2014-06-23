@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.7
 Tested up to: 3.9.1
-Stable tag: 1.2.6.3
+Stable tag: 1.2.6.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -148,6 +148,10 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.2.6.4 - 2014/06/23 =
+* Fixed - Fixed the Warning - "Creating default object from empty value in" on Dynamic Gallery Preview popup.
+* Fixed - Solved the conflict with WP Email Template for the warning "WP Email Template: wp_mail has been declared by another process or plugin, so you won't be able to use another Email Deliver Provider until the problem is solved." on Dynamic Gallery Style tab.
 
 = 1.2.6.3 - 2014/06/18 =
 * Tweak - Updated chosen js script to latest version 1.0.1 on the a3rev Plugin Framework
@@ -332,6 +336,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.2.6.4 =
+Upgrade your plugin now for 2 new bug fixes.
 
 = 1.2.6.3 =
 Upgrade your plugin now for 1 framework code tweak that makes the plugin fully compatible with WooCommerce Version 2.1.11 and backwards.

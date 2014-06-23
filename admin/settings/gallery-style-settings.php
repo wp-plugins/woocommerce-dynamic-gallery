@@ -202,19 +202,13 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 	/* Init all fields of this form */
 	/*-----------------------------------------------------------------------------------*/
 	public function init_form_fields() {
-		$woo_dynamic_gallery = '';
-		if ( is_admin() && in_array (basename($_SERVER['PHP_SELF']), array('admin.php') ) && isset( $_GET['page'] ) && $_GET['page'] == 'woo-dynamic-gallery' && isset( $_GET['tab'] ) && $_GET['tab'] == 'gallery-style' ) {
-			require_once( ABSPATH . 'wp-includes/pluggable.php' );
-			add_action('init' , array( $this, 'remove_mandrill_notice' ) );
-			$woo_dynamic_gallery = wp_create_nonce("woo_dynamic_gallery");
-		}
 		
   		// Define settings			
      	$this->form_fields = apply_filters( $this->option_name . '_settings_fields', array(
 		
 			array(
             	'name' 		=> __( 'Preview', 'woo_dgallery' ),
-				'desc'		=> '<a href="'.  admin_url( 'admin-ajax.php', 'relative') .'?security='.$woo_dynamic_gallery.'" class="preview_gallery">' . __( 'Click here to preview gallery', 'woo_dgallery' ) . '</a>',
+				'desc'		=> '<a href="'.  admin_url( 'admin-ajax.php', 'relative') .'?act=preview-dgallery" class="preview_gallery">' . __( 'Click here to preview gallery', 'woo_dgallery' ) . '</a>',
                 'type' 		=> 'heading',
            	),
 			
