@@ -149,7 +149,7 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 == Changelog ==
 
-= 1.2.6.5 - 2014/09/03 =
+= 1.2.6.5 - 2014/09/03 = 
 * Tweak - Tested fully compatible with WooCommerce 2.2 back to 2.1
 * Tweak - Updated google font face in plugin framework.
 
