@@ -15,7 +15,7 @@ class WC_Gallery_Display_Class
 		/**
 		 * Single Product Image
 		 */
-		global $post, $woocommerce, $wc_dgallery_fonts_face;
+		global $post, $wc_dgallery_fonts_face;
 		$current_db_version = get_option( 'woocommerce_db_version', null );
 		$lightbox_class = 'lightbox';
 		
@@ -66,52 +66,19 @@ class WC_Gallery_Display_Class
 		?>
         <div class="images gallery_container">
           <div class="product_gallery">
-            <?php
-			$g_width = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_width_fixed' );
-            $g_height = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_height' );
-            
+            <?php            
             $g_thumb_width = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'thumb_width' );
 			if ( $g_thumb_width <= 0 ) $g_thumb_width = 105;
             $g_thumb_height = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'thumb_height' );
 			if ( $g_thumb_height <= 0 ) $g_thumb_height = 75;
-            $g_thumb_spacing = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'thumb_spacing' );
-                
+
             $g_auto = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_auto_start' );
             $g_speed = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_speed' );
             $g_effect = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_effect' );
             $g_animation_speed = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_animation_speed' );
 			
-			$bg_nav_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'bg_nav_color' );
-			
-			$bg_image_wrapper = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'bg_image_wrapper' );
-			$border_image_wrapper_color = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'border_image_wrapper_color' );
-			
 			$product_gallery_bg_des = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_bg_des' );
-			
-			$enable_gallery_thumb = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'enable_gallery_thumb' );
-			
-			
-			$product_gallery_nav = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_nav' );
-			
-			$transition_scroll_bar = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'transition_scroll_bar' );
-			
-			$lazy_load_scroll = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'lazy_load_scroll' );
-			
-			$caption_font = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'caption_font' );
-			
-			$navbar_font = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font' );
-			$navbar_height = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_height' );
-			
-			if($product_gallery_nav == 'yes'){
-				$display_ctrl = 'display:block !important;';
-				$mg = $navbar_height;
-				$ldm = $navbar_height;
-				
-			}else{
-				$display_ctrl = 'display:none !important;';
-				$mg = '0';
-				$ldm = '0';
-			}
+			$des_background             = str_replace('#', '', $product_gallery_bg_des);
 			
 			$popup_gallery = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'popup_gallery' );
 			
@@ -121,176 +88,18 @@ class WC_Gallery_Display_Class
 				$lightbox_class = '';
 			}
 			
-			$bg_des = WC_Dynamic_Gallery_Functions::html2rgb($product_gallery_bg_des,true);
-			$des_background =str_replace('#','',$product_gallery_bg_des);
-			                
-            echo '<style>
-			#TB_window{width:auto !important;}
-                .ad-gallery {
-                        width: '.$g_width.'px;
-						position:relative;
-                }
-                .ad-gallery .ad-image-wrapper {
-					background:#'.$bg_image_wrapper.';
-                    width: '.($g_width-2).'px;
-                    height: '.($g_height-2).'px;
-                    margin: 0px;
-                    position: relative;
-                    overflow: hidden !important;
-                    padding:0;
-                    border:1px solid #'.$border_image_wrapper_color.';
-					z-index:8 !important;
-                }
-				.ad-gallery .ad-image-wrapper .ad-image{width:100% !important;text-align:center;}
-                .ad-image img{
-					max-width:'.$g_width.'px !important;
-                }
-                .ad-gallery .ad-thumbs li{
-                    padding-right: '.$g_thumb_spacing.'px !important;
-                }
-                .ad-gallery .ad-thumbs li.last_item{
-                    padding-right: '.($g_thumb_spacing+13).'px !important;
-                }
-                .ad-gallery .ad-thumbs li div{
-                    height: '.$g_thumb_height.'px !important;
-                    width: '.$g_thumb_width.'px !important;
-                }
-                .ad-gallery .ad-thumbs li a {
-                    width: '.$g_thumb_width.'px !important;
-                    height: '.$g_thumb_height.'px !important;	
-                }
-                * html .ad-gallery .ad-forward, .ad-gallery .ad-back{
-                    height:	'.($g_thumb_height).'px !important;
-                }
-				
-				/*Gallery*/
-				.ad-image-wrapper{
-					overflow:inherit !important;
-				}
-				
-				.ad-gallery .ad-controls {
-					background: #'.$bg_nav_color.' !important;
-					border:1px solid #'.$bg_nav_color.';
-					color: #FFFFFF;
-					font-size: 12px;
-					height: 22px;
-					margin-top: 20px !important;
-					padding: 8px 2% !important;
-					position: relative;
-					width: 95.8%;
-					-khtml-border-radius:5px;
-					-webkit-border-radius: 5px;
-					-moz-border-radius: 5px;
-					border-radius: 5px;display:none;
-				}
-				
-				.ad-gallery .ad-info {
-					float: right;
-					font-size: 14px;
-					position: relative;
-					right: 8px;
-					text-shadow: 1px 1px 1px #000000 !important;
-					top: 1px !important;
-				}
-				.ad-gallery .ad-nav .ad-thumbs{
-					margin:7px 4% 0 !important;
-				}
-				.ad-gallery .ad-thumbs .ad-thumb-list {
-					margin-top: 0px !important;
-				}
-				.ad-thumb-list{
-				}
-				.ad-thumb-list li{
-					background:none !important;
-					padding-bottom:0 !important;
-					padding-left:0 !important;
-					padding-top:0 !important;
-				}
-				.ad-gallery .ad-image-wrapper .ad-image-description {
-					background: rgba('.$bg_des.',0.5);
-					filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr="#88'.$des_background.'", EndColorStr="#88'.$des_background.'");
-
-					margin: 0 0 '.$mg.'px !important;';
-					echo $wc_dgallery_fonts_face->generate_font_css( $caption_font );
-					
-					echo '
-					left: 0;
-					line-height: 1.4em;
-					padding:2% 2% 2% !important;
-					position: absolute;
-					text-align: left;
-					width: 96.1% !important;
-					z-index: 10;
-					font-weight:normal;
-				}
-				.product_gallery .ad-gallery .ad-image-wrapper {
-					background: none repeat scroll 0 0 '.$bg_image_wrapper.';
-					border: 1px solid '.$border_image_wrapper_color.' !important;
-					padding-bottom:'.$mg.'px;
-				}
-				.product_gallery .slide-ctrl, .product_gallery .icon_zoom {
-					'.$display_ctrl.';
-					height: '.($navbar_height-16).'px !important;
-					line-height: '.($navbar_height-16).'px !important;';
-					echo $wc_dgallery_fonts_face->generate_font_css( $navbar_font );
-				echo '
-				}';
-				if($lazy_load_scroll == 'yes'){
-					echo '.ad-gallery .lazy-load{
-						background:'.$transition_scroll_bar.' !important;
-						top:'.($g_height + 9).'px !important;
-						opacity:1 !important;
-						margin-top:'.$ldm.'px !important;
-					}';
-				}else{
-					echo '.ad-gallery .lazy-load{display:none!important;}';
-				}
-				echo'
-				.product_gallery .icon_zoom {
-					background: '.$bg_nav_color.';
-					border-right: 1px solid '.$bg_nav_color.';
-					border-top: 1px solid '.$border_image_wrapper_color.';
-				}
-				.product_gallery .slide-ctrl {
-					background:'.$bg_nav_color.';
-					border-left: 1px solid '.$border_image_wrapper_color.';
-					border-top: 1px solid '.$border_image_wrapper_color.';
-				}
-				.product_gallery .slide-ctrl .ad-slideshow-stop-slide,.product_gallery .slide-ctrl .ad-slideshow-start-slide,.product_gallery .icon_zoom{
-					line-height: '.($navbar_height-16).'px !important;';
-					echo $wc_dgallery_fonts_face->generate_font_css( $navbar_font );
-				echo '
-				}
-				.product_gallery .ad-gallery .ad-thumbs li a {
-					border:1px solid '.$border_image_wrapper_color.' !important;
-				}
-				.ad-gallery .ad-thumbs li a.ad-active {
-					border: 1px solid '.$bg_nav_color.' !important;
-				}';
-			if($enable_gallery_thumb == 'no'){
-				echo '.ad-nav{display:none; height:1px;}.woocommerce .images { margin-bottom: 15px;}';
-			}	
-			
-			if($product_gallery_nav == 'no'){
-				echo '
-				.ad-image-wrapper:hover .slide-ctrl{display: block !important;}
-				.product_gallery .slide-ctrl {
-					background: none repeat scroll 0 0 transparent;
-					border: medium none;
-					height: 50px !important;
-					left: 41.5% !important;
-					top: 38% !important;
-					width: 50px !important;
-				}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-start-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/play.png) !important;height: 50px !important;text-indent: -999em !important; width: 50px !important;}';
-				echo '.product_gallery .slide-ctrl .ad-slideshow-stop-slide {background: url('.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/pause.png) !important;height: 50px !important;text-indent: -999em !important; width: 50px !important;}';
+			$_upload_dir = wp_upload_dir();
+			if ( file_exists( $_upload_dir['basedir'] . '/sass/woo_dynamic_gallery.min.css' ) ) {
+				echo  '<link media="screen" type="text/css" href="' . $_upload_dir['baseurl'] . '/sass/woo_dynamic_gallery.min.css" rel="stylesheet" />' . "\n";
+			} else {
+				include( WOO_DYNAMIC_GALLERY_DIR . '/templates/customized_style.php' );
 			}
-			
-			if ($popup_gallery == 'deactivate') echo '#gallery_'.$post->ID.' .ad-image-wrapper .ad-image img{cursor: default;} #gallery_'.$post->ID.' .icon_zoom{cursor: default;}';
-			
-			echo '
-            </style>';
-            
+
+            echo '<style>
+				.ad-gallery .ad-image-wrapper .ad-image-description {
+					filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr="#88'.$des_background.'", EndColorStr="#88'.$des_background.'");
+				}</style>';
+
             echo '<script type="text/javascript">
                 jQuery(function() {
                     var settings_defaults_'.$post->ID.' = { loader_image: "'.WOO_DYNAMIC_GALLERY_JS_URL.'/mygallery/loader.gif",

@@ -87,7 +87,7 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 			
 		add_action( $this->plugin_name . '_set_default_settings' , array( $this, 'set_default_settings' ) );
 		
-		add_action( $this->plugin_name . '-' . $this->form_key . '_settings_init' , array( $this, 'reset_default_settings' ) );
+		add_action( $this->plugin_name . '-' . $this->form_key . '_after_settings_save' , array( $this, 'reset_default_settings' ) );
 		
 		//add_action( $this->plugin_name . '_get_all_settings' , array( $this, 'get_settings' ) );
 		

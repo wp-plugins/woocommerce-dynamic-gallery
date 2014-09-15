@@ -4,10 +4,14 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_lite_version', '1.2.6.6');
+	update_option('a3rev_woo_dgallery_lite_version', '1.3.0');
 	// Set Settings Default from Admin Init
 	global $wc_dgallery_admin_init;
 	$wc_dgallery_admin_init->set_default_settings();
+
+	// Build sass
+	global $wc_wc_dynamic_gallery_less;
+	$wc_wc_dynamic_gallery_less->plugin_build_sass();
 
 	update_option('a3rev_woo_dgallery_just_installed', true);
 }
@@ -54,7 +58,7 @@ function setup_dynamic_gallery() {
 	global $woocommerce, $post;
 	$current_db_version = get_option( 'woocommerce_db_version', null );
 	$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-	if (is_product()) {
+	if (is_singular( array( 'product' ) )) {
 		$global_wc_dgallery_activate = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'activate' );
 		$actived_d_gallery = get_post_meta($post->ID, '_actived_d_gallery',true);
 
@@ -95,7 +99,15 @@ function setup_dynamic_gallery() {
 add_action('plugins_loaded', 'woo_dgallery_lite_upgrade_plugin');
 function woo_dgallery_lite_upgrade_plugin () {
 
-	update_option('a3rev_woo_dgallery_lite_version', '1.2.6.6');
+	// Upgrade to 1.3.0
+	if( version_compare(get_option('a3rev_woo_dgallery_lite_version'), '1.3.0') === -1 ){
+		// Build sass
+		global $wc_wc_dynamic_gallery_less;
+		$wc_wc_dynamic_gallery_less->plugin_build_sass();
+		update_option('a3rev_woo_dgallery_lite_version', '1.3.0');
+	}
+
+	update_option('a3rev_woo_dgallery_lite_version', '1.3.0');
 }
 
 ?>
