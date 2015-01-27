@@ -16,6 +16,8 @@ $bg_image_wrapper           = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'bg_image_
 $border_image_wrapper_color = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'border_image_wrapper_color');
 
 $product_gallery_bg_des     = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'product_gallery_bg_des');
+$des_background             = str_replace('#', '', $product_gallery_bg_des);
+$bg_des                     = WC_Dynamic_Gallery_Functions::html2rgb($product_gallery_bg_des, true);
 
 $enable_gallery_thumb       = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'enable_gallery_thumb');
 
@@ -39,8 +41,6 @@ if ('yes' == $product_gallery_nav) {
     $mg = '0';
     $ldm = '0';
 }
-
-$bg_des                     = WC_Dynamic_Gallery_Functions::html2rgb($product_gallery_bg_des, true);
 
 $popup_gallery              = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'popup_gallery');
 ?>
@@ -131,6 +131,7 @@ echo $g_thumb_height; ?>px !important;
 .ad-image-wrapper .ad-image-description {
     background: rgba(<?php
 echo $bg_des; ?>, 0.5) !important;
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr="#88<?php echo $des_background; ?>", EndColorStr="#88<?php echo $des_background; ?>");
     margin: 0 0 <?php
 echo $mg; ?>px !important;
     left: 0;

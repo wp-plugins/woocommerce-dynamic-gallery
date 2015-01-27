@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 1.3.0
+Tested up to: 4.1
+Stable tag: 1.3.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -158,6 +158,11 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.3.1 - 2015/01/27 =
+* Tweak - Audit, test and tweak for 100% compatibility with WooCommerce 2.2.10
+* Tweak - Audit, test and tweak for 100% compatibility with WordPress Version 4.1
+* Fix - Sass compile path not saving on windows xampp.
 
 = 1.3.0 - 2014/09/15 =
 * Feature - Converted all front end CSS #dynamic {stylesheets} to Sass #dynamic {stylesheets} for faster loading.
@@ -361,6 +366,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.3.1 =
+Upgrade now for full compatibility with WooCommerce 2.2.10 and WordPress 4.1 plus 1 bug fix
 
 = 1.3.0 =
 Major Version upgrade! Upgrade now for full conversion of Dynamic Gallery to Sass #dynamic {stylesheets} on front end and Sass on admin panel.
