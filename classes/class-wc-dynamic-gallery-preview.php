@@ -12,14 +12,15 @@ class WC_Gallery_Preview_Display
 {
 		
 	public static function wc_dynamic_gallery_preview($request = ''){
+		if ( ! is_user_logged_in() || ! current_user_can( 'manage_options' ) ) die();
+		
 		global $wc_dgallery_fonts_face;
 		$request = $_REQUEST;
 		/**
 		 * Single Product Image
 		 */
-		global $post, $woocommerce;
+		$post = new stdClass();
 		$current_db_version = get_option( 'woocommerce_db_version', null );
-		check_ajax_referer( 'woo_dynamic_gallery', 'security' );
 		$woo_a3_gallery_settings = $request;
 		$lightbox_class = 'lightbox';
 		
