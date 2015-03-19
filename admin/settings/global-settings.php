@@ -204,6 +204,22 @@ class WC_Dynamic_Gallery_Global_Settings extends WC_Dynamic_Gallery_Admin_UI
 		
   		// Define settings			
      	$this->form_fields = apply_filters( $this->option_name . '_settings_fields', array(
+			array(
+            	'name' => __('WooCommerce Product Gallery Meta Box', 'woo_dgallery'),
+                'type' => 'heading',
+           	),
+			array(  
+				'name' 		=> __( 'Disable it', 'woo_dgallery' ),
+				'desc' 		=> __( 'ON to hide the default WooCommerce Product Gallery meta box on product edit pages. Do this to avoid confusion with the Dynamic Gallery meta box.', 'woo_dgallery' ),
+				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'hide_woo_gallery',
+				'default'	=> 'no',
+				'type' 		=> 'onoff_checkbox',
+				'free_version'		=> true,
+				'checked_value'		=> 'yes',
+				'unchecked_value'	=> 'no',
+				'checked_label'		=> __( 'ON', 'woo_dgallery' ),
+				'unchecked_label' 	=> __( 'OFF', 'woo_dgallery' ),
+			),
 		
 			array(	'name' => __( 'Image Zoom Function', 'woo_dgallery' ), 'type' => 'heading'),
 			array(  
