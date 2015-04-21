@@ -42,7 +42,7 @@ class WC_Gallery_Display_Class
 				if ( get_post_meta( $featured_img_id, '_woocommerce_exclude_image', true ) != 1 ) {
 					$attached_thumb[0] = $feature_image_data;
 				}
-			} else {
+			} elseif ( $feature_image_data ) {
 				$attached_thumb[0] = $feature_image_data;
 			}
 		}

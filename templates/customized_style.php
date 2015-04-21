@@ -47,6 +47,9 @@ $popup_gallery              = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'popup_gal
 #TB_window {
     width: auto !important;
 }
+.product .onsale {
+    z-index: 100;
+}
 .ad-gallery {
     width: <?php
 echo $g_width; ?>;

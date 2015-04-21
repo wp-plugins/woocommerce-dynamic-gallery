@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.8
-Tested up to: 4.1.1
-Stable tag: 1.3.3
+Tested up to: 4.2.0
+Stable tag: 1.3.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -158,6 +158,13 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.3.4 - 2015/04/21 =
+* Tweak - Tested and Tweaked for full compatibility with WordPress Version 4.2.0
+* Tweak - Tested and Tweaked for full compatibility with WooCommerce Version 2.3.8
+* Tweak - Update style of plugin framework. Removed the <code>[data-icon]</code> selector to prevent conflict with other plugins that have font awesome icons
+* Fix - <code>Undefined property: stdClass::$ID</code> bug. Check if feature image is not set then don't include in gallery.
+* Fix - Set <code>z-index</code> to <code>100</code> of <code>.onsale</code> class so that it cannot be overridden by Dynamic Gallery container
 
 = 1.3.3 - 2015/03/19 =
 * Tweak - Tested and Tweaked for full compatibility with WooCommerce Version 2.3.7
@@ -376,6 +383,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.3.4 =
+Maintenance upgrade. Code tweaks for full compatibility with WordPress 4.2.0 and WooCommerce 2.3.8 plus 2 bug fixes.
 
 = 1.3.3 =
 Upgrade now for full compatibility with WooCommerce Version 2.3.7 and WordPress version 4.1.1
