@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.8
-Tested up to: 4.2.1
-Stable tag: 1.3.5
+Tested up to: 4.2.2
+Stable tag: 1.4.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -158,6 +158,14 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.4.0 - 2015/05/21 =
+* Feature - Added full compatibility with the Enhanced Media Library plugin.
+* Tweak - Tested for full compatibility with WordPress Version 4.2.2
+* Tweak - Tested and Tweaked for full compatibility with WooCommerce Version 2.3.9
+* Tweak - Changed Permission 777 to 755 for style folder inside the uploads folder
+* Tweak - Chmod 644 for dynamic style and .less files from uploads folder
+* Credit - Thanks to Kevin Coffel raising the EML compatability issue and unlimited access to his site to create the compatibility
 
 = 1.3.5 - 2015/05/05 =
 * Tweak - Tested for full compatibility with WordPress Version 4.2.1
@@ -389,6 +397,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.4.0 =
+Feature Upgrade. Added full compatibility with the Enhanced Media Library plugin plus 2 security Tweaks and full compatibility with WordPress 4.2.2 and WooCommerce 2.3.9
 
 = 1.3.5 =
 Maintenance Update. 1 Bug fix for full compatibility with PHP caching plugins with 2 Image Alt and Caption text tweaks and full compatibility with WordPress version 4.2.1
