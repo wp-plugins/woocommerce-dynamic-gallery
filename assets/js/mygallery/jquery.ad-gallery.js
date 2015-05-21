@@ -284,7 +284,7 @@
           var link = $(this);
           var image_src = link.attr('href');
           var thumb = link.find('img');
-		  var alt = link.attr('alt');
+		      var alt = link.attr('alt');
           // Check if the thumb has already loaded
           if(!context.isImageLoaded(thumb[0])) {
             thumb.load(
@@ -326,8 +326,8 @@
           var desc = false;
           if(thumb.data('ad-desc')) {
             desc = thumb.data('ad-desc');
-          } else if(thumb.attr('alt') && thumb.attr('alt').length) {
-            desc = thumb.attr('alt');
+          } else if(thumb.attr('data-caption') && thumb.attr('data-caption').length) {
+            desc = thumb.attr('data-caption');
           };
           var title = false;
           if(thumb.data('ad-title')) {
