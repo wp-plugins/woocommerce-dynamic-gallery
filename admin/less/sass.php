@@ -23,7 +23,7 @@ class WC_Dynamic_Gallery_Less
 	{
 		$_upload_dir = wp_upload_dir();
 		if ( file_exists( $_upload_dir['basedir'] . '/sass/' . $this->css_file_name . '.min.css' ) )
-			echo '<link media="screen" type="text/css" href="' . $_upload_dir['baseurl'] . '/sass/' . $this->css_file_name . '.min.css" rel="stylesheet" />' . "\n";
+			echo '<link media="screen" type="text/css" href="' . str_replace(array('http:','https:'), '', $_upload_dir['baseurl'] ) . '/sass/' . $this->css_file_name . '.min.css" rel="stylesheet" />' . "\n";
 	}
 
 	public function plugin_build_sass()

@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.8
 Tested up to: 4.2.2
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -158,6 +158,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.4.1 - 2015/05/30 =
+* Fix - Update url of dynamic stylesheet in uploads folder to the format <code>//domain.com/</code> so it's always is correct when loaded as <code>http</code> or <code>https</code>
 
 = 1.4.0 - 2015/05/21 =
 * Feature - Added full compatibility with the Enhanced Media Library plugin.
@@ -397,6 +400,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.4.1 =
+Maintenance Upgrade. 1 bug fix for dynamic stylesheets loaded over secure https protocol.
 
 = 1.4.0 =
 Feature Upgrade. Added full compatibility with the Enhanced Media Library plugin plus 2 security Tweaks and full compatibility with WordPress 4.2.2 and WooCommerce 2.3.9
