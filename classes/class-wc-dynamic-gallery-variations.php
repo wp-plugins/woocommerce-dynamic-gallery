@@ -11,7 +11,21 @@
  */
 class WC_Dynamic_Gallery_Variations
 {
-	
+	public static function remove_media_fields( $form_fields, $attachment ) {
+		if ( !isset( $_GET['post_id'] ) ) return $form_fields;
+		$product_id = $_GET['post_id'];
+
+		if( isset($_GET['tab']) && $_GET['tab'] == 'gallery' && get_post_type($product_id) == 'product' && wp_attachment_is_image($attachment->ID) ) {
+			foreach ( get_attachment_taxonomies($attachment) as $taxonomy ) {
+				if ( isset( $form_fields[$taxonomy] ) ) {
+					unset( $form_fields[$taxonomy] );
+				}
+			}
+		}
+
+		return $form_fields;
+	}
+
 	public static function media_fields( $form_fields, $attachment ) {
 	
 		global $woocommerce;
