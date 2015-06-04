@@ -8,6 +8,7 @@ class Compile_Less_Sass {
 	}
 
 	public function compileLessFile( $less_file = '', $css_file = '', $css_min_file = '' ){
+		global $wp_filesystem;
 
 		if( empty( $less_file ) )
 			$less_file      = dirname( __FILE__ ) . '/assets/css/style.less';
@@ -15,9 +16,6 @@ class Compile_Less_Sass {
 			$css_file       = dirname( __FILE__ ) . '/assets/css/style.css';
 		if( empty( $css_min_file ) )
 			$css_min_file       = dirname( __FILE__ ) . '/assets/css/style.min.css';
-
-		//@chmod( $css_file, 0777 );
-		//@chmod( $css_min_file, 0777 );
 
 		// Write less file
     	if ( is_writable( $css_file ) && is_writable( $css_min_file ) ) {
@@ -36,11 +34,11 @@ class Compile_Less_Sass {
 				$compiled_css = $less->compileFile( $less_file );
 
 				if ( $compiled_css != '' ){
-					file_put_contents( $css_file, $compiled_css );
-
+					$wp_filesystem->put_contents( $css_file, $compiled_css );
+					
 					$compiled_css_min = CssMin::minify( $compiled_css );
 					if ( $compiled_css_min != '' )
-						file_put_contents( $css_min_file, $compiled_css_min );
+						$wp_filesystem->put_contents( $css_min_file, $compiled_css_min );
 				}
 
 			} catch ( exception $ex ) {
