@@ -25,14 +25,7 @@ class WC_Dynamic_Gallery_Meta_Boxes
 		$check = '';
 		if($actived_d_gallery == 1){$check = 'checked="checked"';}
 		
-		// Products
-		$woocommerce_db_version = get_option( 'woocommerce_db_version', null );
-		if ( version_compare( $woocommerce_db_version, '2.0', '<' ) && null !== $woocommerce_db_version ) {
-			$woocommerce_product_image_box = 'woocommerce-product-image';
-		} else {
-			$woocommerce_product_image_box = 'woocommerce-product-images';
-		}
-		add_meta_box( $woocommerce_product_image_box, '<label class="a3_actived_d_gallery" style="margin-right: 50px;"><input type="checkbox" '.$check.' value="1" name="_actived_d_gallery" /> '.__('A3 Dynamic Image Gallery activated', 'woo_dgallery').'</label> <label class="a3_wc_dgallery_show_variation"><input disabled="disabled" type="checkbox" value="1" name="_wc_dgallery_show_variation" />'.__('Product Variation Images activated', 'woo_dgallery').'</label>', array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_product_image_box'), 'product', 'normal', 'high' );
+		add_meta_box( 'wc-dgallery-product-images', '<label class="a3_actived_d_gallery" style="margin-right: 50px;"><input type="checkbox" '.$check.' value="1" name="_actived_d_gallery" class="actived_d_gallery" /> '.__('A3 Dynamic Image Gallery activated', 'woo_dgallery').'</label> <span class="wc-dgallery-variation-pro"><label class="a3_wc_dgallery_show_variation"><input disabled="disabled" type="checkbox" value="1" name="_wc_dgallery_show_variation" />'.__('Product Variation Images activated', 'woo_dgallery').'</label></span>', array('WC_Dynamic_Gallery_Meta_Boxes','woocommerce_product_image_box'), 'product', 'normal', 'high' );
 	}
 	
 	public static function woocommerce_product_image_box() {
@@ -40,15 +33,37 @@ class WC_Dynamic_Gallery_Meta_Boxes
 		global $post, $thepostid;
 		
 		$thepostid = $post->ID;
-		
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+		
+		$wc_dgallery_hide_woo_gallery = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'hide_woo_gallery', 'no' );
+		$global_wc_dgallery_activate = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'activate' );
+		$actived_d_gallery = get_post_meta($post->ID, '_actived_d_gallery',true);
+		
+		if ($actived_d_gallery == '' && $global_wc_dgallery_activate != 'no') {
+			$actived_d_gallery = 1;
+		}
 		
 		ob_start();
 		
 		?>
         <script src="<?php echo WOO_DYNAMIC_GALLERY_JS_URL;?>/tipTip/jquery.tipTip<?php echo $suffix;?>.js" type="text/javascript"></script>
-		
 		<style>
+		#woocommerce-product-images {
+		<?php if ( $actived_d_gallery == 1 && $wc_dgallery_hide_woo_gallery == 'yes' ) { ?>
+			display: none;
+		<?php } else { ?>
+			display: block;
+		<?php } ?>
+		}
+		#wc-dgallery-product-images .wc-dgallery-variation-pro {
+			border: 2px solid #E6DB55; 
+			padding:2px 5px; 
+			display: inline-block !important;
+			border-radius: 5px;
+		}
+		#wc-dgallery-product-images .a3-view-docs-button:hover {
+			color:red;
+		}
         .wc_dgallery_a_container {
 			width:70px;
 			height:70px;
@@ -107,7 +122,7 @@ class WC_Dynamic_Gallery_Meta_Boxes
 			'orderby'     => 'menu_order',
 			'order'       => 'ASC',
 			'exclude'	  => array($featured_img_id),
-		) );
+		) );	
 		?>
         	<a href="#" onclick="tb_show('', 'media-upload.php?post_id=<?php echo $post->ID; ?>&type=image&TB_iframe=true');return false;" class="wc_dgallery_a_container upload_image_button1" rel="<?php echo $post->ID; ?>"><img class="image_item" src="<?php echo WOO_DYNAMIC_GALLERY_IMAGES_URL; ?>/no-image-thumb.jpg" /><input type="hidden" name="upload_image_id[1]" class="upload_image_id" value="0" /></a>
         <?php
@@ -144,19 +159,7 @@ class WC_Dynamic_Gallery_Meta_Boxes
         
         <?php
 		$woocommerce_db_version = get_option( 'woocommerce_db_version', null );
-		
-		if ( version_compare( $woocommerce_db_version, '2.1', '>=' ) ) {
-			if ( metadata_exists( 'post', $post->ID, '_product_image_gallery' ) ) {
-				$product_image_gallery = get_post_meta( $post->ID, '_product_image_gallery', true );
-			} else {
-				// Backwards compat
-				$attachment_ids = get_posts( 'post_parent=' . $post->ID . '&numberposts=-1&post_type=attachment&orderby=menu_order&order=ASC&post_mime_type=image&fields=ids&meta_key=_woocommerce_exclude_image&meta_value=0' );
-				$attachment_ids = array_diff( $attachment_ids, array( get_post_thumbnail_id() ) );
-				$product_image_gallery = implode( ',', $attachment_ids );
-			}
 		?>
-        	<input type="hidden" id="product_image_gallery" name="product_image_gallery" value="<?php echo esc_attr( $product_image_gallery ); ?>" />
-        <?php } ?>
         
         <script type="text/javascript">
 		jQuery(".wc_dg_help_tip").tipTip({
@@ -165,8 +168,12 @@ class WC_Dynamic_Gallery_Meta_Boxes
 			"fadeIn" : 50,
 			"fadeOut" : 50
 		});
-		jQuery(document).on('click', '#woocommerce-product-image h3', function(){
-			jQuery('#woocommerce-product-image').removeClass("closed");
+		jQuery(document).on('click', '#wc-dgallery-product-images h3', function(){
+			if( jQuery('input.actived_d_gallery').is(":checked") ) {
+				jQuery('#wc-dgallery-product-images').removeClass("closed");
+			} else {
+				jQuery('#wc-dgallery-product-images').addClass("closed");
+			}
 		});
 		jQuery(document).on('click', '.wc_dg_upload_image_button', function(){
 			var post_id = <?php echo $post->ID; ?>;
@@ -179,12 +186,28 @@ class WC_Dynamic_Gallery_Meta_Boxes
 			jQuery('.wc_dgallery_feature_image').remove();
 			jQuery('#tiptip_holder').remove();
 		});
-		
+		jQuery(document).ready(function() {
+			if( jQuery('input.actived_d_gallery').is(":checked") ) {
+				jQuery('#wc-dgallery-product-images').removeClass("closed");
+			} else {
+				jQuery('#wc-dgallery-product-images').addClass("closed");
+			}
+			jQuery('input.actived_d_gallery').change(function() {
+				if( jQuery(this).is(":checked") ) {
+					jQuery('#wc-dgallery-product-images').removeClass("closed");
+					<?php if ( $wc_dgallery_hide_woo_gallery == 'yes' ) { ?>
+					jQuery('#woocommerce-product-images').slideUp();
+					<?php } ?>
+				} else {
+					jQuery('#woocommerce-product-images').slideDown();
+					jQuery('#wc-dgallery-product-images').addClass("closed");
+				}
+			});
+		});
 		</script>
-        
         <?php
 		$output = ob_get_clean();
-		echo $output;	
+		echo $output;
 	}
 	
 	public static function save_actived_d_gallery( $post_id ) {
