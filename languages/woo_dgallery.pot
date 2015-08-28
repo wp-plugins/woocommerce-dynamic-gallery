@@ -1,22 +1,19 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Dynamic Gallery LITE v1.0.7\n"
+"Project-Id-Version: Woocommerce Dynamic Gallery FREE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-13 16:16+0700\n"
-"PO-Revision-Date: 2015-02-13 16:16+0700\n"
+"POT-Creation-Date: 2015-08-20 09:38+0700\n"
+"PO-Revision-Date: 2015-08-20 09:39+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
-"Language-Team: \n"
-"Language: fr_FR\n"
+"Language-Team: a3rev\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../\n"
-"X-Textdomain-Support: yes\n"
 "X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: admin/admin-interface.php:129
@@ -35,31 +32,25 @@ msgstr ""
 msgid "Thin"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/admin-interface.php:167
-#, fuzzy
 msgid "Thin/Italic"
-msgstr "Italique"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/admin-interface.php:168
 msgid "Normal"
-msgstr "Normal"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/admin-interface.php:169
 msgid "Italic"
-msgstr "Italique"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/admin-interface.php:170
 msgid "Bold"
-msgstr "Gras"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/admin-interface.php:171
 msgid "Bold/Italic"
-msgstr "Gras / Italique"
+msgstr ""
 
 #: admin/admin-interface.php:181
 msgid "Solid"
@@ -225,7 +216,6 @@ msgstr ""
 msgid "Reset Settings"
 msgstr ""
 
-# @ woothemes
 #: admin/admin-pages/dynamic-gallery-page.php:63
 #: admin/admin-pages/dynamic-gallery-page.php:64
 msgid "Dynamic Gallery"
@@ -279,35 +269,27 @@ msgstr ""
 msgid "Dynamic Gallery Style successfully reseted."
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:161
 #: admin/settings/gallery-style-settings.php:345
 #: admin/tabs/gallery-style-tab.php:78
-#, fuzzy
 msgid "Gallery Style"
-msgstr "Galerie"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:210
 msgid "Preview"
-msgstr "Aperçue"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:211
 msgid "Click here to preview gallery"
-msgstr "Cliquer ici pour afficher l'aperçue"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:216
-#, fuzzy
 msgid "Gallery Dimensions"
-msgstr "Hauteur de la galerie"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:225
-#, fuzzy
 msgid "Gallery type"
-msgstr "Galerie"
+msgstr ""
 
 #: admin/settings/gallery-style-settings.php:232
 msgid "Responsive"
@@ -317,17 +299,15 @@ msgstr ""
 msgid "Fixed Wide"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:241
 #: admin/settings/gallery-style-settings.php:263
 msgid "Gallery width"
-msgstr "Largeur de la galerie"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:255
 #: admin/settings/gallery-style-settings.php:272
 msgid "Gallery height"
-msgstr "Hauteur de la galerie"
+msgstr ""
 
 #: admin/settings/gallery-style-settings.php:255
 msgid "Show tall in proportion to wide"
@@ -337,27 +317,22 @@ msgstr ""
 msgid "Gallery Special Effects"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:287
 msgid "Auto start"
-msgstr "Lecture automatique"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:298
 msgid "Slide transition effect"
-msgstr "Effet de transition"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:305
 msgid "None"
-msgstr "Aucun"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:306
 msgid "Fade"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:307
 msgid "Slide Hori"
 msgstr ""
@@ -366,20 +341,17 @@ msgstr ""
 msgid "Slide Vert"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:309
 msgid "Resize"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:313
 msgid "Time between transitions"
-msgstr "Temps de transition"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:323
 msgid "Transition effect speed"
-msgstr "Vitesse de transition"
+msgstr ""
 
 #: admin/settings/gallery-style-settings.php:334
 msgid "Single Image Transition"
@@ -391,111 +363,84 @@ msgid ""
 "to gallery."
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:347
 msgid "Image background colour"
-msgstr "Couleur de l’arrière plan des images"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:348
 msgid "Gallery image background colour. Default <code>#FFFFFF</code>."
 msgstr ""
-"Couleur de l’arrière plan de la galerie. Par défaut <code>#FFFFFF</code>."
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:354
 msgid "Border colour"
-msgstr "Couleur de la bordure"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:355
-#, fuzzy
 msgid "Gallery border colour. Default <code>#CCCCCC</code>."
-msgstr "Couleur de la bordure de la galerie"
+msgstr ""
 
-# @ woothemes
 #: admin/settings/gallery-style-settings.php:361
 msgid "Caption text"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:363
 #: admin/settings/gallery-style-settings.php:395
 msgid "Font"
-msgstr "Police"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:369
 #: admin/settings/gallery-style-settings.php:401
 msgid "Background"
-msgstr "Arrière plan"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:370
-#, fuzzy
 msgid "Caption text background colour. Default [default_value]"
 msgstr ""
-"Couleur de l'arrière plan de la légende, par défaut <code>#000000</code>."
 
-# @ woothemes
 #: admin/settings/gallery-style-settings.php:376
 msgid "Nav Bar"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:378
 #: admin/settings/gallery-style-settings.php:421
 msgid "Control"
-msgstr "Contrôle"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:379
-#, fuzzy
 msgid "YES to enable Nav bar Control"
-msgstr "Activer le contrôle de la barre de navigation "
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:402
-#, fuzzy
 msgid "Nav bar background colour. Default [default_value]."
-msgstr "Couleur de l’arrière plan de la barre de navigation"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:408
 msgid "Container height"
-msgstr "Hauteur du contenu"
+msgstr ""
 
-# @ woothemes
 #: admin/settings/gallery-style-settings.php:417
 msgid "Lazy-load scroll"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:422
-#, fuzzy
 msgid "YES to enable lazy-load scroll"
-msgstr "Activer lazy-charge défilement"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:439
 msgid "Colour"
-msgstr "Couleur"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:440
-#, fuzzy
 msgid "Scroll bar colour. Default [default_value]."
-msgstr "Couleur d la barre de défilement, par défaut <code>#000000</code>."
+msgstr ""
 
 #: admin/settings/gallery-style-settings.php:446
 msgid "Variations Galleries"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/gallery-style-settings.php:448
-#, fuzzy
 msgid "Gallery load effect"
-msgstr "Galerie"
+msgstr ""
 
 #: admin/settings/gallery-style-settings.php:456
 msgid "FADE"
@@ -544,31 +489,25 @@ msgstr ""
 msgid "Image Zoom Function"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/global-settings.php:226
 msgid "Gallery popup"
-msgstr "Galerie popup"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/global-settings.php:235
 msgid "Fancybox"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/global-settings.php:242
-#, fuzzy
 msgid "ColorBox"
-msgstr "Couleur"
+msgstr ""
 
 #: admin/settings/global-settings.php:249
 msgid "Deactivate"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/global-settings.php:259
-#, fuzzy
 msgid "Gallery On / Off"
-msgstr "Galerie"
+msgstr ""
 
 #: admin/settings/global-settings.php:263
 msgid "Gallery Activation Default"
@@ -645,22 +584,18 @@ msgstr ""
 msgid "Thumbnails Settings successfully reseted."
 msgstr ""
 
-# @ woothemes
 #: admin/settings/thumbnails-settings.php:154
 #: admin/settings/thumbnails-settings.php:198 admin/tabs/thumbnails-tab.php:78
 msgid "Image Thumbnails"
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/thumbnails-settings.php:203
 msgid "Show thumbnails"
-msgstr "Afficher les miniatures"
+msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/thumbnails-settings.php:204
-#, fuzzy
 msgid "YES to enable thumbnail gallery"
-msgstr "Activer les vignettes de la galerie"
+msgstr ""
 
 #: admin/settings/thumbnails-settings.php:221
 msgid "Single Image Thumbnail"
@@ -670,10 +605,9 @@ msgstr ""
 msgid "YES to hide thumbnail when only 1 image is loaded to gallery."
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/thumbnails-settings.php:237
 msgid "Thumbnail width"
-msgstr "Largeur des miniatures"
+msgstr ""
 
 #: admin/settings/thumbnails-settings.php:238
 msgid ""
@@ -681,10 +615,9 @@ msgid ""
 "feature if you want to hide them."
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/thumbnails-settings.php:246
 msgid "Thumbnail height"
-msgstr "Hauteur des miniatures"
+msgstr ""
 
 #: admin/settings/thumbnails-settings.php:247
 msgid ""
@@ -692,10 +625,9 @@ msgid ""
 "feature if you want to hide them."
 msgstr ""
 
-# @ woo_dgallery
 #: admin/settings/thumbnails-settings.php:255
 msgid "Thumbnail spacing"
-msgstr "Espacement entre les miniatures"
+msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:62
 msgid "Upgrade to Dynamic Gallery Pro"
@@ -712,11 +644,9 @@ msgstr ""
 msgid "WooCommerce Dynamic Gallery Pro Features"
 msgstr ""
 
-# @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-functions.php:68
-#, fuzzy
 msgid "Show Multiple Product Variation images in Gallery."
-msgstr "Variation des images de produit"
+msgstr ""
 
 #: classes/class-wc-dynamic-gallery-functions.php:69
 msgid "Assign images to variations and they show when variation is selected."
@@ -826,22 +756,18 @@ msgstr ""
 msgid "Page View Count"
 msgstr ""
 
-# @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-functions.php:110
 msgid "Documentation"
 msgstr ""
 
-# @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-functions.php:111
 msgid "Support"
 msgstr ""
 
-# @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-metaboxes.php:28
 msgid "A3 Dynamic Image Gallery activated"
-msgstr "A3 Dynamic Image Galerie activé"
+msgstr ""
 
-# @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-metaboxes.php:28
 msgid "Product Variation Images activated"
 msgstr ""
@@ -860,99 +786,44 @@ msgid ""
 "this image will not show if you have not uploaded it to the Gallery.'"
 msgstr ""
 
-# @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-preview.php:118
 #: classes/class-wc-dynamic-gallery.php:82
 msgid "ZOOM +"
 msgstr ""
 
-# @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-preview.php:314
 #: classes/class-wc-dynamic-gallery.php:114
 msgid "START SLIDESHOW"
 msgstr ""
 
-# @ woo_dgallery
 #: classes/class-wc-dynamic-gallery-preview.php:315
 #: classes/class-wc-dynamic-gallery.php:115
 msgid "STOP SLIDESHOW"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:29
+#: classes/class-wc-dynamic-gallery-variations.php:43
 msgid "Exclude image"
 msgstr ""
 
-# @ woocommerce
-#: classes/class-wc-dynamic-gallery-variations.php:31
-#: classes/class-wc-dynamic-gallery-variations.php:37
+#: classes/class-wc-dynamic-gallery-variations.php:45
+#: classes/class-wc-dynamic-gallery-variations.php:51
 msgid "Enabling this option will hide it from the product page image gallery."
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:31
-#: classes/class-wc-dynamic-gallery-variations.php:37
+#: classes/class-wc-dynamic-gallery-variations.php:45
+#: classes/class-wc-dynamic-gallery-variations.php:51
 msgid ""
 "If assigned to variations below the image will show when option is selected."
 msgstr ""
 
-# @ woo_dgallery
-#: classes/class-wc-dynamic-gallery-variations.php:54
+#: classes/class-wc-dynamic-gallery-variations.php:68
 msgid "Variations"
 msgstr ""
 
-#: classes/class-wc-dynamic-gallery-variations.php:58
+#: classes/class-wc-dynamic-gallery-variations.php:72
 msgid "Upgrade to the PRO version to use this feature."
 msgstr ""
 
-# @ woo_dgallery
-#: classes/class-wc-dynamic-gallery-variations.php:65
+#: classes/class-wc-dynamic-gallery-variations.php:79
 msgid "Apply to All"
 msgstr ""
-
-# @ woo_dgallery
-#~ msgid "Gallery"
-#~ msgstr "Galerie"
-
-# @ woo_dgallery
-#~ msgid "False"
-#~ msgstr "Non"
-
-# @ woo_dgallery
-#~ msgid "True"
-#~ msgstr "Oui"
-
-# @ woo_dgallery
-#~ msgid "Font size"
-#~ msgstr "Taille de la police"
-
-# @ woo_dgallery
-#~ msgid "Font style"
-#~ msgstr "Style de la police"
-
-# @ woo_dgallery
-#~ msgid "Caption text color. Default <code>#FFFFFF</code>."
-#~ msgstr "Couleur de la police de légende, par défaut <code>#FFFFFF</code>."
-
-# @ woo_dgallery
-#~ msgid "Text"
-#~ msgstr "Texte"
-
-# @ woo_dgallery
-#~ msgid "Nav bar text color. Default <code>#000000</code>."
-#~ msgstr ""
-#~ "Couleur du texte de la barre de navigation, par défaut <code>#000000</"
-#~ "code>."
-
-# @ woo_dgallery
-#, fuzzy
-#~ msgid "Click here to visit the a3rev site"
-#~ msgstr "Cliquer ici pour afficher l'aperçue"
-
-# @ woo_dgallery
-#, fuzzy
-#~ msgid ""
-#~ "Show Product Variation images in Gallery. Can disable this feature of "
-#~ "individual products from product edit page."
-#~ msgstr ""
-#~ "Afficher la variation du produit dans la galerie. Vous pouvez désactiver "
-#~ "cette fonction à partir de différents produits lors de leur édition dans "
-#~ "la page \\\"ajouter un produit\\\""
