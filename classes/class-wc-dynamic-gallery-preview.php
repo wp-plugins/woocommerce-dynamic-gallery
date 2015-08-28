@@ -361,10 +361,10 @@ class WC_Gallery_Preview_Display
 								var idx = $(".ad-image img").attr("idx");';
 								
                                 if(count($imgs) <= 1 ){
-                                    $script_colorbox .= '$(".gallery_product_'.$post->ID.'").colorbox({open:true, maxWidth:"100%", title: function() { return "&nbsp;";} });';
+                                    $script_colorbox .= '$(".gallery_product_'.$post->ID.'").colorbox({open:true, maxWidth:"100%" });';
 									$script_fancybox .= '$.fancybox(';
                                 }else{
-                                    $script_colorbox .= '$(".gallery_product_'.$post->ID.'").colorbox({rel:"gallery_product_'.$post->ID.'", maxWidth:"100%", title: function() { return "&nbsp;";} }); $(".gallery_product_'.$post->ID.'_"+idx).colorbox({open:true, maxWidth:"100%", title: function() { return "&nbsp;";} });';
+                                    $script_colorbox .= '$(".gallery_product_'.$post->ID.'").colorbox({rel:"gallery_product_'.$post->ID.'", maxWidth:"100%" }); $(".gallery_product_'.$post->ID.'_"+idx).colorbox({open:true, maxWidth:"100%" });';
 									$script_fancybox .= '$.fancybox([';
                                 }
 								

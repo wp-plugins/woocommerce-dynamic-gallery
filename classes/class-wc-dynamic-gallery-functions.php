@@ -111,6 +111,12 @@ class WC_Dynamic_Gallery_Functions
 		$links[] = '<a href="http://wordpress.org/support/plugin/woocommerce-dynamic-gallery/" target="_blank">'.__('Support', 'woo_dgallery').'</a>';
 		return $links;
 	}
+
+	public static function settings_plugin_links($actions) {
+		$actions = array_merge( array( 'settings' => '<a href="admin.php?page=woo-dynamic-gallery">' . __( 'Settings', 'woo_dgallery' ) . '</a>' ), $actions );
+
+		return $actions;
+	}
 	
 	public static function upgrade_1_2_1() {
 		update_option( WOO_DYNAMIC_GALLERY_PREFIX.'activate', get_option('wc_dgallery_activate') );

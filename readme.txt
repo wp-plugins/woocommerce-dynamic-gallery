@@ -1,9 +1,9 @@
 === WooCommerce Dynamic Gallery  ===
-Contributors: a3rev, A3 Revolution Software Development team
+Contributors: a3rev, A3 Revolution Software Development team, nguyencongtuan
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 3.8
 Tested up to: 4.3
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -158,6 +158,12 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 1.4.4 - 2015/08/28 =
+* Tweak - Tested for full compatibility with WooCommerce Version 2.4.6
+* Tweak - Added new options into Settings -> Permalinks page on Dashboard
+* Fix - Show the caption on pop-up when ColorBox pop-up is selected
+* Fix - Added 'box-sizing: initial;' for #fancybox-wrap ID to the Close button show correct on top right corner of Fancybox pop-up
 
 = 1.4.3 - 2015/08/20 =
 * Tweak - Tested for full compatibility with WooCommerce Version 2.4.4
@@ -413,6 +419,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 1.4.4 =
+Maintenance Upgrade. 2 code Tweak and 2 bug fixes for full compatibility with WooCommerce version 2.4.6
 
 = 1.4.3 =
 Major Maintenance Upgrade. 5 Code Tweaks plus 1 bug fixes for full compatibility with WordPress v 4.3.0 and WooCommerce v 2.4.4
